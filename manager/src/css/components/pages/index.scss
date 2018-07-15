@@ -1,0 +1,46 @@
+// .page-index {
+    .indexbg {
+        background: url(../../../images/cloud_i.png) #ffc64a no-repeat left 30.5rem;
+        background-size: 100%;
+        padding-top: 1.75rem;
+        padding-bottom: 3.5rem;
+    }
+
+    .mask {
+        position: relative;
+        top: -3px;
+        height: 4px;
+        width: 100%;
+        background: #fff;
+    }
+
+    .title {
+        background: url(../../../images/title.png) no-repeat center center;
+        background-size: 17.8125rem 7.6875rem;
+        width: 17.8125rem;
+        height: 7.6875rem;
+        margin: 0px auto;
+    }
+
+    .plane {
+        background: url(../../../images/plan.png) no-repeat center center;
+        background-size: 18.75rem 19.9375rem;
+        width: 18.75rem;
+        height: 19.9375rem;
+        margin: 0.5rem auto auto;
+    }
+
+    .cloud {
+        background: url(../../../images/cloud_i.png) no-repeat top left;
+    }
+
+    .launch-btn {
+        display: block;
+        width: 48%;
+        height: 55px;
+        background: url(../../../images/launch-btn.gif) center top no-repeat;
+        background-size: 100%;
+        margin: 0px auto;
+    }
+
+// }

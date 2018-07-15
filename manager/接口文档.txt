@@ -1,0 +1,23 @@
+/**
+ * step 数据结构
+ * @param {Object|Array} prevRet 每个tpl和category的注入参数
+ * @return {Object|Array} 当类型为tpl时候返回object,为category时候返回Array
+ *
+ * step配置
+ * {
+ *      tplId: tplID/categoryId
+ *      next:[tplID,categoryId],
+ *      type: "category",
+ *      interface:Id
+ *      entry:true|false,
+ *      switchFn: function(data){
+ *          
+ *      }
+ * }
+ *
+ * interface{
+ *      _id,
+ *      title,
+ * }
+ ＊ 172.18.16.13
+ */

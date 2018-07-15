@@ -1,0 +1,968 @@
+2017-07-25 00:48:34: (node:3820) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:18:06: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:18:08: (node:1588) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:34:45: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:34:47: (node:4040) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:34:48: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:34:50: (node:3296) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:35:03: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:35:05: (node:444) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:35:06: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:35:08: (node:3876) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:13: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:15: (node:3648) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:15: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:17: (node:1956) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:17: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:19: (node:2848) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:22: (node:3760) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:22: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:24: (node:3232) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:24: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:26: (node:276) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:57: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:36:58: (node:2416) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:36:58: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:37:00: (node:2032) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:37:17: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:37:19: (node:152) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:38:49: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:38:51: (node:4076) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:40:23: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:40:25: (node:4012) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:40:30: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:40:33: (node:1960) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:40:33: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:40:35: (node:3592) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:40:48: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:40:50: (node:2084) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:41:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:41:22: (node:3760) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:41:23: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:41:25: (node:1712) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:42:21: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-25 10:42:23: (node:2020) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:42:31: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:42:33: (node:2292) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:43:02: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-25 10:43:04: (node:2368) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:45:14: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036-20170725-正常使用.pdf'
+    at Error (native)
+2017-07-25 10:45:16: (node:3748) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:46:22: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:46:24: (node:3924) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 10:46:24: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 10:46:27: (node:3772) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:38:53: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:38:55: (node:3148) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:38:55: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:38:57: (node:3248) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:39:25: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:39:27: (node:2324) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:39:27: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:39:29: (node:3252) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:39:42: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:39:44: (node:3460) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:40:39: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:40:41: (node:2796) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:40:41: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:40:43: (node:2436) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:41:18: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:41:20: (node:3120) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:41:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:41:22: (node:1588) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:22: (node:3364) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:22: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:24: (node:2540) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:38: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:40: (node:3560) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:40: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:42: (node:3496) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:45: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:47: (node:2968) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:48: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:49: (node:3328) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:42:49: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:42:51: (node:3744) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:43:08: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:43:10: (node:1952) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-25 11:43:10: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-25 11:43:12: (node:3936) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 06:48:03: (node:3980) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 06:49:40: (node:1408) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 06:52:37: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 06:52:39: (node:4004) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 07:11:53: (node:2144) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 07:20:17: (node:3932) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:15: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:17: (node:2264) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:17: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:18: (node:3340) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:19: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:20: (node:2312) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:21: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:22: (node:1440) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:34: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:35: (node:2188) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 09:08:35: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 09:08:37: (node:1916) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:28:15: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:28:17: (node:3220) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:28:17: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:28:19: (node:3964) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:29:01: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:29:03: (node:2184) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:29:04: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:29:05: (node:3448) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:29:49: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:29:51: (node:3100) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:29:51: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:29:53: (node:2440) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:29:53: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:29:55: (node:3156) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:01: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 13:30:03: (node:3376) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:32: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 13:30:34: (node:1704) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:34: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:30:36: (node:1660) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:37: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:30:39: (node:2576) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:39: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:30:41: (node:2104) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:49: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:30:51: (node:2676) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:30:51: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:30:53: (node:2760) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:10: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:12: (node:964) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:12: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:14: (node:3180) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:18: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:20: (node:3928) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:22: (node:3892) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:34: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:36: (node:592) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:36: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:31:38: (node:1956) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:31:44: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 13:31:46: (node:3404) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:00: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:02: (node:3156) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:02: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:04: (node:2452) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:09: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 13:32:11: (node:3624) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:11: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:13: (node:3360) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:13: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:15: (node:2320) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:16: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:18: (node:2100) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:27: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 13:32:29: (node:2796) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:29: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:31: (node:3104) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:32:31: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 13:32:33: (node:2688) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 13:33:00: 
+2017-07-26 13:33:00:   Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+      at Error (native)
+2017-07-26 13:33:00: 
+2017-07-26 13:33:06: 
+  Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+      at Error (native)
+
+2017-07-26 13:33:09: 
+2017-07-26 13:33:09:   Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+      at Error (native)
+2017-07-26 13:33:09: 
+2017-07-26 21:48:41: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:48:43: (node:2924) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:49:32: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:49:35: (node:1944) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:50:18: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:50:20: (node:4040) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:50:20: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:50:21: (node:3564) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:51:54: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:51:56: (node:2044) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:51:56: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:51:58: (node:3772) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 21:52:16: ReferenceError: type is not defined
+    at E:\gitCode\cig\services\status.js:90:45
+    at E:\gitCode\cig\node_modules\mongoose\lib\query.js:2843:9
+    at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+2017-07-26 21:52:18: (node:1344) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:00:11: (node:3456) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:02:42: (node:2588) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:07:46: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036-20170725-正常使用.pdf'
+    at Error (native)
+2017-07-26 22:07:48: (node:4028) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:07:48: 
+2017-07-26 22:08:08: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 22:08:10: (node:2724) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:08:35: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 22:08:37: (node:4016) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:09:41: Error: ENOENT: no such file or directory, open 'E:\gitCode\cig\statics\files\FBP00036_ABC_20170725_正常使用.pdf'
+    at Error (native)
+2017-07-26 22:09:43: (node:3748) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-26 22:31:54: (node:2960) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-28 00:05:46: (node:3212) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-28 00:09:50: (node:3332) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-28 00:22:12: (node:3736) DeprecationWarning: `open()` is deprecated in mongoose >= 4.11.0, use `openUri()` instead, or set the `useMongoClient` option if using `connect()` or `createConnection()`. See http://mongoosejs.com/docs/connections.html#use-mongo-client
+2017-07-28 11:20:51: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-07-28 11:20:51: 
+2017-07-28 11:20:51:   ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-07-28 11:21:03: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-07-28 11:21:03: 
+2017-07-28 11:21:03:   ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-07-31 08:43:29: 
+2017-07-31 08:43:29:   TypeError: Cannot read property 'authList' of undefined
+      at Object.getMenuList (E:\gitCode\cig\controllers\common.js:140:45)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:34:19)
+      at next (native)
+      at Object.dispatch (E:\gitCode\cig\node_modules\koa-router\lib\router.js:334:12)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:27:49)
+      at next (native)
+
+2017-07-31 08:43:29: 
+  TypeError: Cannot read property 'authList' of undefined
+      at Object.getAuthList (E:\gitCode\cig\controllers\common.js:208:45)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:34:19)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+      at Object.dispatch (E:\gitCode\cig\node_modules\koa-router\lib\router.js:334:12)
+      at next (native)
+      at Object.<anonymous> (E:\gitCode\cig\node_modules\koa-route\index.js:39:21)
+      at next (native)
+
+2017-08-11 11:27:18: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-08-11 11:27:18: 
+  ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:27:21: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-08-11 11:27:21: 
+2017-08-11 11:27:21:   ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:27:24: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-08-11 11:27:24: 
+  ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:28:56: 
+2017-08-11 11:28:56:   Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:29:01: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:29:05: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:29:11: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:30:04: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:30:14: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:30:16: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:30:34: 
+  Error: read ECONNRESET
+      at exports._errnoException (util.js:1018:11)
+      at TCP.onread (net.js:568:26)
+2017-08-11 11:30:34: 
+2017-08-11 11:31:59: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:32:03: save insInfo Error: { ValidationError: InsInfoModel validation failed: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+    at MongooseError.ValidationError.inspect (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:57:23)
+    at formatValue (util.js:349:36)
+    at inspect (util.js:183:10)
+    at exports.format (util.js:127:20)
+    at Console.warn (console.js:51:37)
+    at model.save (E:\gitCode\cig\services\dict.js:98:29)
+    at E:\gitCode\cig\node_modules\mongoose\lib\model.js:3800:16
+    at E:\gitCode\cig\node_modules\mongoose\lib\services\model\applyHooks.js:155:17
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickDomainCallback (internal/process/next_tick.js:128:9)
+  errors: 
+   { endDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "endDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "endDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'endDate',
+        reason: [Object] },
+     startDate: 
+      { CastError: Cast to Date failed for value "Invalid date" at path "startDate"
+          at MongooseError.CastError (E:\gitCode\cig\node_modules\mongoose\lib\error\cast.js:26:11)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:758:7)
+          at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+          at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+          at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+          at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+          at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+          at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+          at next (native)
+          at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+          at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+        message: 'Cast to Date failed for value "Invalid date" at path "startDate"',
+        name: 'CastError',
+        stringValue: '"Invalid date"',
+        kind: 'Date',
+        value: 'Invalid date',
+        path: 'startDate',
+        reason: [Object] } },
+  _message: 'InsInfoModel validation failed',
+  name: 'ValidationError' }
+2017-08-11 11:32:03: 
+  ValidationError: endDate: Cast to Date failed for value "Invalid date" at path "endDate", startDate: Cast to Date failed for value "Invalid date" at path "startDate"
+      at MongooseError.ValidationError (E:\gitCode\cig\node_modules\mongoose\lib\error\validation.js:27:11)
+      at model.Document.invalidate (E:\gitCode\cig\node_modules\mongoose\lib\document.js:1604:32)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:757:10)
+      at model._handleIndex (E:\gitCode\cig\node_modules\mongoose\lib\document.js:591:14)
+      at model.Document.set (E:\gitCode\cig\node_modules\mongoose\lib\document.js:551:24)
+      at model.Document (E:\gitCode\cig\node_modules\mongoose\lib\document.js:71:12)
+      at model.Model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:46:12)
+      at new model (E:\gitCode\cig\node_modules\mongoose\lib\model.js:3666:13)
+      at Object.save (E:\gitCode\cig\services\dict.js:94:21)
+      at next (native)
+      at onFulfilled (E:\gitCode\cig\node_modules\co\index.js:65:19)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-11 11:32:18: 
+  Error: non-error thrown: [object Object]
+      at Object.onerror (E:\gitCode\cig\node_modules\koa\lib\context.js:105:40)
+      at process._tickDomainCallback (internal/process/next_tick.js:135:7)
+
+2017-08-16 17:32:39: 

@@ -1,0 +1,107 @@
+@import "../widget/birdyheader";
+.result-area,
+.score-area {
+    position: relative;
+}
+
+.score-area {
+    padding-bottom: 1.5rem;
+}
+
+.page-result {
+    .pagetitle {
+        padding-top: 0.9em;
+        p {
+            height: auto;
+            font-size: .875rem;
+            margin: 0px;
+            padding: 0px;
+        }
+        .bottomline {
+            position: relative;
+            height: 2.2em;
+            p {
+                position: absolute;
+                bottom: 0px;
+                line-height: 1.1em;
+            }
+        }
+        .midtitle {
+            position: relative;
+            top: -.8rem;
+            .greenbold {
+                color: #23bb82;
+                font-size: 3.0625rem;
+                position: relative;
+                top: .3rem;
+            }
+        }
+        .boldfont {
+            font-size: 1.875rem;
+        }
+    }
+    @media only screen and (max-width:361px) and (min-width:359px) {
+        .percenttop {
+            top: -.8rem;
+        }
+    }
+    @media only screen and (max-width:359px) {
+        .pagetitle {
+            padding-top: 0.7em;
+        }
+    }
+}
+
+.ab-lr {
+    text-align: right;
+    position: absolute;
+    bottom: 0px;
+    right: 5px;
+    div {
+        font-size: .75rem;
+        margin-bottom: .375rem;
+        color: #999;
+    }
+    .company {
+        font-size: .5625rem;
+    }
+    .last-update-time {
+        margin-right: 1em;
+    }
+}
+
+#improvetips {
+    position: absolute;
+    margin-left: 1px;
+    margin-top: -6px;
+    background: #ffb106;
+    border-radius: 50%;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.follow-account {
+    width: 100%;
+    height: 270px;
+    height: 73vw;
+    text-align: center;
+    background: url(../images/zw_bg.png?v=20150707) center top no-repeat;
+    background-size: 333px auto;
+    background-size: 90vw auto;
+    position: absolute;
+    margin: auto;
+    left: 0px;
+    right: 0px;
+    top: 30%;
+}
+
+.follow-account img {
+    width: 90%;
+    margin-top: 52px;
+    margin-top: 14vw;
+}
+

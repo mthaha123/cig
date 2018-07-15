@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.js"></script>
+</head>
+
+<body>
+    <div>
+        <input type="button" id='starttest' value='开始测试'>
+    </div>
+    <div>
+        <select name="" id="type">
+            <option>通知邮件</option>
+            <option>第一次催办</option>
+            <option>第二次催办</option>
+            <option>过期邮件</option>
+        </select>
+        <input type="text" id='to'>
+        <input type="button" id='sendemail' value='发送邮件'>
+    </div>
+    <script>
+    $("#sendemail").click(function() {
+        $.ajax({
+            url: "/cig/sendEmail",
+            data: {
+                content: $("#type").val(),
+                email: $("#to").val()
+            },
+            type: "POST",
+            success: function(res) {
+                if (res.success) {
+                    alert("发送成功");
+                }
+            }
+        });
+    });
+    </script>
+</body>
+
+</html>

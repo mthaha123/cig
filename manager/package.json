@@ -1,0 +1,84 @@
+{
+  "name": "H5WebSite",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "env=prod gulp build",
+    "dev": "gulp",
+    "wa": "webpack --watch",
+    "clear": "gulp clear:a"
+  },
+  "dependencies": {
+    "browserify-shim": "^3.8.10",
+    "cookie-cutter": "^0.1.1",
+    "domready": "^1.0.8",
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^1.11.2",
+    "lodash": "^4.17.3",
+    "md5": "^2.0.0",
+    "moment": "^2.18.1",
+    "node-constellation": "0.0.5",
+    "node-sass": "^3.13.1",
+    "path": "^0.12.7",
+    "vue": "^2.0.4",
+    "vue-loader": "^10.0.2",
+    "vue-medium": "^5.23.0-1",
+    "vue-router": "^2.1.1",
+    "vue-sweetalert": "^0.1.16",
+    "vue2-medium-editor": "^1.0.4",
+    "vueditor": "^0.2.4",
+    "vuex": "^2.0.0",
+    "vuex-router-sync": "^1.0.0",
+    "wangeditor": "^3.0.15"
+  },
+  "devDependencies": {
+    "babel-core": "^6.9.1",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-runtime": "^6.9.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-runtime": "^6.9.2",
+    "browser-sync": "^2.9.10",
+    "browserify": "^14.0.0",
+    "css-loader": "^0.23.1",
+    "cssnext-loader": "^1.0.1",
+    "d3": "^4.5.0",
+    "del": "^2.2.0",
+    "element-ui": "^1.0.9",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-rev-all": "^0.8.24",
+    "gulp-watch": "^4.3.5",
+    "gulp-webpack": "^1.5.0",
+    "imagemin-pngquant": "^4.2.0",
+    "lodash.assign": "^4.0.6",
+    "mocha": "^1.18.2",
+    "node-sass": "^3.13.1",
+    "promise-polyfill": "3.1.0",
+    "run-sequence": "^1.2.1",
+    "sass-loader": "^3.2.0",
+    "scp2": "^0.2.2",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue-hot-reload-api": "^1.3.2",
+    "vue-html-loader": "^1.2.2",
+    "vue-loader": "^10.0.2",
+    "vue-style-loader": "^1.0.0",
+    "vue-template-compiler": "^2.0.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-zepto": "^0.0.1"
+  },
+  "browser": {
+    "zepto": "http://libs.baidu.com/zepto/0.8/zepto.min.js"
+  },
+  "browserify-shim": {
+    "zepto": "$"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  }
+}

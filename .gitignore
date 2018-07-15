@@ -1,0 +1,7 @@
+node_modules/*
+.DS_Store
+.vscode
+tmp/*
+statics/*
+manager/node_modules/*
+emaillog/

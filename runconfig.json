@@ -1,0 +1,16 @@
+{
+    "apps": [{
+        "name": "cig",
+        "script": "./app.js",
+        "exec_mode": "fork",
+        "error_file": "./logs/cig-err.log",
+        "out_file": "./logs/cig-out.log",
+        "log_date_format": "YYYY-MM-DD HH:mm:ss",
+        "env_stg": {
+            "NODE_ENV": "development"
+        },
+        "env_production": {
+            "NODE_ENV": "production"
+        }
+    }]
+}

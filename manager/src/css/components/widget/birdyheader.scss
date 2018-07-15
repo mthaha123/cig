@@ -1,0 +1,22 @@
+.pagetitle {
+	padding-left: 33%;
+	font-family: SimHei;
+	background: #fdbb2c;
+	color: #fff;
+	box-sizing: border-box;
+	height: 8.5rem;
+	position: relative;
+	font-family:SimHei;
+	// width:100%;
+	// overflow:hidden;
+
+	.birdy {
+		background: url(../../../images/bird_zhan.gif) no-repeat left bottom;
+		background-size: 100%;
+		position: absolute;
+		left: 0.3rem;
+		width: 6.6875rem;
+		height: 7.125rem;
+		bottom: .75rem;
+	}
+}

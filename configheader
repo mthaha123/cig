@@ -1,0 +1,88 @@
+{
+    "value" : [ 
+        {
+            "view" : true,
+            "fieldTitle" : "仪器编号",
+            "fieldName" : "code",
+            "width" : "133"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "仪器名称",
+            "fieldName" : "name",
+            "width" : "100"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "仪器编码",
+            "fieldName" : "insCodeView",
+            "width" : "100"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "资产编号",
+            "fieldName" : "assertNo",
+            "width" : "120"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "部门代码",
+            "fieldName" : "depCodeView",
+            "width" : "125"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "序号",
+            "fieldName" : "No",
+            "width" : "150"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "规格",
+            "fieldName" : "specification",
+            "width" : "85"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "型号",
+            "fieldName" : "modelNo",
+            "width" : "125"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "校验日期",
+            "fieldName" : "startDate",
+            "width" : "120"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "校验类别",
+            "fieldName" : "testTypeView",
+            "width" : "70"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "校验周期",
+            "fieldName" : "periodView",
+            "width" : "70"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "状态",
+            "fieldName" : "statusView",
+            "width" : "80"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "到校日期",
+            "fieldName" : "endDate",
+            "width" : "120"
+        }, 
+        {
+            "view" : true,
+            "fieldTitle" : "描述",
+            "fieldName" : "description",
+            "width" : "130"
+        }
+    ]
+}

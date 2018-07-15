@@ -1,0 +1,7 @@
+{
+    "redisConfig": {
+        "host": "192.168.31.25",
+        "port": "6379"
+    },
+    "userImportUrl": "http://172.31.11.30:81/WebSvcBuilderSetup/Hr.asmx/EMPINFO"
+}
