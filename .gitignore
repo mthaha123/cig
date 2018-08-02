@@ -5,3 +5,7 @@ tmp/*
 statics/*
 manager/node_modules/*
 emaillog/
+config.json
+dump
+emaillog
+statics

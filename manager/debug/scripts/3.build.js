@@ -1,6 +1,6 @@
 webpackJsonp([3,9],{
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([3,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,24 +310,24 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 108:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(109)
+	__webpack_require__(113)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(111),
+	  __webpack_require__(115),
 	  /* template */
-	  __webpack_require__(116),
+	  __webpack_require__(120),
 	  /* scopeId */
 	  "data-v-318ee9b2",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\userinfo.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\userinfo.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] userinfo.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -349,23 +349,23 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 109:
+/***/ 113:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(110);
+	var content = __webpack_require__(114);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("83580dd0", content, false);
+	var update = __webpack_require__(102)("e8300a4a", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-318ee9b2&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./userinfo.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-318ee9b2&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./userinfo.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-318ee9b2&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./userinfo.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-318ee9b2&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./userinfo.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -376,10 +376,10 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 110:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
@@ -391,7 +391,7 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 111:
+/***/ 115:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -400,13 +400,13 @@ webpackJsonp([3,9],{
 	    value: true
 	});
 	
-	var _getIterator2 = __webpack_require__(112);
+	var _getIterator2 = __webpack_require__(116);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
-	var _validate = __webpack_require__(115);
+	var _validate = __webpack_require__(119);
 	
-	var _lodash = __webpack_require__(82);
+	var _lodash = __webpack_require__(86);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
@@ -507,11 +507,22 @@ webpackJsonp([3,9],{
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	    data: function data() {
 	        var self = this;
 	        return {
+	            inValidStatus: "",
 	            authCheckAll: false,
 	            pageNo: 1,
 	            transferUser: "",
@@ -554,7 +565,7 @@ webpackJsonp([3,9],{
 	                            userId: cur.userId,
 	                            name: cur.name,
 	                            authList: cur.authList,
-	                            isLock: cur.isLock ? '无效' : '有效'
+	                            isValid: cur.isValid ? '有效' : '无效'
 	
 	                        };
 	
@@ -772,11 +783,19 @@ webpackJsonp([3,9],{
 	        getList: function getList(page) {
 	            var self = this;
 	            this.pageNo = page || this.pageNo;
-	            this.$store.dispatch("getUserList", {
-	                pageNo: this.pageNo - 1,
-	                pageSize: this.pageSize,
-	                keyword: this.serachContent
-	            });
+	            if (this.inValidStatus === "invalid") {
+	                this.$store.dispatch("getInValidList", {
+	                    pageNo: this.pageNo - 1,
+	                    pageSize: this.pageSize,
+	                    keyword: this.serachContent
+	                });
+	            } else {
+	                this.$store.dispatch("getUserList", {
+	                    pageNo: this.pageNo - 1,
+	                    pageSize: this.pageSize,
+	                    keyword: this.serachContent
+	                });
+	            }
 	        }
 	    },
 	    mounted: function mounted() {
@@ -786,29 +805,29 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 112:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(113), __esModule: true };
+	module.exports = { "default": __webpack_require__(117), __esModule: true };
 
 /***/ }),
 
-/***/ 113:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
-	__webpack_require__(54);
-	__webpack_require__(10);
-	module.exports = __webpack_require__(114);
+	__webpack_require__(57);
+	__webpack_require__(13);
+	module.exports = __webpack_require__(118);
 
 
 /***/ }),
 
-/***/ 114:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
-	var anObject = __webpack_require__(23);
-	var get = __webpack_require__(64);
-	module.exports = __webpack_require__(18).getIterator = function (it) {
+	var anObject = __webpack_require__(26);
+	var get = __webpack_require__(67);
+	module.exports = __webpack_require__(21).getIterator = function (it) {
 	  var iterFn = get(it);
 	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
 	  return anObject(iterFn.call(it));
@@ -817,7 +836,7 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -839,79 +858,113 @@ webpackJsonp([3,9],{
 
 /***/ }),
 
-/***/ 116:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
+	  return _c('div', {
 	    staticClass: "contentbox"
-	  }, [_h('el-row', {
+	  }, [_c('el-row', {
+	    staticStyle: {
+	      "margin-bottom": "20px"
+	    },
 	    attrs: {
 	      "type": "flex",
-	      "style": "margin-bottom:20px;",
 	      "justify": "space-between"
 	    }
-	  }, [_h('el-col', {
+	  }, [_c('el-col', {
 	    attrs: {
 	      "span": 6
 	    }
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "grid-content"
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
+	  }, [_c('el-input', {
+	    staticStyle: {
+	      "width": "300px"
+	    },
+	    attrs: {
+	      "placeholder": "搜索用户名..."
+	    },
+	    model: {
 	      value: (_vm.serachContent),
+	      callback: function($$v) {
+	        _vm.serachContent = $$v
+	      },
 	      expression: "serachContent"
-	    }],
-	    attrs: {
-	      "placeholder": "搜索用户名...",
-	      "style": "width: 300px;"
-	    },
-	    domProps: {
-	      "value": (_vm.serachContent)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.serachContent = $event
-	      }
 	    }
-	  }, [_h('el-button', {
-	    slot: "append",
+	  }, [_c('el-button', {
 	    attrs: {
+	      "slot": "append",
 	      "icon": "search"
 	    },
 	    on: {
 	      "click": _vm.search
-	    }
-	  })])])]), " ", _h('el-col', {
+	    },
+	    slot: "append"
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 4
 	    }
-	  }, [_h('div', {
-	    staticClass: "grid-content bg-purple"
-	  }, [(_vm.dictEdit) ? _h('el-button', {
+	  }, [_c('div', {
+	    staticClass: "grid-content"
+	  }, [_c('el-select', {
 	    attrs: {
-	      "style": "float:right;",
+	      "placeholder": "导入状态"
+	    },
+	    on: {
+	      "change": function($event) {
+	        _vm.getList(1)
+	      }
+	    },
+	    model: {
+	      value: (_vm.inValidStatus),
+	      callback: function($$v) {
+	        _vm.inValidStatus = $$v
+	      },
+	      expression: "inValidStatus"
+	    }
+	  }, [_c('el-option', {
+	    attrs: {
+	      "label": "全部",
+	      "value": ""
+	    }
+	  }), _vm._v(" "), _c('el-option', {
+	    attrs: {
+	      "label": "无效员工",
+	      "value": "invalid"
+	    }
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 4
+	    }
+	  }, [_c('div', {
+	    staticClass: "grid-content bg-purple"
+	  }, [(_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
+	    attrs: {
 	      "type": "success"
 	    },
 	    on: {
 	      "click": _vm.create
 	    }
-	  }, ["新建"]) : _vm._e(), " ", (_vm.dictEdit) ? _h('el-button', {
+	  }, [_vm._v("新建")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
 	    attrs: {
-	      "style": "float:right;",
 	      "disabled": _vm.updating,
 	      "type": "success"
 	    },
 	    on: {
 	      "click": _vm.update
 	    }
-	  }, ["更新"]) : _vm._e()])])]), " ", _h('el-row', [_h('el-col', {
+	  }, [_vm._v("更新")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
-	  }, [_h('el-table', {
+	  }, [_c('el-table', {
 	    directives: [{
 	      name: "loading",
 	      rawName: "v-loading.body",
@@ -921,41 +974,43 @@ webpackJsonp([3,9],{
 	        "body": true
 	      }
 	    }],
+	    staticStyle: {
+	      "width": "100%"
+	    },
 	    attrs: {
 	      "data": _vm.dataList,
-	      "border": "",
-	      "style": "width: 100%"
+	      "border": ""
 	    }
-	  }, [_h('el-table-column', {
+	  }, [_c('el-table-column', {
 	    attrs: {
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "userId",
 	      "label": "工号",
 	      "width": "200"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "name",
 	      "label": "姓名",
 	      "width": "200"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "Email",
 	      "label": "Email",
 	      "show-overflow-tooltip": ""
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "isLock",
+	      "prop": "isValid",
 	      "label": "是否有效",
 	      "show-overflow-tooltip": ""
 	    }
-	  }), " ", (_vm.dictEdit) ? _h('el-table-column', {
+	  }), _vm._v(" "), (_vm.dictEdit) ? _c('el-table-column', {
 	    attrs: {
 	      "context": _vm._self,
 	      "label": "操作",
@@ -964,7 +1019,7 @@ webpackJsonp([3,9],{
 	    inlineTemplate: {
 	      render: function() {
 	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _h('span', [_h('el-button', {
+	          return _c('span', [_c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -974,7 +1029,7 @@ webpackJsonp([3,9],{
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, ["编辑"]), " ", _h('el-button', {
+	          }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -984,7 +1039,7 @@ webpackJsonp([3,9],{
 	                _vm.resetPassword(_vm.row)
 	              }
 	            }
-	          }, ["重置密码"]), " ", _h('el-button', {
+	          }, [_vm._v("重置密码")]), _vm._v(" "), _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -994,7 +1049,7 @@ webpackJsonp([3,9],{
 	                _vm.delrow(_vm.row)
 	              }
 	            }
-	          }, ["删除"]), " ", _h('el-button', {
+	          }, [_vm._v("删除")]), _vm._v(" "), _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -1004,16 +1059,16 @@ webpackJsonp([3,9],{
 	                _vm.changeUserAuth(_vm.row)
 	              }
 	            }
-	          }, ["权限交接"])])
+	          }, [_vm._v("权限交接")])], 1)
 	        
 	      },
 	      staticRenderFns: []
 	    }
-	  }) : _vm._e()])])]), " ", _h('el-row', [_h('div', {
+	  }) : _vm._e()], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('div', {
 	    staticClass: "flexbox"
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "tobox"
-	  }, [_vm._m(0), " ", _h('input', {
+	  }, [_c('span', [_vm._v("转到")]), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -1024,11 +1079,11 @@ webpackJsonp([3,9],{
 	      "type": "text"
 	    },
 	    domProps: {
-	      "value": _vm._s(_vm.toPageNo)
+	      "value": (_vm.toPageNo)
 	    },
 	    on: {
 	      "keyup": function($event) {
-	        if ($event.keyCode !== 13) { return; }
+	        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) { return null; }
 	        _vm.getList(_vm.toPageNo)
 	      },
 	      "input": function($event) {
@@ -1036,206 +1091,176 @@ webpackJsonp([3,9],{
 	        _vm.toPageNo = $event.target.value
 	      }
 	    }
-	  })]), " ", _h('el-pagination', {
+	  })]), _vm._v(" "), _c('el-pagination', {
+	    staticStyle: {
+	      "margin-top": "20px",
+	      "height": "100px"
+	    },
 	    attrs: {
 	      "current-page": _vm.pageNo,
 	      "page-sizes": [10, 15, 20],
 	      "page-size": _vm.pageSize,
 	      "layout": "sizes, prev, pager, next",
-	      "total": _vm.$store.state.userInfo.pageItemTotalCount,
-	      "style": "margin-top:20px;height:100px;"
+	      "total": _vm.$store.state.userInfo.pageItemTotalCount
 	    },
 	    on: {
 	      "size-change": _vm.listsizechange,
-	      "current-change": _vm.getList
-	    }
-	  })])]), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.$store.state.userInfo.dialogFormVisible),
-	      expression: "$store.state.userInfo.dialogFormVisible"
-	    }],
-	    attrs: {
-	      "title": _vm.dialogTitle,
-	      "size": "tiny"
-	    },
-	    domProps: {
-	      "value": (_vm.$store.state.userInfo.dialogFormVisible)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.$store.state.userInfo.dialogFormVisible = $event
+	      "current-change": _vm.getList,
+	      "update:currentPage": function($event) {
+	        _vm.pageNo = $event
 	      }
 	    }
-	  }, [_h('el-form', {
+	  })], 1)]), _vm._v(" "), _c('el-dialog', {
+	    attrs: {
+	      "title": _vm.dialogTitle,
+	      "size": "tiny",
+	      "modal-append-to-body": false
+	    },
+	    model: {
+	      value: (_vm.$store.state.userInfo.dialogFormVisible),
+	      callback: function($$v) {
+	        _vm.$set(_vm.$store.state.userInfo, "dialogFormVisible", $$v)
+	      },
+	      expression: "$store.state.userInfo.dialogFormVisible"
+	    }
+	  }, [_c('el-form', {
 	    attrs: {
 	      "model": _vm.form
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "工号",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.userId),
-	      expression: "form.userId"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.userId)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.userId = $event
-	      }
+	    model: {
+	      value: (_vm.form.userId),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "userId", $$v)
+	      },
+	      expression: "form.userId"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "姓名",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.name),
-	      expression: "form.name"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.name)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.name = $event
-	      }
+	    model: {
+	      value: (_vm.form.name),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "name", $$v)
+	      },
+	      expression: "form.name"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "Email",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.Email),
-	      expression: "form.Email"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.Email)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.Email = $event
-	      }
+	    model: {
+	      value: (_vm.form.Email),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "Email", $$v)
+	      },
+	      expression: "form.Email"
 	    }
-	  })]), " ", _h('el-card', {
+	  })], 1), _vm._v(" "), _c('el-card', {
 	    staticClass: "box-card"
-	  }, [_h('div', {
-	    slot: "header",
-	    staticClass: "clearfix"
-	  }, [_vm._m(1), " ", _h('el-checkbox', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.authCheckAll),
-	      expression: "authCheckAll"
-	    }],
+	  }, [_c('div', {
+	    staticClass: "clearfix",
 	    attrs: {
-	      "style": "float:right;margin-top:8px;",
+	      "slot": "header"
+	    },
+	    slot: "header"
+	  }, [_c('span', {
+	    staticStyle: {
+	      "line-height": "36px"
+	    }
+	  }, [_vm._v("权限设置")]), _vm._v(" "), _c('el-checkbox', {
+	    staticStyle: {
+	      "float": "right",
+	      "margin-top": "8px"
+	    },
+	    attrs: {
 	      "indeterminate": _vm.isIndeterminate
 	    },
-	    domProps: {
-	      "value": (_vm.authCheckAll)
-	    },
 	    on: {
-	      "change": _vm.handleCheckAllChange,
-	      "input": function($event) {
-	        _vm.authCheckAll = $event
-	      }
+	      "change": _vm.handleCheckAllChange
+	    },
+	    model: {
+	      value: (_vm.authCheckAll),
+	      callback: function($$v) {
+	        _vm.authCheckAll = $$v
+	      },
+	      expression: "authCheckAll"
 	    }
-	  }, ["全选"])]), " ", _h('div', {
+	  }, [_vm._v("全选")])], 1), _vm._v(" "), _c('div', {
 	    staticClass: "text item"
-	  }, [_h('el-checkbox-group', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.authList),
-	      expression: "form.authList"
-	    }],
-	    domProps: {
-	      "value": (_vm.form.authList)
-	    },
+	  }, [_c('el-checkbox-group', {
 	    on: {
-	      "change": _vm.handleCheckedAuthsChange,
-	      "input": function($event) {
-	        _vm.form.authList = $event
-	      }
+	      "change": _vm.handleCheckedAuthsChange
+	    },
+	    model: {
+	      value: (_vm.form.authList),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "authList", $$v)
+	      },
+	      expression: "form.authList"
 	    }
-	  }, [_vm._l((_vm.auths), function(auth) {
-	    return _h('el-checkbox', {
+	  }, _vm._l((_vm.auths), function(auth) {
+	    return _c('el-checkbox', {
 	      key: auth.code,
 	      attrs: {
 	        "label": auth.code
 	      }
-	    }, [_vm._s(auth.name)])
-	  })])])])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	    }, [_vm._v(_vm._s(auth.name))])
+	  }))], 1)])], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": _vm.hideDialog
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.submit
 	    }
-	  }, ["确 定"])])]), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.authChangeView),
-	      expression: "authChangeView"
-	    }],
+	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
 	    attrs: {
 	      "title": "权限交接",
-	      "size": "tiny"
+	      "size": "tiny",
+	      "modal-append-to-body": false
 	    },
-	    domProps: {
-	      "value": (_vm.authChangeView)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.authChangeView = $event
-	      }
+	    model: {
+	      value: (_vm.authChangeView),
+	      callback: function($$v) {
+	        _vm.authChangeView = $$v
+	      },
+	      expression: "authChangeView"
 	    }
-	  }, [_h('el-form', [_h('el-form-item', {
+	  }, [_c('el-form', [_c('el-form-item', {
 	    attrs: {
 	      "label": "工号",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.transferUser),
-	      expression: "transferUser"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1243,50 +1268,42 @@ webpackJsonp([3,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.transferUser)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.transferUser = $event
-	      }
+	    model: {
+	      value: (_vm.transferUser),
+	      callback: function($$v) {
+	        _vm.transferUser = $$v
+	      },
+	      expression: "transferUser"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	  }))], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": function($event) {
 	        _vm.authChangeView = false
 	      }
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "danger"
 	    },
 	    on: {
 	      "click": _vm.confirmChangeUserAuth
 	    }
-	  }, ["确 定"])])])])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('span', ["转到"])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('span', {
-	    attrs: {
-	      "style": "line-height: 36px;"
-	    }
-	  }, ["权限设置"])
-	}]}
+	  }, [_vm._v("确 定")])], 1)], 1)], 1)
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

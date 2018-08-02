@@ -1,23 +1,23 @@
 webpackJsonp([1,9],{
 
-/***/ 93:
+/***/ 97:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(94)
+	__webpack_require__(98)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(101),
+	  __webpack_require__(105),
 	  /* template */
-	  __webpack_require__(102),
+	  __webpack_require__(106),
 	  /* scopeId */
 	  "data-v-fdd6ef00",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\login.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\login.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] login.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -39,23 +39,23 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 94:
+/***/ 98:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(95);
+	var content = __webpack_require__(99);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("0475c818", content, false);
+	var update = __webpack_require__(102)("e8500296", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-fdd6ef00&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-fdd6ef00&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./login.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-fdd6ef00&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./login.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-fdd6ef00&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./login.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -66,29 +66,29 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 95:
+/***/ 99:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.bg[data-v-fdd6ef00] {\n  background: url(" + __webpack_require__(97) + ") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%;\n}\n.box-card[data-v-fdd6ef00] {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0);\n}\nfieldset[data-v-fdd6ef00] {\n  padding: 5px 20px;\n  margin: 0 2px;\n}\n#forgot[data-v-fdd6ef00] {\n  float: right;\n}\nlegend[data-v-fdd6ef00] {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px;\n}\n.label-header[data-v-fdd6ef00] {\n  padding: 5px;\n}\nfieldset.question[data-v-fdd6ef00] {\n  border: 1px solid #d5d5d5;\n}\n.container-table[data-v-fdd6ef00] {\n  min-height: 873px;\n}\n.container-table[data-v-fdd6ef00] {\n  display: table;\n}\n.vertical-center-row[data-v-fdd6ef00] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.labletitle[data-v-fdd6ef00] {\n  text-align: left;\n}\n.mg1[data-v-fdd6ef00] {\n  margin: 10px 0px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/login.vue"],"names":[],"mappings":";AAAA;EACE,kEAAuE;EACvE,+BAA+B;EAC/B,aAAa;CAAE;AAEjB;EACE,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,UAAU;EACV,sCAAsC;CAAE;AAE1C;EACE,kBAAkB;EAClB,cAAc;CAAE;AAElB;EACE,aAAa;CAAE;AAEjB;EACE,eAAe;EACf,WAAW;EACX,oBAAoB;EACpB,gBAAgB;EAChB,qBAAqB;EACrB,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;CAAE;AAEtB;EACE,aAAa;CAAE;AAEjB;EACE,0BAA0B;CAAE;AAE9B;EACE,kBAAkB;CAAE;AAEtB;EACE,eAAe;CAAE;AAEnB;EACE,oBAAoB;EACpB,uBAAuB;CAAE;AAE3B;EACE,iBAAiB;CAAE;AAErB;EACE,iBAAiB;CAAE","file":"login.vue","sourcesContent":[".bg {\n  background: url(\"../../../images/loginbg.jpg\") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%; }\n\n.box-card {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0); }\n\nfieldset {\n  padding: 5px 20px;\n  margin: 0 2px; }\n\n#forgot {\n  float: right; }\n\nlegend {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px; }\n\n.label-header {\n  padding: 5px; }\n\nfieldset.question {\n  border: 1px solid #d5d5d5; }\n\n.container-table {\n  min-height: 873px; }\n\n.container-table {\n  display: table; }\n\n.vertical-center-row {\n  display: table-cell;\n  vertical-align: middle; }\n\n.labletitle {\n  text-align: left; }\n\n.mg1 {\n  margin: 10px 0px; }\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.bg[data-v-fdd6ef00] {\n  background: url(" + __webpack_require__(101) + ") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%;\n}\n.box-card[data-v-fdd6ef00] {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0);\n}\nfieldset[data-v-fdd6ef00] {\n  padding: 5px 20px;\n  margin: 0 2px;\n}\n#forgot[data-v-fdd6ef00] {\n  float: right;\n}\nlegend[data-v-fdd6ef00] {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px;\n}\n.label-header[data-v-fdd6ef00] {\n  padding: 5px;\n}\nfieldset.question[data-v-fdd6ef00] {\n  border: 1px solid #d5d5d5;\n}\n.container-table[data-v-fdd6ef00] {\n  min-height: 873px;\n}\n.container-table[data-v-fdd6ef00] {\n  display: table;\n}\n.vertical-center-row[data-v-fdd6ef00] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.labletitle[data-v-fdd6ef00] {\n  text-align: left;\n}\n.mg1[data-v-fdd6ef00] {\n  margin: 10px 0px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/login.vue"],"names":[],"mappings":";AAAA;EACE,kEAAuE;EACvE,+BAA+B;EAC/B,aAAa;CAAE;AAEjB;EACE,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,UAAU;EACV,sCAAsC;CAAE;AAE1C;EACE,kBAAkB;EAClB,cAAc;CAAE;AAElB;EACE,aAAa;CAAE;AAEjB;EACE,eAAe;EACf,WAAW;EACX,oBAAoB;EACpB,gBAAgB;EAChB,qBAAqB;EACrB,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;CAAE;AAEtB;EACE,aAAa;CAAE;AAEjB;EACE,0BAA0B;CAAE;AAE9B;EACE,kBAAkB;CAAE;AAEtB;EACE,eAAe;CAAE;AAEnB;EACE,oBAAoB;EACpB,uBAAuB;CAAE;AAE3B;EACE,iBAAiB;CAAE;AAErB;EACE,iBAAiB;CAAE","file":"login.vue","sourcesContent":[".bg {\n  background: url(\"../../../images/loginbg.jpg\") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%; }\n\n.box-card {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0); }\n\nfieldset {\n  padding: 5px 20px;\n  margin: 0 2px; }\n\n#forgot {\n  float: right; }\n\nlegend {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px; }\n\n.label-header {\n  padding: 5px; }\n\nfieldset.question {\n  border: 1px solid #d5d5d5; }\n\n.container-table {\n  min-height: 873px; }\n\n.container-table {\n  display: table; }\n\n.vertical-center-row {\n  display: table-cell;\n  vertical-align: middle; }\n\n.labletitle {\n  text-align: left; }\n\n.mg1 {\n  margin: 10px 0px; }\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 97:
+/***/ 101:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "images/ae805e72e08a5dba715287732b92029d.jpg";
 
 /***/ }),
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -107,7 +107,7 @@ webpackJsonp([1,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -310,7 +310,7 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -344,7 +344,7 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -398,7 +398,7 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 101:
+/***/ 105:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -538,245 +538,201 @@ webpackJsonp([1,9],{
 
 /***/ }),
 
-/***/ 102:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
+	  return _c('div', {
 	    staticClass: "bg"
-	  }, [(_vm.loginview) ? _h('el-card', {
+	  }, [(_vm.loginview) ? _c('el-card', {
 	    staticClass: "box-card"
-	  }, [_h('div', {
-	    slot: "header",
-	    staticClass: "clearfix"
-	  }, [_vm._m(0)]), " ", _h('div', {
+	  }, [_c('div', {
+	    staticClass: "clearfix",
+	    attrs: {
+	      "slot": "header"
+	    },
+	    slot: "header"
+	  }, [_c('span', {
+	    staticStyle: {
+	      "line-height": "36px"
+	    }
+	  }, [_vm._v("CIG仪器管理系统")])]), _vm._v(" "), _c('div', {
 	    staticClass: "text item"
-	  }, [_h('el-form', {
+	  }, [_c('el-form', {
 	    ref: "form",
 	    attrs: {
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "用户名"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.username),
-	      expression: "username"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "required": ""
 	    },
-	    domProps: {
-	      "value": (_vm.username)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.username = $event
-	      }
+	    model: {
+	      value: (_vm.username),
+	      callback: function($$v) {
+	        _vm.username = $$v
+	      },
+	      expression: "username"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "密码"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.password),
-	      expression: "password"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "type": "password"
 	    },
-	    domProps: {
-	      "value": (_vm.password)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.password = $event
-	      }
+	    model: {
+	      value: (_vm.password),
+	      callback: function($$v) {
+	        _vm.password = $$v
+	      },
+	      expression: "password"
 	    }
-	  })]), " ", _h('el-form-item', [_h('el-button', {
+	  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.login
 	    }
-	  }, ["登陆"])]), " ", _h('el-form-item', [_h('a', {
+	  }, [_vm._v("登陆")])], 1), _vm._v(" "), _c('el-form-item', [_c('a', {
 	    attrs: {
 	      "id": "forgot"
 	    },
 	    on: {
 	      "click": _vm.resetPwd
 	    }
-	  }, ["忘记密码"])])])])]) : _vm._e(), " ", (!_vm.loginview) ? _h('el-card', {
+	  }, [_vm._v("忘记密码")])])], 1)], 1)]) : _vm._e(), _vm._v(" "), (!_vm.loginview) ? _c('el-card', {
 	    staticClass: "box-card"
-	  }, [_h('div', {
-	    slot: "header",
-	    staticClass: "clearfix"
-	  }, [_vm._m(1)]), " ", _h('div', {
+	  }, [_c('div', {
+	    staticClass: "clearfix",
+	    attrs: {
+	      "slot": "header"
+	    },
+	    slot: "header"
+	  }, [_c('span', {
+	    staticStyle: {
+	      "line-height": "36px"
+	    }
+	  }, [_vm._v("密码重置（首次登陆）")])]), _vm._v(" "), _c('div', {
 	    staticClass: "text item"
-	  }, [_h('el-form', {
+	  }, [_c('el-form', {
 	    ref: "form",
 	    attrs: {
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "密码"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.newpassword),
-	      expression: "newpassword"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "required": "",
 	      "type": "password"
 	    },
-	    domProps: {
-	      "value": (_vm.newpassword)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.newpassword = $event
-	      }
+	    model: {
+	      value: (_vm.newpassword),
+	      callback: function($$v) {
+	        _vm.newpassword = $$v
+	      },
+	      expression: "newpassword"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "确认密码"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.passwordconfirm),
-	      expression: "passwordconfirm"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "type": "password"
 	    },
-	    domProps: {
-	      "value": (_vm.passwordconfirm)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.passwordconfirm = $event
-	      }
+	    model: {
+	      value: (_vm.passwordconfirm),
+	      callback: function($$v) {
+	        _vm.passwordconfirm = $$v
+	      },
+	      expression: "passwordconfirm"
 	    }
-	  })]), " ", _h('el-form-item', [_h('el-button', {
+	  })], 1), _vm._v(" "), _c('el-form-item', [_c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.modifypassword
 	    }
-	  }, ["修改"])])])])]) : _vm._e(), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.resetView),
-	      expression: "resetView"
-	    }],
+	  }, [_vm._v("修改")])], 1)], 1)], 1)]) : _vm._e(), _vm._v(" "), _c('el-dialog', {
 	    attrs: {
 	      "title": _vm.dialogTitle,
 	      "size": "tiny"
 	    },
-	    domProps: {
-	      "value": (_vm.resetView)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.resetView = $event
-	      }
+	    model: {
+	      value: (_vm.resetView),
+	      callback: function($$v) {
+	        _vm.resetView = $$v
+	      },
+	      expression: "resetView"
 	    }
-	  }, [_h('el-form', {
+	  }, [_c('el-form', {
 	    attrs: {
 	      "model": _vm.resetform
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "用户名",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.resetform.userId),
-	      expression: "resetform.userId"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.resetform.userId)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.resetform.userId = $event
-	      }
+	    model: {
+	      value: (_vm.resetform.userId),
+	      callback: function($$v) {
+	        _vm.$set(_vm.resetform, "userId", $$v)
+	      },
+	      expression: "resetform.userId"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "邮箱",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.resetform.email),
-	      expression: "resetform.email"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.resetform.email)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.resetform.email = $event
-	      }
+	    model: {
+	      value: (_vm.resetform.email),
+	      callback: function($$v) {
+	        _vm.$set(_vm.resetform, "email", $$v)
+	      },
+	      expression: "resetform.email"
 	    }
-	  })])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	  })], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": function($event) {
 	        _vm.resetView = false
 	      }
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.submitReset
 	    }
-	  }, ["确 定"])])])])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('span', {
-	    attrs: {
-	      "style": "line-height: 36px;"
-	    }
-	  }, ["CIG仪器管理系统"])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('span', {
-	    attrs: {
-	      "style": "line-height: 36px;"
-	    }
-	  }, ["密码重置（首次登陆）"])
-	}]}
+	  }, [_vm._v("确 定")])], 1)], 1)], 1)
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

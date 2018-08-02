@@ -17,7 +17,7 @@
                 </el-table>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='large' v-model="$store.state.email.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='large' v-model="$store.state.email.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-row>
                     <el-col>

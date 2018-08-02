@@ -28,7 +28,7 @@ module.exports = {
     insInfo: {
         updateFields: ["code", "name", "insCode", "depCode", "assertNo", "No", "specification", "modelNo", "startDate", "factoryLabel", "testType", "period", "periodUnit", "status", "keeper", "endDate", "description", "extendFields"],
         insertFields: ["code", "name", "insCode", "depCode", "assertNo", "No", "specification", "modelNo", "startDate", "factoryLabel", "testType", "period", "periodUnit", "status", "keeper", "endDate", "description", "extendFields"],
-        keywordFields: ["name", "code"],
+        keywordFields: ["name", "code","No","modelNo","depCode","insCode","keeper"],
         uniqueList: ["code"]
     },
     email: {

@@ -289,6 +289,25 @@ export const getList = (type, params) => {
     });
 }
 
+export const getInvalidList = ( params) => {
+    return new Promise((rs, rj) => {
+        $.ajax({
+            url: Url.getInvalidList,
+            type: "GET",
+            data: params,
+            success(res) {
+                if (res.success) {
+                    rs(res);
+                } else {
+                    rj(res.message)
+                }
+            },
+            error(err) {
+                rj(err.message);
+            }
+        });
+    });
+}
 
 export const getItem = (type, id) => {
     return new Promise((rs, rj) => {

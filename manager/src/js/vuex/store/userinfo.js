@@ -1,6 +1,6 @@
 import { Url } from "../../../config.js";
 import _ from "lodash";
-import { getList, save, update, transferAuth, resetUserPassword, resetUserOwnPassword, updateUserInfoFromHRS } from "../../libs/query";
+import { getList,getInvalidList, save, update, transferAuth, resetUserPassword, resetUserOwnPassword, updateUserInfoFromHRS } from "../../libs/query";
 
 export default {
     state: {
@@ -42,6 +42,17 @@ export default {
                 pageNo: data.pageNo,
                 keyword: data.keyword,
                 pageSize: data.pageSize,
+            }).then(res => {
+                commit("updateUserList", res);
+                commit("loading", false);
+            });
+        },
+        getInValidList({ commit }, data) {
+            commit("loading", true);
+            getInvalidList({
+                pageNo: data.pageNo,
+                keyword: data.keyword,
+                pageSize: data.pageSize
             }).then(res => {
                 commit("updateUserList", res);
                 commit("loading", false);

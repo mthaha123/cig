@@ -51,6 +51,7 @@ module.exports = function(app) {
 
     app.use(route.post("/cig/common/importUser", userCtrl.importUser));
     app.use(route.post("/cig/transferAuth", userCtrl.changeUserAuthTo));
+    app.use(route.get("/cig/getInvalidList", dictCtrl.getInvalidList));
 
     app.use(route.get('/cig/:type/:id', dictCtrl.getItem));
     app.use(route.get('/cig/:type', dictCtrl.getList));

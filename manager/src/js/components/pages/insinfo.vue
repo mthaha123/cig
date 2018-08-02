@@ -13,7 +13,7 @@
                     <el-select v-model="toConfirmStatus" @change='getList(1)' placeholder="导入状态" :loading="insCodeLoading">
                         <el-option label="全部" value="">
                         </el-option>
-                        <el-option label="我的导入" value="toConfirmStatus">
+                        <el-option label="待我确认的仪器" value="toConfirmStatus">
                         </el-option>
                     </el-select>
                 </div>
@@ -32,8 +32,8 @@
                 <el-table :data="dataList" v-loading.body="$store.state.insInfo.tableLoading" border style="width: 100%">
                     <el-table-column type="index" width="55">
                     </el-table-column>
-                    <el-table-column v-for='item in colList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width'></el-table-column>
-                    <el-table-column v-for='item in extendColList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width'></el-table-column>
+                    <el-table-column v-for='item in colList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width' :show-overflow-tooltip=true></el-table-column>
+                    <el-table-column v-for='item in extendColList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width' :show-overflow-tooltip=true></el-table-column>
                     <el-table-column fixed="right" inline-template :context="_self" label="操作" width="380">
                         <span>
                             <el-button v-if='dictEdit' @click="edit(row)" type="success" size="small">编辑</el-button>
@@ -56,7 +56,7 @@
                 </el-pagination>
             </div>
         </el-row>
-        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.insInfo.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.insInfo.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-row>
                     <el-col :span='11'>
@@ -81,7 +81,11 @@
                     </el-col>
                     <el-col :span='11' :offset="2">
                         <el-form-item label="部门代码" label-width="80px">
-                            <el-input v-model="form.depCode" auto-complete="off"></el-input>
+                            <!-- <el-input v-model="form.depCode" auto-complete="off"></el-input> -->
+                            <el-select v-model="form.depCode" filterable remote placeholder="部门代码" :remote-method="getDepCodeList" :loading="depLoading" @change="depChangeKeeper">
+                                <el-option v-for="item in depOptions" :label="item.label" :key="item.value" :value="item.value">
+                                </el-option>
+                            </el-select>
                         </el-form-item>
                     </el-col>
                 </el-row>
@@ -182,7 +186,7 @@
                 <el-button type="primary" @click="submit">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="编辑扩展字段" size='small' v-model="addExtendView">
+        <el-dialog title="编辑扩展字段" size='small' v-model="addExtendView" :modal-append-to-body='false'>
             <el-form :model="addExtend">
                 <el-form-item label="字段名称" label-width="80px">
                     <el-input v-model="addExtend.fieldTitle" auto-complete="off"></el-input>
@@ -195,7 +199,7 @@
                 <el-button type="primary" @click="submitExtend()">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="菜单设置" size='small' v-model="colEidtView">
+        <el-dialog title="菜单设置" size='small' v-model="colEidtView" :modal-append-to-body='false'>
             <el-row>
                 <el-checkbox v-for="col in colListSet" :label="col.fieldTitle" v-model='col.view' :key="col.view">{{col.fieldTitle}}</el-checkbox>
             </el-row>
@@ -228,7 +232,7 @@
                 <el-button type="primary" @click="saveColSet()">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="仪器日志" size='small' v-model="insLogView">
+        <el-dialog title="仪器日志" size='small' v-model="insLogView" :modal-append-to-body='false'>
             <el-row>
                 <el-table :data="logList" style="width: 100%">
                     <el-table-column prop="createTime" label="检验时间">
@@ -250,7 +254,7 @@
                 <el-button type="primary" @click="insLogView=false">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="仪器日志" size='small' v-model="insLogDetailView">
+        <el-dialog title="仪器日志" size='small' v-model="insLogDetailView" :modal-append-to-body='false'>
             <el-row>
                 <el-table :data="currentLog.log" style="width: 100%">
                     <el-table-column prop="time" label="操作日期">
@@ -280,7 +284,7 @@
                 <el-button type="primary" @click="insLogDetailView=false">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="导入设备信息" size='small' v-model="importDialogView">
+        <el-dialog title="导入设备信息" size='small' v-model="importDialogView" :modal-append-to-body='false'>
             <el-upload class="upload-demo" multiple drag action="/cig/uploadfile" :on-success='handleSuccess' :show-file-list="false">
                 <i class="el-icon-upload"></i>
                 <div class="el-upload__text"><em>点击上传</em></div>
@@ -398,6 +402,7 @@ export default {
         superAdmin() {
             return this.$store.state.common.userAuthList.indexOf("00000") > -1;
         }
+
     },
     data() {
         var self = this;
@@ -517,7 +522,8 @@ export default {
             this.SaveActionName = "editInsInfo";
             this.depOptions = [{
                 value: insInfo.depCode,
-                label: insInfo.depCode.split("&")[1]
+                label: insInfo.depCode
+                // .split("&")[1]
             }]
             this.insCodeOptions = [{
                 value: insInfo.insCode,
@@ -586,7 +592,7 @@ export default {
                 testType: "",
                 period: "",
                 periodUnit: "days",
-                status: "",
+                status: "3",
                 endDate: "",
                 keeper: "",
                 description: "",
@@ -614,7 +620,8 @@ export default {
                     this.depOptions = res.result.map(cur => {
                         return {
                             label: cur.name,
-                            value: cur._id + "&" + cur.name, //+"&"+cur.keeper
+                            value: cur.name, //+"&"+cur.keeper
+                            dep: cur
                         }
                     });;
                 })
@@ -633,7 +640,7 @@ export default {
                     });;
                 })
             } else {
-                this.depOptions = [];
+                this.userOptions = [];
             }
         }, 800),
         submit() {
@@ -911,6 +918,18 @@ export default {
         },
         download(row) {
             window.open("/cig/downloadfile?path=" + row.path)
+        },
+        depChangeKeeper(depCode){
+            for (let item of this.depOptions) {
+                if (item.dep && item.dep.name === depCode) {
+                     this.userOptions = [{
+                        value: item.dep.keeper,
+                        label: item.dep.keeper.split("&")[1]
+                    }]
+                    this.form.keeper = item.dep.keeper
+                    
+                }
+            }
         }
     },
     mounted() {

@@ -1,6 +1,6 @@
 webpackJsonp([7,9],{
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([7,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,7 +310,7 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -332,24 +332,24 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 254:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(255)
+	__webpack_require__(266)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(257),
+	  __webpack_require__(268),
 	  /* template */
-	  __webpack_require__(258),
+	  __webpack_require__(269),
 	  /* scopeId */
 	  "data-v-65f19333",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\email.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\email.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] email.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -371,23 +371,23 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 255:
+/***/ 266:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(256);
+	var content = __webpack_require__(267);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("301559d2", content, false);
+	var update = __webpack_require__(102)("9840c2a2", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-65f19333&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./email.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-65f19333&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./email.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-65f19333&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./email.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-65f19333&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./email.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -398,10 +398,10 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 256:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
@@ -413,7 +413,7 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 257:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -422,11 +422,11 @@ webpackJsonp([7,9],{
 	    value: true
 	});
 	
-	var _lodash = __webpack_require__(82);
+	var _lodash = __webpack_require__(86);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _validate = __webpack_require__(115);
+	var _validate = __webpack_require__(119);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -578,17 +578,17 @@ webpackJsonp([7,9],{
 
 /***/ }),
 
-/***/ 258:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
+	  return _c('div', {
 	    staticClass: "contentbox"
-	  }, [_h('el-row', [_h('el-col', {
+	  }, [_c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
-	  }, [_h('el-table', {
+	  }, [_c('el-table', {
 	    directives: [{
 	      name: "loading",
 	      rawName: "v-loading.body",
@@ -598,28 +598,30 @@ webpackJsonp([7,9],{
 	        "body": true
 	      }
 	    }],
+	    staticStyle: {
+	      "width": "100%"
+	    },
 	    attrs: {
 	      "data": _vm.dataList,
-	      "border": "",
-	      "style": "width: 100%"
+	      "border": ""
 	    }
-	  }, [_h('el-table-column', {
+	  }, [_c('el-table-column', {
 	    attrs: {
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "name",
 	      "label": "名称",
 	      "width": "250"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "title",
 	      "label": "邮件抬头"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "context": _vm._self,
 	      "label": "操作",
@@ -628,7 +630,7 @@ webpackJsonp([7,9],{
 	    inlineTemplate: {
 	      render: function() {
 	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _h('span', [_h('el-button', {
+	          return _c('span', [_c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -638,101 +640,91 @@ webpackJsonp([7,9],{
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, ["编辑"])])
+	          }, [_vm._v("编辑")])], 1)
 	        
 	      },
 	      staticRenderFns: []
 	    }
-	  })])])]), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.$store.state.email.dialogFormVisible),
-	      expression: "$store.state.email.dialogFormVisible"
-	    }],
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
 	    attrs: {
 	      "title": _vm.dialogTitle,
-	      "size": "large"
+	      "size": "large",
+	      "modal-append-to-body": false
 	    },
-	    domProps: {
-	      "value": (_vm.$store.state.email.dialogFormVisible)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.$store.state.email.dialogFormVisible = $event
-	      }
+	    model: {
+	      value: (_vm.$store.state.email.dialogFormVisible),
+	      callback: function($$v) {
+	        _vm.$set(_vm.$store.state.email, "dialogFormVisible", $$v)
+	      },
+	      expression: "$store.state.email.dialogFormVisible"
 	    }
-	  }, [_h('el-form', {
+	  }, [_c('el-form', {
 	    attrs: {
 	      "model": _vm.form
 	    }
-	  }, [_h('el-row', [_h('el-col', [_h('el-form-item', {
+	  }, [_c('el-row', [_c('el-col', [_c('el-form-item', {
+	    staticStyle: {
+	      "max-width": "400px"
+	    },
 	    attrs: {
 	      "label": "名称",
-	      "style": "max-width: 400px;",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.name),
-	      expression: "form.name"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.name)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.name = $event
-	      }
+	    model: {
+	      value: (_vm.form.name),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "name", $$v)
+	      },
+	      expression: "form.name"
 	    }
-	  })])])]), " ", _h('el-row', [_h('el-card', {
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-card', {
 	    staticClass: "box-card"
-	  }, [_h('div', {
-	    slot: "header",
-	    staticClass: "clearfix"
-	  }, [_h('el-row', [_h('el-col', {
+	  }, [_c('div', {
+	    staticClass: "clearfix",
+	    attrs: {
+	      "slot": "header"
+	    },
+	    slot: "header"
+	  }, [_c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 8
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.title),
-	      expression: "form.title"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "placeholder": "邮件抬头",
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.title)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.title = $event
-	      }
+	    model: {
+	      value: (_vm.form.title),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "title", $$v)
+	      },
+	      expression: "form.title"
 	    }
-	  })])])]), " ", _vm._m(0)])])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	  })], 1)], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "text item"
+	  })])], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": _vm.hideDialog
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.submit
 	    }
-	  }, ["确 定"])])]), " ", _h('input', {
+	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
@@ -743,7 +735,7 @@ webpackJsonp([7,9],{
 	      "type": "text"
 	    },
 	    domProps: {
-	      "value": _vm._s(_vm.title)
+	      "value": (_vm.title)
 	    },
 	    on: {
 	      "input": function($event) {
@@ -751,7 +743,7 @@ webpackJsonp([7,9],{
 	        _vm.title = $event.target.value
 	      }
 	    }
-	  }), " ", _h('el-button', {
+	  }), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "success",
 	      "size": "small"
@@ -761,17 +753,13 @@ webpackJsonp([7,9],{
 	        _vm.save(_vm.row)
 	      }
 	    }
-	  }, ["保存"]), " ", _h('div', {
+	  }, [_vm._v("保存")]), _vm._v(" "), _c('div', {
 	    ref: "editor",
 	    attrs: {
 	      "id": "editor"
 	    }
-	  })])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
-	    staticClass: "text item"
-	  })
-	}]}
+	  })], 1)
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

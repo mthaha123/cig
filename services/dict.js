@@ -1,5 +1,5 @@
 const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel } = require("../repositories/mongoHelper");
-
+const mongoose = require('mongoose');
 
 var ModelDict = {
     user: UserModel,
@@ -45,6 +45,67 @@ module.exports = {
             return data;
         }).catch(err => {
             console.log("get List info error:", err.message);
+            console.log(err);
+            return {
+                list: [],
+                total: 0
+            }
+        })
+    },
+    getInvalidList: function( whereObj = {}, pageNo = 0, pageSize = 10) {
+        pageSize = parseInt(pageSize);
+        pageNo = parseInt(pageNo);
+        return new Promise((rs, rj) => {
+            ModelDict["depInfo"].find().distinct("keeper").exec(function(err, res) {
+                if (err) {
+                    console.warn("getInvalidList", type, "Error:", err);
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            });
+        }).then((list) => {
+            list = list.map(function(val){
+                // return mongoose.Types.ObjectId(val.split("&")[0]);
+                return val.split("&")[1];
+            });
+            return new Promise((rs, rj) => {
+                ModelDict["user"].find(whereObj)
+                .in('name',list)
+                .skip(parseInt(pageNo) * pageSize)
+                .limit(pageSize)
+                .exec(function(err, res) {
+                    if (err) {
+                        console.warn("getInvalidList", "Error:", err);
+                        rj(err);
+                    } else {
+                        rs(res);
+                    }
+                });
+            });
+        }).then(list => {
+            if (pageNo == 0) {
+                return new Promise((rs, rj) => {
+                    ModelDict["user"].count(whereObj, function(err, res) {
+                        if (err) {
+                            console.warn("getInvalidList", "Error:", err);
+                            rj(err);
+                        } else {
+                            rs({
+                                list,
+                                total: res
+                            });
+                        }
+                    });
+                });
+            }
+            return {
+                list
+            }
+        }).then(data => {
+            return data;
+        }).catch(err => {
+            console.log("get invalidList info error:", err.message);
             console.log(err);
             return {
                 list: [],

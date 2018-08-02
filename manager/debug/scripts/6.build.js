@@ -1,6 +1,6 @@
 webpackJsonp([6,9],{
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([6,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,7 +310,7 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -332,24 +332,24 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 249:
+/***/ 260:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(250)
+	__webpack_require__(261)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(252),
+	  __webpack_require__(263),
 	  /* template */
-	  __webpack_require__(253),
+	  __webpack_require__(264),
 	  /* scopeId */
 	  "data-v-21f1299c",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\inscode.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\inscode.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] inscode.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -371,23 +371,23 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 250:
+/***/ 261:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(251);
+	var content = __webpack_require__(262);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("610eed7c", content, false);
+	var update = __webpack_require__(102)("07dfc059", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-21f1299c&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./inscode.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-21f1299c&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./inscode.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-21f1299c&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./inscode.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-21f1299c&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./inscode.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -398,10 +398,10 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 251:
+/***/ 262:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
@@ -413,7 +413,7 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 252:
+/***/ 263:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -422,11 +422,11 @@ webpackJsonp([6,9],{
 	    value: true
 	});
 	
-	var _lodash = __webpack_require__(82);
+	var _lodash = __webpack_require__(86);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _validate = __webpack_require__(115);
+	var _validate = __webpack_require__(119);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -598,72 +598,72 @@ webpackJsonp([6,9],{
 
 /***/ }),
 
-/***/ 253:
+/***/ 264:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
+	  return _c('div', {
 	    staticClass: "contentbox"
-	  }, [_h('el-row', {
+	  }, [_c('el-row', {
+	    staticStyle: {
+	      "margin-bottom": "20px"
+	    },
 	    attrs: {
 	      "type": "flex",
-	      "style": "margin-bottom:20px;",
 	      "justify": "space-between"
 	    }
-	  }, [_h('el-col', {
+	  }, [_c('el-col', {
 	    attrs: {
 	      "span": 6
 	    }
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "grid-content"
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
+	  }, [_c('el-input', {
+	    staticStyle: {
+	      "width": "300px"
+	    },
+	    attrs: {
+	      "placeholder": "搜索仪器Code名称..."
+	    },
+	    model: {
 	      value: (_vm.serachContent),
+	      callback: function($$v) {
+	        _vm.serachContent = $$v
+	      },
 	      expression: "serachContent"
-	    }],
-	    attrs: {
-	      "placeholder": "搜索仪器Code名称...",
-	      "style": "width: 300px;"
-	    },
-	    domProps: {
-	      "value": (_vm.serachContent)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.serachContent = $event
-	      }
 	    }
-	  }, [_h('el-button', {
-	    slot: "append",
+	  }, [_c('el-button', {
 	    attrs: {
+	      "slot": "append",
 	      "icon": "search"
 	    },
 	    on: {
 	      "click": function($event) {
 	        _vm.getList(1)
 	      }
-	    }
-	  })])])]), " ", _h('el-col', {
+	    },
+	    slot: "append"
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 12
 	    }
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "grid-content tabletool"
-	  }, [(_vm.dictEdit) ? _h('el-button', {
+	  }, [(_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
 	    attrs: {
-	      "style": "float:right;",
 	      "type": "success"
 	    },
 	    on: {
 	      "click": _vm.create
 	    }
-	  }, ["新建"]) : _vm._e()])])]), " ", _h('el-row', [_h('el-col', {
+	  }, [_vm._v("新建")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
-	  }, [_h('el-table', {
+	  }, [_c('el-table', {
 	    directives: [{
 	      name: "loading",
 	      rawName: "v-loading.body",
@@ -673,29 +673,31 @@ webpackJsonp([6,9],{
 	        "body": true
 	      }
 	    }],
+	    staticStyle: {
+	      "width": "100%"
+	    },
 	    attrs: {
 	      "data": _vm.dataList,
-	      "border": "",
-	      "style": "width: 100%"
+	      "border": ""
 	    }
-	  }, [_h('el-table-column', {
+	  }, [_c('el-table-column', {
 	    attrs: {
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "code",
 	      "label": "仪器代码",
 	      "width": "250"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "name",
 	      "label": "代码名称",
 	      "show-overflow-tooltip": ""
 	    }
-	  }), " ", (_vm.dictEdit) ? _h('el-table-column', {
+	  }), _vm._v(" "), (_vm.dictEdit) ? _c('el-table-column', {
 	    attrs: {
 	      "context": _vm._self,
 	      "label": "操作",
@@ -704,7 +706,7 @@ webpackJsonp([6,9],{
 	    inlineTemplate: {
 	      render: function() {
 	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _h('span', [(_vm.dictEdit) ? _h('el-button', {
+	          return _c('span', [(_vm.dictEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -714,7 +716,7 @@ webpackJsonp([6,9],{
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, ["编辑"]) : _vm._e(), " ", (_vm.dictEdit) ? _h('el-button', {
+	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -724,108 +726,97 @@ webpackJsonp([6,9],{
 	                _vm.delrow(_vm.row)
 	              }
 	            }
-	          }, ["删除"]) : _vm._e()])
+	          }, [_vm._v("删除")]) : _vm._e()], 1)
 	        
 	      },
 	      staticRenderFns: []
 	    }
-	  }) : _vm._e()]), " ", _h('el-pagination', {
+	  }) : _vm._e()], 1), _vm._v(" "), _c('el-pagination', {
+	    staticStyle: {
+	      "margin-top": "20px",
+	      "height": "100px"
+	    },
 	    attrs: {
 	      "current-page": _vm.pageNo,
 	      "page-sizes": [10, 15, 20],
 	      "page-size": _vm.pageSize,
 	      "layout": "sizes, prev, pager, next",
-	      "total": _vm.$store.state.insCode.pageItemTotalCount,
-	      "style": "margin-top:20px;height:100px;"
+	      "total": _vm.$store.state.insCode.pageItemTotalCount
 	    },
 	    on: {
 	      "size-change": _vm.listsizechange,
-	      "current-change": _vm.getList
-	    }
-	  })])]), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.$store.state.insCode.dialogFormVisible),
-	      expression: "$store.state.insCode.dialogFormVisible"
-	    }],
-	    attrs: {
-	      "title": _vm.dialogTitle,
-	      "size": "tiny"
-	    },
-	    domProps: {
-	      "value": (_vm.$store.state.insCode.dialogFormVisible)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.$store.state.insCode.dialogFormVisible = $event
+	      "current-change": _vm.getList,
+	      "update:currentPage": function($event) {
+	        _vm.pageNo = $event
 	      }
 	    }
-	  }, [_h('el-form', {
+	  })], 1)], 1), _vm._v(" "), _c('el-dialog', {
+	    attrs: {
+	      "title": _vm.dialogTitle,
+	      "size": "tiny",
+	      "modal-append-to-body": false
+	    },
+	    model: {
+	      value: (_vm.$store.state.insCode.dialogFormVisible),
+	      callback: function($$v) {
+	        _vm.$set(_vm.$store.state.insCode, "dialogFormVisible", $$v)
+	      },
+	      expression: "$store.state.insCode.dialogFormVisible"
+	    }
+	  }, [_c('el-form', {
 	    attrs: {
 	      "model": _vm.form
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "仪器代码",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.code),
-	      expression: "form.code"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.code)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.code = $event
-	      }
+	    model: {
+	      value: (_vm.form.code),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "code", $$v)
+	      },
+	      expression: "form.code"
 	    }
-	  })]), " ", _h('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {
 	      "label": "仪器名称",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.name),
-	      expression: "form.name"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.name)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.name = $event
-	      }
+	    model: {
+	      value: (_vm.form.name),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "name", $$v)
+	      },
+	      expression: "form.name"
 	    }
-	  })])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	  })], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": _vm.hideDialog
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.submit
 	    }
-	  }, ["确 定"])])])])
+	  }, [_vm._v("确 定")])], 1)], 1)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {

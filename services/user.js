@@ -63,11 +63,16 @@ function saveUser(user) {
     }).then(data => {
         if (data) {
             console.log(`user ${user.Name[0]} exist, updating`)
-
+            
             return new Promise((rs, rj) => {
-                UserModel.update({
-
-                })
+                UserModel.update(
+                    { userId: user.Badge[0] },
+                    {
+                        "Email": user.Email[0],
+                        isValid: user.Status=="在职"?true:false,
+                        isLock: user.Status=="在职"?false:true
+                    }
+                )
             });
         } else {
             var model = new UserModel({
@@ -77,7 +82,8 @@ function saveUser(user) {
                 "userId": user.Badge[0],
                 "isInit": true,
                 "password": "1234",
-                isLock: false
+                isLock: false,
+                isValid: user.Status=="在职"?true:false
             });
 
             return new Promise((rs, rj) => {

@@ -9,6 +9,16 @@
                 </div>
             </el-col>
             <el-col :span='4'>
+                <div class="grid-content">
+                    <el-select v-model="inValidStatus" @change='getList(1)' placeholder="导入状态">
+                        <el-option label="全部" value="">
+                        </el-option>
+                        <el-option label="无效员工" value="invalid">
+                        </el-option>
+                    </el-select>
+                </div>
+            </el-col>
+            <el-col :span='4'>
                 <div class="grid-content bg-purple">
                     <el-button style='float:right;' v-if='dictEdit' @click='create' type="success">新建</el-button>
                     <el-button style='float:right;' :disabled='updating' v-if='dictEdit' @click='update' type="success">更新</el-button>
@@ -26,7 +36,7 @@
                     </el-table-column>
                     <el-table-column prop="Email" label="Email" show-overflow-tooltip>
                     </el-table-column>
-                    <el-table-column prop="isLock" label="是否有效" show-overflow-tooltip>
+                    <el-table-column prop="isValid" label="是否有效" show-overflow-tooltip>
                     </el-table-column>
                     <el-table-column inline-template v-if='dictEdit' :context="_self" label="操作" width="340">
                         <span>
@@ -49,7 +59,7 @@
                 </el-pagination>
             </div>
         </el-row>
-        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.userInfo.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.userInfo.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-form-item label="工号" label-width="80px">
                     <el-input v-model="form.userId" auto-complete="off"></el-input>
@@ -77,7 +87,7 @@
                 <el-button type="primary" @click="submit">确 定</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="权限交接" size='tiny' v-model="authChangeView">
+        <el-dialog title="权限交接" size='tiny' v-model="authChangeView" :modal-append-to-body='false'>
             <el-form>
                 <el-form-item label="工号" label-width="80px">
                     <el-select v-model="transferUser" filterable remote placeholder="请选择" :remote-method="getUserList" :loading="userLoading">
@@ -100,6 +110,7 @@ export default {
     data() {
         var self = this;
         return {
+            inValidStatus: "",
             authCheckAll: false,
             pageNo: 1,
             transferUser: "",
@@ -139,7 +150,7 @@ export default {
                             userId: cur.userId,
                             name: cur.name,
                             authList: cur.authList,
-                            isLock: cur.isLock ? '无效':'有效',
+                            isValid: cur.isValid ? '有效':'无效',
 
                         }
 
@@ -330,12 +341,20 @@ export default {
         getList(page) {
             var self = this;
             this.pageNo = page || this.pageNo;
-            this.$store.dispatch("getUserList", {
-                pageNo: this.pageNo - 1,
-                pageSize: this.pageSize,
-                keyword: this.serachContent
-            });
-        },
+            if(this.inValidStatus==="invalid"){
+                this.$store.dispatch("getInValidList", {
+                    pageNo: this.pageNo - 1,
+                    pageSize: this.pageSize,
+                    keyword: this.serachContent
+                });
+            }else{
+                this.$store.dispatch("getUserList", {
+                    pageNo: this.pageNo - 1,
+                    pageSize: this.pageSize,
+                    keyword: this.serachContent,
+                });
+            }
+        }
     },
     mounted() {
         this.getList(1);

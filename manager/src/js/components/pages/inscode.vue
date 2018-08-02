@@ -34,7 +34,7 @@
                 </el-pagination>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.insCode.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.insCode.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-form-item label="仪器代码" label-width="80px">
                     <el-input v-model="form.code" auto-complete="off"></el-input>

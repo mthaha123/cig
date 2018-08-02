@@ -1,6 +1,6 @@
 webpackJsonp([2,9],{
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([2,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,24 +310,24 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 103:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(104)
+	__webpack_require__(108)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(106),
+	  __webpack_require__(110),
 	  /* template */
-	  __webpack_require__(107),
+	  __webpack_require__(111),
 	  /* scopeId */
 	  "data-v-fdfdb9f8",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\manager.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\manager.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] manager.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -349,23 +349,23 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 104:
+/***/ 108:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(105);
+	var content = __webpack_require__(109);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("939357c0", content, false);
+	var update = __webpack_require__(102)("b2ff6306", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-fdfdb9f8&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./manager.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-fdfdb9f8&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./manager.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-fdfdb9f8&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./manager.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-fdfdb9f8&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./manager.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -376,10 +376,10 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 105:
+/***/ 109:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
@@ -391,7 +391,7 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 106:
+/***/ 110:
 /***/ (function(module, exports) {
 
 	'use strict';
@@ -465,11 +465,11 @@ webpackJsonp([2,9],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', [_h('el-menu', {
+	  return _c('div', [_c('el-menu', {
 	    staticClass: "el-menu-demo",
 	    attrs: {
 	      "theme": "dark",
@@ -478,53 +478,51 @@ webpackJsonp([2,9],{
 	      "router": true
 	    }
 	  }, [_vm._l((_vm.$store.state.common.menuList), function(item) {
-	    return _h('el-menu-item', {
+	    return _c('el-menu-item', {
 	      attrs: {
 	        "index": item.href
 	      }
-	    }, [_vm._s(item.title)])
-	  }), " ", _h('div', {
+	    }, [_vm._v(_vm._s(item.title))])
+	  }), _vm._v(" "), _c('div', {
 	    staticClass: "userInfoToolbar"
-	  }, [_h('el-button', {
+	  }, [_c('el-button', {
 	    attrs: {
 	      "type": "danger"
 	    },
 	    on: {
 	      "click": _vm.logout
 	    }
-	  }, ["退出登录"])])]), " ", _h('el-row', {
+	  }, [_vm._v("退出登录")])], 1)], 2), _vm._v(" "), _c('el-row', {
 	    staticClass: "tac"
-	  }, [_h('el-col', {
+	  }, [_c('el-col', {
 	    attrs: {
 	      "span": 4
 	    }
-	  }, [_h('el-menu', {
+	  }, [_c('el-menu', {
 	    staticClass: "el-menu-vertical-demo",
 	    attrs: {
 	      "default-active": _vm.$store.state.common.navpath,
 	      "router": true
 	    }
-	  }, [_vm._l((_vm.$store.state.common.currentMenu.itemList), function(item) {
-	    return _h('el-menu-item', {
+	  }, _vm._l((_vm.$store.state.common.currentMenu.itemList), function(item) {
+	    return _c('el-menu-item', {
 	      attrs: {
 	        "index": item.href
 	      }
-	    }, [_vm._m(0, true), _vm._s(item.title)])
-	  })])]), " ", _h('el-col', {
+	    }, [_c('i', {
+	      staticClass: "el-icon-menu"
+	    }), _vm._v(_vm._s(item.title))])
+	  }))], 1), _vm._v(" "), _c('el-col', {
 	    staticClass: "content-side",
 	    attrs: {
 	      "span": 20
 	    }
-	  }, [_h('transition', {
+	  }, [_c('transition', {
 	    attrs: {
 	      "name": "fade"
 	    }
-	  }, [_h('router-view')])])])])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('i', {
-	    staticClass: "el-icon-menu"
-	  })
-	}]}
+	  }, [_c('router-view')], 1)], 1)], 1)], 1)
+	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()

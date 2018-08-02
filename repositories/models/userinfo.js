@@ -4,6 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var userInfoSchema = new Schema({
+    
     userId: { type: String, index: true },
     name: { type: String },
     Email: { type: String },
@@ -11,6 +12,7 @@ var userInfoSchema = new Schema({
     isInit: { type: Boolean },
     password: { type: String },
     isLock: { type: Boolean },
+    isValid:{ type: Boolean },
     authList: { type: Array }
 });
 

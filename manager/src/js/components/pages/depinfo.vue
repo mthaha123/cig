@@ -40,7 +40,7 @@
                 </el-pagination>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.depInfo.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.depInfo.dialogFormVisible"  :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-row>
                     <el-col :span='11'>

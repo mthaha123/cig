@@ -105,5 +105,17 @@ module.exports = {
         this.body = {
             success: true
         }
+    },
+    //获取无效且是保管人员的员工
+    getInvalidList: function*(){
+        // let params = yield parse(this);
+        let whereObj = getWhereStr("user", this.query.keyword);
+        whereObj.isValid = false;
+        var ret = yield dictSvc.getInvalidList(whereObj, this.query.pageNo, this.query.pageSize);
+        this.body = {
+            success: true,
+            result: ret.list,
+            total: ret.total
+        }
     }
 }

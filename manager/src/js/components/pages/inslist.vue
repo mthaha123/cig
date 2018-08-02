@@ -36,7 +36,7 @@
                 <el-table :data="dataList" border style="width: 100%">
                     <el-table-column type="index" width="55">
                     </el-table-column>
-                    <el-table-column v-for='item in colList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width'></el-table-column>
+                    <el-table-column v-for='item in colList' :prop="item.fieldName" :label="item.fieldTitle" :width='item.width' :show-overflow-tooltip=true></el-table-column>
                     <el-table-column fixed="right" inline-template :context="_self" label="操作" width="100">
                         <span>
                         <el-button @click="edit(row)" type="success" size="small">处理</el-button>
@@ -47,7 +47,7 @@
                 </el-pagination>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.insList.dialogFormVisible">
+        <el-dialog :title="dialogTitle" size='small' v-model="$store.state.insList.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-row>
                     <el-col :span='11'>
@@ -148,7 +148,7 @@
                 <el-button type="primary" v-if="form.toConfirm == 0" @click="reject">否 决</el-button>
             </div>
         </el-dialog>
-        <el-dialog title="导入报告信息" size='small' v-model="importDialogView">
+        <el-dialog title="导入报告信息" size='small' v-model="importDialogView" :modal-append-to-body='false'>
             <el-upload class="upload-demo" drag multiple action="/cig/uploadfile" :on-success='handleReportSuccess' :show-file-list="false">
                 <i class="el-icon-upload"></i>
                 <div class="el-upload__text"><em>点击上传</em></div>

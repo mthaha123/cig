@@ -27,4 +27,5 @@ export const Url = {
     resetUserOwnPassword: "/cig/resetUserOwnPassword",
     checkUserLogin: "/cig/checkUrlLogin",
     removeAttachFile: "/cig/removeAttachFile",
+    getInvalidList: "/cig/getInvalidList",
 }

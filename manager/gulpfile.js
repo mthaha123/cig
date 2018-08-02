@@ -64,7 +64,7 @@ gulp.task('serve', ['webpack'], function() {
         //     baseDir: './debug'
         // },
         port: 8086,
-        browser: "google chrome",
+        // browser: "google chrome",
         proxy: 'localhost:8085',
         // open: 'tunnel',
         // tunnel: true

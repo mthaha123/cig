@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://192.168.31.25:27017/CIG");
+mongoose.connect("mongodb://127.0.0.1:27017/CIG");
 
 mongoose.connection.on('connected', function() {
     console.log('MongoDB connected !');

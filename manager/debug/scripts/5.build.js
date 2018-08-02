@@ -1,6 +1,6 @@
 webpackJsonp([5,9],{
 
-/***/ 98:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([5,9],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(99)
+	var listToStyles = __webpack_require__(103)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 99:
+/***/ 103:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 100:
+/***/ 104:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,7 +310,7 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 119:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -332,24 +332,24 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 244:
+/***/ 255:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(245)
+	__webpack_require__(256)
 	
-	var Component = __webpack_require__(100)(
+	var Component = __webpack_require__(104)(
 	  /* script */
-	  __webpack_require__(247),
+	  __webpack_require__(258),
 	  /* template */
-	  __webpack_require__(248),
+	  __webpack_require__(259),
 	  /* scopeId */
 	  "data-v-1cf5d6d8",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "E:\\cig\\manager\\src\\js\\components\\pages\\depinfo.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\depinfo.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
 	if (Component.options.functional) {console.error("[vue-loader] depinfo.vue: functional components are not supported with templates, they should use render functions.")}
 	
@@ -371,23 +371,23 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 245:
+/***/ 256:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(246);
+	var content = __webpack_require__(257);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(98)("11e995ae", content, false);
+	var update = __webpack_require__(102)("02f06cea", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1cf5d6d8&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./depinfo.vue", function() {
-	     var newContent = require("!!../../../../node_modules/css-loader/index.js?sourceMap!../../../../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1cf5d6d8&scoped=true!../../../../node_modules/sass-loader/index.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./depinfo.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1cf5d6d8&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./depinfo.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1cf5d6d8&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./depinfo.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -398,10 +398,10 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 246:
+/***/ 257:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(96)();
+	exports = module.exports = __webpack_require__(100)();
 	// imports
 	
 	
@@ -413,7 +413,7 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 247:
+/***/ 258:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -422,11 +422,11 @@ webpackJsonp([5,9],{
 	    value: true
 	});
 	
-	var _lodash = __webpack_require__(82);
+	var _lodash = __webpack_require__(86);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _validate = __webpack_require__(115);
+	var _validate = __webpack_require__(119);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -714,72 +714,72 @@ webpackJsonp([5,9],{
 
 /***/ }),
 
-/***/ 248:
+/***/ 259:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _h('div', {
+	  return _c('div', {
 	    staticClass: "contentbox"
-	  }, [_h('el-row', {
+	  }, [_c('el-row', {
+	    staticStyle: {
+	      "margin-bottom": "20px"
+	    },
 	    attrs: {
 	      "type": "flex",
-	      "style": "margin-bottom:20px;",
 	      "justify": "space-between"
 	    }
-	  }, [_h('el-col', {
+	  }, [_c('el-col', {
 	    attrs: {
 	      "span": 6
 	    }
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "grid-content"
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
+	  }, [_c('el-input', {
+	    staticStyle: {
+	      "width": "300px"
+	    },
+	    attrs: {
+	      "placeholder": "搜索科室名称..."
+	    },
+	    model: {
 	      value: (_vm.serachContent),
+	      callback: function($$v) {
+	        _vm.serachContent = $$v
+	      },
 	      expression: "serachContent"
-	    }],
-	    attrs: {
-	      "placeholder": "搜索科室名称...",
-	      "style": "width: 300px;"
-	    },
-	    domProps: {
-	      "value": (_vm.serachContent)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.serachContent = $event
-	      }
 	    }
-	  }, [_h('el-button', {
-	    slot: "append",
+	  }, [_c('el-button', {
 	    attrs: {
+	      "slot": "append",
 	      "icon": "search"
 	    },
 	    on: {
 	      "click": function($event) {
 	        _vm.getList(1)
 	      }
-	    }
-	  })])])]), " ", _h('el-col', {
+	    },
+	    slot: "append"
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 12
 	    }
-	  }, [_h('div', {
+	  }, [_c('div', {
 	    staticClass: "grid-content tabletool"
-	  }, [(_vm.dictEdit) ? _h('el-button', {
+	  }, [(_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
 	    attrs: {
-	      "style": "float:right;",
 	      "type": "success"
 	    },
 	    on: {
 	      "click": _vm.create
 	    }
-	  }, ["新建"]) : _vm._e()])])]), " ", _h('el-row', [_h('el-col', {
+	  }, [_vm._v("新建")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
-	  }, [_h('el-table', {
+	  }, [_c('el-table', {
 	    directives: [{
 	      name: "loading",
 	      rawName: "v-loading.body",
@@ -789,47 +789,49 @@ webpackJsonp([5,9],{
 	        "body": true
 	      }
 	    }],
+	    staticStyle: {
+	      "width": "100%"
+	    },
 	    attrs: {
 	      "data": _vm.dataList,
-	      "border": "",
-	      "style": "width: 100%"
+	      "border": ""
 	    }
-	  }, [_h('el-table-column', {
+	  }, [_c('el-table-column', {
 	    attrs: {
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "code",
 	      "label": "部门代码",
 	      "width": "250"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "name",
 	      "label": "部门名称",
 	      "width": "300"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "location",
 	      "label": "位置",
 	      "show-overflow-tooltip": ""
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "factory",
 	      "label": "厂区",
 	      "width": "100"
 	    }
-	  }), " ", _h('el-table-column', {
+	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "prop": "managerView",
 	      "label": "主管",
 	      "width": "100"
 	    }
-	  }), " ", (_vm.dictEdit) ? _h('el-table-column', {
+	  }), _vm._v(" "), (_vm.dictEdit) ? _c('el-table-column', {
 	    attrs: {
 	      "context": _vm._self,
 	      "label": "操作",
@@ -838,7 +840,7 @@ webpackJsonp([5,9],{
 	    inlineTemplate: {
 	      render: function() {
 	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _h('span', [(_vm.dictEdit) ? _h('el-button', {
+	          return _c('span', [(_vm.dictEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -848,7 +850,7 @@ webpackJsonp([5,9],{
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, ["编辑"]) : _vm._e(), " ", (_vm.dictEdit) ? _h('el-button', {
+	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -858,173 +860,139 @@ webpackJsonp([5,9],{
 	                _vm.delrow(_vm.row)
 	              }
 	            }
-	          }, ["删除"]) : _vm._e()])
+	          }, [_vm._v("删除")]) : _vm._e()], 1)
 	        
 	      },
 	      staticRenderFns: []
 	    }
-	  }) : _vm._e()]), " ", _h('el-pagination', {
+	  }) : _vm._e()], 1), _vm._v(" "), _c('el-pagination', {
+	    staticStyle: {
+	      "margin-top": "20px",
+	      "height": "100px"
+	    },
 	    attrs: {
 	      "current-page": _vm.pageNo,
 	      "page-sizes": [10, 15, 20],
 	      "page-size": _vm.pageSize,
 	      "layout": "sizes, prev, pager, next",
-	      "total": _vm.$store.state.depInfo.pageItemTotalCount,
-	      "style": "margin-top:20px;height:100px;"
+	      "total": _vm.$store.state.depInfo.pageItemTotalCount
 	    },
 	    on: {
 	      "size-change": _vm.listsizechange,
-	      "current-change": _vm.getList
-	    }
-	  })])]), " ", _h('el-dialog', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.$store.state.depInfo.dialogFormVisible),
-	      expression: "$store.state.depInfo.dialogFormVisible"
-	    }],
-	    attrs: {
-	      "title": _vm.dialogTitle,
-	      "size": "small"
-	    },
-	    domProps: {
-	      "value": (_vm.$store.state.depInfo.dialogFormVisible)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.$store.state.depInfo.dialogFormVisible = $event
+	      "current-change": _vm.getList,
+	      "update:currentPage": function($event) {
+	        _vm.pageNo = $event
 	      }
 	    }
-	  }, [_h('el-form', {
+	  })], 1)], 1), _vm._v(" "), _c('el-dialog', {
+	    attrs: {
+	      "title": _vm.dialogTitle,
+	      "size": "small",
+	      "modal-append-to-body": false
+	    },
+	    model: {
+	      value: (_vm.$store.state.depInfo.dialogFormVisible),
+	      callback: function($$v) {
+	        _vm.$set(_vm.$store.state.depInfo, "dialogFormVisible", $$v)
+	      },
+	      expression: "$store.state.depInfo.dialogFormVisible"
+	    }
+	  }, [_c('el-form', {
 	    attrs: {
 	      "model": _vm.form
 	    }
-	  }, [_h('el-row', [_h('el-col', {
+	  }, [_c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "部门代码",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.code),
-	      expression: "form.code"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.code)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.code = $event
-	      }
+	    model: {
+	      value: (_vm.form.code),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "code", $$v)
+	      },
+	      expression: "form.code"
 	    }
-	  })])]), " ", _h('el-col', {
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "部门名称",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.name),
-	      expression: "form.name"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.name)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.name = $event
-	      }
+	    model: {
+	      value: (_vm.form.name),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "name", $$v)
+	      },
+	      expression: "form.name"
 	    }
-	  })])])]), " ", _h('el-row', [_h('el-col', {
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "厂区",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.factory),
-	      expression: "form.factory"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.factory)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.factory = $event
-	      }
+	    model: {
+	      value: (_vm.form.factory),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "factory", $$v)
+	      },
+	      expression: "form.factory"
 	    }
-	  })])]), " ", _h('el-col', {
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "位置",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.location),
-	      expression: "form.location"
-	    }],
+	  }, [_c('el-input', {
 	    attrs: {
 	      "auto-complete": "off"
 	    },
-	    domProps: {
-	      "value": (_vm.form.location)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.location = $event
-	      }
+	    model: {
+	      value: (_vm.form.location),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "location", $$v)
+	      },
+	      expression: "form.location"
 	    }
-	  })])])]), " ", _h('el-row', [_h('el-col', {
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "保管人",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.keeper),
-	      expression: "form.keeper"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1032,41 +1000,32 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.keeper)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.keeper = $event
-	      }
+	    model: {
+	      value: (_vm.form.keeper),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "keeper", $$v)
+	      },
+	      expression: "form.keeper"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])]), " ", _h('el-col', {
+	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "主管",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.manager),
-	      expression: "form.manager"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1074,40 +1033,31 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.manager)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.manager = $event
-	      }
+	    model: {
+	      value: (_vm.form.manager),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "manager", $$v)
+	      },
+	      expression: "form.manager"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])])]), " ", _h('el-row', [_h('el-col', {
+	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "文员",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.staff),
-	      expression: "form.staff"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1115,41 +1065,32 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.staff)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.staff = $event
-	      }
+	    model: {
+	      value: (_vm.form.staff),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "staff", $$v)
+	      },
+	      expression: "form.staff"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])]), " ", _h('el-col', {
+	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "代理人",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.proxer),
-	      expression: "form.proxer"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1157,40 +1098,31 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.proxer)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.proxer = $event
-	      }
+	    model: {
+	      value: (_vm.form.proxer),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "proxer", $$v)
+	      },
+	      expression: "form.proxer"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])])]), " ", _h('el-row', [_h('el-col', {
+	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "高阶主管",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.seniorManager),
-	      expression: "form.seniorManager"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1198,41 +1130,32 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.seniorManager)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.seniorManager = $event
-	      }
+	    model: {
+	      value: (_vm.form.seniorManager),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "seniorManager", $$v)
+	      },
+	      expression: "form.seniorManager"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])]), " ", _h('el-col', {
+	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
 	    }
-	  }, [_h('el-form-item', {
+	  }, [_c('el-form-item', {
 	    attrs: {
 	      "label": "最高主管",
 	      "label-width": "80px"
 	    }
-	  }, [_h('el-select', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.form.generalManager),
-	      expression: "form.generalManager"
-	    }],
+	  }, [_c('el-select', {
 	    attrs: {
 	      "filterable": "",
 	      "remote": "",
@@ -1240,39 +1163,39 @@ webpackJsonp([5,9],{
 	      "remote-method": _vm.getUserList,
 	      "loading": _vm.userLoading
 	    },
-	    domProps: {
-	      "value": (_vm.form.generalManager)
-	    },
-	    on: {
-	      "input": function($event) {
-	        _vm.form.generalManager = $event
-	      }
+	    model: {
+	      value: (_vm.form.generalManager),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "generalManager", $$v)
+	      },
+	      expression: "form.generalManager"
 	    }
-	  }, [_vm._l((_vm.userOptions), function(item) {
-	    return _h('el-option', {
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
-	        "label": item.label
-	      },
-	      domProps: {
+	        "label": item.label,
 	        "value": item.value
 	      }
 	    })
-	  })])])])])]), " ", _h('div', {
-	    slot: "footer",
-	    staticClass: "dialog-footer"
-	  }, [_h('el-button', {
+	  }))], 1)], 1)], 1)], 1), _vm._v(" "), _c('div', {
+	    staticClass: "dialog-footer",
+	    attrs: {
+	      "slot": "footer"
+	    },
+	    slot: "footer"
+	  }, [_c('el-button', {
 	    on: {
 	      "click": _vm.hideDialog
 	    }
-	  }, ["取 消"]), " ", _h('el-button', {
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
 	      "click": _vm.submit
 	    }
-	  }, ["确 定"])])])])
+	  }, [_vm._v("确 定")])], 1)], 1)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
