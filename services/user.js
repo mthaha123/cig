@@ -63,17 +63,48 @@ function saveUser(user) {
     }).then(data => {
         if (data) {
             console.log(`user ${user.Name[0]} exist, updating`)
-            
-            return new Promise((rs, rj) => {
-                UserModel.update(
-                    { userId: user.Badge[0] },
-                    {
-                        "Email": user.Email[0],
-                        isValid: user.Status=="在职"?true:false,
-                        isLock: user.Status=="在职"?false:true
-                    }
-                )
-            });
+            if(user.Email[0]!=="无"){
+                return new Promise((rs, rj) => {
+                    UserModel.update(
+                        { userId: user.Badge[0] },
+                        { $set:
+                            {
+                                "Email": user.Email[0],
+                                isValid: user.Status[0]=="在职"?true:false,
+                                isLock: user.Status[0]=="在职"?false:true
+                            }
+                        },
+                        (err, res) => {
+                            if (err) {
+                                console.warn("update", user.Name[0], "Error:", err);
+                                rj(err);
+                            } else {
+                                rs(res);
+                            }
+                        }
+                    )
+                });
+            }else{
+                return new Promise((rs, rj) => {
+                    UserModel.update(
+                        { userId: user.Badge[0] },
+                        { $set:
+                            {
+                                isValid: user.Status[0]=="在职"?true:false,
+                                isLock: user.Status[0]=="在职"?false:true
+                            }
+                        },
+                        (err, res) => {
+                            if (err) {
+                                console.warn("update", user.Name[0], "Error:", err);
+                                rj(err);
+                            } else {
+                                rs(res);
+                            }
+                        }
+                    )
+                });
+            }
         } else {
             var model = new UserModel({
                 "name": user.Name[0],
