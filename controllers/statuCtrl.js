@@ -278,9 +278,10 @@ module.exports = {
     confirmInit: function*() {
         let { id } = yield parse(this);
         let testInfo = yield dictSvc.get("insInfo", id);
-
+        let userId = this.session.userInfo.userId;
         if (testInfo.keeper.split("&")[0] == this.session.userInfo._id) {
             yield statusSvc.setInit(id, false);
+            yield statusSvc.completeClog(testInfo,userId);
             this.body = {
                 success: true
             }

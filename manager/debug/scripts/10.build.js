@@ -1,4 +1,4 @@
-webpackJsonp([4,12],Array(105).concat([
+webpackJsonp([10,12],Array(105).concat([
 /* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -317,34 +317,9 @@ webpackJsonp([4,12],Array(105).concat([
 /* 116 */,
 /* 117 */,
 /* 118 */,
-/* 119 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(120), __esModule: true };
-
-/***/ }),
-/* 120 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	__webpack_require__(57);
-	__webpack_require__(13);
-	module.exports = __webpack_require__(121);
-
-
-/***/ }),
-/* 121 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	var anObject = __webpack_require__(26);
-	var get = __webpack_require__(67);
-	module.exports = __webpack_require__(21).getIterator = function (it) {
-	  var iterFn = get(it);
-	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
-	  return anObject(iterFn.call(it));
-	};
-
-
-/***/ }),
+/* 119 */,
+/* 120 */,
+/* 121 */,
 /* 122 */
 /***/ (function(module, exports) {
 
@@ -370,1214 +345,10 @@ webpackJsonp([4,12],Array(105).concat([
 
 /***/ }),
 /* 123 */,
-/* 124 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	
-	/* styles */
-	__webpack_require__(125)
-	
-	var Component = __webpack_require__(107)(
-	  /* script */
-	  __webpack_require__(127),
-	  /* template */
-	  __webpack_require__(257),
-	  /* scopeId */
-	  "data-v-2d5ed973",
-	  /* cssModules */
-	  null
-	)
-	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\insinfo.vue"
-	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] insinfo.vue: functional components are not supported with templates, they should use render functions.")}
-	
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2d5ed973", Component.options)
-	  } else {
-	    hotAPI.reload("data-v-2d5ed973", Component.options)
-	  }
-	})()}
-	
-	module.exports = Component.exports
-
-
-/***/ }),
-/* 125 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-	
-	// load the styles
-	var content = __webpack_require__(126);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	if(content.locals) module.exports = content.locals;
-	// add the styles to the DOM
-	var update = __webpack_require__(105)("7e506140", content, false);
-	// Hot Module Replacement
-	if(false) {
-	 // When the styles change, update the <style> tags
-	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-2d5ed973&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./insinfo.vue", function() {
-	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-2d5ed973&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./insinfo.vue");
-	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-	     update(newContent);
-	   });
-	 }
-	 // When the module is disposed, remove the <style> tags
-	 module.hot.dispose(function() { update(); });
-	}
-
-/***/ }),
-/* 126 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(103)();
-	// imports
-	
-	
-	// module
-	exports.push([module.id, "\n.contentbox[data-v-2d5ed973] {\n  padding: 15px;\n}\n.flexbox[data-v-2d5ed973] {\n  display: flex;\n  height: 28px;\n}\n.flexbox .tobox[data-v-2d5ed973] {\n    margin-top: 20px;\n    text-align: right;\n}\n.flexbox .tobox > *[data-v-2d5ed973] {\n      height: 28px;\n      display: inline-block;\n}\n.flexbox .tobox input[data-v-2d5ed973] {\n      width: 2em;\n      padding: 0px;\n}\n.flexbox .el-pagination[data-v-2d5ed973] {\n    flex: 1;\n}\n.tabletool[data-v-2d5ed973] {\n  margin-bottom: 10px;\n}\n.tabletool button[data-v-2d5ed973] {\n  float: right;\n  margin-left: 20px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/insinfo.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAElB;EACE,cAAc;EACd,aAAa;CAAE;AACf;IACE,iBAAiB;IACjB,kBAAkB;CAAE;AACpB;MACE,aAAa;MACb,sBAAsB;CAAE;AAC1B;MACE,WAAW;MACX,aAAa;CAAE;AACnB;IACE,QAAQ;CAAE;AAEd;EACE,oBAAoB;CAAE;AAExB;EACE,aAAa;EACb,kBAAkB;CAAE","file":"insinfo.vue","sourcesContent":[".contentbox {\n  padding: 15px; }\n\n.flexbox {\n  display: flex;\n  height: 28px; }\n  .flexbox .tobox {\n    margin-top: 20px;\n    text-align: right; }\n    .flexbox .tobox > * {\n      height: 28px;\n      display: inline-block; }\n    .flexbox .tobox input {\n      width: 2em;\n      padding: 0px; }\n  .flexbox .el-pagination {\n    flex: 1; }\n\n.tabletool {\n  margin-bottom: 10px; }\n\n.tabletool button {\n  float: right;\n  margin-left: 20px; }\n"],"sourceRoot":"webpack://"}]);
-	
-	// exports
-
-
-/***/ }),
-/* 127 */
-/***/ (function(module, exports, __webpack_require__) {
-
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	    value: true
-	});
-	
-	var _getIterator2 = __webpack_require__(119);
-	
-	var _getIterator3 = _interopRequireDefault(_getIterator2);
-	
-	var _lodash = __webpack_require__(86);
-	
-	var _lodash2 = _interopRequireDefault(_lodash);
-	
-	var _validate = __webpack_require__(122);
-	
-	var _moment = __webpack_require__(128);
-	
-	var _moment2 = _interopRequireDefault(_moment);
-	
-	var _path = __webpack_require__(253);
-	
-	var _path2 = _interopRequireDefault(_path);
-	
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	
-	exports.default = {
-	    computed: {
-	        dataList: function dataList() {
-	            var _this = this;
-	
-	            return this.$store.state.insInfo.infolist.map(function (current) {
-	                current.periodView = current.period + function (unit) {
-	                    switch (unit) {
-	                        case "days":
-	                            return "天";
-	                            break;
-	                        case "months":
-	                            return "月";
-	                            break;
-	                        case "weeks":
-	                            return "周";
-	                            break;
-	                        case "years":
-	                            return "年";
-	                            break;
-	                        default:
-	                            return "";
-	                            break;
-	                    }
-	                }(current.periodUnit);
-	                if (current.depCode) current.depCodeView = current.depCode;else current.depCodeView = "";
-	                current.insCodeView = current.insCode.split("&")[1];
-	
-	                current.endDate = (0, _moment2.default)(current.endDate).format("YYYY-MM-DD");
-	                current.startDate = (0, _moment2.default)(current.startDate).format("YYYY-MM-DD");
-	
-	                current.testTypeView = function (type) {
-	                    var _iteratorNormalCompletion = true;
-	                    var _didIteratorError = false;
-	                    var _iteratorError = undefined;
-	
-	                    try {
-	                        for (var _iterator = (0, _getIterator3.default)(_this.testTypeList), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	                            var item = _step.value;
-	
-	                            if (item.value == type) {
-	                                return item.label;
-	                            }
-	                        }
-	                    } catch (err) {
-	                        _didIteratorError = true;
-	                        _iteratorError = err;
-	                    } finally {
-	                        try {
-	                            if (!_iteratorNormalCompletion && _iterator.return) {
-	                                _iterator.return();
-	                            }
-	                        } finally {
-	                            if (_didIteratorError) {
-	                                throw _iteratorError;
-	                            }
-	                        }
-	                    }
-	                }(current.testType);
-	                // current.statusView = current.status;
-	
-	                // current.extendFieldView = (list=>{
-	                //     let ret = "  ";
-	                //     for(let item of list){
-	                //         ret+=`${item.title}:${item.value} | `;
-	                //     }
-	
-	                //     return ret.substr(ret,ret.length-2);
-	                // })(current.extendFields);
-	                // current.statusView = ((status)=>{
-	                //     for(let st of this.$store.state.common.statusList){
-	                //         if(st.statusCode == status){
-	                //             return st.label;
-	                //         }
-	                //     }
-	
-	                //     return "";
-	
-	                // })(current.status);
-	
-	                current.statusView = function (list) {
-	                    var _iteratorNormalCompletion2 = true;
-	                    var _didIteratorError2 = false;
-	                    var _iteratorError2 = undefined;
-	
-	                    try {
-	                        for (var _iterator2 = (0, _getIterator3.default)(list), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-	                            var item = _step2.value;
-	
-	                            var label = void 0;
-	                            var statusCode = current.toConfirm != "1" ? current.nextStatus : current.status;
-	                            if (item.statusCode == statusCode) {
-	                                label = item.label;
-	
-	                                if (current.toConfirm != "1") {
-	                                    label += "(待确认)";
-	                                }
-	                                return label;
-	                            }
-	                        }
-	                    } catch (err) {
-	                        _didIteratorError2 = true;
-	                        _iteratorError2 = err;
-	                    } finally {
-	                        try {
-	                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
-	                                _iterator2.return();
-	                            }
-	                        } finally {
-	                            if (_didIteratorError2) {
-	                                throw _iteratorError2;
-	                            }
-	                        }
-	                    }
-	                }(_this.$store.state.common.statusList);
-	                return _lodash2.default.assign({}, current, current.extendFields);
-	            });
-	        },
-	
-	        currentEndDate: function currentEndDate() {
-	            // try{
-	            var startDate = (0, _moment2.default)(this.form.startDate);
-	            var period = parseInt(this.form.period);
-	            var unit = this.form.periodUnit;
-	            var endDate = startDate.add(period, unit);
-	            return endDate.format("YYYY-MM-DD");
-	            // }catch(e){
-	            //     return "";
-	            // }
-	        },
-	        // depkeeper(){
-	        //     if(!this.form.depCode)
-	        //         return "";
-	        //     let strs = this.form.depCode.split("&");
-	        //     if(strs.length==4){
-	        //         return strs[3];
-	        //     }else{
-	        //         return "";
-	        //     }
-	        // },
-	        dictEdit: function dictEdit() {
-	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-	        },
-	        superAdmin: function superAdmin() {
-	            return this.$store.state.common.userAuthList.indexOf("00000") > -1;
-	        }
-	    },
-	    data: function data() {
-	        var self = this;
-	        return {
-	            toConfirmStatus: "",
-	            colList: [],
-	            pageSize: 10,
-	            extendColList: [],
-	            extendFieldsConfig: [],
-	            insLogView: false,
-	            insLogDetailView: false,
-	            logList: [],
-	            serachContent: "",
-	            dialogTitle: "新建模板集",
-	            // dataList: [],
-	            pageNo: 1,
-	            colEidtView: false,
-	            importDialogView: false,
-	            importFileId: "",
-	            form: {},
-	            type: "create",
-	            depLoading: false,
-	            userLoading: false,
-	            insCodeLoading: false,
-	            depOptions: [],
-	            addExtend: {},
-	            addExtendView: false,
-	            userOptions: [],
-	            insCodeOptions: [],
-	            colListSet: [],
-	            toPageNo: 1,
-	            testTypeList: [{
-	                value: "0",
-	                label: "内校"
-	            }, {
-	                value: "1",
-	                label: "外校"
-	            }, {
-	                value: "2",
-	                label: "免校"
-	            }],
-	            periodList: [{
-	                value: "0",
-	                label: "12"
-	            }],
-	            statusList: [{
-	                value: "0",
-	                label: "Test"
-	            }],
-	            pickerOption: {},
-	            addExtendFlag: false,
-	            authCheckAll: false,
-	            currentLog: {
-	                attachmentList: [],
-	                log: []
-	            }
-	        };
-	    },
-	
-	    methods: {
-	        exportList: function exportList() {
-	            var _this2 = this;
-	
-	            this.$store.dispatch("exportInsList").then(function (res) {
-	                window.open(res);
-	            }, function (err) {
-	                _this2.$message.error("服务暂不可用");
-	            });
-	        },
-	        stateDateChange: function stateDateChange(value) {
-	            try {
-	                var startDate = (0, _moment2.default)(value);
-	                var period = parseInt(this.form.period);
-	                var unit = this.form.periodUnit;
-	                var endDate = startDate.add(period, unit);
-	                return endDate.format("YYYY-MM-DD");
-	            } catch (e) {
-	                return "";
-	            }
-	        },
-	        hideDialog: function hideDialog() {
-	            this.$store.commit('viewInsInfoDetail', false);
-	        },
-	        getExtendFieldsView: function getExtendFieldsView(extend) {
-	            var ret = [];
-	            var odd = 0;
-	            var row = [];
-	
-	            for (var i = 0; i < this.extendFieldsConfig.length; i++) {
-	                var userValue = void 0;
-	                if (!!!extend) {
-	                    userValue = "";
-	                } else userValue = extend[this.extendFieldsConfig[i].fieldName];
-	                row.push(_lodash2.default.assign({}, this.extendFieldsConfig[i], {
-	                    userValue: userValue
-	                }));
-	                if (row.length == 2) {
-	                    ret.push(row);
-	                    row = [];
-	                }
-	            }
-	
-	            if (row.length > 0) {
-	                ret.push(row);
-	            }
-	
-	            return ret;
-	        },
-	        listsizechange: function listsizechange(val) {
-	            this.pageSize = val;
-	            this.getList(val);
-	        },
-	        edit: function edit(insInfo) {
-	            this.$store.commit("viewInsInfoDetail", true);
-	            this.dialogTitle = "编辑仪器信息";
-	            this.SaveActionName = "editInsInfo";
-	            this.depOptions = [{
-	                value: insInfo.depCode,
-	                label: insInfo.depCode
-	                // .split("&")[1]
-	            }];
-	            this.insCodeOptions = [{
-	                value: insInfo.insCode,
-	                label: insInfo.insCode.split("&")[1]
-	            }];
-	            if (insInfo.keeper) this.userOptions = [{
-	                value: insInfo.keeper,
-	                label: insInfo.keeper.split("&")[1]
-	            }];else this.userOptions = [];
-	
-	            insInfo.extendFieldsView = this.getExtendFieldsView(insInfo.extendFields);
-	            this.form = _lodash2.default.assign({
-	                code: "",
-	                name: "",
-	                insCode: '',
-	                depCode: '',
-	                assertNo: "",
-	                No: "",
-	                specification: "",
-	                modelNo: "",
-	                startDate: "",
-	                testType: "",
-	                period: "",
-	                periodUnit: "days",
-	                status: "",
-	                endDate: "",
-	                keeper: "",
-	                description: "",
-	                extendFields: {},
-	                extendFieldsView: []
-	            }, insInfo);
-	            // this.form.fromKeeper = insInfo.keeper;
-	        },
-	        importList: function importList() {},
-	        handleSuccess: function handleSuccess(res, file, fileList) {
-	            var _this3 = this;
-	
-	            if (res.success) {
-	                this.$store.dispatch("importList", {
-	                    importFileId: res.result
-	                }).then(function (res) {
-	                    _this3.importDialogView = false;
-	                    _this3.$alert("导入成功");
-	                }, function (err) {
-	                    _this3.importDialogView = false;
-	                    _this3.$alert(err);
-	                });
-	            }
-	        },
-	        create: function create() {
-	            this.$store.commit("viewInsInfoDetail", true);
-	            this.dialogTitle = "新建仪器信息";
-	            this.SaveActionName = "createInsInfo";
-	            this.form = {
-	                code: "",
-	                name: "",
-	                insCode: '',
-	                depCode: '',
-	                assertNo: "",
-	                No: "",
-	                specification: "",
-	                modelNo: "",
-	                startDate: "",
-	                testType: "",
-	                period: "",
-	                periodUnit: "days",
-	                status: "3",
-	                endDate: "",
-	                keeper: "",
-	                description: "",
-	                extendFields: [],
-	                extendFieldsView: []
-	            };
-	        },
-	
-	        getInsCodeList: _lodash2.default.throttle(function (keyword) {
-	            var _this4 = this;
-	
-	            if (keyword) {
-	                this.$store.dispatch("getOptions", { keyword: keyword, type: "insCode" }).then(function (res) {
-	                    _this4.insCodeOptions = res.result.map(function (cur) {
-	                        return {
-	                            label: cur.name,
-	                            value: cur._id + "&" + cur.name
-	                        };
-	                    });
-	                });
-	            } else {
-	                this.insCodeOptions = [];
-	            }
-	        }, 800),
-	        getDepCodeList: _lodash2.default.throttle(function (keyword) {
-	            var _this5 = this;
-	
-	            if (keyword) {
-	                this.$store.dispatch("getOptions", { keyword: keyword, type: "depInfo" }).then(function (res) {
-	                    _this5.depOptions = res.result.map(function (cur) {
-	                        return {
-	                            label: cur.name,
-	                            value: cur.name, //+"&"+cur.keeper
-	                            dep: cur
-	                        };
-	                    });;
-	                });
-	            } else {
-	                this.depOptions = [];
-	            }
-	        }, 800),
-	        getUserList: _lodash2.default.throttle(function (keyword) {
-	            var _this6 = this;
-	
-	            if (keyword) {
-	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
-	                    _this6.userOptions = res.result.map(function (cur) {
-	                        return {
-	                            label: cur.name,
-	                            value: cur._id + "&" + cur.name
-	                        };
-	                    });;
-	                });
-	            } else {
-	                this.userOptions = [];
-	            }
-	        }, 800),
-	        submit: function submit() {
-	            var _this7 = this;
-	
-	            var obj = _lodash2.default.assign({}, this.form);
-	
-	            obj.extendFields = function (list) {
-	                var ret = {};
-	                var _iteratorNormalCompletion3 = true;
-	                var _didIteratorError3 = false;
-	                var _iteratorError3 = undefined;
-	
-	                try {
-	                    for (var _iterator3 = (0, _getIterator3.default)(list), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-	                        var row = _step3.value;
-	
-	                        if (row && row.length) {
-	                            var _iteratorNormalCompletion4 = true;
-	                            var _didIteratorError4 = false;
-	                            var _iteratorError4 = undefined;
-	
-	                            try {
-	                                for (var _iterator4 = (0, _getIterator3.default)(row), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
-	                                    var col = _step4.value;
-	
-	                                    ret[col.fieldName] = col.userValue;
-	                                }
-	                            } catch (err) {
-	                                _didIteratorError4 = true;
-	                                _iteratorError4 = err;
-	                            } finally {
-	                                try {
-	                                    if (!_iteratorNormalCompletion4 && _iterator4.return) {
-	                                        _iterator4.return();
-	                                    }
-	                                } finally {
-	                                    if (_didIteratorError4) {
-	                                        throw _iteratorError4;
-	                                    }
-	                                }
-	                            }
-	                        }
-	                    }
-	                } catch (err) {
-	                    _didIteratorError3 = true;
-	                    _iteratorError3 = err;
-	                } finally {
-	                    try {
-	                        if (!_iteratorNormalCompletion3 && _iterator3.return) {
-	                            _iterator3.return();
-	                        }
-	                    } finally {
-	                        if (_didIteratorError3) {
-	                            throw _iteratorError3;
-	                        }
-	                    }
-	                }
-	
-	                return ret;
-	            }(obj.extendFieldsView);
-	
-	            obj.startDate = (0, _moment2.default)(obj.startDate).format("YYYY-MM-DD HH:mm:ss");
-	            obj.endDate = (0, _moment2.default)(this.currentEndDate).format("YYYY-MM-DD HH:mm:ss");
-	
-	            var ret = (0, _validate.validateInsInfo)(obj);
-	            if (ret != "") {
-	                this.$message.warn(ret);
-	            } else {
-	                this.$store.dispatch(this.SaveActionName, obj).then(function () {
-	                    _this7.$message.info("保存成功");
-	                    _this7.getList();
-	                }, function (err) {
-	                    _this7.$message.error("保存失败");
-	                });
-	            }
-	        },
-	        startTest: function startTest(row) {
-	            var _this8 = this;
-	
-	            this.$store.dispatch("startTest", row._id).then(function () {
-	                _this8.getList();
-	                _this8.$message.info("操作成功");
-	            }, function (errMsg) {
-	                _this8.$message.error(errMsg);
-	            });
-	        },
-	        delExtend: function delExtend(row) {
-	            for (var i = 0; i < this.extendFieldsConfig.length; i++) {
-	                if (this.extendFieldsConfig[i] === row) {
-	                    this.extendFieldsConfig.splice(i, 1);
-	                }
-	            }
-	
-	            this.reIndex();
-	        },
-	        canConfirmImport: function canConfirmImport(keeper) {
-	            if (keeper) {
-	                var ks = keeper.split("&");
-	                return ks[0] == this.$store.state.common.userInfo.id;
-	            }
-	
-	            return false;
-	        },
-	        reIndex: function reIndex() {
-	            this.extendFieldsConfig = this.extendFieldsConfig.map(function (cur, index, array) {
-	                cur.index = index;
-	                cur.colIndex = cur.index + 1;
-	                return cur;
-	            });
-	        },
-	        moveUp: function moveUp(index) {
-	            if (index > 0) {
-	                var editItem = this.extendFieldsConfig.splice(index, 1);
-	                this.extendFieldsConfig.splice(index - 1, 0, editItem.shift());
-	
-	                this.reIndex();
-	            }
-	        },
-	        editExtend: function editExtend(row) {
-	            this.addExtend = row;
-	            this.addExtendView = true;
-	            this.addExtendFlag = false;
-	        },
-	        submitExtend: function submitExtend() {
-	            this.addExtendView = false;
-	            if (this.addExtendFlag) {
-	                this.extendFieldsConfig.push(_lodash2.default.assign({ view: false }, this.addExtend));
-	
-	                this.extendFieldsConfig = this.extendFieldsConfig.map(function (cur, index, array) {
-	                    cur.index = index;
-	                    cur.colIndex = cur.index + 1;
-	                    return cur;
-	                });
-	            }
-	        },
-	        addExtendField: function addExtendField() {
-	            this.addExtendFlag = true;
-	            this.addExtendView = true;
-	            this.addExtend = {
-	                title: "",
-	                value: ""
-	            };
-	        },
-	        editcol: function editcol() {
-	            this.colEidtView = true;
-	        },
-	        search: function search() {
-	            this.getList(1);
-	        },
-	        getList: function getList(page) {
-	            var self = this;
-	            this.pageNo = page || this.pageNo;
-	            this.$store.dispatch("getInsInfoList", {
-	                pageNo: this.pageNo - 1,
-	                keyword: this.serachContent,
-	                pageSize: this.pageSize,
-	                myConfirm: this.toConfirmStatus
-	            });
-	        },
-	        saveColSet: function saveColSet() {
-	            var _this9 = this;
-	
-	            this.$store.dispatch("saveColListSet", {
-	                colList: this.colListSet,
-	                extendConfig: this.extendFieldsConfig
-	            }).then(function () {
-	                _this9.$message.info("保存成功");
-	                _this9.colEidtView = false;
-	                window.location.reload();
-	            }, function (err) {
-	                _this9.$message.error("保存失败");
-	                _this9.colEidtView = false;
-	            });
-	        },
-	        confirmImport: function confirmImport(row) {
-	            var _this10 = this;
-	
-	            this.$store.dispatch("confirmInit", row._id).then(function () {
-	                _this10.$message.info("保存成功");
-	                _this10.getList();
-	            }, function (err) {
-	                _this10.$message.error(err);
-	            });
-	        },
-	        viewLog: function viewLog(insInfo) {
-	            var _this11 = this;
-	
-	            this.insLogView = true;
-	            this.$store.dispatch("getInsLog", insInfo._id).then(function (res) {
-	                _this11.logList = res.map(function (cur) {
-	                    cur.attachmentCount = function (list) {
-	                        var total = 0;
-	                        var _iteratorNormalCompletion5 = true;
-	                        var _didIteratorError5 = false;
-	                        var _iteratorError5 = undefined;
-	
-	                        try {
-	                            for (var _iterator5 = (0, _getIterator3.default)(list), _step5; !(_iteratorNormalCompletion5 = (_step5 = _iterator5.next()).done); _iteratorNormalCompletion5 = true) {
-	                                var item = _step5.value;
-	
-	                                if (item.filePath && item.filePath.length) {
-	                                    total += item.filePath.length;
-	                                }
-	                            }
-	                        } catch (err) {
-	                            _didIteratorError5 = true;
-	                            _iteratorError5 = err;
-	                        } finally {
-	                            try {
-	                                if (!_iteratorNormalCompletion5 && _iterator5.return) {
-	                                    _iterator5.return();
-	                                }
-	                            } finally {
-	                                if (_didIteratorError5) {
-	                                    throw _iteratorError5;
-	                                }
-	                            }
-	                        }
-	
-	                        return total ? total : "";
-	                    }(cur.log);
-	                    // cur.startStatusView = ((status)=>{
-	                    //     for(let st of this.$store.state.common.statusList){
-	                    //         if(st.statusCode == status){
-	                    //             return st.label;
-	                    //         }
-	                    //     }
-	
-	                    //     return "";
-	
-	                    // })(cur.startStatus);
-	
-	                    // cur.endStatusView = ((status)=>{
-	                    //     for(let st of this.$store.state.common.statusList){
-	                    //         if(st.statusCode == status){
-	                    //             return st.label;
-	                    //         }
-	                    //     }
-	
-	                    //     return "";
-	
-	                    // })(cur.endStatus);
-	                    return cur;
-	                });
-	            }, function (err) {
-	                _this11.$message.error("服务暂不可用");
-	            });
-	        },
-	        viewTestLog: function viewTestLog(log) {
-	            this.insLogDetailView = true;
-	            this.currentLog = log;
-	            this.currentLog.attachmentList = function (list) {
-	                var ret = [];
-	                var _iteratorNormalCompletion6 = true;
-	                var _didIteratorError6 = false;
-	                var _iteratorError6 = undefined;
-	
-	                try {
-	                    var _loop = function _loop() {
-	                        var item = _step6.value;
-	
-	                        if (item.filePath && item.filePath.length) {
-	                            ret = ret.concat(item.filePath.map(function (cur) {
-	                                return {
-	                                    name: _path2.default.basename(item.filePath),
-	                                    path: item.filePath
-	                                };
-	                            }));
-	                        }
-	                    };
-	
-	                    for (var _iterator6 = (0, _getIterator3.default)(list), _step6; !(_iteratorNormalCompletion6 = (_step6 = _iterator6.next()).done); _iteratorNormalCompletion6 = true) {
-	                        _loop();
-	                    }
-	                } catch (err) {
-	                    _didIteratorError6 = true;
-	                    _iteratorError6 = err;
-	                } finally {
-	                    try {
-	                        if (!_iteratorNormalCompletion6 && _iterator6.return) {
-	                            _iterator6.return();
-	                        }
-	                    } finally {
-	                        if (_didIteratorError6) {
-	                            throw _iteratorError6;
-	                        }
-	                    }
-	                }
-	
-	                return ret;
-	            }(log.log);
-	        },
-	        init: function init() {
-	            var _this12 = this;
-	
-	            this.$store.dispatch("getHeaderList").then(function (res) {
-	                _this12.colList = [];
-	                _this12.colListSet = res.listHeader.map(function (cur) {
-	                    if (cur.view === undefined) {
-	                        cur.view = false;
-	                    }
-	
-	                    return cur;
-	                });
-	
-	                // 处理扩展类的index 和 view字段
-	                res.extendListHeader = res.extendListHeader.map(function (cur, index, array) {
-	                    if (cur.view === undefined) {
-	                        cur.view = false;
-	                    }
-	
-	                    cur.index = cur.index || array.length;
-	
-	                    return cur;
-	                });
-	
-	                // 处理扩展类的index 字段为正常序列
-	                res.extendListHeader.sort(function (a, b) {
-	                    return a.index - b.index;
-	                });
-	
-	                _this12.extendFieldsConfig = res.extendListHeader;
-	
-	                _this12.reIndex();
-	
-	                res.listHeader.forEach(function (cur) {
-	                    if (cur.view) {
-	                        _this12.colList.push(cur);
-	                    }
-	                });
-	                console.log(_this12.colList);
-	
-	                _this12.extendFieldsConfig.forEach(function (cur) {
-	                    if (cur.view) {
-	                        _this12.extendColList.push(cur);
-	                    }
-	                });
-	                _this12.getList(1);
-	            }, function (err) {
-	                _this12.$message.error("服务暂不可用");
-	            });
-	        },
-	        delrow: function delrow(row) {
-	            var _this13 = this;
-	
-	            console.log(row);
-	            this.$confirm('此操作将永久删除, 是否继续?', '提示', {
-	                confirmButtonText: '确定',
-	                cancelButtonText: '取消',
-	                type: 'warning'
-	            }).then(function () {
-	                _this13.$store.dispatch("removeDict", {
-	                    type: "insInfo",
-	                    id: row._id
-	                }).then(function () {
-	                    _this13.$message({
-	                        type: 'success',
-	                        message: '删除成功!'
-	                    });
-	                    _this13.getList();
-	                }, function (err) {
-	                    _this13.$message({
-	                        type: 'error',
-	                        message: '删除失败!'
-	                    });
-	                });
-	
-	                _this13.$store.dispatch("clearNone");
-	            }).catch(function () {
-	                _this13.$message({
-	                    type: 'info',
-	                    message: '已取消删除'
-	                });
-	            });
-	        },
-	        download: function download(row) {
-	            window.open("/cig/downloadfile?path=" + row.path);
-	        },
-	        depChangeKeeper: function depChangeKeeper(depCode) {
-	            var _iteratorNormalCompletion7 = true;
-	            var _didIteratorError7 = false;
-	            var _iteratorError7 = undefined;
-	
-	            try {
-	                for (var _iterator7 = (0, _getIterator3.default)(this.depOptions), _step7; !(_iteratorNormalCompletion7 = (_step7 = _iterator7.next()).done); _iteratorNormalCompletion7 = true) {
-	                    var _item = _step7.value;
-	
-	                    if (_item.dep && _item.dep.name === depCode) {
-	                        this.userOptions = [{
-	                            value: _item.dep.keeper,
-	                            label: _item.dep.keeper.split("&")[1]
-	                        }];
-	                        this.form.keeper = _item.dep.keeper;
-	                    }
-	                }
-	            } catch (err) {
-	                _didIteratorError7 = true;
-	                _iteratorError7 = err;
-	            } finally {
-	                try {
-	                    if (!_iteratorNormalCompletion7 && _iterator7.return) {
-	                        _iterator7.return();
-	                    }
-	                } finally {
-	                    if (_didIteratorError7) {
-	                        throw _iteratorError7;
-	                    }
-	                }
-	            }
-	        }
-	    },
-	    mounted: function mounted() {
-	        this.init();
-	    }
-	};
-
-/***/ }),
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
 /* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19470,7 +18241,258 @@ webpackJsonp([4,12],Array(105).concat([
 
 
 /***/ }),
-/* 257 */
+/* 257 */,
+/* 258 */,
+/* 259 */,
+/* 260 */,
+/* 261 */,
+/* 262 */,
+/* 263 */,
+/* 264 */,
+/* 265 */,
+/* 266 */,
+/* 267 */,
+/* 268 */,
+/* 269 */,
+/* 270 */,
+/* 271 */,
+/* 272 */,
+/* 273 */,
+/* 274 */,
+/* 275 */,
+/* 276 */,
+/* 277 */,
+/* 278 */,
+/* 279 */,
+/* 280 */,
+/* 281 */,
+/* 282 */,
+/* 283 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	
+	/* styles */
+	__webpack_require__(284)
+	
+	var Component = __webpack_require__(107)(
+	  /* script */
+	  __webpack_require__(286),
+	  /* template */
+	  __webpack_require__(287),
+	  /* scopeId */
+	  "data-v-1314f15d",
+	  /* cssModules */
+	  null
+	)
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\confirmLog.vue"
+	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+	if (Component.options.functional) {console.error("[vue-loader] confirmLog.vue: functional components are not supported with templates, they should use render functions.")}
+	
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-1314f15d", Component.options)
+	  } else {
+	    hotAPI.reload("data-v-1314f15d", Component.options)
+	  }
+	})()}
+	
+	module.exports = Component.exports
+
+
+/***/ }),
+/* 284 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+	
+	// load the styles
+	var content = __webpack_require__(285);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	if(content.locals) module.exports = content.locals;
+	// add the styles to the DOM
+	var update = __webpack_require__(105)("212c27a0", content, false);
+	// Hot Module Replacement
+	if(false) {
+	 // When the styles change, update the <style> tags
+	 if(!content.locals) {
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1314f15d&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./confirmLog.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1314f15d&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./confirmLog.vue");
+	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+	     update(newContent);
+	   });
+	 }
+	 // When the module is disposed, remove the <style> tags
+	 module.hot.dispose(function() { update(); });
+	}
+
+/***/ }),
+/* 285 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(103)();
+	// imports
+	
+	
+	// module
+	exports.push([module.id, "\n.contentbox[data-v-1314f15d] {\n  padding: 15px;\n}\n.tabletool[data-v-1314f15d] {\n  margin-bottom: 10px;\n}\n.tabletool button[data-v-1314f15d] {\n  float: right;\n  margin-left: 20px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/confirmLog.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAElB;EACE,oBAAoB;CAAE;AAExB;EACE,aAAa;EACb,kBAAkB;CAAE","file":"confirmLog.vue","sourcesContent":[".contentbox {\n  padding: 15px; }\n\n.tabletool {\n  margin-bottom: 10px; }\n\n.tabletool button {\n  float: right;\n  margin-left: 20px; }\n"],"sourceRoot":"webpack://"}]);
+	
+	// exports
+
+
+/***/ }),
+/* 286 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	
+	var _lodash = __webpack_require__(86);
+	
+	var _lodash2 = _interopRequireDefault(_lodash);
+	
+	var _moment = __webpack_require__(128);
+	
+	var _moment2 = _interopRequireDefault(_moment);
+	
+	var _validate = __webpack_require__(122);
+	
+	var _path = __webpack_require__(253);
+	
+	var _path2 = _interopRequireDefault(_path);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	
+	exports.default = {
+	    data: function data() {
+	        return {
+	            serachContent: "",
+	            dialogTitle: "",
+	            // dataList: [],
+	            pageSize: 10,
+	            pageNo: 1,
+	            dialogFormVisible: false,
+	            currentLog: {},
+	            type: "create"
+	        };
+	    },
+	
+	    computed: {
+	        dataList: function dataList() {
+	            return this.$store.state.confirmLog.confirmLogList.map(function (current) {
+	                // current.state=(current.state?"是":"否");
+	                current.createTime = (0, _moment2.default)(current.createTime).format("YYYY-MM-DD");
+	                current.updateTime = (0, _moment2.default)(current.updateTime).format("YYYY-MM-DD");
+	                switch (current.confirm) {
+	                    case "1":
+	                        current.confirm = "确认完成";break;
+	                    case "2":
+	                        current.confirm = "确认失败";break;
+	                    default:
+	                        current.confirm = "待确认";
+	                }
+	                current.keeperName = current.keeper.split("&")[1];
+	                current.fromKeeperName = current.fromKeeper.split("&")[1] || "无";
+	                return current;
+	            });
+	        }
+	    },
+	    methods: {
+	        hideDialog: function hideDialog() {
+	            this.$store.commit('viewConfirmLogDetail', false);
+	        },
+	        viewTestLog: function viewTestLog(row) {
+	            this.$store.commit("viewConfirmLogDetail", true);
+	            this.currentLog = row;
+	        },
+	        listsizechange: function listsizechange(val) {
+	            this.pageSize = val;
+	            this.getList(1);
+	        },
+	        search: function search() {
+	            this.getList(1);
+	        },
+	        getList: function getList(page) {
+	            var self = this;
+	            this.pageNo = page || this.pageNo;
+	            this.$store.dispatch("getConfirmLogList", {
+	                pageNo: page - 1,
+	                keyword: this.serachContent,
+	                pageSize: this.pageSize
+	            });
+	        }
+	    },
+	    mounted: function mounted() {
+	        this.getList(1);
+	    }
+	};
+
+/***/ }),
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -19486,7 +18508,7 @@ webpackJsonp([4,12],Array(105).concat([
 	    }
 	  }, [_c('el-col', {
 	    attrs: {
-	      "span": 8
+	      "span": 6
 	    }
 	  }, [_c('div', {
 	    staticClass: "grid-content"
@@ -19495,7 +18517,7 @@ webpackJsonp([4,12],Array(105).concat([
 	      "width": "300px"
 	    },
 	    attrs: {
-	      "placeholder": "搜索仪器信息名称..."
+	      "placeholder": "搜索仪器编号..."
 	    },
 	    model: {
 	      value: (_vm.serachContent),
@@ -19515,88 +18537,7 @@ webpackJsonp([4,12],Array(105).concat([
 	      }
 	    },
 	    slot: "append"
-	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 4
-	    }
-	  }, [_c('div', {
-	    staticClass: "grid-content"
-	  }, [_c('el-select', {
-	    attrs: {
-	      "placeholder": "导入状态",
-	      "loading": _vm.insCodeLoading
-	    },
-	    on: {
-	      "change": function($event) {
-	        _vm.getList(1)
-	      }
-	    },
-	    model: {
-	      value: (_vm.toConfirmStatus),
-	      callback: function($$v) {
-	        _vm.toConfirmStatus = $$v
-	      },
-	      expression: "toConfirmStatus"
-	    }
-	  }, [_c('el-option', {
-	    attrs: {
-	      "label": "全部",
-	      "value": ""
-	    }
-	  }), _vm._v(" "), _c('el-option', {
-	    attrs: {
-	      "label": "待我确认的仪器",
-	      "value": "toConfirmStatus"
-	    }
-	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 12
-	    }
-	  }, [_c('div', {
-	    staticClass: "grid-content tabletool"
-	  }, [(_vm.dictEdit) ? _c('el-button', {
-	    staticStyle: {
-	      "float": "right"
-	    },
-	    attrs: {
-	      "type": "success"
-	    },
-	    on: {
-	      "click": _vm.editcol
-	    }
-	  }, [_vm._v("菜单设置")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
-	    staticStyle: {
-	      "float": "right"
-	    },
-	    attrs: {
-	      "type": "success"
-	    },
-	    on: {
-	      "click": _vm.create
-	    }
-	  }, [_vm._v("新建")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
-	    staticStyle: {
-	      "float": "right"
-	    },
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.importDialogView = true
-	      }
-	    }
-	  }, [_vm._v("导入")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
-	    staticStyle: {
-	      "float": "right"
-	    },
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": _vm.exportList
-	    }
-	  }, [_vm._v("导出")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	  })], 1)], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
@@ -19604,8 +18545,8 @@ webpackJsonp([4,12],Array(105).concat([
 	    directives: [{
 	      name: "loading",
 	      rawName: "v-loading.body",
-	      value: (_vm.$store.state.insInfo.tableLoading),
-	      expression: "$store.state.insInfo.tableLoading",
+	      value: (_vm.$store.state.confirmLog.tableLoading),
+	      expression: "$store.state.confirmLog.tableLoading",
 	      modifiers: {
 	        "body": true
 	      }
@@ -19622,860 +18563,53 @@ webpackJsonp([4,12],Array(105).concat([
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), _vm._v(" "), _vm._l((_vm.colList), function(item) {
-	    return _c('el-table-column', {
-	      attrs: {
-	        "prop": item.fieldName,
-	        "label": item.fieldTitle,
-	        "width": item.width,
-	        "show-overflow-tooltip": true
-	      }
-	    })
-	  }), _vm._v(" "), _vm._l((_vm.extendColList), function(item) {
-	    return _c('el-table-column', {
-	      attrs: {
-	        "prop": item.fieldName,
-	        "label": item.fieldTitle,
-	        "width": item.width,
-	        "show-overflow-tooltip": true
-	      }
-	    })
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "createTime",
+	      "label": "校验时间",
+	      "width": "120",
+	      "show-overflow-tooltip": true
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "insCode",
+	      "label": "仪器编号",
+	      "width": "180",
+	      "show-overflow-tooltip": true
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "insName",
+	      "label": "仪器名称",
+	      "width": "180",
+	      "show-overflow-tooltip": true
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "keeperName",
+	      "label": "目标保管人",
+	      "width": "120",
+	      "show-overflow-tooltip": true
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "fromKeeperName",
+	      "label": "前保管人",
+	      "width": "120",
+	      "show-overflow-tooltip": true
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "confirm",
+	      "label": "确认情况",
+	      "show-overflow-tooltip": ""
+	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "fixed": "right",
 	      "context": _vm._self,
 	      "label": "操作",
-	      "width": "380"
-	    },
-	    inlineTemplate: {
-	      render: function() {
-	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _c('span', [(_vm.dictEdit) ? _c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.edit(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), _c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.viewLog(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("查看记录")]), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
-	            attrs: {
-	              "type": "danger",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.delrow(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("删除")]) : _vm._e(), _vm._v(" "), (_vm.superAdmin) ? _c('el-button', {
-	            attrs: {
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.startTest(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("测试")]) : _vm._e(), _vm._v(" "), (_vm.row.isInit && _vm.canConfirmImport(_vm.row.keeper)) ? _c('el-button', {
-	            attrs: {
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.confirmImport(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("确认导入")]) : _vm._e()], 1)
-	        
-	      },
-	      staticRenderFns: []
-	    }
-	  })], 2)], 1)], 1), _vm._v(" "), _c('el-row', [_c('div', {
-	    staticClass: "flexbox"
-	  }, [_c('div', {
-	    staticClass: "tobox"
-	  }, [_c('span', [_vm._v("转到")]), _vm._v(" "), _c('input', {
-	    directives: [{
-	      name: "model",
-	      rawName: "v-model",
-	      value: (_vm.toPageNo),
-	      expression: "toPageNo"
-	    }],
-	    attrs: {
-	      "type": "text"
-	    },
-	    domProps: {
-	      "value": (_vm.toPageNo)
-	    },
-	    on: {
-	      "keyup": function($event) {
-	        if (!('button' in $event) && _vm._k($event.keyCode, "enter", 13, $event.key, "Enter")) { return null; }
-	        _vm.getList(_vm.toPageNo)
-	      },
-	      "input": function($event) {
-	        if ($event.target.composing) { return; }
-	        _vm.toPageNo = $event.target.value
-	      }
-	    }
-	  })]), _vm._v(" "), _c('el-pagination', {
-	    staticStyle: {
-	      "margin-top": "20px",
-	      "height": "100px"
-	    },
-	    attrs: {
-	      "current-page": _vm.pageNo,
-	      "page-sizes": [10, 15, 20],
-	      "page-size": _vm.pageSize,
-	      "layout": "sizes, prev, pager, next",
-	      "total": _vm.$store.state.insInfo.pageItemTotalCount
-	    },
-	    on: {
-	      "size-change": _vm.listsizechange,
-	      "current-change": _vm.getList,
-	      "update:currentPage": function($event) {
-	        _vm.pageNo = $event
-	      }
-	    }
-	  })], 1)]), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": _vm.dialogTitle,
-	      "size": "small",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.$store.state.insInfo.dialogFormVisible),
-	      callback: function($$v) {
-	        _vm.$set(_vm.$store.state.insInfo, "dialogFormVisible", $$v)
-	      },
-	      expression: "$store.state.insInfo.dialogFormVisible"
-	    }
-	  }, [_c('el-form', {
-	    attrs: {
-	      "model": _vm.form
-	    }
-	  }, [_c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "仪器编号",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.code),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "code", $$v)
-	      },
-	      expression: "form.code"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "仪器名称",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.name),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "name", $$v)
-	      },
-	      expression: "form.name"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "仪器编码",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-select', {
-	    attrs: {
-	      "filterable": "",
-	      "remote": "",
-	      "placeholder": "编码",
-	      "remote-method": _vm.getInsCodeList,
-	      "loading": _vm.insCodeLoading
-	    },
-	    model: {
-	      value: (_vm.form.insCode),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "insCode", $$v)
-	      },
-	      expression: "form.insCode"
-	    }
-	  }, _vm._l((_vm.insCodeOptions), function(item) {
-	    return _c('el-option', {
-	      key: item.value,
-	      attrs: {
-	        "label": item.label,
-	        "value": item.value
-	      }
-	    })
-	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "部门代码",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-select', {
-	    attrs: {
-	      "filterable": "",
-	      "remote": "",
-	      "placeholder": "部门代码",
-	      "remote-method": _vm.getDepCodeList,
-	      "loading": _vm.depLoading
-	    },
-	    on: {
-	      "change": _vm.depChangeKeeper
-	    },
-	    model: {
-	      value: (_vm.form.depCode),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "depCode", $$v)
-	      },
-	      expression: "form.depCode"
-	    }
-	  }, _vm._l((_vm.depOptions), function(item) {
-	    return _c('el-option', {
-	      key: item.value,
-	      attrs: {
-	        "label": item.label,
-	        "value": item.value
-	      }
-	    })
-	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "资产编号",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.assertNo),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "assertNo", $$v)
-	      },
-	      expression: "form.assertNo"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "序号",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.No),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "No", $$v)
-	      },
-	      expression: "form.No"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "规格",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.specification),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "specification", $$v)
-	      },
-	      expression: "form.specification"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "型号",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.modelNo),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "modelNo", $$v)
-	      },
-	      expression: "form.modelNo"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "校验日期",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-date-picker', {
-	    staticStyle: {
-	      "width": "100%"
-	    },
-	    attrs: {
-	      "type": "date",
-	      "placeholder": "选择日期",
-	      "picker-options": _vm.pickerOption
-	    },
-	    on: {
-	      "change": _vm.stateDateChange
-	    },
-	    model: {
-	      value: (_vm.form.startDate),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "startDate", $$v)
-	      },
-	      expression: "form.startDate"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "校验类别",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-select', {
-	    attrs: {
-	      "placeholder": "请选择"
-	    },
-	    model: {
-	      value: (_vm.form.testType),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "testType", $$v)
-	      },
-	      expression: "form.testType"
-	    }
-	  }, _vm._l((_vm.testTypeList), function(item) {
-	    return _c('el-option', {
-	      attrs: {
-	        "label": item.label,
-	        "value": item.value
-	      }
-	    })
-	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "校验周期",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    staticStyle: {
-	      "width": "45%",
-	      "float": "left"
-	    },
-	    attrs: {
-	      "placeholder": "请输入"
-	    },
-	    on: {
-	      "blur": _vm.stateDateChange
-	    },
-	    model: {
-	      value: (_vm.form.period),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "period", $$v)
-	      },
-	      expression: "form.period"
-	    }
-	  }), _vm._v(" "), _c('el-select', {
-	    staticStyle: {
-	      "width": "45%",
-	      "float": "left"
-	    },
-	    attrs: {
-	      "placeholder": "请选择"
-	    },
-	    model: {
-	      value: (_vm.form.periodUnit),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "periodUnit", $$v)
-	      },
-	      expression: "form.periodUnit"
-	    }
-	  }, [_c('el-option', {
-	    attrs: {
-	      "label": "月",
-	      "value": "months"
-	    }
-	  }), _vm._v(" "), _c('el-option', {
-	    attrs: {
-	      "label": "周",
-	      "value": "weeks"
-	    }
-	  }), _vm._v(" "), _c('el-option', {
-	    attrs: {
-	      "label": "日",
-	      "value": "days"
-	    }
-	  }), _vm._v(" "), _c('el-option', {
-	    attrs: {
-	      "label": "年",
-	      "value": "years"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "仪器状态",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-select', {
-	    attrs: {
-	      "placeholder": "请选择"
-	    },
-	    model: {
-	      value: (_vm.form.status),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "status", $$v)
-	      },
-	      expression: "form.status"
-	    }
-	  }, _vm._l((_vm.$store.state.common.statusList), function(item) {
-	    return _c('el-option', {
-	      attrs: {
-	        "label": item.label,
-	        "value": item.statusCode
-	      }
-	    })
-	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 11
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "到校日期",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "disabled": true,
-	      "type": "text",
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.currentEndDate),
-	      callback: function($$v) {
-	        _vm.currentEndDate = $$v
-	      },
-	      expression: "currentEndDate"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-col', {
-	    attrs: {
-	      "span": 11,
-	      "offset": 2
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "保管人",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-select', {
-	    attrs: {
-	      "filterable": "",
-	      "remote": "",
-	      "placeholder": "保管人",
-	      "remote-method": _vm.getUserList,
-	      "loading": _vm.userLoading
-	    },
-	    model: {
-	      value: (_vm.form.keeper),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "keeper", $$v)
-	      },
-	      expression: "form.keeper"
-	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
-	    return _c('el-option', {
-	      key: item.value,
-	      attrs: {
-	        "label": item.label,
-	        "value": item.value
-	      }
-	    })
-	  }))], 1)], 1)], 1), _vm._v(" "), _vm._l((_vm.form.extendFieldsView), function(row) {
-	    return _c('el-row', _vm._l((row), function(col) {
-	      return _c('el-col', {
-	        attrs: {
-	          "span": 11
-	        }
-	      }, [_c('el-form-item', {
-	        attrs: {
-	          "label": col.fieldTitle,
-	          "label-width": "80px"
-	        }
-	      }, [_c('el-input', {
-	        attrs: {
-	          "type": "text",
-	          "auto-complete": "off"
-	        },
-	        model: {
-	          value: (col.userValue),
-	          callback: function($$v) {
-	            _vm.$set(col, "userValue", $$v)
-	          },
-	          expression: "col.userValue"
-	        }
-	      })], 1)], 1)
-	    }))
-	  }), _vm._v(" "), _c('el-row', [_c('el-form-item', {
-	    attrs: {
-	      "label": "描述",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "type": "textarea",
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.description),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "description", $$v)
-	      },
-	      expression: "form.description"
-	    }
-	  })], 1)], 1)], 2), _vm._v(" "), _c('div', {
-	    staticClass: "dialog-footer",
-	    attrs: {
-	      "slot": "footer"
-	    },
-	    slot: "footer"
-	  }, [_c('el-button', {
-	    on: {
-	      "click": _vm.hideDialog
-	    }
-	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": _vm.submit
-	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": "编辑扩展字段",
-	      "size": "small",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.addExtendView),
-	      callback: function($$v) {
-	        _vm.addExtendView = $$v
-	      },
-	      expression: "addExtendView"
-	    }
-	  }, [_c('el-form', {
-	    attrs: {
-	      "model": _vm.addExtend
-	    }
-	  }, [_c('el-form-item', {
-	    attrs: {
-	      "label": "字段名称",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.addExtend.fieldTitle),
-	      callback: function($$v) {
-	        _vm.$set(_vm.addExtend, "fieldTitle", $$v)
-	      },
-	      expression: "addExtend.fieldTitle"
-	    }
-	  })], 1), _vm._v(" "), _c('el-form-item', {
-	    attrs: {
-	      "label": "字段值",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.addExtend.fieldName),
-	      callback: function($$v) {
-	        _vm.$set(_vm.addExtend, "fieldName", $$v)
-	      },
-	      expression: "addExtend.fieldName"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('div', {
-	    staticClass: "dialog-footer",
-	    attrs: {
-	      "slot": "footer"
-	    },
-	    slot: "footer"
-	  }, [_c('el-button', {
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.submitExtend()
-	      }
-	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": "菜单设置",
-	      "size": "small",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.colEidtView),
-	      callback: function($$v) {
-	        _vm.colEidtView = $$v
-	      },
-	      expression: "colEidtView"
-	    }
-	  }, [_c('el-row', _vm._l((_vm.colListSet), function(col) {
-	    return _c('el-checkbox', {
-	      key: col.view,
-	      attrs: {
-	        "label": col.fieldTitle
-	      },
-	      model: {
-	        value: (col.view),
-	        callback: function($$v) {
-	          _vm.$set(col, "view", $$v)
-	        },
-	        expression: "col.view"
-	      }
-	    }, [_vm._v(_vm._s(col.fieldTitle))])
-	  })), _vm._v(" "), _c('el-row', [_c('el-card', {
-	    staticClass: "box-card"
-	  }, [_c('div', {
-	    staticClass: "clearfix",
-	    attrs: {
-	      "slot": "header"
-	    },
-	    slot: "header"
-	  }, [_c('span', {
-	    staticStyle: {
-	      "line-height": "36px"
-	    }
-	  }, [_vm._v("扩展列")]), _vm._v(" "), _c('el-button', {
-	    staticStyle: {
-	      "float": "right"
-	    },
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": _vm.addExtendField
-	    }
-	  }, [_vm._v("新增")])], 1), _vm._v(" "), _c('el-table', {
-	    staticStyle: {
-	      "width": "100%"
-	    },
-	    attrs: {
-	      "data": _vm.extendFieldsConfig
-	    }
-	  }, [_c('el-table-column', {
-	    attrs: {
-	      "prop": "colIndex",
-	      "label": "序号"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "fieldTitle",
-	      "label": "列名称"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "fieldName",
-	      "label": "列字段"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "context": _vm._self,
-	      "label": "操作",
 	      "width": "300"
-	    },
-	    inlineTemplate: {
-	      render: function() {
-	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _c('span', [(_vm.row.index > 0) ? _c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.moveUp(_vm.row.index);
-	              }
-	            }
-	          }, [_vm._v("上移")]) : _vm._e(), _vm._v(" "), (_vm.row.view) ? _c('el-button', {
-	            attrs: {
-	              "type": "danger",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.row.view = false;
-	              }
-	            }
-	          }, [_vm._v(_vm._s("关闭显示"))]) : _vm._e(), _vm._v(" "), (!_vm.row.view) ? _c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.row.view = true;
-	              }
-	            }
-	          }, [_vm._v(_vm._s("显示"))]) : _vm._e(), _vm._v(" "), _c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.editExtend(_vm.row);
-	              }
-	            }
-	          }, [_vm._v("编辑")]), _vm._v(" "), _c('el-button', {
-	            attrs: {
-	              "type": "danger",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.delExtend(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("删除")])], 1)
-	        
-	      },
-	      staticRenderFns: []
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('div', {
-	    staticClass: "dialog-footer",
-	    attrs: {
-	      "slot": "footer"
-	    },
-	    slot: "footer"
-	  }, [_c('el-button', {
-	    attrs: {
-	      "type": "primary"
-	    },
-	    on: {
-	      "click": function($event) {
-	        _vm.saveColSet()
-	      }
-	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": "仪器日志",
-	      "size": "small",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.insLogView),
-	      callback: function($$v) {
-	        _vm.insLogView = $$v
-	      },
-	      expression: "insLogView"
-	    }
-	  }, [_c('el-row', [_c('el-table', {
-	    staticStyle: {
-	      "width": "100%"
-	    },
-	    attrs: {
-	      "data": _vm.logList
-	    }
-	  }, [_c('el-table-column', {
-	    attrs: {
-	      "prop": "createTime",
-	      "label": "检验时间"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "startStatus",
-	      "label": "起始状态"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "endStatus",
-	      "label": "目标状态"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "attachmentCount",
-	      "label": "附件数量"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "context": _vm._self,
-	      "label": "操作",
-	      "width": "150"
 	    },
 	    inlineTemplate: {
 	      render: function() {
@@ -20487,7 +18621,7 @@ webpackJsonp([4,12],Array(105).concat([
 	            },
 	            on: {
 	              "click": function($event) {
-	                _vm.viewTestLog(_vm.row);
+	                _vm.viewTestLog(_vm.row)
 	              }
 	            }
 	          }, [_vm._v("查看")])], 1)
@@ -20495,33 +18629,37 @@ webpackJsonp([4,12],Array(105).concat([
 	      },
 	      staticRenderFns: []
 	    }
-	  })], 1)], 1), _vm._v(" "), _c('div', {
-	    staticClass: "dialog-footer",
-	    attrs: {
-	      "slot": "footer"
+	  })], 1), _vm._v(" "), _c('el-pagination', {
+	    staticStyle: {
+	      "margin-top": "20px",
+	      "height": "100px"
 	    },
-	    slot: "footer"
-	  }, [_c('el-button', {
 	    attrs: {
-	      "type": "primary"
+	      "current-page": _vm.pageNo,
+	      "page-sizes": [10, 15, 20],
+	      "page-size": _vm.pageSize,
+	      "layout": "sizes, prev, pager, next",
+	      "total": _vm.$store.state.confirmLog.pageItemTotalCount
 	    },
 	    on: {
-	      "click": function($event) {
-	        _vm.insLogView = false
+	      "size-change": _vm.listsizechange,
+	      "current-change": _vm.getList,
+	      "update:currentPage": function($event) {
+	        _vm.pageNo = $event
 	      }
 	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
+	  })], 1)], 1), _vm._v(" "), _c('el-dialog', {
 	    attrs: {
 	      "title": "仪器日志",
 	      "size": "small",
 	      "modal-append-to-body": false
 	    },
 	    model: {
-	      value: (_vm.insLogDetailView),
+	      value: (_vm.$store.state.confirmLog.dialogFormVisible),
 	      callback: function($$v) {
-	        _vm.insLogDetailView = $$v
+	        _vm.$set(_vm.$store.state.confirmLog, "dialogFormVisible", $$v)
 	      },
-	      expression: "insLogDetailView"
+	      expression: "$store.state.confirmLog.dialogFormVisible"
 	    }
 	  }, [_c('el-row', [_c('el-table', {
 	    staticStyle: {
@@ -20542,54 +18680,8 @@ webpackJsonp([4,12],Array(105).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "note",
-	      "label": "备注"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
 	      "prop": "operator",
-	      "label": "操作人"
-	    }
-	  })], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-table', {
-	    staticStyle: {
-	      "width": "100%"
-	    },
-	    attrs: {
-	      "data": _vm.currentLog.attachmentList
-	    }
-	  }, [_c('el-table-column', {
-	    attrs: {
-	      "type": "index",
-	      "width": "55"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "name",
-	      "label": "名称"
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "context": _vm._self,
-	      "label": "操作",
-	      "width": "150"
-	    },
-	    inlineTemplate: {
-	      render: function() {
-	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	          return _c('span', [_c('el-button', {
-	            attrs: {
-	              "type": "success",
-	              "size": "small"
-	            },
-	            on: {
-	              "click": function($event) {
-	                _vm.download(_vm.row)
-	              }
-	            }
-	          }, [_vm._v("下载")])], 1)
-	        
-	      },
-	      staticRenderFns: []
+	      "label": "操作人Id"
 	    }
 	  })], 1)], 1), _vm._v(" "), _c('div', {
 	    staticClass: "dialog-footer",
@@ -20602,46 +18694,18 @@ webpackJsonp([4,12],Array(105).concat([
 	      "type": "primary"
 	    },
 	    on: {
-	      "click": function($event) {
-	        _vm.insLogDetailView = false
-	      }
+	      "click": _vm.hideDialog
 	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": "导入设备信息",
-	      "size": "small",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.importDialogView),
-	      callback: function($$v) {
-	        _vm.importDialogView = $$v
-	      },
-	      expression: "importDialogView"
-	    }
-	  }, [_c('el-upload', {
-	    staticClass: "upload-demo",
-	    attrs: {
-	      "multiple": "",
-	      "drag": "",
-	      "action": "/cig/uploadfile",
-	      "on-success": _vm.handleSuccess,
-	      "show-file-list": false
-	    }
-	  }, [_c('i', {
-	    staticClass: "el-icon-upload"
-	  }), _vm._v(" "), _c('div', {
-	    staticClass: "el-upload__text"
-	  }, [_c('em', [_vm._v("点击上传")])])])], 1)], 1)
+	  }, [_vm._v("确 定")])], 1)], 1)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2d5ed973", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1314f15d", module.exports)
 	  }
 	}
 
 /***/ })
 ]));
-//# sourceMappingURL=4.build.js.map
+//# sourceMappingURL=10.build.js.map

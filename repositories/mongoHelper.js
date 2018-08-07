@@ -21,3 +21,5 @@ module.exports.TestModel = require("./models/test.js");
 module.exports.AuthModel = require("./models/auth.js");
 module.exports.EmailModel = require("./models/email.js");
 module.exports.ConfigModel= require("./models/config.js");
+module.exports.supplierModel= require("./models/supplier.js");
+module.exports.confirmLogModel= require("./models/confirmLog.js");

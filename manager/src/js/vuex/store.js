@@ -8,6 +8,9 @@ import insInfo from "./store/insinfo";
 import insCode from "./store/inscode";
 import insList from "./store/inslist";
 import email from "./store/email";
+import supplier from "./store/supplier";
+import recode from "./store/recode";
+import confirmLog from "./store/confirmLog";
 
 
 Vue.use(Vuex)
@@ -21,5 +24,8 @@ export default new Vuex.Store({
         insCode,
         insList,
         email,
+        supplier,
+        recode,
+        confirmLog,
     }
 });

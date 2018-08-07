@@ -3,7 +3,7 @@
         <el-row type='flex' style='margin-bottom:20px;' justify='space-between'>
             <el-col :span='6'>
                 <div class="grid-content">
-                    <el-input placeholder="搜索仪器Code名称..." v-model="serachContent" style="width: 300px;">
+                    <el-input placeholder="搜索供应商名称..." v-model="serachContent" style="width: 300px;">
                         <el-button @click='getList(1)' slot="append" icon="search"></el-button>
                     </el-input>
                 </div>
@@ -16,12 +16,12 @@
         </el-row>
         <el-row>
             <el-col :span='24'>
-                <el-table :data="dataList" v-loading.body="$store.state.insCode.tableLoading" border style="width: 100%">
+                <el-table :data="dataList" v-loading.body="$store.state.supplier.tableLoading" border style="width: 100%">
                     <el-table-column type="index" width="55">
                     </el-table-column>
-                    <el-table-column prop="code" label="仪器代码" width="250">
+                    <el-table-column prop="name" label="供应商名称" width="250">
                     </el-table-column>
-                    <el-table-column prop="name" label="代码名称" show-overflow-tooltip>
+                    <el-table-column prop="state" label="服务状态" show-overflow-tooltip>
                     </el-table-column>
                     <el-table-column inline-template v-if='dictEdit' :context="_self" label="操作" width="300">
                         <span>
@@ -30,17 +30,20 @@
                       </span>
                     </el-table-column>
                 </el-table>
-                <el-pagination @size-change="listsizechange" @current-change="getList" :current-page.sync="pageNo" :page-sizes="[10,15,20]" :page-size="pageSize" layout="sizes, prev, pager, next" :total="$store.state.insCode.pageItemTotalCount" style='margin-top:20px;height:100px;'>
+                <el-pagination @size-change="listsizechange" @current-change="getList" :current-page.sync="pageNo" :page-sizes="[10,15,20]" :page-size="pageSize" layout="sizes, prev, pager, next" :total="$store.state.supplier.pageItemTotalCount" style='margin-top:20px;height:100px;'>
                 </el-pagination>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.insCode.dialogFormVisible" :modal-append-to-body='false'>
+        <el-dialog :title="dialogTitle" size='tiny' v-model="$store.state.supplier.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
-                <el-form-item label="仪器代码" label-width="80px">
-                    <el-input v-model="form.code" auto-complete="off"></el-input>
-                </el-form-item>
-                <el-form-item label="仪器名称" label-width="80px">
+                <el-form-item label="供应商名称" label-width="100px">
                     <el-input v-model="form.name" auto-complete="off"></el-input>
+                </el-form-item>
+                <el-form-item label="服务状态" label-width="100px">
+                    <el-select v-model="form.state" placeholder="请选择">
+                        <el-option key="true" value="true" label="是"/>
+                        <el-option key="false" value="false" label="否"/>
+                    </el-select>
                 </el-form-item>
             </el-form>
             <div slot="footer" class="dialog-footer">
@@ -50,25 +53,16 @@
         </el-dialog>
     </div>
 </template>
+
 <script>
 import _ from "lodash";
-import { validateInsCode } from "../../libs/validate.js";
+import { validateSupplier } from "../../libs/validate.js";
 
 export default {
-    computed: {
-        dataList() {
-            return this.$store.state.insCode.codeList.map((current) => {
-                return current;
-            })
-        },
-        dictEdit() {
-            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-        }
-    },
     data() {
         return {
             serachContent: "",
-            dialogTitle: "新建模板集",
+            dialogTitle: "",
             // dataList: [],
             pageSize: 10,
             pageNo: 1,
@@ -77,20 +71,31 @@ export default {
             type: "create",
         }
     },
+    computed: {
+        dataList() {
+            return this.$store.state.supplier.supplierList.map((current) => {
+                current.state=(current.state?"是":"否");
+                return current;
+            })
+        },
+        dictEdit() {   
+            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+        }
+    },
     methods: {
         hideDialog() {
-            this.$store.commit('viewInsCodeDetail', false);
+            this.$store.commit('viewSupplierDetail', false);
         },
-        edit(insInfo) {
-            this.$store.commit("viewInsCodeDetail", true);
-            this.dialogTitle = "编辑仪器代码";
-            this.SaveActionName = "editInsCode";
-            this.form = _.assign({}, insInfo);
+        edit(row) {
+            this.$store.commit("viewSupplierDetail", true);
+            this.dialogTitle = "编辑供应商信息";
+            this.SaveActionName = "editSupplier";
+            this.form = _.assign({}, row);
         },
         create() {
-            this.$store.commit("viewInsCodeDetail", true);
-            this.dialogTitle = "新建仪器代码";
-            this.SaveActionName = "createInsCode";
+            this.$store.commit("viewSupplierDetail", true);
+            this.dialogTitle = "新建供应商信息";
+            this.SaveActionName = "createSupplier";
             this.form = {
                 name: "",
                 userId: '',
@@ -99,7 +104,7 @@ export default {
             }
         },
         submit() {
-            let ret = validateInsCode(this.form);
+            let ret = validateSupplier(this.form);
             if (ret != "") {
                 this.$message.warn(ret);
             } else {
@@ -123,7 +128,7 @@ export default {
                 type: 'warning'
             }).then(() => {
                 this.$store.dispatch("removeDict", {
-                    type: "insCode",
+                    type: "supplier",
                     id: row._id
                 }).then(() => {
                     this.$message({
@@ -152,7 +157,7 @@ export default {
         getList(page) {
             var self = this;
             this.pageNo = page || this.pageNo;
-            this.$store.dispatch("getInsCodeList", {
+            this.$store.dispatch("getSupplierList", {
                 pageNo: page - 1,
                 keyword: this.serachContent,
                 pageSize: this.pageSize,

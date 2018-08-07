@@ -21,14 +21,13 @@ var insInfoSchema = new Schema({
     nextStatus: { type: String },
     toConfirm: { type: String },
     endDate: { type: Date },
-    isInit: { type: Boolean },
+    isInit: { type: Boolean,default:true },      //用来判定是否更换保管人
     keeper: { type: String },
-    description: {
-        type: String
-    },
+    description: { type: String},
     extendFields: {
         type: Object
     },
+    fromKeeper:{ type:String },
 });
 
 module.exports = mongoose.model('InsInfoModel', insInfoSchema, "cig_insInfo");

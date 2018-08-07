@@ -1,4 +1,16 @@
 module.exports = {
+    test:{
+        keywordFields: ["insCode"],
+    },
+    confirmLog:{
+        keywordFields:["insCode","insName","keeper","fromKeeper"],
+    },
+    supplier:{
+        updateFields: ["name"],
+        insertFields: ["name", "state"],
+        keywordFields: ["name", "state"],
+        uniqueList: ["name"],
+    },
     insCode: {
         updateFields: ["name"],
         insertFields: ["code", "name"],

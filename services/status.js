@@ -1,4 +1,4 @@
-const { TestModel, InsInfoModel, InsCodeModel, DepModel } = require("../repositories/mongoHelper");
+const { TestModel, InsInfoModel, InsCodeModel, DepModel,confirmLogModel } = require("../repositories/mongoHelper");
 const moment = require("moment");
 const { statusCodeView, statusList } = require("../modeltranform/statusrule")
 const _ = require("lodash");
@@ -38,7 +38,7 @@ module.exports = {
             return "";
         });
     },
-    updateInsInfo: function(id, item) {
+    updateInsInfo: function* (id, item, userId) {
         let self = this;
         return new Promise((rs, rj) => {
             InsInfoModel.find({ _id: id }, (err, res) => {
@@ -52,21 +52,85 @@ module.exports = {
             if (data && data.length) {
                 data = data[0].toObject();
                 let cancelTest = Promise.resolve();
+                
+                //修改保管人信息，建立保管人确认文档
+                if(data.keeper != item.keeper){
+                    if(data.isInit == true){ //说明目前是更换保管人状态
+                        let cLog = {
+                            message: "更换保管人为"+item.keeper.split("&")[1],
+                            time: moment().format("YYYY-MM-DD HH:mm:ss"),
+                            operator: userId,
+                        };
+                        cancelTest =new Promise((rs, rj) => {
+                            confirmLogModel.find({insId: id, complete: false},(err, res) => {
+                                if (err) {
+                                    rj(err);
+                                } else {
+                                    rs(res);
+                                }
+                            })
+                        }).then((confirmLogData)=>{
+                            let log = (confirmLogData[0].log || []).concat([cLog]);
+                            let updateObj = {
+                                keeper: item.keeper,
+                                log
+                            }; 
+                            return new Promise((rs,rj)=>{
+                                confirmLogModel.update({ _id: confirmLogData[0]._id },updateObj,(err,res) =>{
+                                    if (err) {
+                                        rj(err);
+                                    } else {
+                                        rs(res);
+                                    }
+                                })
+                            })
+                        });
+                    }else{
+                        item.isInit = true;  //标志修改了保管人
+                        //添加保管人确认文档到数据库
+                        cancelTest = createConfirmLog(item,userId,data);
+                        /* let model = new confirmLogModel({
+                            insId : id,
+                            insCode : item.code,
+                            insName: item.name,
+                            keeper: item.keeper,
+                            fromKeeper: data.keeper,
+                            log: [{
+                                time: moment().format("YYYY-MM-DD HH:mm:ss"),
+                                message: "更换保管人为"+item.keeper.split("&")[1],
+                                operator: userId,
+                            }]
+                        });
+                        cancelTest =new Promise((rs, rj) => {
+                            model.save((err, res) => {
+                                if (err) {
+                                    rj(err);
+                                } else {
+                                    rs(res);
+                                }
+                            })
+                        }); */
+                    }
+
+                }
+
                 if (data.status != item.status) {
                     item.toConfirm = "1";
                     item.nextStatus = "";
-                    cancelTest = new Promise((rs, rj) => {
-                        TestModel.find({ insId: id, complete: false }, (err, res) => {
-                            if (err) {
-                                rj(err);
-                            } else {
-                                if (res && res.length) {
-                                    let obj = res[0].toObject();
-                                    self.completeTest(obj._id, item.status).then(rs, rj)
+                    cancelTest =cancelTest.then(function(){
+                        return new Promise((rs, rj) => {
+                            TestModel.find({ insId: id, complete: false }, (err, res) => {
+                                if (err) {
+                                    rj(err);
+                                } else {
+                                    if (res && res.length) {
+                                        let obj = res[0].toObject();
+                                        self.completeTest(obj._id, item.status).then(rs, rj)
+                                    }
+                                    rs()
                                 }
-                                rs()
-                            }
-                        });
+                            });
+                        })
                     })
                 }
 
@@ -758,5 +822,60 @@ module.exports = {
             console.log(err);
             return;
         })
-    }
+    },
+    createConfirmLog: function(item,userId,data=null){ // 新建仪器信息时或修改保管人时，创建保管人更改记录
+        let model = new confirmLogModel({
+            insId : item._id,
+            insCode : item.code,
+            insName: item.name,
+            keeper: item.keeper,
+            fromKeeper: data?data.keeper : "无",
+            log: [{
+                time: moment().format("YYYY-MM-DD HH:mm:ss"),
+                message: "更换保管人为"+item.keeper.split("&")[1],
+                operator: userId,
+            }]
+        });
+        return new Promise((rs,rj)=>{
+            model.save((err, res) => {
+                if (err) {
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            })
+        })
+    },
+    completeClog: function(item,userId){
+        let cLog = {
+            message: item.keeper.split("&")[1]+"确认更换保管人",
+            time: moment().format("YYYY-MM-DD HH:mm:ss"),
+            operator: userId,
+        };
+        return new Promise((rs, rj) => {
+            confirmLogModel.find({insId: item.id, complete: false},(err, res) => {
+                if (err) {
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            })
+        }).then((confirmLogData)=>{
+            let log = (confirmLogData[0].log || []).concat([cLog]);
+            let updateObj = {
+                complete: true,
+                confirm: "1",
+                log
+            }; 
+            return new Promise((rs,rj)=>{
+                confirmLogModel.update({ _id: confirmLogData[0]._id },updateObj,(err,res) =>{
+                    if (err) {
+                        rj(err);
+                    } else {
+                        rs(res);
+                    }
+                })
+            })
+        });
+    } 
 }

@@ -1,5 +1,7 @@
-const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel } = require("../repositories/mongoHelper");
+const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel,supplierModel,TestModel,confirmLogModel } = require("../repositories/mongoHelper");
 const mongoose = require('mongoose');
+const co =require('co');
+const _=require('lodash');
 
 var ModelDict = {
     user: UserModel,
@@ -7,8 +9,26 @@ var ModelDict = {
     insCode: InsCodeModel,
     depInfo: DepModel,
     email: EmailModel,
+    supplier: supplierModel,
+    confirmLog: confirmLogModel,
 }
 
+function getInsInfoById(val){
+    return new Promise((rs, rj) => {
+        ModelDict["insInfo"].find({_id:mongoose.Types.ObjectId(val.insId)}).exec(function(err,res){
+            if (err) {
+                console.warn("getRecodeList", "Error:", err);
+                rj(err);
+            } else {
+                rs(res);
+            }
+        });
+    });
+    // .then((valList)=>{
+    //     val.insName = valList[0].name;
+    //     return val;
+    // });
+}
 module.exports = {
     getList: function(type, whereObj = {}, pageNo = 0, pageSize = 10) {
         pageSize = parseInt(pageSize);
@@ -45,6 +65,58 @@ module.exports = {
             return data;
         }).catch(err => {
             console.log("get List info error:", err.message);
+            console.log(err);
+            return {
+                list: [],
+                total: 0
+            }
+        })
+    },
+    // 获取流水信息
+    getRecodeList: function* ( whereObj = {}, pageNo = 0, pageSize = 10) {
+        pageSize = parseInt(pageSize);
+        pageNo = parseInt(pageNo);
+        return new Promise((rs, rj) => {
+            TestModel.find(whereObj).sort({_id: -1}).skip(parseInt(pageNo) * pageSize).limit(pageSize).exec(function(err, res) {
+                if (err) {
+                    console.warn("getRecodeList", type, "Error:", err);
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            });
+        }).then((list)=>{
+            return Promise.all(list.map(function (val){
+                return getInsInfoById(val);
+                
+            })
+        ).then((result)=>{
+                let list2 = _.zipWith(list,result,(a,b)=>{
+                    return _.assign(a._doc,{insName:b[0].name});
+                })
+                if (pageNo == 0) {
+                    return new Promise((rs, rj) => {
+                        TestModel.count(whereObj, function(err, res) {
+                            if (err) {
+                                console.warn("getRecodeList","Error:", err);
+                                rj(err);
+                            } else {
+                                rs({
+                                    list2,
+                                    total: res
+                                });
+                            }
+                        });
+                    });
+                }
+                return {
+                    list2
+                }
+            })
+        }).then((data)=>{
+            return data;
+        }).catch(err => {
+            console.log("get recodeList info error:", err.message);
             console.log(err);
             return {
                 list: [],

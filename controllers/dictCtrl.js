@@ -80,9 +80,9 @@ module.exports = {
     },
     updateDict: function*(type, id) {
         let params = yield parse(this);
-
+        let userId = this.session.userInfo.userId;
         if (type == "insInfo") {
-            var item = yield statusSvc.updateInsInfo(id, getSaveItem(type, params));
+            var item = yield statusSvc.updateInsInfo(id, getSaveItem(type, params),userId);
         } else {
             var item = yield dictSvc.update(type, id, getSaveItem(type, params));
         }
@@ -94,7 +94,15 @@ module.exports = {
     },
     saveDict: function*(type, id) {
         let params = yield parse(this);
+        let userId = this.session.userInfo.userId;
         var item = yield dictSvc.save(type, getSaveItem(type, params), ModelFieldSetting[type].uniqueList);
+        if(type == "insInfo"){//创建仪器信息要保管人确认
+            yield statusSvc.createConfirmLog(item.toObject(),userId).catch(err => {
+                console.log("createConfirmLog failed", err.message);
+                console.log(err);
+                return;
+            });
+        }
         this.body = {
             success: true,
             result: item._id
@@ -115,6 +123,16 @@ module.exports = {
         this.body = {
             success: true,
             result: ret.list,
+            total: ret.total
+        }
+    },
+    //获取日志信息
+    getRecodeList: function*(){
+        let whereObj = getWhereStr("test", this.query.keyword);
+        var ret = yield dictSvc.getRecodeList(whereObj, this.query.pageNo, this.query.pageSize);
+        this.body = {
+            success: true,
+            result: ret.list2,
             total: ret.total
         }
     }

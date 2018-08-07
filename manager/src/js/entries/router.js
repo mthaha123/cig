@@ -46,6 +46,24 @@ const routes = [{
         component(resolve) {
             require(['../components/pages/email.vue'], resolve);
         }
+    },{
+        path: "supplier",
+        name: "supplier",
+        component(resolve){
+            require(['../components/pages/supplier.vue'],resolve);
+        }
+    },{
+        path: "recode",
+        name: "recode",
+        component(resolve){
+            require(['../components/pages/recode.vue'],resolve);
+        }
+    },{
+        path: "confirmLog",
+        name: "confirmLog",
+        component(resolve){
+            require(['../components/pages/confirmLog.vue'],resolve);
+        }
     }]
 }, {
     path: '/application',

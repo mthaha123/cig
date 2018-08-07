@@ -10,5 +10,8 @@ module.exports = {
     },
     validateInsInfo() {
         return "";
+    },
+    validateSupplier(){
+        return "";
     }
 }
