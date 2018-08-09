@@ -88,7 +88,7 @@ module.exports = {
                     }else{
                         item.isInit = true;  //标志修改了保管人
                         //添加保管人确认文档到数据库
-                        cancelTest = createConfirmLog(item,userId,data);
+                        cancelTest = this.createConfirmLog(item,userId,data);
                         /* let model = new confirmLogModel({
                             insId : id,
                             insCode : item.code,

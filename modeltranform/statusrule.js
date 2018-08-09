@@ -17,7 +17,7 @@ module.exports = {
     statusRule: [
         "2=>1",
         "1=>3",
-        "3=>8",
+        "3=>16",
         "8=>2",
         "1=>7",
         "7=>4",
@@ -28,17 +28,19 @@ module.exports = {
         "7=>12",
         "7=>13",
         "7=>14",
+        "7=>3",
         "3=>10",
         "3=>7",
-        "10=>8",
+        "10=>16",
         "10=>11",
-        "11=>4",
-        "11=>5",
-        "11=>6",
         "11=>7",
-        "11=>8",
+        "11=>16",
         "11=>9",
         "11=>10",
+        "16=>8",
+        "3=>17",
+        "17=>7",
+        "17=>16",
     ],
     statusList: [{
         statusCode: "1",
@@ -85,6 +87,12 @@ module.exports = {
     }, {
         statusCode: "15",
         label: "限制使用"
+    },{
+        statusCode:"16",
+        label:"检验合格"
+    },{
+        statusCode:"17",
+        label:"厂校中"
     }],
     statusCode: {
         receive: "1",
@@ -102,6 +110,8 @@ module.exports = {
         sendfix: "13",
         waitfix: "14",
         limituse: "15",
+        qualified: "16",
+        factoryTest: "17",
     },
     statusCodeView: {
         "1": "receive",
@@ -119,15 +129,29 @@ module.exports = {
         "13": "sendfix",
         "14": "waitfix",
         "15": "limituse",
+        "16": "qualified",
+        "17": "factoryTest",
     },
     needProve: [
-        "3=>8",
+        /* "3=>8",
         "7=>4",
         "7=>5",
         "7=>6",
         "7=>8",
         "7=>9",
-        "10=>8",
+        "10=>8", */
+        "3=>16",
+        "3=>7",
+        "7=>4",
+        "7=>5",
+        "7=>6",
+        "7=>8",
+        "7=>9",
+        "10=>16",
+        "10=>7",
+        "11=>7",
+        "17=>16",
+        "17=>7",
     ],
     exportHeaderOrder: [
         { index: "序号" },
