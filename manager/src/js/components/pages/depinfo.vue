@@ -212,7 +212,7 @@ export default {
         submit() {
             let ret = validateDepInfo(this.form);
             if (ret != "") {
-                this.$message.warn(ret);
+                this.$message.info(ret);
             } else {
                 this.$store.dispatch(this.SaveActionName, this.form).then(res => {
                     this.$message.info("保存成功")

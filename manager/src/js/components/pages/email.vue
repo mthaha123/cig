@@ -68,7 +68,7 @@ export default {
         return {
             serachContent: "",
             dialogTitle: "新建模板集",
-            dataList: [],
+            // dataList: [],
             pageNo: 1,
             title: "",
             text: "",

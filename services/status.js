@@ -861,6 +861,31 @@ module.exports = {
                 }
             })
         }).then((confirmLogData)=>{
+            if(!confirmLogData.length){
+                let model = new confirmLogModel({
+                    insId : item.id,
+                    insCode : item.code,
+                    insName: item.name,
+                    keeper: item.keeper,
+                    fromKeeper: "无",
+                    complete: true,
+                    confirm: "1",
+                    log: [{
+                        time: moment().format("YYYY-MM-DD HH:mm:ss"),
+                        message: item.keeper.split("&")[1]+"确认更换保管人",
+                        operator: userId,
+                    }]
+                });
+                return new Promise((rs,rj)=>{
+                    model.save((err, res) => {
+                        if (err) {
+                            rj(err);
+                        } else {
+                            rs(res);
+                        }
+                    })
+                })
+            }
             let log = (confirmLogData[0].log || []).concat([cLog]);
             let updateObj = {
                 complete: true,
