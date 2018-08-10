@@ -594,6 +594,18 @@ webpackJsonp([5,12],{
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	    computed: {
@@ -614,7 +626,12 @@ webpackJsonp([5,12],{
 	            dialogTitle: "新建模板集",
 	            // dataList: [],
 	            userLoading: false,
-	            userOptions: [],
+	            keeperOptions: [],
+	            managerOptions: [],
+	            staffOptions: [],
+	            proxerOptions: [],
+	            seniorManagerOptions: [],
+	            generalManagerOptions: [],
 	            pageNo: 1,
 	            pageSize: 10,
 	            form: {},
@@ -630,24 +647,29 @@ webpackJsonp([5,12],{
 	            this.$store.commit("viewDepDetail", true);
 	            this.dialogTitle = "编辑科室信息";
 	            this.SaveActionName = "editDep";
-	            this.userOptions = [{
+	            this.keeperOptions = [{
 	                value: insInfo.keeper,
-	                label: insInfo.keeper.split("&")[1]
-	            }, {
+	                label: insInfo.keeper ? insInfo.keeper.split("&")[1] : ""
+	            }];
+	            this.managerOptions = [{
 	                value: insInfo.manager,
-	                label: insInfo.manager.split("&")[1]
-	            }, {
+	                label: insInfo.manager ? insInfo.manager.split("&")[1] : ""
+	            }];
+	            this.staffOptions = [{
 	                value: insInfo.staff,
-	                label: insInfo.staff.split("&")[1]
-	            }, {
+	                label: insInfo.staff ? insInfo.staff.split("&")[1] : ""
+	            }];
+	            this.proxerOptions = [{
 	                value: insInfo.proxer,
-	                label: insInfo.proxer.split("&")[1]
-	            }, {
+	                label: insInfo.proxer ? insInfo.proxer.split("&")[1] : ""
+	            }];
+	            this.seniorManagerOptions = [{
 	                value: insInfo.seniorManager,
-	                label: insInfo.seniorManager.split("&")[1]
-	            }, {
+	                label: insInfo.seniorManager ? insInfo.seniorManager.split("&")[1] : ""
+	            }];
+	            this.generalManagerOptions = [{
 	                value: insInfo.generalManager,
-	                label: insInfo.generalManager.split("&")[1]
+	                label: insInfo.generalManager ? insInfo.generalManager.split("&")[1] : ""
 	            }];
 	            this.form = _lodash2.default.assign({}, insInfo);
 	        },
@@ -655,40 +677,137 @@ webpackJsonp([5,12],{
 	            this.$store.commit("viewDepDetail", true);
 	            this.dialogTitle = "新建科室信息";
 	            this.SaveActionName = "createDep";
-	            this.userOptions = [];
+	            this.keeperOptions = [];
+	            this.managerOptions = [];
+	            this.staffOptions = [];
+	            this.proxerOptions = [];
+	            this.seniorManagerOptions = [];
+	            this.generalManagerOptions = [];
 	            this.form = {
 	                keeper: ""
 	            };
 	        },
 	
-	        getUserList: _lodash2.default.throttle(function (keyword) {
+	        getUserList1: _lodash2.default.throttle(function (keyword) {
 	            var _this = this;
 	
 	            if (keyword) {
+	                keyword = keyword.split("_")[0];
 	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
-	                    _this.userOptions = res.result.map(function (cur) {
+	                    _this.keeperOptions = res.result.map(function (cur) {
 	                        return {
 	                            label: cur.name,
+	                            userId: cur.userId,
 	                            value: cur._id + "&" + cur.name
 	                        };
-	                    });;
+	                    });
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        getUserList2: _lodash2.default.throttle(function (keyword) {
+	            var _this2 = this;
+	
+	            if (keyword) {
+	                keyword = keyword.split("_")[0];
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this2.managerOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            userId: cur.userId,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        getUserList3: _lodash2.default.throttle(function (keyword) {
+	            var _this3 = this;
+	
+	            if (keyword) {
+	                keyword = keyword.split("_")[0];
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this3.staffOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            userId: cur.userId,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        getUserList4: _lodash2.default.throttle(function (keyword) {
+	            var _this4 = this;
+	
+	            if (keyword) {
+	                keyword = keyword.split("_")[0];
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this4.proxerOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            userId: cur.userId,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        getUserList5: _lodash2.default.throttle(function (keyword) {
+	            var _this5 = this;
+	
+	            if (keyword) {
+	                keyword = keyword.split("_")[0];
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this5.seniorManagerOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            userId: cur.userId,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        getUserList6: _lodash2.default.throttle(function (keyword) {
+	            var _this6 = this;
+	
+	            if (keyword) {
+	                keyword = keyword.split("_")[0];
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this6.generalManagerOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            userId: cur.userId,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });
 	                });
 	            } else {
 	                this.depOptions = [];
 	            }
 	        }, 800),
 	        submit: function submit() {
-	            var _this2 = this;
+	            var _this7 = this;
 	
 	            var ret = (0, _validate.validateDepInfo)(this.form);
 	            if (ret != "") {
 	                this.$message.info(ret);
 	            } else {
 	                this.$store.dispatch(this.SaveActionName, this.form).then(function (res) {
-	                    _this2.$message.info("保存成功");
-	                    _this2.getList(1);
+	                    _this7.$message.info("保存成功");
+	                    _this7.getList(1);
 	                }, function (err) {
-	                    _this2.$message.error("保存失败");
+	                    _this7.$message.error("保存失败");
 	                });
 	            }
 	        },
@@ -697,7 +816,7 @@ webpackJsonp([5,12],{
 	            this.getList(1);
 	        },
 	        delrow: function delrow(row) {
-	            var _this3 = this;
+	            var _this8 = this;
 	
 	            console.log(row);
 	            this.$confirm('此操作将永久删除, 是否继续?', '提示', {
@@ -705,23 +824,23 @@ webpackJsonp([5,12],{
 	                cancelButtonText: '取消',
 	                type: 'warning'
 	            }).then(function () {
-	                _this3.$store.dispatch("removeDict", {
+	                _this8.$store.dispatch("removeDict", {
 	                    type: "depInfo",
 	                    id: row._id
 	                }).then(function () {
-	                    _this3.$message({
+	                    _this8.$message({
 	                        type: 'success',
 	                        message: '删除成功!'
 	                    });
-	                    _this3.getList(1);
+	                    _this8.getList(1);
 	                }, function (err) {
-	                    _this3.$message({
+	                    _this8.$message({
 	                        type: 'error',
 	                        message: '删除失败!'
 	                    });
 	                });
 	            }).catch(function () {
-	                _this3.$message({
+	                _this8.$message({
 	                    type: 'info',
 	                    message: '已取消删除'
 	                });
@@ -1031,7 +1150,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "保管人",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList1,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1041,14 +1160,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.keeper"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.keeperOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
@@ -1064,7 +1192,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "主管",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList2,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1074,14 +1202,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.manager"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.managerOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
@@ -1096,7 +1233,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "文员",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList3,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1106,14 +1243,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.staff"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.staffOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
@@ -1129,7 +1275,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "代理人",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList4,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1139,14 +1285,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.proxer"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.proxerOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 11
@@ -1161,7 +1316,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "高阶主管",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList5,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1171,14 +1326,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.seniorManager"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.seniorManagerOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
@@ -1194,7 +1358,7 @@ webpackJsonp([5,12],{
 	      "filterable": "",
 	      "remote": "",
 	      "placeholder": "最高主管",
-	      "remote-method": _vm.getUserList,
+	      "remote-method": _vm.getUserList6,
 	      "loading": _vm.userLoading
 	    },
 	    model: {
@@ -1204,14 +1368,23 @@ webpackJsonp([5,12],{
 	      },
 	      expression: "form.generalManager"
 	    }
-	  }, _vm._l((_vm.userOptions), function(item) {
+	  }, _vm._l((_vm.generalManagerOptions), function(item) {
 	    return _c('el-option', {
 	      key: item.value,
 	      attrs: {
 	        "label": item.label,
 	        "value": item.value
 	      }
-	    })
+	    }, [_c('span', {
+	      staticStyle: {
+	        "float": "left"
+	      }
+	    }, [_vm._v(_vm._s(item.label))]), _vm._v(" "), _c('span', {
+	      staticStyle: {
+	        "float": "right",
+	        "font-size": "13px"
+	      }
+	    }, [_vm._v(_vm._s(item.userId))])])
 	  }))], 1)], 1)], 1)], 1), _vm._v(" "), _c('div', {
 	    staticClass: "dialog-footer",
 	    attrs: {

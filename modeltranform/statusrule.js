@@ -56,7 +56,7 @@ module.exports = {
         label: "暂停使用"
     }, {
         statusCode: "5",
-        label: "移除类"
+        label: "报废"
     }, {
         statusCode: "6",
         label: "功能失效"
@@ -93,6 +93,15 @@ module.exports = {
     },{
         statusCode:"17",
         label:"厂校中"
+    },{
+        statusCode:"18",
+        label:"退回客户"
+    },{
+        statusCode:"19",
+        label:"退回厂商"
+    },{
+        statusCode:"20",
+        label:"检验不合格"
     }],
     statusCode: {
         receive: "1",
@@ -112,6 +121,9 @@ module.exports = {
         limituse: "15",
         qualified: "16",
         factoryTest: "17",
+        returnClint: "18",
+        returnFirm: "19",
+        testFailed: "20",
     },
     statusCodeView: {
         "1": "receive",
@@ -131,6 +143,9 @@ module.exports = {
         "15": "limituse",
         "16": "qualified",
         "17": "factoryTest",
+        "18": "returnClint",
+        "19": "returnFirm",
+        "20": "testFailed",
     },
     needProve: [
         /* "3=>8",
@@ -140,7 +155,7 @@ module.exports = {
         "7=>8",
         "7=>9",
         "10=>8", */
-        "3=>16",
+        /* "3=>16",
         "3=>7",
         "7=>4",
         "7=>5",
@@ -151,7 +166,19 @@ module.exports = {
         "10=>7",
         "11=>7",
         "17=>16",
-        "17=>7",
+        "17=>7", */
+        "16=>8",
+        "7=>3",
+        "7=>4",
+        "7=>5",
+        "7=>6",
+        "7=>12",
+        "7=>13",
+        "7=>14",
+        "7=>15",
+        "7=>18",
+        "7=>19",
+        "7=>20",
     ],
     exportHeaderOrder: [
         { index: "序号" },
@@ -173,6 +200,14 @@ module.exports = {
         { No: "序列号" },
         { statusView: "仪器状态" },
         { assertNo: '资产编号' },
+    ],
+    exportRecodeHeader:[
+        { index: "序号" },
+        {testTime:"校验时间"},
+        {insCode:"仪器编号"},
+        {insName:"仪器名称"},
+        {endStatus:"目标状态"},
+        {factory:"校验渠道"},
     ],
     importHeaderOrder: {
         insCode: 2,

@@ -112,6 +112,7 @@ webpackJsonp([0,12],[
 	    getAuthList: "/cig/getAuthList",
 	    getInsLog: "/cig/getInsLog",
 	    exportInsList: "/cig/exportInsList",
+	    exportRecList: "/cig/exportRecList",
 	    confirmInit: "/cig/confirmInit",
 	    updateUserInfoFromHRS: "/cig/common/importUser",
 	    transferAuth: "/cig/transferAuth",
@@ -9658,8 +9659,21 @@ webpackJsonp([0,12],[
 	        userInfo: {},
 	        menuList: [],
 	        userAuthList: [],
-	        statusRule: ["2=>1", "1=>3", "3=>16", "8=>2", "1=>7", "7=>4", "7=>5", "7=>6", "7=>9", "7=>8", "7=>12", "7=>13", "7=>14", "7=>3", "3=>10", "3=>7", "10=>16", "10=>11", "11=>7", "11=>16", "11=>9", "11=>10", "16=>8", "3=>17", "17=>7", "17=>16"],
-	        needProve: ["3=>16", "3=>7", "7=>4", "7=>5", "7=>6", "7=>8", "7=>9", "10=>16", "10=>7", "11=>7", "17=>16", "17=>7"],
+	        statusRule: ["2=>1", "1=>3", "3=>16", "8=>2", "1=>7", "7=>4", "7=>5", "7=>6", "7=>9", "7=>8", "7=>12", "7=>13", "7=>14", "7=>3", "7=>18", "7=>19", "7=>20", "3=>10", "3=>7", "10=>16", "10=>11", "11=>7", "11=>16", "11=>9", "11=>10", "16=>8", "3=>17", "17=>7", "17=>16"],
+	        needProve: [
+	        /* "3=>16",
+	        "3=>7",
+	        "7=>4",
+	        "7=>5",
+	        "7=>6",
+	        "7=>8",
+	        "7=>9",
+	        "10=>16",
+	        "10=>7",
+	        "11=>7",
+	        "17=>16",
+	        "17=>7", */
+	        "16=>8", "7=>3", "7=>4", "7=>5", "7=>6", "7=>12", "7=>13", "7=>14", "7=>15", "7=>18", "7=>19", "7=>20"],
 	        statusList: [{
 	            statusCode: "1",
 	            label: "待召回"
@@ -9674,7 +9688,7 @@ webpackJsonp([0,12],[
 	            label: "暂停使用"
 	        }, {
 	            statusCode: "5",
-	            label: "移除类"
+	            label: "报废"
 	        }, {
 	            statusCode: "6",
 	            label: "功能失效"
@@ -9711,6 +9725,15 @@ webpackJsonp([0,12],[
 	        }, {
 	            statusCode: "17",
 	            label: "厂校中"
+	        }, {
+	            statusCode: "18",
+	            label: "退回客户"
+	        }, {
+	            statusCode: "19",
+	            label: "退回厂商"
+	        }, {
+	            statusCode: "20",
+	            label: "检验不合格"
 	        }],
 	        authList: [{
 	            name: "用户信息",
@@ -28881,7 +28904,7 @@ webpackJsonp([0,12],[
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
 	});
-	exports.rejectApplication = exports.proveApplication = exports.changeApplication = exports.importInsList = exports.importReport = exports.remove = exports.update = exports.save = exports.getItem = exports.getInvalidList = exports.getList = exports.getDeviceByStatus = exports.updateUserInfoFromHRS = exports.removeUploadedFile = exports.resetUserPassword = exports.resetUserOwnPassword = exports.getMenuList = exports.getHeaderList = exports.saveColListSet = exports.getInsLog = exports.transferAuth = exports.exportInsList = exports.confirmInit = undefined;
+	exports.rejectApplication = exports.proveApplication = exports.changeApplication = exports.importInsList = exports.importReport = exports.remove = exports.update = exports.save = exports.getItem = exports.getInvalidList = exports.getList = exports.getDeviceByStatus = exports.updateUserInfoFromHRS = exports.removeUploadedFile = exports.resetUserPassword = exports.resetUserOwnPassword = exports.getMenuList = exports.getHeaderList = exports.saveColListSet = exports.getInsLog = exports.transferAuth = exports.exportRecList = exports.exportInsList = exports.confirmInit = undefined;
 	
 	var _promise = __webpack_require__(10);
 	
@@ -28925,6 +28948,24 @@ webpackJsonp([0,12],[
 	    return new _promise2.default(function (rs, rj) {
 	        $.ajax({
 	            url: _config.Url.exportInsList,
+	            type: "POST",
+	            success: function success(res) {
+	                if (res.success) {
+	                    rs(res.result);
+	                } else {
+	                    rj(res.message);
+	                }
+	            },
+	            error: function error(err) {
+	                rj(err.message);
+	            }
+	        });
+	    });
+	};
+	var exportRecList = exports.exportRecList = function exportRecList() {
+	    return new _promise2.default(function (rs, rj) {
+	        $.ajax({
+	            url: _config.Url.exportRecList,
 	            type: "POST",
 	            success: function success(res) {
 	                if (res.success) {
@@ -29996,11 +30037,18 @@ webpackJsonp([0,12],[
 	            (0, _query.getList)("recode", {
 	                pageNo: data.pageNo,
 	                keyword: data.keyword,
-	                pageSize: data.pageSize
+	                pageSize: data.pageSize,
+	                hasReport: true,
+	                complete: true
 	            }).then(function (res) {
 	                commit("updateRecodeList", res);
 	                commit("loading", false);
 	            });
+	        },
+	        exportRecodeList: function exportRecodeList(_ref2) {
+	            var commit = _ref2.commit;
+	
+	            return (0, _query.exportRecList)();
 	        }
 	    }
 	};

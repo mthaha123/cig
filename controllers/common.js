@@ -240,6 +240,13 @@ module.exports = {
             result: ret
         };
     },
+    exportRecList: function*() {
+        let ret = yield commonSvc.exportRecList();
+        this.body = {
+            success: true,
+            result: ret
+        };
+    },
     downloadFile: function*(file) {
         this.body = fs.createReadStream(path.dirname(__dirname) + "/tmp/" + file);
     }

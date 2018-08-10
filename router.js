@@ -47,6 +47,7 @@ module.exports = function(app) {
     app.use(route.post("/cig/getAuthList", commonSvc.getAuthList));
     app.use(route.post("/cig/getInsLog", commonSvc.getInsLog));
     app.use(route.post("/cig/exportInsList", commonSvc.exportInsList));
+    app.use(route.post("/cig/exportRecList", commonSvc.exportRecList));
     app.use(route.get("/cig/download/:file", commonSvc.downloadFile));
 
     app.use(route.post("/cig/common/importUser", userCtrl.importUser));

@@ -69,16 +69,20 @@
                 <el-row>
                     <el-col :span='11'>
                         <el-form-item label="保管人" label-width="80px">
-                            <el-select v-model="form.keeper" filterable remote placeholder="保管人" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.keeper" filterable remote placeholder="保管人" :remote-method="getUserList1" :loading="userLoading">
+                                <el-option v-for="item in keeperOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right; font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span='11' :offset="2">
                         <el-form-item label="主管" label-width="80px">
-                            <el-select v-model="form.manager" filterable remote placeholder="主管" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.manager" filterable remote placeholder="主管" :remote-method="getUserList2" :loading="userLoading">
+                                <el-option v-for="item in managerOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right; font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
@@ -87,16 +91,20 @@
                 <el-row>
                     <el-col :span='11'>
                         <el-form-item label="文员" label-width="80px">
-                            <el-select v-model="form.staff" filterable remote placeholder="文员" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.staff" filterable remote placeholder="文员" :remote-method="getUserList3" :loading="userLoading">
+                                <el-option v-for="item in staffOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right; font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span='11' :offset="2">
                         <el-form-item label="代理人" label-width="80px">
-                            <el-select v-model="form.proxer" filterable remote placeholder="代理人" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.proxer" filterable remote placeholder="代理人" :remote-method="getUserList4" :loading="userLoading">
+                                <el-option v-for="item in proxerOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right;font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
@@ -105,16 +113,20 @@
                 <el-row>
                     <el-col :span='11'>
                         <el-form-item label="高阶主管" label-width="80px">
-                            <el-select v-model="form.seniorManager" filterable remote placeholder="高阶主管" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.seniorManager" filterable remote placeholder="高阶主管" :remote-method="getUserList5" :loading="userLoading">
+                                <el-option v-for="item in seniorManagerOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right; font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
                     </el-col>
                     <el-col :span='11' :offset="2">
                         <el-form-item label="最高主管" label-width="80px">
-                            <el-select v-model="form.generalManager" filterable remote placeholder="最高主管" :remote-method="getUserList" :loading="userLoading">
-                                <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
+                            <el-select v-model="form.generalManager" filterable remote placeholder="最高主管" :remote-method="getUserList6" :loading="userLoading">
+                                <el-option v-for="item in generalManagerOptions" :label="item.label" :key="item.value" :value="item.value">
+                                    <span style="float: left">{{ item.label }}</span>
+                                    <span style="float: right;font-size: 13px">{{ item.userId }}</span>
                                 </el-option>
                             </el-select>
                         </el-form-item>
@@ -150,7 +162,12 @@ export default {
             dialogTitle: "新建模板集",
             // dataList: [],
             userLoading: false,
-            userOptions: [],
+            keeperOptions: [],
+            managerOptions:[],
+            staffOptions:[],
+            proxerOptions:[],
+            seniorManagerOptions:[],
+            generalManagerOptions:[],
             pageNo: 1,
             pageSize: 10,
             form: {},
@@ -165,24 +182,29 @@ export default {
             this.$store.commit("viewDepDetail", true);
             this.dialogTitle = "编辑科室信息";
             this.SaveActionName = "editDep";
-            this.userOptions = [{
+            this.keeperOptions = [{
                 value: insInfo.keeper,
-                label: insInfo.keeper.split("&")[1]
-            },{
+                label: insInfo.keeper?insInfo.keeper.split("&")[1]:""
+            }];
+            this.managerOptions = [{
                 value: insInfo.manager,
-                label: insInfo.manager.split("&")[1]
-            },{
+                label: insInfo.manager?insInfo.manager.split("&")[1]:""
+            }];
+            this.staffOptions = [{
                 value: insInfo.staff,
-                label: insInfo.staff.split("&")[1]
-            },{
+                label: insInfo.staff?insInfo.staff.split("&")[1]:""
+            }];
+            this.proxerOptions = [{
                 value: insInfo.proxer,
-                label: insInfo.proxer.split("&")[1]
-            },{
+                label: insInfo.proxer?insInfo.proxer.split("&")[1]:""
+            }];
+            this.seniorManagerOptions = [{
                 value: insInfo.seniorManager,
-                label: insInfo.seniorManager.split("&")[1]
-            },{
+                label: insInfo.seniorManager?insInfo.seniorManager.split("&")[1]:""
+            }];
+            this.generalManagerOptions = [{
                 value: insInfo.generalManager,
-                label: insInfo.generalManager.split("&")[1]
+                label: insInfo.generalManager?insInfo.generalManager.split("&")[1]:""
             }]
             this.form = _.assign({}, insInfo);
         },
@@ -190,20 +212,107 @@ export default {
             this.$store.commit("viewDepDetail", true);
             this.dialogTitle = "新建科室信息";
             this.SaveActionName = "createDep";
-            this.userOptions = []
+            this.keeperOptions= [];
+            this.managerOptions=[];
+            this.staffOptions=[];
+            this.proxerOptions=[];
+            this.seniorManagerOptions=[];
+            this.generalManagerOptions=[];
             this.form = {
                 keeper: "",
             }
         },
-        getUserList: _.throttle(function(keyword) {
+        getUserList1: _.throttle(function(keyword) {
             if (keyword) {
+                keyword = keyword.split("_")[0];
                 this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
-                    this.userOptions = res.result.map(cur => {
+                    this.keeperOptions = res.result.map(cur => {
                         return {
                             label: cur.name,
+                            userId: cur.userId,
                             value: cur._id + "&" + cur.name
                         }
-                    });;
+                    });
+                })
+            } else {
+                this.depOptions = [];
+            }
+        }, 800),
+        getUserList2: _.throttle(function(keyword) {
+            if (keyword) {
+                keyword = keyword.split("_")[0];
+                this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
+                    this.managerOptions = res.result.map(cur => {
+                        return {
+                            label: cur.name,
+                            userId: cur.userId,
+                            value: cur._id + "&" + cur.name
+                        }
+                    });
+                })
+            } else {
+                this.depOptions = [];
+            }
+        }, 800),
+        getUserList3: _.throttle(function(keyword) {
+            if (keyword) {
+                keyword = keyword.split("_")[0];
+                this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
+                    this.staffOptions = res.result.map(cur => {
+                        return {
+                            label: cur.name,
+                            userId: cur.userId,
+                            value: cur._id + "&" + cur.name
+                        }
+                    });
+                })
+            } else {
+                this.depOptions = [];
+            }
+        }, 800),
+        getUserList4: _.throttle(function(keyword) {
+            if (keyword) {
+                keyword = keyword.split("_")[0];
+                this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
+                    this.proxerOptions = res.result.map(cur => {
+                        return {
+                            label: cur.name,
+                            userId: cur.userId,
+                            value: cur._id + "&" + cur.name
+                        }
+                    });
+                })
+            } else {
+                this.depOptions = [];
+            }
+        }, 800),
+        getUserList5: _.throttle(function(keyword) {
+            if (keyword) {
+                keyword = keyword.split("_")[0];
+                this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
+                    this.seniorManagerOptions = res.result.map(cur => {
+                        return {
+                            label: cur.name,
+                            userId: cur.userId,
+                            value: cur._id + "&" + cur.name
+                        }
+                    });
+                })
+            } else {
+                this.depOptions = [];
+            }
+        }, 800),
+        getUserList6: _.throttle(function(keyword) {
+            if (keyword) {
+                keyword = keyword.split("_")[0];
+                this.$store.dispatch("getOptions", { keyword, type: "user" }).then(res => {
+                    this.generalManagerOptions = res.result.map(cur => {
+                        return {
+                            label: cur.name,
+                            userId: cur.userId,
+                            value: cur._id + "&" + cur.name
+                        }
+                    });
                 })
             } else {
                 this.depOptions = [];

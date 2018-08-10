@@ -1,6 +1,6 @@
 import { Url } from "../../../config.js";
 import _ from "lodash";
-import { getList } from "../../libs/query";
+import { getList,exportRecList } from "../../libs/query";
 
 export default {
     state: {
@@ -32,10 +32,15 @@ export default {
                 pageNo: data.pageNo,
                 keyword: data.keyword,
                 pageSize: data.pageSize,
+                hasReport:true,
+                complete: true,
             }).then(res => {
                 commit("updateRecodeList", res);
                 commit("loading", false);
             });
+        },
+        exportRecodeList({ commit }) {
+            return exportRecList();
         },
     }
 }

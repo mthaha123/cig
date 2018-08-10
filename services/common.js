@@ -1,12 +1,12 @@
 const fs = require("fs");
 const { insInfo } = require("../modeltranform/dict.js");
-const { InsInfoModel, DepModel, InsCodeModel, UserModel } = require("../repositories/mongoHelper");
+const { InsInfoModel, DepModel, InsCodeModel, UserModel,TestModel } = require("../repositories/mongoHelper");
 const co = require("co");
 const uuid = require("uuid");
 const moment = require("moment");
 const path = require("path");
 const _ = require("lodash");
-const { statusList, importHeaderOrder, exportHeaderOrder } = require("../modeltranform/statusrule.js");
+const { statusList, importHeaderOrder, exportHeaderOrder,exportRecodeHeader } = require("../modeltranform/statusrule.js");
 const configSvc = require("./config.js");
 var iconv = require('iconv-lite');
 const xlsx = require('node-xlsx').default;
@@ -487,6 +487,77 @@ module.exports = {
             } else {
                 return exportFile([], mainHeaderList.concat(extendHeaderList))
             }
+        }).catch(err => {
+            console.log("export failed:", err.message);
+            console.log(err);
+            return {
+                success: false,
+                message: "导出失败"
+            };
+        })
+    },
+    exportRecList: function(){
+        return new Promise((rs,rj)=>{
+            TestModel.find({complete:true,hasReport:true}).sort({_id: -1}).exec(function(err,res){
+                if (err) {
+                    console.warn("getRecodeList", type, "Error:", err);
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            });
+        }).then((list)=>{
+            let fileName = "流水记录——" + moment().format("YYYY-MM-DD_HH_mm_ss") + ".xlsx";
+            let outputFileName = path.dirname(__dirname) + "/tmp/" + fileName;
+            let retList = [];
+            let headerList = exportRecodeHeader.map(cur => {
+                let fieldName = Object.keys(cur)[0];
+                let fieldTitle = cur[fieldName];
+                return {
+                    fieldName,
+                    fieldTitle
+                }
+            });
+            retList.push(headerList.map(cur => {
+                return cur.fieldTitle;
+            }));
+            list.forEach((current,mIndex)=>{
+                current = current.toObject();
+                for (let item of current.log) {
+                    if (item.filePath && item.filePath.length) {
+                        let itemName = item.filePath.map(cur => {
+                            if(cur instanceof Array){
+                                return path.basename(cur[0]);
+                            }
+                            return path.basename(cur);
+                        });
+                        let filename= itemName[0].split("_");
+                        current.insName = filename[1]||"";
+                        current.testTime = filename[2]?filename[2].replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3"):"";
+                        current.factory = filename[4] || "";
+                        break;
+                    }
+                }
+                retList.push(headerList.map((header)=>{
+                    if (header.fieldName == "index") {
+                        return mIndex + 1;
+                    }else if (current[header.fieldName]) {
+                        return current[header.fieldName].replace(/\r/g, " ");
+                    } else {
+                        return "";
+                    }
+                }));
+            });
+            let buffer = xlsx.build([{ name: "流水记录", data: retList }]); // Returns a buffer
+            return new Promise((rs, rj) => {
+                fs.writeFile(outputFileName, buffer, err => {
+                    if (err) {
+                        rj(err);
+                    } else {
+                        rs("/cig/download/" + fileName);
+                    }
+                });
+            })
         }).catch(err => {
             console.log("export failed:", err.message);
             console.log(err);

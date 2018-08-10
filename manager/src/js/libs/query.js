@@ -45,6 +45,24 @@ export const exportInsList = () => {
         });
     });
 }
+export const exportRecList = () => {
+    return new Promise((rs, rj) => {
+        $.ajax({
+            url: Url.exportRecList,
+            type: "POST",
+            success(res) {
+                if (res.success) {
+                    rs(res.result)
+                } else {
+                    rj(res.message)
+                }
+            },
+            error(err) {
+                rj(err.message);
+            }
+        });
+    });
+}
 
 export const transferAuth = data => {
     return new Promise((rs, rj) => {

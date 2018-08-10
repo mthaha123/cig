@@ -18496,6 +18496,9 @@ webpackJsonp([9,12],Array(105).concat([
 	//
 	//
 	//
+	//
+	//
+	//
 	
 	exports.default = {
 	    data: function data() {
@@ -18515,43 +18518,58 @@ webpackJsonp([9,12],Array(105).concat([
 	        dataList: function dataList() {
 	            return this.$store.state.recode.recodeList.map(function (current) {
 	                // current.state=(current.state?"是":"否");
-	                current.createTime = (0, _moment2.default)(current.createTime).format("YYYY-MM-DD");
-	                current.attachmentCount = function (list) {
-	                    var total = 0;
-	                    var _iteratorNormalCompletion = true;
-	                    var _didIteratorError = false;
-	                    var _iteratorError = undefined;
 	
-	                    try {
-	                        for (var _iterator = (0, _getIterator3.default)(list), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	                            var item = _step.value;
+	                var _iteratorNormalCompletion = true;
+	                var _didIteratorError = false;
+	                var _iteratorError = undefined;
 	
-	                            if (item.filePath && item.filePath.length) {
-	                                total += item.filePath.length;
-	                            }
+	                try {
+	                    var _loop = function _loop() {
+	                        var item = _step.value;
+	
+	                        if (item.filePath && item.filePath.length) {
+	                            var itemName = item.filePath.map(function (cur) {
+	                                return _path2.default.basename(item.filePath);
+	                            });
+	                            var filename = itemName[0].split("_");
+	                            current.name = filename[1] || "";
+	                            current.testTime = filename[2] ? filename[2].replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3") : "";
+	                            current.factory = filename[4] || "";
 	                        }
-	                    } catch (err) {
-	                        _didIteratorError = true;
-	                        _iteratorError = err;
+	                    };
+	
+	                    for (var _iterator = (0, _getIterator3.default)(current.log), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                        _loop();
+	                    }
+	                } catch (err) {
+	                    _didIteratorError = true;
+	                    _iteratorError = err;
+	                } finally {
+	                    try {
+	                        if (!_iteratorNormalCompletion && _iterator.return) {
+	                            _iterator.return();
+	                        }
 	                    } finally {
-	                        try {
-	                            if (!_iteratorNormalCompletion && _iterator.return) {
-	                                _iterator.return();
-	                            }
-	                        } finally {
-	                            if (_didIteratorError) {
-	                                throw _iteratorError;
-	                            }
+	                        if (_didIteratorError) {
+	                            throw _iteratorError;
 	                        }
 	                    }
+	                }
 	
-	                    return total ? total : 0;
-	                }(current.log);
 	                return current;
 	            });
 	        }
 	    },
 	    methods: {
+	        exportList: function exportList() {
+	            var _this = this;
+	
+	            this.$store.dispatch("exportRecodeList").then(function (res) {
+	                window.open(res);
+	            }, function (err) {
+	                _this.$message.error("服务暂不可用");
+	            });
+	        },
 	        hideDialog: function hideDialog() {
 	            this.$store.commit('viewRecodeDetail', false);
 	        },
@@ -18565,7 +18583,7 @@ webpackJsonp([9,12],Array(105).concat([
 	                var _iteratorError2 = undefined;
 	
 	                try {
-	                    var _loop = function _loop() {
+	                    var _loop2 = function _loop2() {
 	                        var item = _step2.value;
 	
 	                        if (item.filePath && item.filePath.length) {
@@ -18579,7 +18597,7 @@ webpackJsonp([9,12],Array(105).concat([
 	                    };
 	
 	                    for (var _iterator2 = (0, _getIterator3.default)(list), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-	                        _loop();
+	                        _loop2();
 	                    }
 	                } catch (err) {
 	                    _didIteratorError2 = true;
@@ -18667,7 +18685,23 @@ webpackJsonp([9,12],Array(105).concat([
 	      }
 	    },
 	    slot: "append"
-	  })], 1)], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 12
+	    }
+	  }, [_c('div', {
+	    staticClass: "grid-content tabletool"
+	  }, [_c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
+	    attrs: {
+	      "type": "primary"
+	    },
+	    on: {
+	      "click": _vm.exportList
+	    }
+	  }, [_vm._v("导出")])], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
@@ -18695,7 +18729,7 @@ webpackJsonp([9,12],Array(105).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "createTime",
+	      "prop": "testTime",
 	      "label": "校验时间",
 	      "width": "120",
 	      "show-overflow-tooltip": true
@@ -18716,13 +18750,6 @@ webpackJsonp([9,12],Array(105).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "startStatus",
-	      "label": "起始状态",
-	      "width": "120",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
 	      "prop": "endStatus",
 	      "label": "目标状态",
 	      "width": "120",
@@ -18730,8 +18757,8 @@ webpackJsonp([9,12],Array(105).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "attachmentCount",
-	      "label": "附件数量",
+	      "prop": "factory",
+	      "label": "校验渠道",
 	      "show-overflow-tooltip": ""
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {

@@ -129,6 +129,8 @@ module.exports = {
     //获取日志信息
     getRecodeList: function*(){
         let whereObj = getWhereStr("test", this.query.keyword);
+        whereObj.complete = true;
+        whereObj.hasReport = true;
         var ret = yield dictSvc.getRecodeList(whereObj, this.query.pageNo, this.query.pageSize);
         this.body = {
             success: true,

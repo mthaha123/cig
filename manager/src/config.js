@@ -21,6 +21,7 @@ export const Url = {
     getAuthList: "/cig/getAuthList",
     getInsLog: "/cig/getInsLog",
     exportInsList: "/cig/exportInsList",
+    exportRecList: "/cig/exportRecList",
     confirmInit: "/cig/confirmInit",
     updateUserInfoFromHRS: "/cig/common/importUser",
     transferAuth: "/cig/transferAuth",
