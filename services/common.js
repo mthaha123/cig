@@ -11,9 +11,9 @@ const configSvc = require("./config.js");
 var iconv = require('iconv-lite');
 const xlsx = require('node-xlsx').default;
 
-function formatCTime(time) {
+/* function formatCTime(time) {
     if (/\d{1,2}\/\d{1,2}\/\d{2}/.test(time)) {
-        let str = time.split("/");
+        let str = time.split("-");
         let year = str[2];
         let month = str[0].length == 1 ? `0${str[0]}` : `${str[0]}`;
         let day = str[1].length == 1 ? `0${str[1]}` : `${str[1]}`;
@@ -21,7 +21,7 @@ function formatCTime(time) {
     } else {
         return "1970-01-01"
     }
-}
+} */
 
 function existDev(code) {
     return new Promise((rs, rj) => {
@@ -216,7 +216,9 @@ module.exports = {
         return new Promise((rs, rj) => {
             rs();
         }).then(function (res) {
-            return xlsx.parse(fs.readFileSync(importFilePath));
+            // return xlsx.parse(fs.readFileSync(importFilePath));
+            // let s = fs.readFileSync(importFilePath);
+            return xlsx.parse(importFilePath);
         }, function (err) {
             console.warn(err);
             return '';
@@ -233,7 +235,7 @@ module.exports = {
                 if (line == "")
                     continue;
                 let vals = line;
-                if (vals.length < 18) { //insInfo.insertFields.length) {
+                if (vals.length < 16) { //insInfo.insertFields.length) {
                     try {
                         console.log(vals);
                         throw `第${index}行，导入格式有误`
@@ -251,8 +253,8 @@ module.exports = {
                     }
                 }
 
-                if (index == 248)
-                    console.log("call")
+                // if (index == 248)
+                //     console.log("call")
                 // let depCode = yield getDepCode(getValue("depCode"));
                 // if (!!!depCode) {
                 //     return "未找到相关的部门";
@@ -297,10 +299,10 @@ module.exports = {
                     obj["No"] = getValue("No");
                     obj["specification"] = getValue("specification");
                     obj["modelNo"] = getValue("modelNo");
-                    let tstartDate = formatCTime(getValue("startDate"));
+                    let tstartDate = moment(getValue("startDate"),"YYYY-MM-DD").isValid()?getValue("startDate"):"1970-01-01";
                     console.log(tstartDate)
                     obj["startDate"] = `${tstartDate} 00:00:00`;
-                    let tendDate = formatCTime(getValue("endDate"));
+                    let tendDate = moment(getValue("endDate"),"YYYY-MM-DD").isValid()?getValue("endDate"):"1971-01-01";
                     console.log(tendDate)
                     obj["endDate"] = `${tendDate} 00:00:00`;
                     obj["description"] = getValue("description");
@@ -327,8 +329,8 @@ module.exports = {
 
 
                     obj["extendFields"] = {};
-                    extendConfig.value.forEach((cur, index, array) => {
-                        obj["extendFields"][cur.fieldName] = vals[17 + index];
+                    extendConfig.value.forEach((cur, i, array) => {
+                        obj["extendFields"][cur.fieldName] = vals[16 + i];
                     });
 
                     try {
