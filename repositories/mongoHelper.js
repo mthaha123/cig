@@ -23,3 +23,5 @@ module.exports.EmailModel = require("./models/email.js");
 module.exports.ConfigModel= require("./models/config.js");
 module.exports.supplierModel= require("./models/supplier.js");
 module.exports.confirmLogModel= require("./models/confirmLog.js");
+module.exports.MatCodeModel= require("./models/matCode.js");
+module.exports.materialsModel= require("./models/materials.js");

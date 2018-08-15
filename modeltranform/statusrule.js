@@ -204,6 +204,7 @@ module.exports = {
     exportRecodeHeader:[
         { index: "序号" },
         {testTime:"校验时间"},
+        {lastTime:"结束时间"},
         {insCode:"仪器编号"},
         {insName:"仪器名称"},
         {endStatus:"目标状态"},

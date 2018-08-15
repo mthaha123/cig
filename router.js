@@ -5,6 +5,8 @@ var router = require("koa-router")();
 var body = require('koa-better-body')
 var commonSvc = require("./controllers/common.js");
 var userCtrl = require("./controllers/user");
+var matCode = require("./controllers/matCode");
+var materials = require("./controllers/materials");
 
 var statusCtrl = require("./controllers/statuCtrl.js");
 
@@ -16,6 +18,8 @@ module.exports = function(app) {
     app.use(route.post("/cig/resetUserPassword", userCtrl.resetUserPassword));
     app.use(route.post("/cig/resetUserOwnPassword", userCtrl.resetUserOwnPassword));
     app.use(route.post("/cig/importInsList", commonSvc.importInsList));
+    app.use(route.post("/cig/importMatCodeList", matCode.importMatCodeList));
+    app.use(route.post("/cig/importMaterialsList", materials.importMaterialsList));
     app.use(route.post("/cig/importReport", commonSvc.importReport));
 
     app.use(route.post("/cig/getDeviceByStatus", statusCtrl.getDeviceList));
@@ -48,10 +52,13 @@ module.exports = function(app) {
     app.use(route.post("/cig/getInsLog", commonSvc.getInsLog));
     app.use(route.post("/cig/exportInsList", commonSvc.exportInsList));
     app.use(route.post("/cig/exportRecList", commonSvc.exportRecList));
+    app.use(route.post("/cig/exportMatCodeList", matCode.exportMatCodeList));
+    app.use(route.post("/cig/exportMaterialsList", materials.exportMaterialsList));
     app.use(route.get("/cig/download/:file", commonSvc.downloadFile));
 
     app.use(route.post("/cig/common/importUser", userCtrl.importUser));
     app.use(route.post("/cig/transferAuth", userCtrl.changeUserAuthTo));
+    app.use(route.post("/cig/materials/addInsLog", materials.addInsLog));
     app.use(route.get("/cig/getInvalidList", dictCtrl.getInvalidList));
     app.use(route.get("/cig/recode", dictCtrl.getRecodeList));
 

@@ -1,4 +1,10 @@
 module.exports = {
+    validateMaterials(){
+        return "";
+    },
+    validateMatCode(){
+        return "";
+    },
     validateUser(user) {
         return "";
     },

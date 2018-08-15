@@ -1,4 +1,16 @@
 module.exports = {
+    materials:{
+        keywordFields:["code","type","order","user"],
+        updateFields:["code","type","order","supplier","description","num","user","createTime","log","complete"],
+        insertFields:["code","type","order","supplier","description","num","user","createTime","log","complete"],
+        uniqueList:["code"],
+    },
+    matCode:{
+        keywordFields:["code","type"],
+        updateFields:["code","type","supplier","description"],
+        insertFields:["code","type","supplier","description"],
+        uniqueList:["code"],
+    },
     test:{
         keywordFields: ["insCode"],
     },

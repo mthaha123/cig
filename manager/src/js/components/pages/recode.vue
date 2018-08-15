@@ -21,6 +21,8 @@
                     </el-table-column>
                     <el-table-column prop="testTime" label="校验时间" width="120" :show-overflow-tooltip=true>
                     </el-table-column>
+                    <el-table-column prop="lastTime" label="结束时间" width="120" :show-overflow-tooltip=true>
+                    </el-table-column>
                     <el-table-column prop="insCode" label="仪器编号" width="180" :show-overflow-tooltip=true>
                     </el-table-column>
                     <el-table-column prop="insName" label="仪器名称" width="180" :show-overflow-tooltip=true>
@@ -106,6 +108,7 @@ export default {
                         current.testTime = filename[2]?filename[2].replace(/^(\d{4})(\d{2})(\d{2})$/, "$1-$2-$3"):"";
                         current.factory = filename[4] || "";
                     }
+                    current.lastTime = item.time.split(" ")[0];
                 }
                     
                 return current;

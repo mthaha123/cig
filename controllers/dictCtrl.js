@@ -118,7 +118,7 @@ module.exports = {
     getInvalidList: function*(){
         // let params = yield parse(this);
         let whereObj = getWhereStr("user", this.query.keyword);
-        whereObj.isValid = false;
+        whereObj.isValid = {$ne: true};
         var ret = yield dictSvc.getInvalidList(whereObj, this.query.pageNo, this.query.pageSize);
         this.body = {
             success: true,

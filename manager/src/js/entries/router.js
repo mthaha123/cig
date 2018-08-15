@@ -64,6 +64,18 @@ const routes = [{
         component(resolve){
             require(['../components/pages/confirmLog.vue'],resolve);
         }
+    },{
+        path: "matCode",
+        name: "matCode",
+        component(resolve){
+            require(['../components/pages/matCode.vue'],resolve);
+        }
+    },{
+        path: "materials",
+        name: "materials",
+        component(resolve){
+            require(['../components/pages/materials.vue'],resolve);
+        }
     }]
 }, {
     path: '/application',

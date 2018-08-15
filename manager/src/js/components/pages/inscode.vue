@@ -11,6 +11,8 @@
             <el-col :span='12'>
                 <div class="grid-content tabletool">
                     <el-button style='float:right;' v-if='dictEdit' @click='create' type="success">新建</el-button>
+                    <el-button style='float:right;' @click='importDialogView = true' v-if='dictEdit' type="primary">导入</el-button>
+                    <el-button style='float:right;' @click='exportList' v-if='dictEdit' type="primary">导出</el-button>
                 </div>
             </el-col>
         </el-row>

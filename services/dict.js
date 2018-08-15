@@ -1,4 +1,4 @@
-const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel,supplierModel,TestModel,confirmLogModel } = require("../repositories/mongoHelper");
+const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel,supplierModel,TestModel,confirmLogModel,MatCodeModel,materialsModel} = require("../repositories/mongoHelper");
 const mongoose = require('mongoose');
 const co =require('co');
 const _=require('lodash');
@@ -11,6 +11,8 @@ var ModelDict = {
     email: EmailModel,
     supplier: supplierModel,
     confirmLog: confirmLogModel,
+    matCode: MatCodeModel,
+    materials: materialsModel
 }
 
 function getInsInfoById(val){
@@ -130,7 +132,7 @@ module.exports = {
         return new Promise((rs, rj) => {
             ModelDict["depInfo"].find().distinct("keeper").exec(function(err, res) {
                 if (err) {
-                    console.warn("getInvalidList", type, "Error:", err);
+                    console.warn("getInvalidList Error:", err);
                     rj(err);
                 } else {
                     rs(res);

@@ -1,6 +1,6 @@
-webpackJsonp([3,12],{
+webpackJsonp([3,14],{
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([3,12],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(106)
+	var listToStyles = __webpack_require__(108)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 109:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,18 +310,18 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 115:
+/***/ 117:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(116)
+	__webpack_require__(118)
 	
-	var Component = __webpack_require__(107)(
+	var Component = __webpack_require__(109)(
 	  /* script */
-	  __webpack_require__(118),
+	  __webpack_require__(120),
 	  /* template */
-	  __webpack_require__(123),
+	  __webpack_require__(125),
 	  /* scopeId */
 	  "data-v-318ee9b2",
 	  /* cssModules */
@@ -349,17 +349,17 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 116:
+/***/ 118:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(117);
+	var content = __webpack_require__(119);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(105)("e8300a4a", content, false);
+	var update = __webpack_require__(107)("e8300a4a", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -376,10 +376,10 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 117:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(103)();
+	exports = module.exports = __webpack_require__(105)();
 	// imports
 	
 	
@@ -391,7 +391,7 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 118:
+/***/ 120:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -400,11 +400,11 @@ webpackJsonp([3,12],{
 	    value: true
 	});
 	
-	var _getIterator2 = __webpack_require__(119);
+	var _getIterator2 = __webpack_require__(121);
 	
 	var _getIterator3 = _interopRequireDefault(_getIterator2);
 	
-	var _validate = __webpack_require__(122);
+	var _validate = __webpack_require__(124);
 	
 	var _lodash = __webpack_require__(86);
 	
@@ -805,24 +805,24 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 119:
+/***/ 121:
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(120), __esModule: true };
+	module.exports = { "default": __webpack_require__(122), __esModule: true };
 
 /***/ }),
 
-/***/ 120:
+/***/ 122:
 /***/ (function(module, exports, __webpack_require__) {
 
 	__webpack_require__(57);
 	__webpack_require__(13);
-	module.exports = __webpack_require__(121);
+	module.exports = __webpack_require__(123);
 
 
 /***/ }),
 
-/***/ 121:
+/***/ 123:
 /***/ (function(module, exports, __webpack_require__) {
 
 	var anObject = __webpack_require__(26);
@@ -836,12 +836,18 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 122:
+/***/ 124:
 /***/ (function(module, exports) {
 
 	"use strict";
 	
 	module.exports = {
+	    validateMaterials: function validateMaterials() {
+	        return "";
+	    },
+	    validateMatCode: function validateMatCode() {
+	        return "";
+	    },
 	    validateUser: function validateUser(user) {
 	        return "";
 	    },
@@ -892,7 +898,7 @@ webpackJsonp([3,12],{
 
 /***/ }),
 
-/***/ 123:
+/***/ 125:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

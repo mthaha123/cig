@@ -1,6 +1,6 @@
-webpackJsonp([6,12],{
+webpackJsonp([6,14],{
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -19,7 +19,7 @@ webpackJsonp([6,12],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(106)
+	var listToStyles = __webpack_require__(108)
 	
 	/*
 	type StyleObject = {
@@ -222,7 +222,7 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, exports) {
 
 	/**
@@ -256,7 +256,7 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 109:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -310,12 +310,18 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 122:
+/***/ 124:
 /***/ (function(module, exports) {
 
 	"use strict";
 	
 	module.exports = {
+	    validateMaterials: function validateMaterials() {
+	        return "";
+	    },
+	    validateMatCode: function validateMatCode() {
+	        return "";
+	    },
 	    validateUser: function validateUser(user) {
 	        return "";
 	    },
@@ -366,18 +372,18 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 263:
+/***/ 265:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(264)
+	__webpack_require__(266)
 	
-	var Component = __webpack_require__(107)(
+	var Component = __webpack_require__(109)(
 	  /* script */
-	  __webpack_require__(266),
+	  __webpack_require__(268),
 	  /* template */
-	  __webpack_require__(267),
+	  __webpack_require__(269),
 	  /* scopeId */
 	  "data-v-21f1299c",
 	  /* cssModules */
@@ -405,17 +411,17 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 264:
+/***/ 266:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(265);
+	var content = __webpack_require__(267);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(105)("07dfc059", content, false);
+	var update = __webpack_require__(107)("07dfc059", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -432,10 +438,10 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 265:
+/***/ 267:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(103)();
+	exports = module.exports = __webpack_require__(105)();
 	// imports
 	
 	
@@ -447,7 +453,7 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 266:
+/***/ 268:
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -460,10 +466,12 @@ webpackJsonp([6,12],{
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
 	
-	var _validate = __webpack_require__(122);
+	var _validate = __webpack_require__(124);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	//
+	//
 	//
 	//
 	//
@@ -632,7 +640,7 @@ webpackJsonp([6,12],{
 
 /***/ }),
 
-/***/ 267:
+/***/ 269:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -693,7 +701,29 @@ webpackJsonp([6,12],{
 	    on: {
 	      "click": _vm.create
 	    }
-	  }, [_vm._v("新建")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	  }, [_vm._v("新建")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
+	    attrs: {
+	      "type": "primary"
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.importDialogView = true
+	      }
+	    }
+	  }, [_vm._v("导入")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
+	    attrs: {
+	      "type": "primary"
+	    },
+	    on: {
+	      "click": _vm.exportList
+	    }
+	  }, [_vm._v("导出")]) : _vm._e()], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }

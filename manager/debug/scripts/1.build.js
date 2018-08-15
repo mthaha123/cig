@@ -1,17 +1,17 @@
-webpackJsonp([1,12],{
+webpackJsonp([1,14],{
 
-/***/ 100:
+/***/ 102:
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(101)
+	__webpack_require__(103)
 	
-	var Component = __webpack_require__(107)(
+	var Component = __webpack_require__(109)(
 	  /* script */
-	  __webpack_require__(108),
+	  __webpack_require__(110),
 	  /* template */
-	  __webpack_require__(109),
+	  __webpack_require__(111),
 	  /* scopeId */
 	  "data-v-fdd6ef00",
 	  /* cssModules */
@@ -39,17 +39,17 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 101:
+/***/ 103:
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(102);
+	var content = __webpack_require__(104);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(105)("e8500296", content, false);
+	var update = __webpack_require__(107)("e8500296", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
@@ -66,29 +66,29 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 102:
+/***/ 104:
 /***/ (function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(103)();
+	exports = module.exports = __webpack_require__(105)();
 	// imports
 	
 	
 	// module
-	exports.push([module.id, "\n.bg[data-v-fdd6ef00] {\n  background: url(" + __webpack_require__(104) + ") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%;\n}\n.box-card[data-v-fdd6ef00] {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0);\n}\nfieldset[data-v-fdd6ef00] {\n  padding: 5px 20px;\n  margin: 0 2px;\n}\n#forgot[data-v-fdd6ef00] {\n  float: right;\n}\nlegend[data-v-fdd6ef00] {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px;\n}\n.label-header[data-v-fdd6ef00] {\n  padding: 5px;\n}\nfieldset.question[data-v-fdd6ef00] {\n  border: 1px solid #d5d5d5;\n}\n.container-table[data-v-fdd6ef00] {\n  min-height: 873px;\n}\n.container-table[data-v-fdd6ef00] {\n  display: table;\n}\n.vertical-center-row[data-v-fdd6ef00] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.labletitle[data-v-fdd6ef00] {\n  text-align: left;\n}\n.mg1[data-v-fdd6ef00] {\n  margin: 10px 0px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/login.vue"],"names":[],"mappings":";AAAA;EACE,kEAAuE;EACvE,+BAA+B;EAC/B,aAAa;CAAE;AAEjB;EACE,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,UAAU;EACV,sCAAsC;CAAE;AAE1C;EACE,kBAAkB;EAClB,cAAc;CAAE;AAElB;EACE,aAAa;CAAE;AAEjB;EACE,eAAe;EACf,WAAW;EACX,oBAAoB;EACpB,gBAAgB;EAChB,qBAAqB;EACrB,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;CAAE;AAEtB;EACE,aAAa;CAAE;AAEjB;EACE,0BAA0B;CAAE;AAE9B;EACE,kBAAkB;CAAE;AAEtB;EACE,eAAe;CAAE;AAEnB;EACE,oBAAoB;EACpB,uBAAuB;CAAE;AAE3B;EACE,iBAAiB;CAAE;AAErB;EACE,iBAAiB;CAAE","file":"login.vue","sourcesContent":[".bg {\n  background: url(\"../../../images/loginbg.jpg\") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%; }\n\n.box-card {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0); }\n\nfieldset {\n  padding: 5px 20px;\n  margin: 0 2px; }\n\n#forgot {\n  float: right; }\n\nlegend {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px; }\n\n.label-header {\n  padding: 5px; }\n\nfieldset.question {\n  border: 1px solid #d5d5d5; }\n\n.container-table {\n  min-height: 873px; }\n\n.container-table {\n  display: table; }\n\n.vertical-center-row {\n  display: table-cell;\n  vertical-align: middle; }\n\n.labletitle {\n  text-align: left; }\n\n.mg1 {\n  margin: 10px 0px; }\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.bg[data-v-fdd6ef00] {\n  background: url(" + __webpack_require__(106) + ") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%;\n}\n.box-card[data-v-fdd6ef00] {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0);\n}\nfieldset[data-v-fdd6ef00] {\n  padding: 5px 20px;\n  margin: 0 2px;\n}\n#forgot[data-v-fdd6ef00] {\n  float: right;\n}\nlegend[data-v-fdd6ef00] {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px;\n}\n.label-header[data-v-fdd6ef00] {\n  padding: 5px;\n}\nfieldset.question[data-v-fdd6ef00] {\n  border: 1px solid #d5d5d5;\n}\n.container-table[data-v-fdd6ef00] {\n  min-height: 873px;\n}\n.container-table[data-v-fdd6ef00] {\n  display: table;\n}\n.vertical-center-row[data-v-fdd6ef00] {\n  display: table-cell;\n  vertical-align: middle;\n}\n.labletitle[data-v-fdd6ef00] {\n  text-align: left;\n}\n.mg1[data-v-fdd6ef00] {\n  margin: 10px 0px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/login.vue"],"names":[],"mappings":";AAAA;EACE,kEAAuE;EACvE,+BAA+B;EAC/B,aAAa;CAAE;AAEjB;EACE,aAAa;EACb,mBAAmB;EACnB,SAAS;EACT,UAAU;EACV,sCAAsC;CAAE;AAE1C;EACE,kBAAkB;EAClB,cAAc;CAAE;AAElB;EACE,aAAa;CAAE;AAEjB;EACE,eAAe;EACf,WAAW;EACX,oBAAoB;EACpB,gBAAgB;EAChB,qBAAqB;EACrB,YAAY;EACZ,YAAY;EACZ,iBAAiB;EACjB,kBAAkB;CAAE;AAEtB;EACE,aAAa;CAAE;AAEjB;EACE,0BAA0B;CAAE;AAE9B;EACE,kBAAkB;CAAE;AAEtB;EACE,eAAe;CAAE;AAEnB;EACE,oBAAoB;EACpB,uBAAuB;CAAE;AAE3B;EACE,iBAAiB;CAAE;AAErB;EACE,iBAAiB;CAAE","file":"login.vue","sourcesContent":[".bg {\n  background: url(\"../../../images/loginbg.jpg\") no-repeat center center;\n  background-size: 1920px 1080px;\n  height: 100%; }\n\n.box-card {\n  width: 300px;\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  transform: translate3d(-50%, -50%, 0); }\n\nfieldset {\n  padding: 5px 20px;\n  margin: 0 2px; }\n\n#forgot {\n  float: right; }\n\nlegend {\n  display: block;\n  width: 40%;\n  margin-bottom: 20px;\n  font-size: 15px;\n  line-height: inherit;\n  color: #333;\n  border: 1px;\n  border-bottom: 0;\n  margin-left: 20px; }\n\n.label-header {\n  padding: 5px; }\n\nfieldset.question {\n  border: 1px solid #d5d5d5; }\n\n.container-table {\n  min-height: 873px; }\n\n.container-table {\n  display: table; }\n\n.vertical-center-row {\n  display: table-cell;\n  vertical-align: middle; }\n\n.labletitle {\n  text-align: left; }\n\n.mg1 {\n  margin: 10px 0px; }\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
 
-/***/ 104:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "images/ae805e72e08a5dba715287732b92029d.jpg";
 
 /***/ }),
 
-/***/ 105:
+/***/ 107:
 /***/ (function(module, exports, __webpack_require__) {
 
 	/*
@@ -107,7 +107,7 @@ webpackJsonp([1,12],{
 	  ) }
 	}
 	
-	var listToStyles = __webpack_require__(106)
+	var listToStyles = __webpack_require__(108)
 	
 	/*
 	type StyleObject = {
@@ -310,7 +310,7 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 106:
+/***/ 108:
 /***/ (function(module, exports) {
 
 	/**
@@ -344,7 +344,7 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 107:
+/***/ 109:
 /***/ (function(module, exports) {
 
 	module.exports = function normalizeComponent (
@@ -398,7 +398,7 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 108:
+/***/ 110:
 /***/ (function(module, exports) {
 
 	"use strict";
@@ -538,7 +538,7 @@ webpackJsonp([1,12],{
 
 /***/ }),
 
-/***/ 109:
+/***/ 111:
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;

@@ -1,4 +1,4 @@
-webpackJsonp([10,14],Array(107).concat([
+webpackJsonp([13,14],Array(107).concat([
 /* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -317,70 +317,35 @@ webpackJsonp([10,14],Array(107).concat([
 /* 118 */,
 /* 119 */,
 /* 120 */,
-/* 121 */,
-/* 122 */,
-/* 123 */,
-/* 124 */
-/***/ (function(module, exports) {
+/* 121 */
+/***/ (function(module, exports, __webpack_require__) {
 
-	"use strict";
-	
-	module.exports = {
-	    validateMaterials: function validateMaterials() {
-	        return "";
-	    },
-	    validateMatCode: function validateMatCode() {
-	        return "";
-	    },
-	    validateUser: function validateUser(user) {
-	        return "";
-	    },
-	    validateInsCode: function validateInsCode() {
-	        return "";
-	    },
-	    validateDepInfo: function validateDepInfo(form) {
-	        if (!form.code) {
-	            return "部门代码不能为空";
-	        };
-	        if (!form.name) {
-	            return "部门名称不能为空";
-	        };
-	        if (!form.factory) {
-	            return "厂区不能为空";
-	        };
-	        if (!form.location) {
-	            return "位置不能为空";
-	        };
-	        if (!form.keeper) {
-	            return "保管人不能为空";
-	        };
-	        if (!form.manager) {
-	            return "主管不能为空";
-	        };
-	        if (!form.staff) {
-	            return "文员不能为空";
-	        };
-	        if (!form.proxer) {
-	            return "代理人不能为空";
-	        };
-	        if (!form.seniorManager) {
-	            return "高阶主管不能为空";
-	        };
-	        if (!form.generalManager) {
-	            return "最高主管不能为空";
-	        };
-	
-	        return "";
-	    },
-	    validateInsInfo: function validateInsInfo() {
-	        return "";
-	    },
-	    validateSupplier: function validateSupplier() {
-	        return "";
-	    }
-	};
+	module.exports = { "default": __webpack_require__(122), __esModule: true };
 
 /***/ }),
+/* 122 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	__webpack_require__(57);
+	__webpack_require__(13);
+	module.exports = __webpack_require__(123);
+
+
+/***/ }),
+/* 123 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	var anObject = __webpack_require__(26);
+	var get = __webpack_require__(67);
+	module.exports = __webpack_require__(21).getIterator = function (it) {
+	  var iterFn = get(it);
+	  if (typeof iterFn != 'function') throw TypeError(it + ' is not iterable!');
+	  return anObject(iterFn.call(it));
+	};
+
+
+/***/ }),
+/* 124 */,
 /* 125 */,
 /* 126 */,
 /* 127 */,
@@ -18304,26 +18269,41 @@ webpackJsonp([10,14],Array(107).concat([
 /* 282 */,
 /* 283 */,
 /* 284 */,
-/* 285 */
+/* 285 */,
+/* 286 */,
+/* 287 */,
+/* 288 */,
+/* 289 */,
+/* 290 */,
+/* 291 */,
+/* 292 */,
+/* 293 */,
+/* 294 */,
+/* 295 */,
+/* 296 */,
+/* 297 */,
+/* 298 */,
+/* 299 */,
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	
 	/* styles */
-	__webpack_require__(286)
+	__webpack_require__(301)
 	
 	var Component = __webpack_require__(109)(
 	  /* script */
-	  __webpack_require__(288),
+	  __webpack_require__(303),
 	  /* template */
-	  __webpack_require__(289),
+	  __webpack_require__(310),
 	  /* scopeId */
-	  "data-v-1314f15d",
+	  "data-v-72f8ad63",
 	  /* cssModules */
 	  null
 	)
-	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\confirmLog.vue"
+	Component.options.__file = "C:\\nodejsProject\\cig\\manager\\src\\js\\components\\pages\\inslist.vue"
 	if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
-	if (Component.options.functional) {console.error("[vue-loader] confirmLog.vue: functional components are not supported with templates, they should use render functions.")}
+	if (Component.options.functional) {console.error("[vue-loader] inslist.vue: functional components are not supported with templates, they should use render functions.")}
 	
 	/* hot reload */
 	if (false) {(function () {
@@ -18332,9 +18312,9 @@ webpackJsonp([10,14],Array(107).concat([
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-1314f15d", Component.options)
+	    hotAPI.createRecord("data-v-72f8ad63", Component.options)
 	  } else {
-	    hotAPI.reload("data-v-1314f15d", Component.options)
+	    hotAPI.reload("data-v-72f8ad63", Component.options)
 	  }
 	})()}
 	
@@ -18342,23 +18322,23 @@ webpackJsonp([10,14],Array(107).concat([
 
 
 /***/ }),
-/* 286 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 	
 	// load the styles
-	var content = __webpack_require__(287);
+	var content = __webpack_require__(302);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	if(content.locals) module.exports = content.locals;
 	// add the styles to the DOM
-	var update = __webpack_require__(107)("212c27a0", content, false);
+	var update = __webpack_require__(107)("69224d96", content, false);
 	// Hot Module Replacement
 	if(false) {
 	 // When the styles change, update the <style> tags
 	 if(!content.locals) {
-	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1314f15d&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./confirmLog.vue", function() {
-	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-1314f15d&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./confirmLog.vue");
+	   module.hot.accept("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-72f8ad63&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./inslist.vue", function() {
+	     var newContent = require("!!../../../../node_modules/_css-loader@0.23.1@css-loader/index.js?sourceMap!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/style-rewriter.js?id=data-v-72f8ad63&scoped=true!../../../../node_modules/_sass-loader@3.2.3@sass-loader/index.js!../../../../node_modules/_vue-loader@10.3.0@vue-loader/lib/selector.js?type=styles&index=0!./inslist.vue");
 	     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 	     update(newContent);
 	   });
@@ -18368,7 +18348,7 @@ webpackJsonp([10,14],Array(107).concat([
 	}
 
 /***/ }),
-/* 287 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(105)();
@@ -18376,13 +18356,13 @@ webpackJsonp([10,14],Array(107).concat([
 	
 	
 	// module
-	exports.push([module.id, "\n.contentbox[data-v-1314f15d] {\n  padding: 15px;\n}\n.tabletool[data-v-1314f15d] {\n  margin-bottom: 10px;\n}\n.tabletool button[data-v-1314f15d] {\n  float: right;\n  margin-left: 20px;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/confirmLog.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAElB;EACE,oBAAoB;CAAE;AAExB;EACE,aAAa;EACb,kBAAkB;CAAE","file":"confirmLog.vue","sourcesContent":[".contentbox {\n  padding: 15px; }\n\n.tabletool {\n  margin-bottom: 10px; }\n\n.tabletool button {\n  float: right;\n  margin-left: 20px; }\n"],"sourceRoot":"webpack://"}]);
+	exports.push([module.id, "\n.contentbox[data-v-72f8ad63] {\n  padding: 15px;\n}\n.tabletool[data-v-72f8ad63] {\n  margin-bottom: 10px;\n}\n.tabletool button[data-v-72f8ad63] {\n  float: right;\n}\n", "", {"version":3,"sources":["/./src/js/components/pages/inslist.vue"],"names":[],"mappings":";AAAA;EACE,cAAc;CAAE;AAElB;EACE,oBAAoB;CAAE;AAExB;EACE,aAAa;CAAE","file":"inslist.vue","sourcesContent":[".contentbox {\n  padding: 15px; }\n\n.tabletool {\n  margin-bottom: 10px; }\n\n.tabletool button {\n  float: right; }\n"],"sourceRoot":"webpack://"}]);
 	
 	// exports
 
 
 /***/ }),
-/* 288 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -18391,145 +18371,665 @@ webpackJsonp([10,14],Array(107).concat([
 	    value: true
 	});
 	
+	var _assign = __webpack_require__(304);
+	
+	var _assign2 = _interopRequireDefault(_assign);
+	
+	var _getIterator2 = __webpack_require__(121);
+	
+	var _getIterator3 = _interopRequireDefault(_getIterator2);
+	
 	var _lodash = __webpack_require__(86);
 	
 	var _lodash2 = _interopRequireDefault(_lodash);
+	
+	var _path2 = __webpack_require__(255);
+	
+	var _path3 = _interopRequireDefault(_path2);
 	
 	var _moment = __webpack_require__(130);
 	
 	var _moment2 = _interopRequireDefault(_moment);
 	
-	var _validate = __webpack_require__(124);
-	
-	var _path = __webpack_require__(255);
-	
-	var _path2 = _interopRequireDefault(_path);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 	
 	exports.default = {
 	    data: function data() {
+	        var self = this;
 	        return {
-	            serachContent: "",
-	            dialogTitle: "",
-	            // dataList: [],
-	            pageSize: 10,
 	            pageNo: 1,
-	            dialogFormVisible: false,
-	            currentLog: {},
-	            type: "create"
+	            pageSize: 10,
+	            needProve: false,
+	            totalCount: 1,
+	            serachContent: "",
+	            statusList: [],
+	            userLoading: false,
+	            importDialogView: false,
+	            colList: [],
+	            currentImportList: [],
+	            userOptions: [],
+	            form: {
+	                tostatus: "",
+	                insInfo: {},
+	                log: [],
+	                confirmChain: [],
+	                completeChain: []
+	            },
+	            testTypeList: [{
+	                value: "0",
+	                label: "内校"
+	            }, {
+	                value: "1",
+	                label: "外校"
+	            }, {
+	                value: "2",
+	                label: "免校"
+	            }],
+	            periodList: [{
+	                value: "0",
+	                label: "12"
+	            }],
+	            dialogTitle: "状态申请单",
+	            attachmentList: [],
+	            fileList: [],
+	            changlog: [],
+	            forStatusList: []
 	        };
 	    },
 	
 	    computed: {
-	        dataList: function dataList() {
-	            return this.$store.state.confirmLog.confirmLogList.map(function (current) {
-	                // current.state=(current.state?"是":"否");
-	                current.createTime = (0, _moment2.default)(current.createTime).format("YYYY-MM-DD");
-	                current.updateTime = (0, _moment2.default)(current.updateTime).format("YYYY-MM-DD");
-	                switch (current.confirm) {
-	                    case "1":
-	                        current.confirm = "确认完成";break;
-	                    case "2":
-	                        current.confirm = "确认失败";break;
-	                    default:
-	                        current.confirm = "待确认";
+	        targetStatusList: function targetStatusList() {
+	            if (this.form.toConfirm != "1") return this.$store.state.common.statusList;
+	            var totalList = this.$store.state.common.statusList;
+	            var statusRule = this.$store.state.common.statusRule;
+	            if (!!!this.form.deviceStatus) {
+	                return [];
+	            }
+	            var statusCode = this.form.toConfirm != "1" ? this.form.nextDeviceStatus : this.form.deviceStatus;
+	
+	            var ret = [];
+	            var _iteratorNormalCompletion = true;
+	            var _didIteratorError = false;
+	            var _iteratorError = undefined;
+	
+	            try {
+	                for (var _iterator = (0, _getIterator3.default)(totalList), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                    var item = _step.value;
+	
+	                    var trule = statusCode + "=>" + item.statusCode;
+	                    if (statusRule.indexOf(trule) > -1) {
+	                        ret.push(item);
+	                    }
 	                }
-	                current.keeperName = current.keeper.split("&")[1];
-	                current.fromKeeperName = current.fromKeeper.split("&")[1] || "无";
-	                return current;
+	            } catch (err) {
+	                _didIteratorError = true;
+	                _iteratorError = err;
+	            } finally {
+	                try {
+	                    if (!_iteratorNormalCompletion && _iterator.return) {
+	                        _iterator.return();
+	                    }
+	                } finally {
+	                    if (_didIteratorError) {
+	                        throw _iteratorError;
+	                    }
+	                }
+	            }
+	
+	            return ret;
+	        },
+	        dataList: function dataList() {
+	            var _this = this;
+	
+	            // return this.$store.state.insList.deviceStatusList.map(cur => {
+	            //     let ret = _.assign({}, cur);
+	            //     ret.depName = ret.insInfo.depCode;
+	
+	            //     ret.statusName = ((list) => {
+	            //         for (let item of list) {
+	            //             let label;
+	            //             let statusCode = cur.toConfirm != "1" ? cur.nextDeviceStatus : cur.deviceStatus;
+	            //             if (item.statusCode == statusCode) {
+	            //                 label = item.label;
+	
+	            //                 if (cur.toConfirm != "1") {
+	            //                     label += "(待确认)";
+	            //                 }
+	            //                 return label;
+	            //             }
+	            //         }
+	            //     })(this.$store.state.common.statusList);
+	
+	            //     return ret;
+	            // });
+	            return this.$store.state.insList.deviceStatusList.map(function (originCurrent) {
+	                var current = originCurrent.insInfo;
+	                current.periodView = current.period + function (unit) {
+	                    switch (unit) {
+	                        case "days":
+	                            return "天";
+	                            break;
+	                        case "months":
+	                            return "月";
+	                            break;
+	                        case "weeks":
+	                            return "周";
+	                            break;
+	                        case "years":
+	                            return "年";
+	                            break;
+	                        default:
+	                            return "";
+	                            break;
+	                    }
+	                }(current.periodUnit);
+	                if (current.depCode) current.depCodeView = current.depCode;else current.depCodeView = "";
+	                current.insCodeView = current.insCode.split("&")[1];
+	
+	                current.endDate = (0, _moment2.default)(current.endDate).format("YYYY-MM-DD");
+	                current.startDate = (0, _moment2.default)(current.startDate).format("YYYY-MM-DD");
+	
+	                current.testTypeView = function (type) {
+	                    var _iteratorNormalCompletion2 = true;
+	                    var _didIteratorError2 = false;
+	                    var _iteratorError2 = undefined;
+	
+	                    try {
+	                        for (var _iterator2 = (0, _getIterator3.default)(_this.testTypeList), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                            var item = _step2.value;
+	
+	                            if (item.value == type) {
+	                                return item.label;
+	                            }
+	                        }
+	                    } catch (err) {
+	                        _didIteratorError2 = true;
+	                        _iteratorError2 = err;
+	                    } finally {
+	                        try {
+	                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                                _iterator2.return();
+	                            }
+	                        } finally {
+	                            if (_didIteratorError2) {
+	                                throw _iteratorError2;
+	                            }
+	                        }
+	                    }
+	                }(current.testType);
+	                // current.statusView = current.status;
+	
+	                // current.extendFieldView = (list=>{
+	                //     let ret = "  ";
+	                //     for(let item of list){
+	                //         ret+=`${item.title}:${item.value} | `;
+	                //     }
+	
+	                //     return ret.substr(ret,ret.length-2);
+	                // })(current.extendFields);
+	                // current.statusView = ((status)=>{
+	                //     for(let st of this.$store.state.common.statusList){
+	                //         if(st.statusCode == status){
+	                //             return st.label;
+	                //         }
+	                //     }
+	
+	                //     return "";
+	
+	                // })(current.status);
+	
+	                current.statusView = function (list) {
+	                    var _iteratorNormalCompletion3 = true;
+	                    var _didIteratorError3 = false;
+	                    var _iteratorError3 = undefined;
+	
+	                    try {
+	                        for (var _iterator3 = (0, _getIterator3.default)(list), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	                            var item = _step3.value;
+	
+	                            var label = void 0;
+	                            var statusCode = current.toConfirm != "1" ? current.nextStatus : current.status;
+	                            if (item.statusCode == statusCode) {
+	                                label = item.label;
+	
+	                                if (current.toConfirm != "1") {
+	                                    label += "(待确认)";
+	                                }
+	                                return label;
+	                            }
+	                        }
+	                    } catch (err) {
+	                        _didIteratorError3 = true;
+	                        _iteratorError3 = err;
+	                    } finally {
+	                        try {
+	                            if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	                                _iterator3.return();
+	                            }
+	                        } finally {
+	                            if (_didIteratorError3) {
+	                                throw _iteratorError3;
+	                            }
+	                        }
+	                    }
+	                }(_this.$store.state.common.statusList);
+	                return _lodash2.default.assign({}, current, originCurrent);
 	            });
 	        }
 	    },
 	    methods: {
-	        hideDialog: function hideDialog() {
-	            this.$store.commit('viewConfirmLogDetail', false);
-	        },
-	        viewTestLog: function viewTestLog(row) {
-	            this.$store.commit("viewConfirmLogDetail", true);
-	            this.currentLog = row;
+	        handlePreview: function handlePreview() {},
+	        changeStatus: function changeStatus(value) {
+	            // if(this.$store.state.common.needProve.indexOf(this.form.deviceStatus+"=>"+value)>-1){
+	            //     this.needProve= true;
+	            // }
+	
 	        },
 	        listsizechange: function listsizechange(val) {
 	            this.pageSize = val;
 	            this.getList(1);
 	        },
-	        search: function search() {
-	            this.getList(1);
+	        handleRemove: function handleRemove(file, fileList) {
+	            var key = function (dict) {
+	                for (var _key in dict) {
+	                    if (_key == file.uid) {
+	                        return _key;
+	                    }
+	                }
+	            }(this.form.uploadFileList);
+	
+	            this.$store.dispatch("removeUploadedFile", { deletePath: this.form.uploadFileList[key] });
+	            delete this.form.uploadFileList[key];
+	        },
+	        handleSuccess: function handleSuccess(res, file, fileList) {
+	            if (res.success) {
+	                this.form.uploadFileList = this.form.uploadFileList || {};
+	                var obj = {};
+	                this.form.uploadFileList[file.uid] = res.result;
+	            }
+	            console.log(file, fileList);
+	        },
+	        handleReportSuccess: function handleReportSuccess(res, file, fileList) {
+	            var _this2 = this;
+	
+	            if (res.success) {
+	                var _path = res.result;
+	                this.$store.dispatch("importReport", {
+	                    importFileId: res.result
+	                }).then(function (res) {
+	                    _this2.$message.info("导入成功");
+	                    // this.importDialogView = false;
+	                    console.log({
+	                        path: _path,
+	                        success: true
+	                    });
+	                    _this2.currentImportList.push({
+	                        path: _path,
+	                        success: true
+	                    });
+	                    // this.getList();
+	                }, function (err) {
+	                    _this2.currentImportList.push({
+	                        path: "",
+	                        msg: err
+	                    });
+	                    // this.$message.error(err);
+	                });
+	            }
+	        },
+	        handleError: function handleError() {},
+	        hideDialog: function hideDialog() {
+	            this.$store.commit('viewApplication', false);
 	        },
 	        getList: function getList(page) {
 	            var self = this;
 	            this.pageNo = page || this.pageNo;
-	            this.$store.dispatch("getConfirmLogList", {
-	                pageNo: page - 1,
-	                keyword: this.serachContent,
-	                pageSize: this.pageSize
+	            this.$store.dispatch("getAllDeviceInsInfoList", {
+	                pageNo: this.pageNo - 1,
+	                statusList: this.statusList || [],
+	                forStatusList: this.forStatusList || [],
+	                pageSize: this.pageSize,
+	                keyword: this.serachContent
+	            });
+	        },
+	        refresh: function refresh() {
+	            this.getList();
+	        },
+	        edit: function edit(insInfo) {
+	            this.form = insInfo;
+	            this.form.uploadFileList = {};
+	            this.needProve = insInfo.toConfirm == "0" || true;
+	
+	            if (insInfo.toConfirm == "1") {
+	                this.form.completeChain = [];
+	                this.form.confirmChain = [];
+	            }
+	
+	            this.form.attachmentList = function (list) {
+	                var retArray = [];
+	                list.forEach(function (cur) {
+	                    if (cur.filePath && cur.filePath.length && cur.filePath instanceof Array) {
+	                        retArray = retArray.concat(cur.filePath.map(function (cf) {
+	                            return {
+	                                name: _path3.default.basename(cf),
+	                                path: cf
+	                            };
+	                        }));
+	                    }
+	                });
+	
+	                return retArray;
+	            }(insInfo.log);
+	
+	            if (insInfo.confirmChain && insInfo.confirmChain.length) {
+	                this.userOptions = insInfo.confirmChain.map(function (cur) {
+	                    var str = cur.split("&");
+	                    return {
+	                        label: str[1],
+	                        value: cur
+	                    };
+	                });
+	            }
+	
+	            this.$store.commit("viewApplication", true);
+	        },
+	        search: function search() {
+	            this.getList(1);
+	        },
+	        submit: function submit() {
+	            var _this3 = this;
+	
+	            var needProve = this.$store.state.common.needProve;
+	            if (this.form.confirmChain.length == 0) {
+	                if (needProve.indexOf(this.form.deviceStatus + "=>" + this.form.nextDeviceStatus) > -1) {
+	                    this.$message.error("该状态转换需要增加审批链");
+	                    return;
+	                }
+	            }
+	
+	            if (this.form.toConfirm != "1") {
+	                var list = [];
+	                for (var key in this.form.uploadFileList) {
+	                    list.push(this.form.uploadFileList[key]);
+	                }
+	                this.$store.dispatch("proveApplication", {
+	                    filePath: list,
+	                    note: this.form.note,
+	                    _id: this.form._id
+	                }).then(function () {
+	                    _this3.getList();
+	                }, function (err) {
+	                    _this3.$message.error(err);
+	                });
+	            } else {
+	                var _list = [];
+	                for (var _key2 in this.form.uploadFileList) {
+	                    _list.push(this.form.uploadFileList[_key2]);
+	                }
+	                this.$store.dispatch("changeApplication", {
+	                    filePath: _list,
+	                    note: this.form.note,
+	                    confirmChain: this.form.confirmChain,
+	                    to: this.form.nextDeviceStatus,
+	                    _id: this.form._id
+	                }).then(function () {
+	                    _this3.getList();
+	                }, function (err) {
+	                    alert(err);
+	                });
+	            }
+	        },
+	        reject: function reject() {
+	            var _this4 = this;
+	
+	            var list = [];
+	            for (var key in this.form.uploadFileList) {
+	                list.push(this.form.uploadFileList[key]);
+	            }
+	            this.$store.dispatch("rejectApplication", {
+	                filePath: list,
+	                note: this.form.note,
+	                _id: this.form._id
+	            }).then(function () {
+	                _this4.getList();
+	            }, function (err) {
+	                _this4.$message.error(err);
+	            });
+	        },
+	
+	        getUserList: _lodash2.default.throttle(function (keyword) {
+	            var _this5 = this;
+	
+	            if (keyword) {
+	                this.$store.dispatch("getOptions", { keyword: keyword, type: "user" }).then(function (res) {
+	                    _this5.userOptions = res.result.map(function (cur) {
+	                        return {
+	                            label: cur.name,
+	                            value: cur._id + "&" + cur.name
+	                        };
+	                    });;
+	                });
+	            } else {
+	                this.depOptions = [];
+	            }
+	        }, 800),
+	        download: function download(row) {
+	            window.open("/cig/downloadfile?path=" + row.path);
+	        },
+	        deleteFile: function deleteFile(row, id) {
+	            var _this6 = this;
+	
+	            var self = this;
+	            this.$confirm("此操作讲删除该附件，是否确认删除？", "提示").then(function () {
+	                _this6.$store.dispatch("removeAttachFile", { path: row.path, id: id }).then(function (res) {
+	                    if (res.success) {
+	                        self.form = (0, _assign2.default)({}, self.form, {
+	                            attachmentList: self.form.attachmentList.filter(function (cur) {
+	                                return cur.path != row.path;
+	                            })
+	                        });
+	
+	                        self.getList();
+	                    }
+	                });
+	            }, function () {});
+	        },
+	        init: function init() {
+	            var _this7 = this;
+	
+	            this.$store.dispatch("getHeaderList").then(function (res) {
+	                _this7.colList = [];
+	
+	                res.listHeader.forEach(function (cur) {
+	                    if (cur.view) {
+	                        _this7.colList.push(cur);
+	                    }
+	                });
+	                console.log(_this7.colList);
+	
+	                _this7.getList(1);
+	            }, function (err) {
+	                _this7.$message.error("服务暂不可用");
 	            });
 	        }
 	    },
 	    mounted: function mounted() {
-	        this.getList(1);
+	        this.init();
 	    }
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ }),
-/* 289 */
+/* 304 */,
+/* 305 */,
+/* 306 */,
+/* 307 */,
+/* 308 */,
+/* 309 */,
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -18545,7 +19045,7 @@ webpackJsonp([10,14],Array(107).concat([
 	    }
 	  }, [_c('el-col', {
 	    attrs: {
-	      "span": 6
+	      "span": 8
 	    }
 	  }, [_c('div', {
 	    staticClass: "grid-content"
@@ -18554,7 +19054,7 @@ webpackJsonp([10,14],Array(107).concat([
 	      "width": "300px"
 	    },
 	    attrs: {
-	      "placeholder": "搜索仪器编号..."
+	      "placeholder": "搜索仪器编码..."
 	    },
 	    model: {
 	      value: (_vm.serachContent),
@@ -18569,25 +19069,100 @@ webpackJsonp([10,14],Array(107).concat([
 	      "icon": "search"
 	    },
 	    on: {
+	      "click": _vm.search
+	    },
+	    slot: "append"
+	  })], 1)], 1)]), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 6
+	    }
+	  }, [_c('el-select', {
+	    attrs: {
+	      "multiple": "",
+	      "placeholder": "请选择"
+	    },
+	    model: {
+	      value: (_vm.statusList),
+	      callback: function($$v) {
+	        _vm.statusList = $$v
+	      },
+	      expression: "statusList"
+	    }
+	  }, [_c('el-option', {
+	    attrs: {
+	      "label": "待处理",
+	      "value": "toUserConfirm"
+	    }
+	  }), _vm._v(" "), _c('el-option', {
+	    attrs: {
+	      "label": "加签中",
+	      "value": "toConfirm"
+	    }
+	  }), _vm._v(" "), _c('el-option', {
+	    attrs: {
+	      "label": "流程待变更",
+	      "value": "toChange"
+	    }
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 6
+	    }
+	  }, [_c('el-select', {
+	    attrs: {
+	      "multiple": "",
+	      "placeholder": "请选择"
+	    },
+	    model: {
+	      value: (_vm.forStatusList),
+	      callback: function($$v) {
+	        _vm.forStatusList = $$v
+	      },
+	      expression: "forStatusList"
+	    }
+	  }, _vm._l((_vm.$store.state.common.statusList), function(item) {
+	    return _c('el-option', {
+	      attrs: {
+	        "label": item.label,
+	        "value": item.statusCode
+	      }
+	    })
+	  }))], 1), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 4
+	    }
+	  }, [_c('div', {
+	    staticClass: "grid-content bg-purple"
+	  }, [_c('el-button', {
+	    staticStyle: {
+	      "float": "right",
+	      "margin-left": "10px"
+	    },
+	    attrs: {
+	      "type": "success"
+	    },
+	    on: {
 	      "click": function($event) {
 	        _vm.getList(1)
 	      }
+	    }
+	  }, [_vm._v("查询")]), _vm._v(" "), _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
 	    },
-	    slot: "append"
-	  })], 1)], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	    attrs: {
+	      "type": "danger"
+	    },
+	    on: {
+	      "click": function($event) {
+	        _vm.currentImportList = [];
+	        _vm.importDialogView = true;
+	      }
+	    }
+	  }, [_vm._v("导入")])], 1)])], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
 	    attrs: {
 	      "span": 24
 	    }
 	  }, [_c('el-table', {
-	    directives: [{
-	      name: "loading",
-	      rawName: "v-loading.body",
-	      value: (_vm.$store.state.confirmLog.tableLoading),
-	      expression: "$store.state.confirmLog.tableLoading",
-	      modifiers: {
-	        "body": true
-	      }
-	    }],
 	    staticStyle: {
 	      "width": "100%"
 	    },
@@ -18600,53 +19175,21 @@ webpackJsonp([10,14],Array(107).concat([
 	      "type": "index",
 	      "width": "55"
 	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "createTime",
-	      "label": "校验时间",
-	      "width": "120",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "insCode",
-	      "label": "仪器编号",
-	      "width": "180",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "insName",
-	      "label": "仪器名称",
-	      "width": "180",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "keeperName",
-	      "label": "目标保管人",
-	      "width": "120",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "fromKeeperName",
-	      "label": "前保管人",
-	      "width": "120",
-	      "show-overflow-tooltip": true
-	    }
-	  }), _vm._v(" "), _c('el-table-column', {
-	    attrs: {
-	      "prop": "confirm",
-	      "label": "确认情况",
-	      "show-overflow-tooltip": ""
-	    }
+	  }), _vm._v(" "), _vm._l((_vm.colList), function(item) {
+	    return _c('el-table-column', {
+	      attrs: {
+	        "prop": item.fieldName,
+	        "label": item.fieldTitle,
+	        "width": item.width,
+	        "show-overflow-tooltip": true
+	      }
+	    })
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
 	      "fixed": "right",
 	      "context": _vm._self,
 	      "label": "操作",
-	      "width": "300"
+	      "width": "100"
 	    },
 	    inlineTemplate: {
 	      render: function() {
@@ -18658,15 +19201,15 @@ webpackJsonp([10,14],Array(107).concat([
 	            },
 	            on: {
 	              "click": function($event) {
-	                _vm.viewTestLog(_vm.row)
+	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("查看")])], 1)
+	          }, [_vm._v("处理")])], 1)
 	        
 	      },
 	      staticRenderFns: []
 	    }
-	  })], 1), _vm._v(" "), _c('el-pagination', {
+	  })], 2), _vm._v(" "), _c('el-pagination', {
 	    staticStyle: {
 	      "margin-top": "20px",
 	      "height": "100px"
@@ -18676,7 +19219,7 @@ webpackJsonp([10,14],Array(107).concat([
 	      "page-sizes": [10, 15, 20],
 	      "page-size": _vm.pageSize,
 	      "layout": "sizes, prev, pager, next",
-	      "total": _vm.$store.state.confirmLog.pageItemTotalCount
+	      "total": _vm.$store.state.insList.pageItemTotalCount
 	    },
 	    on: {
 	      "size-change": _vm.listsizechange,
@@ -18687,23 +19230,246 @@ webpackJsonp([10,14],Array(107).concat([
 	    }
 	  })], 1)], 1), _vm._v(" "), _c('el-dialog', {
 	    attrs: {
-	      "title": "仪器日志",
+	      "title": _vm.dialogTitle,
 	      "size": "small",
 	      "modal-append-to-body": false
 	    },
 	    model: {
-	      value: (_vm.$store.state.confirmLog.dialogFormVisible),
+	      value: (_vm.$store.state.insList.dialogFormVisible),
 	      callback: function($$v) {
-	        _vm.$set(_vm.$store.state.confirmLog, "dialogFormVisible", $$v)
+	        _vm.$set(_vm.$store.state.insList, "dialogFormVisible", $$v)
 	      },
-	      expression: "$store.state.confirmLog.dialogFormVisible"
+	      expression: "$store.state.insList.dialogFormVisible"
 	    }
-	  }, [_c('el-row', [_c('el-table', {
+	  }, [_c('el-form', {
+	    attrs: {
+	      "model": _vm.form
+	    }
+	  }, [_c('el-row', [_c('el-col', {
+	    attrs: {
+	      "span": 11
+	    }
+	  }, [_c('el-form-item', {
+	    attrs: {
+	      "label": "校验编号",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-input', {
+	    attrs: {
+	      "disabled": "",
+	      "auto-complete": "off"
+	    },
+	    model: {
+	      value: (_vm.form._id),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "_id", $$v)
+	      },
+	      expression: "form._id"
+	    }
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 11,
+	      "offset": 2
+	    }
+	  }, [_c('el-form-item', {
+	    attrs: {
+	      "label": "仪器名称",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-input', {
+	    attrs: {
+	      "disabled": "",
+	      "auto-complete": "off"
+	    },
+	    model: {
+	      value: (_vm.form.insInfo.name),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form.insInfo, "name", $$v)
+	      },
+	      expression: "form.insInfo.name"
+	    }
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	    attrs: {
+	      "span": 11
+	    }
+	  }, [_c('el-form-item', {
+	    attrs: {
+	      "label": "校验编号",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-input', {
+	    attrs: {
+	      "disabled": "",
+	      "auto-complete": "off"
+	    },
+	    model: {
+	      value: (_vm.form.code),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "code", $$v)
+	      },
+	      expression: "form.code"
+	    }
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-col', {
+	    attrs: {
+	      "span": 11
+	    }
+	  }, [_c('el-form-item', {
+	    attrs: {
+	      "label": "仪器状态",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-input', {
+	    attrs: {
+	      "disabled": "",
+	      "auto-complete": "off"
+	    },
+	    model: {
+	      value: (_vm.form.statusView),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "statusView", $$v)
+	      },
+	      expression: "form.statusView"
+	    }
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
+	    attrs: {
+	      "span": 11,
+	      "offset": 2
+	    }
+	  }, [_c('el-form-item', {
+	    attrs: {
+	      "label": "转换状态",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-select', {
+	    attrs: {
+	      "disabled": _vm.form.toConfirm != 1,
+	      "placeholder": "请选择"
+	    },
+	    on: {
+	      "change": _vm.changeStatus
+	    },
+	    model: {
+	      value: (_vm.form.nextDeviceStatus),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "nextDeviceStatus", $$v)
+	      },
+	      expression: "form.nextDeviceStatus"
+	    }
+	  }, _vm._l((_vm.targetStatusList), function(item) {
+	    return _c('el-option', {
+	      attrs: {
+	        "label": item.label,
+	        "value": item.statusCode
+	      }
+	    })
+	  }))], 1)], 1)], 1), _vm._v(" "), (_vm.needProve) ? _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "审批链",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-select', {
+	    attrs: {
+	      "disabled": _vm.form.toConfirm != '1',
+	      "multiple": "",
+	      "filterable": "",
+	      "remote": "",
+	      "placeholder": "请选择",
+	      "remote-method": _vm.getUserList,
+	      "loading": _vm.userLoading
+	    },
+	    model: {
+	      value: (_vm.form.confirmChain),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "confirmChain", $$v)
+	      },
+	      expression: "form.confirmChain"
+	    }
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
+	      key: item.value,
+	      attrs: {
+	        "label": item.label,
+	        "value": item.value
+	      }
+	    })
+	  }))], 1)], 1) : _vm._e(), _vm._v(" "), (_vm.needProve) ? _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "已审批",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-select', {
+	    attrs: {
+	      "disabled": "",
+	      "multiple": "",
+	      "filterable": "",
+	      "remote": "",
+	      "placeholder": "请选择",
+	      "remote-method": _vm.getUserList,
+	      "loading": _vm.userLoading
+	    },
+	    model: {
+	      value: (_vm.form.completeChain),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "completeChain", $$v)
+	      },
+	      expression: "form.completeChain"
+	    }
+	  }, _vm._l((_vm.userOptions), function(item) {
+	    return _c('el-option', {
+	      key: item.value,
+	      attrs: {
+	        "label": item.label,
+	        "value": item.value
+	      }
+	    })
+	  }))], 1)], 1) : _vm._e(), _vm._v(" "), _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "描述",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-input', {
+	    attrs: {
+	      "type": "textarea",
+	      "auto-complete": "off",
+	      "rows": 8
+	    },
+	    model: {
+	      value: (_vm.form.note),
+	      callback: function($$v) {
+	        _vm.$set(_vm.form, "note", $$v)
+	      },
+	      expression: "form.note"
+	    }
+	  })], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "附件上传",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-upload', {
+	    ref: "uploadbox",
+	    attrs: {
+	      "action": "/cig/uploadfile",
+	      "on-preview": _vm.handlePreview,
+	      "on-remove": _vm.handleRemove,
+	      "on-success": _vm.handleSuccess,
+	      "default-file-list": _vm.fileList
+	    }
+	  }, [_c('el-button', {
+	    attrs: {
+	      "size": "small",
+	      "type": "primary"
+	    }
+	  }, [_vm._v("点击上传")])], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "操作记录",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-table', {
 	    staticStyle: {
 	      "width": "100%"
 	    },
 	    attrs: {
-	      "data": _vm.currentLog.log
+	      "data": _vm.form.log
 	    }
 	  }, [_c('el-table-column', {
 	    attrs: {
@@ -18717,32 +19483,132 @@ webpackJsonp([10,14],Array(107).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "operator",
-	      "label": "操作人Id"
+	      "prop": "note",
+	      "label": "备注"
 	    }
-	  })], 1)], 1), _vm._v(" "), _c('div', {
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "operator",
+	      "label": "操作人"
+	    }
+	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-form-item', {
+	    attrs: {
+	      "label": "附件列表",
+	      "label-width": "80px"
+	    }
+	  }, [_c('el-table', {
+	    staticStyle: {
+	      "width": "100%"
+	    },
+	    attrs: {
+	      "data": _vm.form.attachmentList
+	    }
+	  }, [_c('el-table-column', {
+	    attrs: {
+	      "type": "index",
+	      "width": "55"
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "name",
+	      "label": "名称"
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "context": _vm._self,
+	      "label": "操作",
+	      "width": "150"
+	    },
+	    inlineTemplate: {
+	      render: function() {
+	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	          return _c('span', [_c('el-button', {
+	            attrs: {
+	              "type": "success",
+	              "size": "small"
+	            },
+	            on: {
+	              "click": function($event) {
+	                _vm.download(_vm.row)
+	              }
+	            }
+	          }, [_vm._v("下载")]), _vm._v(" "), _c('el-button', {
+	            attrs: {
+	              "type": "danger",
+	              "size": "small"
+	            },
+	            on: {
+	              "click": function($event) {
+	                _vm.deleteFile(_vm.row, _vm.form._id)
+	              }
+	            }
+	          }, [_vm._v("删除")])], 1)
+	        
+	      },
+	      staticRenderFns: []
+	    }
+	  })], 1)], 1)], 1)], 1), _vm._v(" "), _c('div', {
 	    staticClass: "dialog-footer",
 	    attrs: {
 	      "slot": "footer"
 	    },
 	    slot: "footer"
 	  }, [_c('el-button', {
+	    on: {
+	      "click": _vm.hideDialog
+	    }
+	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },
 	    on: {
-	      "click": _vm.hideDialog
+	      "click": _vm.submit
 	    }
-	  }, [_vm._v("确 定")])], 1)], 1)], 1)
+	  }, [_vm._v("确 定")]), _vm._v(" "), (_vm.form.toConfirm == 0) ? _c('el-button', {
+	    attrs: {
+	      "type": "primary"
+	    },
+	    on: {
+	      "click": _vm.reject
+	    }
+	  }, [_vm._v("否 决")]) : _vm._e()], 1)], 1), _vm._v(" "), _c('el-dialog', {
+	    attrs: {
+	      "title": "导入报告信息",
+	      "size": "small",
+	      "modal-append-to-body": false
+	    },
+	    model: {
+	      value: (_vm.importDialogView),
+	      callback: function($$v) {
+	        _vm.importDialogView = $$v
+	      },
+	      expression: "importDialogView"
+	    }
+	  }, [_c('el-upload', {
+	    staticClass: "upload-demo",
+	    attrs: {
+	      "drag": "",
+	      "multiple": "",
+	      "action": "/cig/uploadfile",
+	      "on-success": _vm.handleReportSuccess,
+	      "show-file-list": false
+	    }
+	  }, [_c('i', {
+	    staticClass: "el-icon-upload"
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "el-upload__text"
+	  }, [_c('em', [_vm._v("点击上传")])])]), _vm._v(" "), _c('div', {}, [_c('ul', _vm._l((_vm.currentImportList), function(item) {
+	    return _c('li', [_vm._v("\n                    " + _vm._s(item.path) + " " + _vm._s(item.success ? "上传成功" : item.msg) + "\n                ")])
+	  }))])], 1)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1314f15d", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-72f8ad63", module.exports)
 	  }
 	}
 
 /***/ })
 ]));
-//# sourceMappingURL=10.build.js.map
+//# sourceMappingURL=13.build.js.map

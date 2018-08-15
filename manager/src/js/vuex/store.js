@@ -11,6 +11,8 @@ import email from "./store/email";
 import supplier from "./store/supplier";
 import recode from "./store/recode";
 import confirmLog from "./store/confirmLog";
+import matCode from "./store/matCode";
+import materials from "./store/materials";
 
 
 Vue.use(Vuex)
@@ -27,5 +29,7 @@ export default new Vuex.Store({
         supplier,
         recode,
         confirmLog,
+        matCode,
+        materials,
     }
 });
