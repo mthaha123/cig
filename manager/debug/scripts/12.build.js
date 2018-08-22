@@ -18606,6 +18606,13 @@ webpackJsonp([12,14],Array(107).concat([
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	    data: function data() {
@@ -18677,6 +18684,7 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.form = {};
 	            this.form.completeView = "未完成";
 	            this.form.complete = false;
+	            this.form.type = "未确认";
 	        },
 	        submit: function submit() {
 	            var _this2 = this;
@@ -18756,6 +18764,10 @@ webpackJsonp([12,14],Array(107).concat([
 	                pageSize: this.pageSize
 	            });
 	        },
+	        querySearch: function querySearch(keyword, cb) {
+	            this.getMatCodeList(keyword);
+	            cb(this.codeOptions);
+	        },
 	
 	        getMatCodeList: _lodash2.default.throttle(function (keyword) {
 	            var _this5 = this;
@@ -18792,55 +18804,87 @@ webpackJsonp([12,14],Array(107).concat([
 	            }
 	        }, 500),
 	        codeChangeOther: function codeChangeOther(code) {
-	            var _iteratorNormalCompletion = true;
-	            var _didIteratorError = false;
-	            var _iteratorError = undefined;
-	
-	            try {
-	                for (var _iterator = (0, _getIterator3.default)(this.codeOptions), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	                    var item = _step.value;
-	
-	                    if (item.matCode && item.matCode.code === code) {
-	                        this.form.type = item.matCode.type;
-	                        this.form.supplier = item.matCode.supplier;
-	                        this.form.description = item.matCode.description;
-	                    }
-	                }
-	            } catch (err) {
-	                _didIteratorError = true;
-	                _iteratorError = err;
-	            } finally {
-	                try {
-	                    if (!_iteratorNormalCompletion && _iterator.return) {
-	                        _iterator.return();
-	                    }
-	                } finally {
-	                    if (_didIteratorError) {
-	                        throw _iteratorError;
-	                    }
-	                }
+	            this.form.type = code.matCode.type;
+	            this.form.supplier = code.matCode.supplier;
+	            this.form.description = code.matCode.description;
+	            if (code.matCode.type == "NA") {
+	                this.form.complete = true;
+	                this.form.completeView = "完成";
 	            }
 	        },
 	        addFile: function addFile(row) {
-	            this.fileList = row.log ? [{ name: _path2.default.basename(row.log.url), url: row.log.url }] : [];
+	            //    this.fileList = row.log?[{name:path.basename(row.log.url),url:row.log.url}]:[];
+	            this.fileList = [];
+	            if (row.log) {
+	                if (row.log.url) {
+	                    if (row.log.url instanceof Array) {
+	                        var _iteratorNormalCompletion = true;
+	                        var _didIteratorError = false;
+	                        var _iteratorError = undefined;
+	
+	                        try {
+	                            for (var _iterator = (0, _getIterator3.default)(row.log.url), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+	                                var i = _step.value;
+	
+	                                this.fileList.push({ name: _path2.default.basename(i), response: { result: i } });
+	                            }
+	                        } catch (err) {
+	                            _didIteratorError = true;
+	                            _iteratorError = err;
+	                        } finally {
+	                            try {
+	                                if (!_iteratorNormalCompletion && _iterator.return) {
+	                                    _iterator.return();
+	                                }
+	                            } finally {
+	                                if (_didIteratorError) {
+	                                    throw _iteratorError;
+	                                }
+	                            }
+	                        }
+	                    } else {
+	                        this.fileList.push({ name: _path2.default.basename(row.log.url), response: { result: row.log.url } });
+	                    }
+	                }
+	            }
 	            this.form = _lodash2.default.assign({}, row);
 	            this.importFileView = true;
 	        },
 	        importFile: function importFile() {
+	            this.form.log = { url: [] };
+	            if (this.fileList) {
+	                var _iteratorNormalCompletion2 = true;
+	                var _didIteratorError2 = false;
+	                var _iteratorError2 = undefined;
+	
+	                try {
+	                    for (var _iterator2 = (0, _getIterator3.default)(this.fileList), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                        var file = _step2.value;
+	
+	                        this.form.log.url.push(file.response.result);
+	                    }
+	                } catch (err) {
+	                    _didIteratorError2 = true;
+	                    _iteratorError2 = err;
+	                } finally {
+	                    try {
+	                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                            _iterator2.return();
+	                        }
+	                    } finally {
+	                        if (_didIteratorError2) {
+	                            throw _iteratorError2;
+	                        }
+	                    }
+	                }
+	            }
 	            this.SaveActionName = "editMaterials";
 	            this.submit();
 	            this.importFileView = false;
 	        },
 	        importFileSuccess: function importFileSuccess(res, file, fileList) {
 	            if (res.success) {
-	                this.form.log = { url: res.result };
-	                this.form.complete = true;
-	            }
-	        },
-	        beforeUpload: function beforeUpload(file) {
-	            if (this.fileList.length >= 1) {
-	                this.$message.warning("\u5F53\u524D\u9650\u5236\u9009\u62E9 1 \u4E2A\u6587\u4EF6");
-	                return false;
+	                this.fileList.push(file);
 	            }
 	        },
 	        addIns: function addIns(row) {
@@ -18848,27 +18892,27 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.form.insLog = "";
 	            if (this.form.log) {
 	                if (row.log.ins) {
-	                    var _iteratorNormalCompletion2 = true;
-	                    var _didIteratorError2 = false;
-	                    var _iteratorError2 = undefined;
+	                    var _iteratorNormalCompletion3 = true;
+	                    var _didIteratorError3 = false;
+	                    var _iteratorError3 = undefined;
 	
 	                    try {
-	                        for (var _iterator2 = (0, _getIterator3.default)(row.log.ins), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-	                            var ins = _step2.value;
+	                        for (var _iterator3 = (0, _getIterator3.default)(row.log.ins), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	                            var ins = _step3.value;
 	
-	                            this.form.insLog += ins + " ";
+	                            this.form.insLog += ins + "_";
 	                        }
 	                    } catch (err) {
-	                        _didIteratorError2 = true;
-	                        _iteratorError2 = err;
+	                        _didIteratorError3 = true;
+	                        _iteratorError3 = err;
 	                    } finally {
 	                        try {
-	                            if (!_iteratorNormalCompletion2 && _iterator2.return) {
-	                                _iterator2.return();
+	                            if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	                                _iterator3.return();
 	                            }
 	                        } finally {
-	                            if (_didIteratorError2) {
-	                                throw _iteratorError2;
+	                            if (_didIteratorError3) {
+	                                throw _iteratorError3;
 	                            }
 	                        }
 	                    }
@@ -18886,6 +18930,16 @@ webpackJsonp([12,14],Array(107).concat([
 	                ths.addInsView = false;
 	            }, function (err) {
 	                _this7.$message.error(err);
+	            });
+	        },
+	        updateType: function updateType() {
+	            var _this8 = this;
+	
+	            this.$store.dispatch("updateType").then(function (res) {
+	                _this8.$alert("更新了" + res + "条数据");
+	                _this8.getList(1);
+	            }, function (err) {
+	                _this8.$alert(err);
 	            });
 	        }
 	    },
@@ -18957,6 +19011,16 @@ webpackJsonp([12,14],Array(107).concat([
 	      "click": _vm.create
 	    }
 	  }, [_vm._v("新建")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	    staticStyle: {
+	      "float": "right"
+	    },
+	    attrs: {
+	      "type": "success"
+	    },
+	    on: {
+	      "click": _vm.updateType
+	    }
+	  }, [_vm._v("更新")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
 	    staticStyle: {
 	      "float": "right"
 	    },
@@ -19106,7 +19170,7 @@ webpackJsonp([12,14],Array(107).concat([
 	                _vm.addFile(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("导入文件")]) : _vm._e(), _vm._v(" "), (_vm.row.type == "cam") ? _c('el-button', {
+	          }, [_vm._v("导入文件")]) : _vm._e(), _vm._v(" "), (_vm.row.type == "CAL") ? _c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -19166,15 +19230,15 @@ webpackJsonp([12,14],Array(107).concat([
 	      "label": "物料编号",
 	      "label-width": "80px"
 	    }
-	  }, [_c('el-select', {
+	  }, [_c('el-autocomplete', {
+	    staticClass: "inline-input",
 	    attrs: {
-	      "filterable": "",
-	      "remote": "",
-	      "placeholder": "物料编号",
-	      "remote-method": _vm.getMatCodeList
+	      "fetch-suggestions": _vm.querySearch,
+	      "placeholder": "请输入内容"
 	    },
 	    on: {
-	      "change": _vm.codeChangeOther
+	      "trigger-on-focus": false,
+	      "select": _vm.codeChangeOther
 	    },
 	    model: {
 	      value: (_vm.form.code),
@@ -19183,15 +19247,7 @@ webpackJsonp([12,14],Array(107).concat([
 	      },
 	      expression: "form.code"
 	    }
-	  }, _vm._l((_vm.codeOptions), function(item) {
-	    return _c('el-option', {
-	      key: item.value,
-	      attrs: {
-	        "label": item.label,
-	        "value": item.value
-	      }
-	    })
-	  }))], 1)], 1), _vm._v(" "), _c('el-col', {
+	  })], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
 	      "span": 11,
 	      "offset": 2
@@ -19352,10 +19408,16 @@ webpackJsonp([12,14],Array(107).concat([
 	      "label": "ESD"
 	    }
 	  }), _vm._v(" "), _c('el-option', {
-	    key: "cam",
+	    key: "CAL",
 	    attrs: {
-	      "value": "cam",
-	      "label": "cam"
+	      "value": "CAL",
+	      "label": "CAL"
+	    }
+	  }), _vm._v(" "), _c('el-option', {
+	    key: "未确认",
+	    attrs: {
+	      "value": "未确认",
+	      "label": "未确认"
 	    }
 	  })], 1)], 1)], 1), _vm._v(" "), _c('el-col', {
 	    attrs: {
@@ -19471,8 +19533,7 @@ webpackJsonp([12,14],Array(107).concat([
 	      "multiple": "",
 	      "action": "/cig/uploadfile",
 	      "file-list": _vm.fileList,
-	      "on-success": _vm.importFileSuccess,
-	      "before-upload": _vm.beforeUpload
+	      "on-success": _vm.importFileSuccess
 	    }
 	  }, [_c('el-button', {
 	    attrs: {
@@ -19519,11 +19580,15 @@ webpackJsonp([12,14],Array(107).concat([
 	    attrs: {
 	      "model": _vm.form
 	    }
-	  }, [_c('el-input', {
+	  }, [_c('el-row', [_c('span', {
+	    staticStyle: {
+	      "float": "left"
+	    }
+	  }, [_vm._v("输入仪器编号，中间\"_\"隔开")])]), _vm._v(" "), _c('el-input', {
 	    attrs: {
 	      "type": "textarea",
 	      "rows": 2,
-	      "placeholder": "输入仪器编号，中间空格隔开"
+	      "placeholder": "输入仪器编号，中间\"_\"隔开"
 	    },
 	    model: {
 	      value: (_vm.form.insLog),

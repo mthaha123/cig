@@ -51,7 +51,7 @@
                     <el-select v-model="form.type" placeholder="请选择" style="width: 100%;">
                         <el-option key="NA" value="NA" label="NA"/>
                         <el-option key="ESD" value="ESD" label="ESD"/>
-                        <el-option key="cam" value="cam" label="cam"/>
+                        <el-option key="CAL" value="CAL" label="CAL"/>
                     </el-select>
                 </el-form-item>
                 <el-form-item label="供应商" label-width="100px">

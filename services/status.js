@@ -75,6 +75,10 @@ module.exports = {
                                 keeper: item.keeper,
                                 log
                             }; 
+                            if(item.keeper == confirmLogData[0].fromKeeper){
+                                updateObj.confirm = 1;
+                                item.isInit = false;
+                            }
                             return new Promise((rs,rj)=>{
                                 confirmLogModel.update({ _id: confirmLogData[0]._id },updateObj,(err,res) =>{
                                     if (err) {
@@ -88,7 +92,7 @@ module.exports = {
                     }else{
                         item.isInit = true;  //标志修改了保管人
                         //添加保管人确认文档到数据库
-                        cancelTest = this.createConfirmLog(item,userId,data);
+                        cancelTest = this.createConfirmLog(id,item,userId,data);
                         /* let model = new confirmLogModel({
                             insId : id,
                             insCode : item.code,
@@ -823,9 +827,9 @@ module.exports = {
             return;
         })
     },
-    createConfirmLog: function(item,userId,data=null){ // 新建仪器信息时或修改保管人时，创建保管人更改记录
+    createConfirmLog: function(insId,item,userId,data=null){ // 新建仪器信息时或修改保管人时，创建保管人更改记录
         let model = new confirmLogModel({
-            insId : item._id,
+            insId : insId,
             insCode : item.code,
             insName: item.name,
             keeper: item.keeper,

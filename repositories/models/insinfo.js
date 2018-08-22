@@ -28,6 +28,7 @@ var insInfoSchema = new Schema({
         type: Object
     },
     fromKeeper:{ type:String },
+    isDelete: { type: Boolean, default: false},
 });
 
 module.exports = mongoose.model('InsInfoModel', insInfoSchema, "cig_insInfo");

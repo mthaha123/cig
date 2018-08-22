@@ -17621,10 +17621,10 @@ webpackJsonp([11,14],Array(107).concat([
 	      "label": "ESD"
 	    }
 	  }), _vm._v(" "), _c('el-option', {
-	    key: "cam",
+	    key: "CAL",
 	    attrs: {
-	      "value": "cam",
-	      "label": "cam"
+	      "value": "CAL",
+	      "label": "CAL"
 	    }
 	  })], 1)], 1), _vm._v(" "), _c('el-form-item', {
 	    attrs: {

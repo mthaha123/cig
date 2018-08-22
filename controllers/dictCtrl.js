@@ -97,7 +97,8 @@ module.exports = {
         let userId = this.session.userInfo.userId;
         var item = yield dictSvc.save(type, getSaveItem(type, params), ModelFieldSetting[type].uniqueList);
         if(type == "insInfo"){//创建仪器信息要保管人确认
-            yield statusSvc.createConfirmLog(item.toObject(),userId).catch(err => {
+            let insId = item.toObject()._id;
+            yield statusSvc.createConfirmLog(insId,item.toObject(),userId).catch(err => {
                 console.log("createConfirmLog failed", err.message);
                 console.log(err);
                 return;

@@ -3,7 +3,7 @@ module.exports = {
         keywordFields:["code","type","order","user"],
         updateFields:["code","type","order","supplier","description","num","user","createTime","log","complete"],
         insertFields:["code","type","order","supplier","description","num","user","createTime","log","complete"],
-        uniqueList:["code"],
+        uniqueList :[],
     },
     matCode:{
         keywordFields:["code","type"],

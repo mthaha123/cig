@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 var materialsSchema = new Schema({
     code: { type: String },
     order: { type: String},
-    type: { type: String, default: "NA"},  //"NA":无分类    "cam"    "ESD"
+    type: { type: String, default: "NA"},  //"NA":无分类    "CAL"    "ESD"   "待确认"
     description:{ type: String},
     supplier:{ type: String},
     num: {type: Number},
@@ -15,6 +15,7 @@ var materialsSchema = new Schema({
     createTime: { type: Date},
     complete:{type: Boolean},
     log:{type: Object},
+    isDelete: { type: Boolean, default: false},
 
 },{timestamps:{
     updatedAt: "updateTime",

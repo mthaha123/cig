@@ -30319,8 +30319,29 @@ webpackJsonp([0,14],[
 	                commit("viewMaterialsDetail", false);
 	            });
 	        },
-	        addInsLog: function addInsLog(_ref4, data) {
+	        updateType: function updateType(_ref4) {
 	            var commit = _ref4.commit;
+	
+	            return new _promise2.default(function (rs, rj) {
+	                $.ajax({
+	                    url: "/cig/materials/updateType",
+	                    type: "POST",
+	                    success: function success(res) {
+	                        if (res.success) {
+	                            rs(res.result);
+	                        } else {
+	                            rj(res.message);
+	                        }
+	                    },
+	                    error: function error(err) {
+	                        console.log(err.message);
+	                        rj("服务暂不可用");
+	                    }
+	                });
+	            });
+	        },
+	        addInsLog: function addInsLog(_ref5, data) {
+	            var commit = _ref5.commit;
 	
 	            return new _promise2.default(function (rs, rj) {
 	                $.ajax({
@@ -30341,8 +30362,8 @@ webpackJsonp([0,14],[
 	                });
 	            });
 	        },
-	        getCodeOptions: function getCodeOptions(_ref5, data) {
-	            var commit = _ref5.commit;
+	        getCodeOptions: function getCodeOptions(_ref6, data) {
+	            var commit = _ref6.commit;
 	
 	            return (0, _query.getList)(data.type, {
 	                pageNo: data.pageNo,
@@ -30354,9 +30375,9 @@ webpackJsonp([0,14],[
 	                return [];
 	            });
 	        },
-	        importMaterialsList: function importMaterialsList(_ref6, _ref7) {
-	            var commit = _ref6.commit;
-	            var importFileId = _ref7.importFileId;
+	        importMaterialsList: function importMaterialsList(_ref7, _ref8) {
+	            var commit = _ref7.commit;
+	            var importFileId = _ref8.importFileId;
 	
 	            return new _promise2.default(function (rs, rj) {
 	                $.ajax({
@@ -30377,8 +30398,8 @@ webpackJsonp([0,14],[
 	                });
 	            });
 	        },
-	        exportMaterialsList: function exportMaterialsList(_ref8) {
-	            var commit = _ref8.commit;
+	        exportMaterialsList: function exportMaterialsList(_ref9) {
+	            var commit = _ref9.commit;
 	
 	            return new _promise2.default(function (rs, rj) {
 	                $.ajax({

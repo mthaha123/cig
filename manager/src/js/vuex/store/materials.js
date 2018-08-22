@@ -47,6 +47,25 @@ export default {
                 commit("viewMaterialsDetail", false);
             })
         },
+        updateType({ commit }){
+            return new Promise((rs, rj) => {
+                $.ajax({
+                    url: "/cig/materials/updateType",
+                    type: "POST",
+                    success(res) {
+                        if (res.success) {
+                            rs(res.result);
+                        } else {
+                            rj(res.message);
+                        }
+                    },
+                    error(err) {
+                        console.log(err.message);
+                        rj("服务暂不可用")
+                    }
+                });
+            });
+        },
         addInsLog({commit},data){
             return new Promise((rs, rj) => {
                 $.ajax({

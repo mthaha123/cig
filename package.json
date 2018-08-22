@@ -39,7 +39,7 @@
     "n-readlines": "^0.2.7",
     "node-ews": "^3.2.2",
     "node-schedule": "^1.2.1",
-    "node-xlsx": "^0.7.4",
+    "node-xlsx": "^0.12.1",
     "redis": "^2.6.3",
     "request": "^2.81.0",
     "thunkify": "^2.1.2",

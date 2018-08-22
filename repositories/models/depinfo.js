@@ -13,7 +13,8 @@ var depSchema = new Schema({
     staff: { type: String },
     proxer: { type: String },
     seniorManager: { type: String },
-    generalManager: { type: String }
+    generalManager: { type: String },
+    isDelete: {type: Boolean ,default: false},
 });
 
 module.exports = mongoose.model('Depmodel', depSchema, "cig_dep");

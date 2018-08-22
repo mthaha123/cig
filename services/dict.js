@@ -33,6 +33,7 @@ function getInsInfoById(val){
 }
 module.exports = {
     getList: function(type, whereObj = {}, pageNo = 0, pageSize = 10) {
+        whereObj.isDelete = {$ne:true};
         pageSize = parseInt(pageSize);
         pageNo = parseInt(pageNo);
         return new Promise((rs, rj) => {
@@ -189,7 +190,7 @@ module.exports = {
     },
     remove: function(type, id) {
         return new Promise((rs, rj) => {
-            ModelDict[type].remove({ "_id": id }, (err) => {
+            ModelDict[type].update({ "_id": id },{"isDelete":true}, (err) => {
                 if (err) {
                     console.warn("remove", type, id, "Error:", err);
                     rj(err)
@@ -213,19 +214,20 @@ module.exports = {
     },
     save: function*(type, item, uniqueList) {
         var Model = ModelDict[type];
-        var exQueryObj = {};
-        for (let key of uniqueList) {
-            exQueryObj[key] = item[key];
-        }
-
-        var exist = yield Model.findOne(exQueryObj);
-        if (exist) {
-            throw {
-                notify: true,
-                message: "用户名已存在"
+        if(uniqueList.length){
+            var exQueryObj = {};
+            for (let key of uniqueList) {
+                exQueryObj[key] = item[key];
+            }
+            
+            var exist = yield Model.findOne(exQueryObj);
+            if (exist) {
+                throw {
+                    notify: true,
+                    message: "用户名已存在"
+                }
             }
         }
-
         var model = new Model(item);
         return new Promise((rs, rj) => {
             model.save((err, res) => {

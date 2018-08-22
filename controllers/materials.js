@@ -8,7 +8,7 @@ const notify = require("../libs/notify.js");
 const commonSvc = require("../services/common");
 const statusSvc = require("../services/status.js");
 const { statusCode } = require("../modeltranform/statusrule.js");
-const {InsInfoModel} = require("../repositories/mongoHelper");
+const {InsInfoModel,MatCodeModel,materialsModel} = require("../repositories/mongoHelper");
 const _ = require("lodash");
 const moment = require("moment");
 var iconv = require('iconv-lite');
@@ -42,7 +42,7 @@ module.exports = {
     addInsLog:function*(){
         let {form} = yield parse(this);
         let log = {ins:[]};
-        let ins1 = form.insLog.split(" ");
+        let ins1 = form.insLog.split("_");
         log.ins = ins1;
         form.log = log;
         for(let insCode of ins1){
@@ -106,6 +106,30 @@ module.exports = {
         this.body = {
             success: true,
             result: ret
+        };
+    },
+    updateType: function*(){
+        let query = {
+            type:"未确认" 
+        };
+        let num=0;
+        //找出未确认状态的来料，之后对其更新
+        let list = yield materialsModel.find(query);
+        for(let i of list){
+            i = i.toObject();
+            let matcode = yield MatCodeModel.findOne({code: i.code});
+            if(matcode){
+                i["type"] = matcode.type;
+                if(i.type == "NA"){
+                    i.complete = true;
+                }
+                yield dictSvc.update("materials", i._id, getSaveItem("materials", i));
+                num++;
+            }
+        }
+        this.body = {
+            success: true,
+            result:num,
         };
     },
 }

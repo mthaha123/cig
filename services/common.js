@@ -285,18 +285,23 @@ module.exports = {
                         return `第${index}行，导入格式有误`;
                     }
                 }
-                if(yield materialsModel.findOne({code: vals[2]})){
-                    console.log(`第${index++}行，系统内已存在`);
-                    continue;
-                }
+                // if(yield materialsModel.findOne({code: vals[2]})){
+                //     console.log(`第${index++}行，系统内已存在`);
+                //     continue;
+                // }
                 let matcode = yield MatCodeModel.findOne({code: vals[2]});
-                if(!matcode){
-                    console.log(`第${index++}行，来料Code信息中不存在`);
-                    console.log('第${index++}行，');
-                    return `第${index++}行，来料Code信息中不存在`;
+                if(matcode){
+                    obj["type"] = matcode.type;
+                }else{
+                    obj["type"] = "未确认";
                 }
+                // if(!matcode){
+                //     console.log(`第${index++}行，来料Code信息中不存在`);
+                //     console.log('第${index++}行，');
+                //     return `第${index++}行，来料Code信息中不存在`;
+                // }
                 let user = yield UserModel.findOne({name:vals[7]});
-                obj["type"] = matcode.type;
+                
                 obj["updateTime"] = moment(vals[1],"YYYY-MM-DD").isValid()?vals[1]:"1970-01-01";
                 obj["updateTime"] = obj["updateTime"]+" 00:00:00";
                 obj["code"] = vals[2];

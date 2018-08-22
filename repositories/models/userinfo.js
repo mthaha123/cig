@@ -13,7 +13,8 @@ var userInfoSchema = new Schema({
     password: { type: String },
     isLock: { type: Boolean },
     isValid:{ type: Boolean },
-    authList: { type: Array }
+    authList: { type: Array },
+    isDelete: { type: Boolean, default: false},
 });
 
 module.exports = mongoose.model('UserInfoModel', userInfoSchema, "cig_user");

@@ -11,6 +11,7 @@
             <el-col :span='12'>
                 <div class="grid-content tabletool">
                     <el-button style='float:right;' v-if='dictEdit' @click='create' type="success">新建</el-button>
+                    <el-button style='float:right;' v-if='dictEdit' @click='updateType' type="success">更新</el-button>
                     <el-button style='float:right;' @click='importDialogView = true' v-if='dictEdit' type="primary">导入</el-button>
                     <el-button style='float:right;' @click='exportList' v-if='dictEdit' type="primary">导出</el-button>
                 </div>
@@ -44,7 +45,7 @@
                        <el-button @click="edit(row)" v-if='dictEdit' type="success" size="small">编辑</el-button>
                        <el-button @click="delrow(row)" v-if='dictEdit' type="danger" size="small">删除</el-button>
                        <el-button @click="addFile(row)" v-if='row.type=="ESD"' type="success" size="small">导入文件</el-button>
-                       <el-button @click="addIns(row)" v-if='row.type=="cam"' type="success" size="small">添加仪器</el-button>
+                       <el-button @click="addIns(row)" v-if='row.type=="CAL"' type="success" size="small">添加仪器</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -58,10 +59,12 @@
                     <el-col :span='11'>
                         <el-form-item label="物料编号" label-width="80px">
                             <!-- <el-input v-model="form.code" auto-complete="off"></el-input> -->
-                            <el-select v-model="form.code" filterable remote placeholder="物料编号" :remote-method="getMatCodeList"  @change="codeChangeOther">
+                            <!-- <el-select v-model="form.code" filterable remote placeholder="物料编号" :remote-method="getMatCodeList"  @change="codeChangeOther">
                                 <el-option v-for="item in codeOptions" :label="item.label" :key="item.value" :value="item.value">
                                 </el-option>
-                            </el-select>
+                            </el-select> -->
+                            <el-autocomplete class="inline-input" v-model="form.code" :fetch-suggestions="querySearch" placeholder="请输入内容" @trigger-on-focus="false" @select="codeChangeOther"></el-autocomplete>
+                            
                         </el-form-item>
                     </el-col>
                     <el-col :span='11' :offset="2">
@@ -102,10 +105,11 @@
                 <el-row>
                     <el-col :span='11'>
                         <el-form-item label="类别" label-width="80px">
-                            <el-select v-model="form.type" placeholder="请选择" style="width: 100%;" :disabled="typeView">
+                            <el-select v-model="form.type" placeholder="请选择" style="width: 100%;" :disabled="typeView" >
                                 <el-option key="NA" value="NA" label="NA"/>
                                 <el-option key="ESD" value="ESD" label="ESD"/>
-                                <el-option key="cam" value="cam" label="cam"/>
+                                <el-option key="CAL" value="CAL" label="CAL"/>
+                                <el-option key="未确认" value="未确认" label="未确认"/>
                             </el-select>
                         </el-form-item>
                     </el-col>
@@ -137,7 +141,7 @@
             </el-upload>
         </el-dialog>
         <el-dialog title="导入文件信息" size='tiny' v-model="importFileView" :modal-append-to-body='false'>
-            <el-upload class="upload-demo" multiple action="/cig/uploadfile"  :file-list="fileList" :on-success="importFileSuccess" :before-upload="beforeUpload" >
+            <el-upload class="upload-demo" multiple action="/cig/uploadfile"  :file-list="fileList" :on-success="importFileSuccess" >
                     <el-button size="small" type="primary">点击上传</el-button>
                     <div slot="tip" class="el-upload__tip">请上传pdf文件</div>
             </el-upload>
@@ -148,7 +152,10 @@
         </el-dialog>
         <el-dialog title="添加仪器信息" size='tiny' v-model="addInsView" :modal-append-to-body='false'>
             <el-form :model="form">
-                <el-input type="textarea" :rows="2" placeholder="输入仪器编号，中间空格隔开" v-model="form.insLog"></el-input>
+                <el-row>
+                    <span style="float: left">输入仪器编号，中间"_"隔开</span>
+                </el-row>
+                <el-input type="textarea" :rows="2" placeholder='输入仪器编号，中间"_"隔开' v-model="form.insLog"></el-input>
             </el-form>
             <div slot="footer" class="dialog-footer">
                 <el-button @click="hideInsDialog">取 消</el-button>
@@ -231,6 +238,7 @@ export default {
             this.form = {};
             this.form.completeView = "未完成";
             this.form.complete = false;
+            this.form.type = "未确认";
         },
         submit() {
             let ret = validateMaterials(this.form);
@@ -306,6 +314,10 @@ export default {
                 pageSize: this.pageSize,
             });
         },
+        querySearch(keyword,cb){
+            this.getMatCodeList(keyword);
+            cb(this.codeOptions);
+        },
         getMatCodeList: _.throttle(function(keyword) {
             if (keyword) {
                 this.$store.dispatch("getCodeOptions", { keyword, type: "matCode" }).then(res => {
@@ -337,34 +349,45 @@ export default {
             }
         }, 500),
         codeChangeOther(code){
-            for (let item of this.codeOptions) {
-                if (item.matCode && item.matCode.code === code) {
-                    this.form.type = item.matCode.type;
-                    this.form.supplier = item.matCode.supplier;
-                    this.form.description = item.matCode.description;
-                }
+            this.form.type = code.matCode.type;
+            this.form.supplier = code.matCode.supplier;
+            this.form.description = code.matCode.description;
+            if(code.matCode.type == "NA"){
+                this.form.complete = true;
+                this.form.completeView = "完成";
             }
         },
         addFile(row){
-           this.fileList = row.log?[{name:path.basename(row.log.url),url:row.log.url}]:[];
-           this.form = _.assign({}, row);
-           this.importFileView = true; 
+        //    this.fileList = row.log?[{name:path.basename(row.log.url),url:row.log.url}]:[];
+            this.fileList = [];
+            if(row.log){
+                if(row.log.url){
+                    if(row.log.url instanceof Array){
+                        for(let i of row.log.url){
+                            this.fileList.push({name:path.basename(i),response:{result:i}});
+                        }
+                    }else{
+                        this.fileList.push({name:path.basename(row.log.url),response:{result:row.log.url}});
+                    }
+                }
+            }
+            this.form = _.assign({}, row);
+            this.importFileView = true; 
         },
         importFile(){
+            this.form.log={url:[]}; 
+            if(this.fileList){
+                for(let file of this.fileList){
+                    this.form.log.url.push(file.response.result);
+                }
+            }
             this.SaveActionName = "editMaterials";
             this.submit();
             this.importFileView = false;
         },
         importFileSuccess(res,file,fileList){
             if (res.success) {
-                this.form.log = {url:res.result};
-                this.form.complete = true;
-            }
-        },
-        beforeUpload(file){
-            if(this.fileList.length>=1){
-                this.$message.warning(`当前限制选择 1 个文件`);
-                return false;
+                this.fileList.push(file);
             }
         },
         addIns(row){
@@ -373,7 +396,7 @@ export default {
             if(this.form.log){
                 if(row.log.ins){
                     for(let ins of row.log.ins){
-                        this.form.insLog +=ins+" ";
+                        this.form.insLog +=ins+"_";
                     }
                 }
             }
@@ -390,6 +413,14 @@ export default {
                     this.$message.error(err)
             });
            
+        },
+        updateType(){
+            this.$store.dispatch("updateType").then(res => {
+                    this.$alert("更新了"+res+"条数据");
+                    this.getList(1);
+                }, err => {
+                    this.$alert(err);
+                });
         }
     },
     mounted() {
