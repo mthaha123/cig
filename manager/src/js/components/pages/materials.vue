@@ -40,11 +40,12 @@
                     </el-table-column>
                     <el-table-column prop="description" label="物料描述" :show-overflow-tooltip=true>
                     </el-table-column>
-                    <el-table-column inline-template fixed="right" v-if='dictEdit' :context="_self" label="操作" width="300">
+                    <el-table-column inline-template fixed="right" v-if='dictEdit' :context="_self" label="操作" width="320">
                         <span>
                        <el-button @click="edit(row)" v-if='dictEdit' type="success" size="small">编辑</el-button>
                        <el-button @click="delrow(row)" v-if='dictEdit' type="danger" size="small">删除</el-button>
                        <el-button @click="addFile(row)" v-if='row.type=="ESD"' type="success" size="small">导入文件</el-button>
+                       <el-button @click="downfile(row)" v-if='row.type=="ESD"&&row.complete==true' type="success" size="small">下载文件</el-button>
                        <el-button @click="addIns(row)" v-if='row.type=="CAL"' type="success" size="small">添加仪器</el-button>
                       </span>
                     </el-table-column>
@@ -162,6 +163,21 @@
                 <el-button type="primary" @click="addInsLog">确 定</el-button>
             </div>
         </el-dialog>
+        <el-dialog title="下载文件" size='small' v-model="downFileView" :modal-append-to-body='false'>
+            <el-row>
+                <el-table :data="fileList" style="width: 100%">
+                    <el-table-column type="index" width="55">
+                    </el-table-column>
+                    <el-table-column prop="name" label="名称">
+                    </el-table-column>
+                    <el-table-column inline-template :context="_self" label="操作" width="150">
+                        <span>
+                      <el-button @click="download(row)" type="success" size="small">下载</el-button>
+                    </span>
+                    </el-table-column>
+                </el-table>
+            </el-row>
+        </el-dialog>
     </div>
 </template>
 
@@ -186,6 +202,7 @@ export default {
             codeOptions:[],
             userOptions:[],
             importFileView:false,
+            downFileView:false,
             fileList:[],
             addInsView:false,
         }
@@ -374,12 +391,29 @@ export default {
             this.form = _.assign({}, row);
             this.importFileView = true; 
         },
+        downfile(row){
+            this.fileList = [];
+            if(row.log){
+                if(row.log.url){
+                    if(row.log.url instanceof Array){
+                        for(let i of row.log.url){
+                            this.fileList.push({name:path.basename(i),path:i});
+                        }
+                    }else{
+                        this.fileList.push({name:path.basename(row.log.url),path:i});
+                    }
+                }
+            }
+            this.form = _.assign({}, row);
+            this.downFileView =true;
+        },
         importFile(){
             this.form.log={url:[]}; 
             if(this.fileList){
                 for(let file of this.fileList){
                     this.form.log.url.push(file.response.result);
                 }
+                this.form.complete =true;
             }
             this.SaveActionName = "editMaterials";
             this.submit();
@@ -421,7 +455,10 @@ export default {
                 }, err => {
                     this.$alert(err);
                 });
-        }
+        },
+        download(row) {
+            window.open("/cig/downloadfile?path=" + row.path)
+        },
     },
     mounted() {
         this.getList(1);

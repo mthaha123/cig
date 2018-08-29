@@ -18613,6 +18613,22 @@ webpackJsonp([12,14],Array(107).concat([
 	//
 	//
 	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 	
 	exports.default = {
 	    data: function data() {
@@ -18629,6 +18645,7 @@ webpackJsonp([12,14],Array(107).concat([
 	            codeOptions: [],
 	            userOptions: [],
 	            importFileView: false,
+	            downFileView: false,
 	            fileList: [],
 	            addInsView: false
 	        };
@@ -18824,9 +18841,9 @@ webpackJsonp([12,14],Array(107).concat([
 	
 	                        try {
 	                            for (var _iterator = (0, _getIterator3.default)(row.log.url), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
-	                                var i = _step.value;
+	                                var _i = _step.value;
 	
-	                                this.fileList.push({ name: _path2.default.basename(i), response: { result: i } });
+	                                this.fileList.push({ name: _path2.default.basename(_i), response: { result: _i } });
 	                            }
 	                        } catch (err) {
 	                            _didIteratorError = true;
@@ -18850,33 +18867,72 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.form = _lodash2.default.assign({}, row);
 	            this.importFileView = true;
 	        },
+	        downfile: function downfile(row) {
+	            this.fileList = [];
+	            if (row.log) {
+	                if (row.log.url) {
+	                    if (row.log.url instanceof Array) {
+	                        var _iteratorNormalCompletion2 = true;
+	                        var _didIteratorError2 = false;
+	                        var _iteratorError2 = undefined;
+	
+	                        try {
+	                            for (var _iterator2 = (0, _getIterator3.default)(row.log.url), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
+	                                var _i2 = _step2.value;
+	
+	                                this.fileList.push({ name: _path2.default.basename(_i2), path: _i2 });
+	                            }
+	                        } catch (err) {
+	                            _didIteratorError2 = true;
+	                            _iteratorError2 = err;
+	                        } finally {
+	                            try {
+	                                if (!_iteratorNormalCompletion2 && _iterator2.return) {
+	                                    _iterator2.return();
+	                                }
+	                            } finally {
+	                                if (_didIteratorError2) {
+	                                    throw _iteratorError2;
+	                                }
+	                            }
+	                        }
+	                    } else {
+	                        this.fileList.push({ name: _path2.default.basename(row.log.url), path: i });
+	                    }
+	                }
+	            }
+	            this.form = _lodash2.default.assign({}, row);
+	            this.downFileView = true;
+	        },
 	        importFile: function importFile() {
 	            this.form.log = { url: [] };
 	            if (this.fileList) {
-	                var _iteratorNormalCompletion2 = true;
-	                var _didIteratorError2 = false;
-	                var _iteratorError2 = undefined;
+	                var _iteratorNormalCompletion3 = true;
+	                var _didIteratorError3 = false;
+	                var _iteratorError3 = undefined;
 	
 	                try {
-	                    for (var _iterator2 = (0, _getIterator3.default)(this.fileList), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done); _iteratorNormalCompletion2 = true) {
-	                        var file = _step2.value;
+	                    for (var _iterator3 = (0, _getIterator3.default)(this.fileList), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
+	                        var file = _step3.value;
 	
 	                        this.form.log.url.push(file.response.result);
 	                    }
 	                } catch (err) {
-	                    _didIteratorError2 = true;
-	                    _iteratorError2 = err;
+	                    _didIteratorError3 = true;
+	                    _iteratorError3 = err;
 	                } finally {
 	                    try {
-	                        if (!_iteratorNormalCompletion2 && _iterator2.return) {
-	                            _iterator2.return();
+	                        if (!_iteratorNormalCompletion3 && _iterator3.return) {
+	                            _iterator3.return();
 	                        }
 	                    } finally {
-	                        if (_didIteratorError2) {
-	                            throw _iteratorError2;
+	                        if (_didIteratorError3) {
+	                            throw _iteratorError3;
 	                        }
 	                    }
 	                }
+	
+	                this.form.complete = true;
 	            }
 	            this.SaveActionName = "editMaterials";
 	            this.submit();
@@ -18892,27 +18948,27 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.form.insLog = "";
 	            if (this.form.log) {
 	                if (row.log.ins) {
-	                    var _iteratorNormalCompletion3 = true;
-	                    var _didIteratorError3 = false;
-	                    var _iteratorError3 = undefined;
+	                    var _iteratorNormalCompletion4 = true;
+	                    var _didIteratorError4 = false;
+	                    var _iteratorError4 = undefined;
 	
 	                    try {
-	                        for (var _iterator3 = (0, _getIterator3.default)(row.log.ins), _step3; !(_iteratorNormalCompletion3 = (_step3 = _iterator3.next()).done); _iteratorNormalCompletion3 = true) {
-	                            var ins = _step3.value;
+	                        for (var _iterator4 = (0, _getIterator3.default)(row.log.ins), _step4; !(_iteratorNormalCompletion4 = (_step4 = _iterator4.next()).done); _iteratorNormalCompletion4 = true) {
+	                            var ins = _step4.value;
 	
 	                            this.form.insLog += ins + "_";
 	                        }
 	                    } catch (err) {
-	                        _didIteratorError3 = true;
-	                        _iteratorError3 = err;
+	                        _didIteratorError4 = true;
+	                        _iteratorError4 = err;
 	                    } finally {
 	                        try {
-	                            if (!_iteratorNormalCompletion3 && _iterator3.return) {
-	                                _iterator3.return();
+	                            if (!_iteratorNormalCompletion4 && _iterator4.return) {
+	                                _iterator4.return();
 	                            }
 	                        } finally {
-	                            if (_didIteratorError3) {
-	                                throw _iteratorError3;
+	                            if (_didIteratorError4) {
+	                                throw _iteratorError4;
 	                            }
 	                        }
 	                    }
@@ -18941,6 +18997,9 @@ webpackJsonp([12,14],Array(107).concat([
 	            }, function (err) {
 	                _this8.$alert(err);
 	            });
+	        },
+	        download: function download(row) {
+	            window.open("/cig/downloadfile?path=" + row.path);
 	        }
 	    },
 	    mounted: function mounted() {
@@ -19135,7 +19194,7 @@ webpackJsonp([12,14],Array(107).concat([
 	      "fixed": "right",
 	      "context": _vm._self,
 	      "label": "操作",
-	      "width": "300"
+	      "width": "320"
 	    },
 	    inlineTemplate: {
 	      render: function() {
@@ -19170,7 +19229,17 @@ webpackJsonp([12,14],Array(107).concat([
 	                _vm.addFile(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("导入文件")]) : _vm._e(), _vm._v(" "), (_vm.row.type == "CAL") ? _c('el-button', {
+	          }, [_vm._v("导入文件")]) : _vm._e(), _vm._v(" "), (_vm.row.type == "ESD" && _vm.row.complete == true) ? _c('el-button', {
+	            attrs: {
+	              "type": "success",
+	              "size": "small"
+	            },
+	            on: {
+	              "click": function($event) {
+	                _vm.downfile(_vm.row)
+	              }
+	            }
+	          }, [_vm._v("下载文件")]) : _vm._e(), _vm._v(" "), (_vm.row.type == "CAL") ? _c('el-button', {
 	            attrs: {
 	              "type": "success",
 	              "size": "small"
@@ -19614,7 +19683,61 @@ webpackJsonp([12,14],Array(107).concat([
 	    on: {
 	      "click": _vm.addInsLog
 	    }
-	  }, [_vm._v("确 定")])], 1)], 1)], 1)
+	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('el-dialog', {
+	    attrs: {
+	      "title": "下载文件",
+	      "size": "small",
+	      "modal-append-to-body": false
+	    },
+	    model: {
+	      value: (_vm.downFileView),
+	      callback: function($$v) {
+	        _vm.downFileView = $$v
+	      },
+	      expression: "downFileView"
+	    }
+	  }, [_c('el-row', [_c('el-table', {
+	    staticStyle: {
+	      "width": "100%"
+	    },
+	    attrs: {
+	      "data": _vm.fileList
+	    }
+	  }, [_c('el-table-column', {
+	    attrs: {
+	      "type": "index",
+	      "width": "55"
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "prop": "name",
+	      "label": "名称"
+	    }
+	  }), _vm._v(" "), _c('el-table-column', {
+	    attrs: {
+	      "context": _vm._self,
+	      "label": "操作",
+	      "width": "150"
+	    },
+	    inlineTemplate: {
+	      render: function() {
+	        var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	          return _c('span', [_c('el-button', {
+	            attrs: {
+	              "type": "success",
+	              "size": "small"
+	            },
+	            on: {
+	              "click": function($event) {
+	                _vm.download(_vm.row)
+	              }
+	            }
+	          }, [_vm._v("下载")])], 1)
+	        
+	      },
+	      staticRenderFns: []
+	    }
+	  })], 1)], 1)], 1)], 1)
 	},staticRenderFns: []}
 	module.exports.render._withStripped = true
 	if (false) {
