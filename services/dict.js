@@ -95,7 +95,7 @@ module.exports = {
             })
         ).then((result)=>{
                 let list2 = _.zipWith(list,result,(a,b)=>{
-                    return _.assign(a._doc,{insName:b[0].name});
+                    return _.assign(a._doc,{insName:b[0].name,insinfo:b});
                 })
                 if (pageNo == 0) {
                     return new Promise((rs, rj) => {

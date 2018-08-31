@@ -15,9 +15,11 @@
                       </span>
                     </el-table-column>
                 </el-table>
+                <el-pagination @size-change="listsizechange" @current-change="getList" :current-page.sync="pageNo" :page-sizes="[10,15,20]" :page-size="pageSize" layout="sizes, prev, pager, next" :total="$store.state.email.pageItemTotalCount" style='margin-top:20px;height:60px;'>
+                </el-pagination>
             </el-col>
         </el-row>
-        <el-dialog :title="dialogTitle" size='large' v-model="$store.state.email.dialogFormVisible" :modal-append-to-body='false'>
+        <!-- <el-dialog :title="dialogTitle" size='large' v-model="$store.state.email.dialogFormVisible" :modal-append-to-body='false'>
             <el-form :model="form">
                 <el-row>
                     <el-col>
@@ -44,7 +46,7 @@
                 <el-button @click="hideDialog">取 消</el-button>
                 <el-button type="primary" @click="submit">确 定</el-button>
             </div>
-        </el-dialog>
+        </el-dialog> -->
         <input type="text" v-model='title'>
         <el-button @click="save(row)" type="success" size="small">保存</el-button>
         <div ref='editor' id="editor">
@@ -70,6 +72,7 @@ export default {
             dialogTitle: "新建模板集",
             // dataList: [],
             pageNo: 1,
+            pageSize: 10,
             title: "",
             text: "",
             editor: {},
@@ -92,6 +95,10 @@ export default {
             this.current = insInfo;
             this.title = insInfo.title.toString();
             this.editor.txt.html(insInfo.content);
+        },
+        listsizechange(val) {
+            this.pageSize = val;
+            this.getList(1);
         },
         submit() {
 
@@ -130,7 +137,8 @@ export default {
             this.pageNo = page;
             this.$store.dispatch("getEmailList", {
                 pageNo: page - 1,
-                keyword: this.serachContent
+                keyword: this.serachContent,
+                pageSize: this.pageSize,
             });
         },
     },

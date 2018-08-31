@@ -13,7 +13,10 @@ export default {
     },
     mutations: {
         updateEmailList(state, data) {
-            state.EmailList = data;
+            state.EmailList = data.result;
+            if (data.hasOwnProperty("total")) {
+                state.pageItemTotalCount = data.total;
+            }
         },
         loading(state, view) {
             state.tableLoading = view;
@@ -27,9 +30,10 @@ export default {
             commit("loading", true);
             getList("email", {
                 pageNo: data.pageNo,
-                keyword: data.keyword
+                keyword: data.keyword,
+                pageSize: data.pageSize,
             }).then(res => {
-                commit("updateEmailList", res.result || []);
+                commit("updateEmailList", res);
                 commit("loading", false);
             });
         },

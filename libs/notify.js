@@ -1,5 +1,6 @@
 const { sendMail } = require("./email/index.js");
 const { UserModel, InsInfoModel } = require("../repositories/mongoHelper");
+const statusrule = require("../modeltranform/statusrule.js");
 const co = require("co");
 const moment = require("moment")
 
@@ -75,9 +76,17 @@ function getAdminList() {
         })
     }).then(function(data) {
         if (data && data.length) {
-            return data.map(cur => {
-                return cur.Email;
-            })
+            // return data.map(cur => {
+            //     return cur.Email;
+            // })
+            let emails = data.map(cur =>{return cur.Email});
+            let em=[];
+            for(let email of emails){
+                if (email != "无"){
+                    em.push(email);
+                }
+            }
+            return em;
         } else {
             return [];
         }
@@ -97,6 +106,54 @@ function getDeviceListNotify(list) {
     }
 }
 
+//每日报表中仪器清单信息
+function getReportList(list) {
+    if (list && list.length) {
+        return list.map(cur => {
+            cur.deviceStatus = statusrule.statusList[parseInt(cur.deviceStatus)-1].label;
+            return `${cur.insCode} ${cur.insName}  ${cur.deviceStatus}`;
+        })
+    } else {
+        return [];
+    }
+}
+//签核通知中仪器清单信息
+function getHandleList(list) {
+    if (list && list.length) {
+        return list.map(cur => {
+            cur.deviceStatus = statusrule.statusList[parseInt(cur.deviceStatus)-1].label;
+            cur.nextDeviceStatus = statusrule.statusList[parseInt(cur.nextDeviceStatus)-1].label;
+            return `${cur.insCode} ${cur.insName}  ${cur.deviceStatus} => ${cur.nextDeviceStatus}`;
+        })
+    } else {
+        return [];
+    }
+}
+
+function getUserListNotify(list) {
+    if (list && list.length) {
+        return list.map(cur => {
+            return `${cur.name}  ${cur.userId}`;
+        })
+    } else {
+        return [];
+    }
+}
+function getInfoChangeList(list) {
+   return list.map(cur => {
+       let keeper = cur.keeper.split("&")[1];
+       let fromkeeper = cur.fromKeeper =="无"?"无":cur.fromKeeper.split("&")[1];
+       return `${cur.insCode}  ${cur.insName} ${fromkeeper} => ${keeper}`;
+   })
+}
+
+function getCompleteList(list) {
+   return list.map(cur => {
+       let keeper = cur.keeper.split("&")[1];
+       return `${cur.insCode} ${cur.insName}  校验完毕`;
+   })
+}
+
 module.exports.notifyPwd = function(pwd, email) {
     return co(function*() {
         yield sendMail("pwd", [email], [], { pwd });
@@ -106,14 +163,28 @@ module.exports.notifyPwd = function(pwd, email) {
 module.exports.notifyAdmin = function(type, deviceList, date = "") {
     return co(function*() {
         let userList = yield getAdminList();
-        yield sendMail(type, userList, getDeviceListNotify(deviceList), { date: moment(date).format("YYYY-MM-DD") });
+        let list;
+        switch(type){
+            case "infochange": list = getUserListNotify(deviceList);break;
+            case "report": list = getReportList(deviceList);break;
+            case "handle" : list = getHandleList(deviceList);break;
+            default:   list = getDeviceListNotify(deviceList);
+        }
+        yield sendMail(type, userList, list, { date: moment(date).format("YYYY-MM-DD") });
     })
 }
 
-module.exports.notifyKeeper = function(type, userList, deviceList, date = "") {
+//提醒保管人并通知管理员
+module.exports.notifyKeeper = function(type, userList, deviceList) {
     return co(function*() {
         let tmpuserList = yield getUserEmailList(userList);
-
-        yield sendMail(type, tmpuserList, getDeviceListNotify(deviceList), { date: moment(date).format("YYYY-MM-DD") });
+        let ccRecipients  = yield getAdminList();   //抄送给管理员
+        let list;
+        switch(type){
+            case "userchange": list = getInfoChangeList(deviceList); break;
+            case "complete": list = getCompleteList(deviceList);break;
+            default:   list = getDeviceListNotify(deviceList);
+        }
+        yield sendMail(type, tmpuserList, list,false,ccRecipients);
     })
 }

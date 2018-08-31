@@ -395,6 +395,8 @@ module.exports = {
             return false;
         });
     },
+    //创建测试
+    // insId:仪器id   userId:创建人   targetStatus: 当前目标状态
     startTest: function(insId, userId, targetStatus) {
         return new Promise((rs, rj) => {
             InsInfoModel.find({ _id: insId }, (err, res) => {
@@ -576,16 +578,20 @@ module.exports = {
             updateObj = {
                 nextDeviceStatus: to,
                 toConfirm: "0",
-                log
+                log,
+                fromWho:userId
             };
 
-            //增加审批链
+            //增加审批链，并提醒审批人
             if (confirmChain) {
                 updateObj.confirmChain = confirmChain;
                 updateObj.forUser = confirmChain[0];
                 updateObj.fromWho = userId;
+                let confirmer = confirmChain.map(cur => {
+                    return cur.split("&")[0];
+                })
                 this.getDeviceByID(testInfo.insId).then(res=>{
-                    notify.notifyKeeper("handle", [confirmChain[0].split("&")[0]], res);
+                     notify.notifyKeeper("handle", confirmer, res);
                 })
                 
             }
@@ -639,6 +645,11 @@ module.exports = {
                 log
             };
 
+            
+            this.getDeviceByID(testInfo.insId).then(res=>{
+                notify.notifyKeeper("reject", [testInfo.fromWho.split("&")[0]], res);
+           });
+
             updateObj.toConfirm = '1';
             updateObj.forUser = '';
             updateObj.fromWho = "";
@@ -650,7 +661,7 @@ module.exports = {
                 } else {
                     rs(_.assign({}, testInfo.toObject(), updateObj));
                 }
-            })
+            });
         });
     },
     proveTestChange: function(testInfo, note, filePath, userId) {

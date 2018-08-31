@@ -29883,7 +29883,10 @@ webpackJsonp([0,14],[
 	    },
 	    mutations: {
 	        updateEmailList: function updateEmailList(state, data) {
-	            state.EmailList = data;
+	            state.EmailList = data.result;
+	            if (data.hasOwnProperty("total")) {
+	                state.pageItemTotalCount = data.total;
+	            }
 	        },
 	        loading: function loading(state, view) {
 	            state.tableLoading = view;
@@ -29899,9 +29902,10 @@ webpackJsonp([0,14],[
 	            commit("loading", true);
 	            (0, _query.getList)("email", {
 	                pageNo: data.pageNo,
-	                keyword: data.keyword
+	                keyword: data.keyword,
+	                pageSize: data.pageSize
 	            }).then(function (res) {
-	                commit("updateEmailList", res.result || []);
+	                commit("updateEmailList", res);
 	                commit("loading", false);
 	            });
 	        },

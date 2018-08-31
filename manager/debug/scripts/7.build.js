@@ -523,6 +523,8 @@ webpackJsonp([7,14],{
 	//
 	//
 	//
+	//
+	//
 	
 	exports.default = {
 	    computed: {
@@ -539,6 +541,7 @@ webpackJsonp([7,14],{
 	            dialogTitle: "新建模板集",
 	            // dataList: [],
 	            pageNo: 1,
+	            pageSize: 10,
 	            title: "",
 	            text: "",
 	            editor: {},
@@ -562,6 +565,10 @@ webpackJsonp([7,14],{
 	            this.current = insInfo;
 	            this.title = insInfo.title.toString();
 	            this.editor.txt.html(insInfo.content);
+	        },
+	        listsizechange: function listsizechange(val) {
+	            this.pageSize = val;
+	            this.getList(1);
 	        },
 	        submit: function submit() {
 	            var _this = this;
@@ -602,7 +609,8 @@ webpackJsonp([7,14],{
 	            this.pageNo = page;
 	            this.$store.dispatch("getEmailList", {
 	                pageNo: page - 1,
-	                keyword: this.serachContent
+	                keyword: this.serachContent,
+	                pageSize: this.pageSize
 	            });
 	        }
 	    },
@@ -685,86 +693,26 @@ webpackJsonp([7,14],{
 	      },
 	      staticRenderFns: []
 	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-dialog', {
-	    attrs: {
-	      "title": _vm.dialogTitle,
-	      "size": "large",
-	      "modal-append-to-body": false
-	    },
-	    model: {
-	      value: (_vm.$store.state.email.dialogFormVisible),
-	      callback: function($$v) {
-	        _vm.$set(_vm.$store.state.email, "dialogFormVisible", $$v)
-	      },
-	      expression: "$store.state.email.dialogFormVisible"
-	    }
-	  }, [_c('el-form', {
-	    attrs: {
-	      "model": _vm.form
-	    }
-	  }, [_c('el-row', [_c('el-col', [_c('el-form-item', {
+	  })], 1), _vm._v(" "), _c('el-pagination', {
 	    staticStyle: {
-	      "max-width": "400px"
+	      "margin-top": "20px",
+	      "height": "60px"
 	    },
 	    attrs: {
-	      "label": "名称",
-	      "label-width": "80px"
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.name),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "name", $$v)
-	      },
-	      expression: "form.name"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('el-row', [_c('el-card', {
-	    staticClass: "box-card"
-	  }, [_c('div', {
-	    staticClass: "clearfix",
-	    attrs: {
-	      "slot": "header"
-	    },
-	    slot: "header"
-	  }, [_c('el-row', [_c('el-col', {
-	    attrs: {
-	      "span": 8
-	    }
-	  }, [_c('el-input', {
-	    attrs: {
-	      "placeholder": "邮件抬头",
-	      "auto-complete": "off"
-	    },
-	    model: {
-	      value: (_vm.form.title),
-	      callback: function($$v) {
-	        _vm.$set(_vm.form, "title", $$v)
-	      },
-	      expression: "form.title"
-	    }
-	  })], 1)], 1)], 1), _vm._v(" "), _c('div', {
-	    staticClass: "text item"
-	  })])], 1)], 1), _vm._v(" "), _c('div', {
-	    staticClass: "dialog-footer",
-	    attrs: {
-	      "slot": "footer"
-	    },
-	    slot: "footer"
-	  }, [_c('el-button', {
-	    on: {
-	      "click": _vm.hideDialog
-	    }
-	  }, [_vm._v("取 消")]), _vm._v(" "), _c('el-button', {
-	    attrs: {
-	      "type": "primary"
+	      "current-page": _vm.pageNo,
+	      "page-sizes": [10, 15, 20],
+	      "page-size": _vm.pageSize,
+	      "layout": "sizes, prev, pager, next",
+	      "total": _vm.$store.state.email.pageItemTotalCount
 	    },
 	    on: {
-	      "click": _vm.submit
+	      "size-change": _vm.listsizechange,
+	      "current-change": _vm.getList,
+	      "update:currentPage": function($event) {
+	        _vm.pageNo = $event
+	      }
 	    }
-	  }, [_vm._v("确 定")])], 1)], 1), _vm._v(" "), _c('input', {
+	  })], 1)], 1), _vm._v(" "), _c('input', {
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",

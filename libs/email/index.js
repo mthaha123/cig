@@ -54,6 +54,9 @@ let ewsArgsTemplate = {
             "ToRecipients": {
                 "Mailbox": []
             },
+            "CcRecipients":{
+                "Mailbox":[]
+            },
             "IsRead": "false"
         }
     }
@@ -72,14 +75,16 @@ function send(ewsArgs) {
 
 
 
-module.exports.sendMail = function (type, userList, deviceList, params) {
+module.exports.sendMail = function (type, userList, deviceList, params,ccRecipients) {
     return co(function* () {
         let template = tpls[type].content;
-        for (var key in params) {
-            template = template.replace("{" + key + "}", params[key]);
-        }
+        if(params){
+            for (var key in params) {
+                template = template.replace("{" + key + "}", params[key]);
+            }
 
-        template = template.replace("{{__devList}}", deviceList.join(",\n"));
+        }
+        template = template.replace("{{__devList}}", deviceList.join(",<br />"));
 
         let args = JSON.parse(JSON.stringify(ewsArgsTemplate));
         if (userList && userList.length) {
@@ -92,6 +97,13 @@ module.exports.sendMail = function (type, userList, deviceList, params) {
             args["Items"]["Message"]["Subject"] = tpls[type].title;
 
             args["Items"]["Message"]["Body"]["$value"] = template;
+        }
+        if(ccRecipients &&ccRecipients.length){
+            args["Items"]["Message"]["CcRecipients"]["Mailbox"] = ccRecipients.map(cur =>{
+                return {
+                    "EmailAddress":cur
+                }
+            })
         }
 
         console.log("===========sendEmial===========");

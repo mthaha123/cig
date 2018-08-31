@@ -42,7 +42,7 @@ module.exports = {
         }
 
         let currentUser = this.session.userInfo._id + "&" + this.session.userInfo.name;
-        let ret = yield statusSvc.getDeviceByStatus(queryStatus, currentUser, forStatusList, pageNo, pageSize, keyword)
+        let ret = yield statusSvc.getDeviceByStatus(queryStatus, currentUser, forStatusList, pageNo, pageSize, keyword);
 
         this.body = {
             success: true,
@@ -56,13 +56,14 @@ module.exports = {
             success: true
         }
     },
+    //创建测试信息
     createTest: function*(id) {
         let insId, userId;
-        if (typeof(id) != "object") {
+        if (typeof(id) != "object") {     //系统创建
             insId = id;
             userId = "System";
             targetStatus = "1";
-        } else {
+        } else {                         //手动创建测试
             let params = yield parse(this);
             insId = params.insId;
             userId = this.session.userInfo.userId;
@@ -88,16 +89,16 @@ module.exports = {
         // }
 
         let exist = yield statusSvc.existTest(insId);
-        if (!exist) {
+        if (!exist) {//不存在，则创建
             let ret = yield statusSvc.startTest(insId, userId, targetStatus);
 
-            yield statusSvc.updateDevStatus(ret);
+            yield statusSvc.updateDevStatus(ret); //更新仪器信息表中的仪器状态
 
             if (id)
                 this.body = {
                     success: true
                 }
-        } else {
+        } else {//存在，更新状态
             yield statusSvc.updateDevStatus({
                 deviceStatus: targetStatus,
                 toConfirm: "1",
