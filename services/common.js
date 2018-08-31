@@ -401,10 +401,10 @@ module.exports = {
                     obj["No"] = getValue("No");
                     obj["specification"] = getValue("specification");
                     obj["modelNo"] = getValue("modelNo");
-                    let tstartDate = moment(getValue("startDate"),"YYYY-MM-DD").isValid()?getValue("startDate"):"1970-01-01";
+                    let tstartDate = moment(getValue("startDate"),"YYYY-MM-DD").isValid()?moment(getValue("startDate")).format('YYYY-MM-DD'):"1970-01-01";
                     console.log(tstartDate)
                     obj["startDate"] = `${tstartDate} 00:00:00`;
-                    let tendDate = moment(getValue("endDate"),"YYYY-MM-DD").isValid()?getValue("endDate"):"1971-01-01";
+                    let tendDate = moment(getValue("endDate"),"YYYY-MM-DD").isValid()?moment(getValue("startDate")).format('YYYY-MM-DD'):"1971-01-01";
                     console.log(tendDate)
                     obj["endDate"] = `${tendDate} 00:00:00`;
                     obj["description"] = getValue("description");
@@ -426,7 +426,13 @@ module.exports = {
                             }
                         }
                     })(getValue("testType"));
-                    obj["keeper"] = yield getKeeper(getValue("keeper"));
+                    // obj["keeper"] = yield getKeeper(getValue("keeper"));
+                    let dep = yield DepModel.findOne({name: obj["depCode"]});
+                    if(dep){
+                        obj["keeper"] = dep.keeper;
+                    }else{
+                        obj["keeper"] = yield getKeeper(getValue("keeper"));
+                    }
                     obj["isInit"] = true;
 
 
@@ -464,7 +470,7 @@ module.exports = {
         })
 
         return new Promise((rs, rj) => {
-            InsCodeModel.find({}, (err, res) => {
+            InsCodeModel.find({isDelete:{$ne:true}}, (err, res) => {
                 if (err) {
                     rj(err);
                 } else {
@@ -674,7 +680,7 @@ module.exports = {
     },
     exportMatCodeList: function(){
         return new Promise((rs,rj)=>{
-            MatCodeModel.find().sort({_id: -1}).exec(function(err,res){
+            MatCodeModel.find({isDelete:{$ne:true}}).sort({_id: -1}).exec(function(err,res){
                 if (err) {
                     console.warn("getMatCodeList Error:", err);
                     rj(err);
@@ -717,7 +723,7 @@ module.exports = {
     },
     exportMaterialsList: function(){
         return new Promise((rs,rj)=>{
-            materialsModel.find().sort({_id: -1}).exec(function(err,res){
+            materialsModel.find({isDelete:{$ne:true}}).sort({_id: -1}).exec(function(err,res){
                 if (err) {
                     console.warn("getMatCodeList Error:", err);
                     rj(err);
