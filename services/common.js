@@ -156,8 +156,10 @@ function exportFile(list, headerList) {
                 return mIndex + 1;
             } else if (header.fieldName == 'org') {
                 return "CIG";
-            } else if (cur[header.fieldName]) {
+            } else if (cur[header.fieldName]&& typeof(cur[header.fieldName])=="string") {
                 return cur[header.fieldName].replace(/\r/g, " ");
+            } else if (cur[header.fieldName]&& typeof(cur[header.fieldName])=="number") {
+                return cur[header.fieldName];
             } else {
                 return "";
             }
