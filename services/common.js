@@ -404,7 +404,7 @@ module.exports = {
                     let tstartDate = moment(getValue("startDate"),"YYYY-MM-DD").isValid()?moment(getValue("startDate")).format('YYYY-MM-DD'):"1970-01-01";
                     console.log(tstartDate)
                     obj["startDate"] = `${tstartDate} 00:00:00`;
-                    let tendDate = moment(getValue("endDate"),"YYYY-MM-DD").isValid()?moment(getValue("startDate")).format('YYYY-MM-DD'):"1971-01-01";
+                    let tendDate = moment(getValue("endDate"),"YYYY-MM-DD").isValid()?moment(getValue("endDate")).format('YYYY-MM-DD'):"1971-01-01";
                     console.log(tendDate)
                     obj["endDate"] = `${tendDate} 00:00:00`;
                     obj["description"] = getValue("description");
