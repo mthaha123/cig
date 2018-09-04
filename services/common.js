@@ -244,7 +244,7 @@ module.exports = {
                         return `第${index}行，导入格式有误`;
                     }
                 }
-                if(yield MatCodeModel.findOne({code: vals[2]})){
+                if(yield MatCodeModel.findOne({code: vals[2],isDelete:{$ne:true}})){
                     console.log(`第${index++}行，系统内已存在`);
                     continue;
                 }
@@ -291,7 +291,7 @@ module.exports = {
                 //     console.log(`第${index++}行，系统内已存在`);
                 //     continue;
                 // }
-                let matcode = yield MatCodeModel.findOne({code: vals[2]});
+                let matcode = yield MatCodeModel.findOne({code: vals[2],isDelete:{$ne:true}});
                 if(matcode){
                     obj["type"] = matcode.type;
                 }else{
@@ -302,7 +302,7 @@ module.exports = {
                 //     console.log('第${index++}行，');
                 //     return `第${index++}行，来料Code信息中不存在`;
                 // }
-                let user = yield UserModel.findOne({name:vals[7]});
+                let user = yield UserModel.findOne({name:vals[7],isDelete:{$ne:true}});
                 
                 obj["updateTime"] = moment(vals[1],"YYYY-MM-DD").isValid()?vals[1]:"1970-01-01";
                 obj["updateTime"] = obj["updateTime"]+" 00:00:00";
@@ -429,7 +429,7 @@ module.exports = {
                         }
                     })(getValue("testType"));
                     // obj["keeper"] = yield getKeeper(getValue("keeper"));
-                    let dep = yield DepModel.findOne({name: obj["depCode"]});
+                    let dep = yield DepModel.findOne({name: obj["depCode"],isDelete:{$ne:true}});
                     if(dep){
                         obj["keeper"] = dep.keeper;
                     }else{
@@ -487,7 +487,7 @@ module.exports = {
             }
 
             return new Promise((rs, rj) => {
-                DepModel.find({}, (err, res) => {
+                DepModel.find({isDelete:{$ne:true}}, (err, res) => {
                     if (err) {
                         rj(err);
                     } else {
@@ -503,7 +503,7 @@ module.exports = {
             }
 
             return new Promise((rs, rj) => {
-                InsInfoModel.find({}, (err, res) => {
+                InsInfoModel.find({isDelete:{$ne:true}}, (err, res) => {
                     if (err) {
                         rj(err);
                     } else {

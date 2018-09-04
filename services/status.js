@@ -582,16 +582,14 @@ module.exports = {
                 fromWho:userId
             };
 
-            //增加审批链，并提醒审批人
+            //增加审批链，并提醒第一个审批人
             if (confirmChain) {
                 updateObj.confirmChain = confirmChain;
                 updateObj.forUser = confirmChain[0];
                 updateObj.fromWho = userId;
-                let confirmer = confirmChain.map(cur => {
-                    return cur.split("&")[0];
-                })
+                let confirmer = confirmChain[0].split("&")[0]
                 this.getDeviceByID(testInfo.insId).then(res=>{
-                     notify.notifyKeeper("handle", confirmer, res);
+                     notify.notifyKeeper("handle", [confirmer], res);
                 })
                 
             }
@@ -689,7 +687,7 @@ module.exports = {
                 updateObj.toConfirm = '1';
                 updateObj.forUser = '';
                 updateObj.fromWho = "";
-                updateObj.completeChain = [];
+                // updateObj.completeChain = [];
                 updateObj.confirmChain = [];
                 updateObj.deviceStatus = testInfo.nextDeviceStatus;
                 updateObj.nextDeviceStatus = "";
@@ -715,6 +713,7 @@ module.exports = {
                 updateObj.forUser = testInfo.fromWho;
                 // updateObj.deviceStatus = testInfo.nextDeviceStatus;
                 // updateObj.nextDeviceStatus = "";
+                //提醒计量管理员审批确认
             } else {
                 //未完成  更新下一位审批人
                 let releaseUser = testInfo.confirmChain.slice(completeChain.length).shift();

@@ -33,7 +33,7 @@ var TestSchema = new Schema({
      * 需要专人审核
      * @type {String}
      */
-    forUser: { type: String },
+    forUser: { type: String },    //当前审批人
 
     /** 是否测试完成 */
     complete: { type: Boolean },
