@@ -46,7 +46,7 @@ module.exports = {
         log.ins = ins1;
         form.log = log;
         for(let insCode of ins1){
-            if(!(yield InsInfoModel.findOne({code: insCode}))){
+            if(!(yield InsInfoModel.findOne({code: insCode,isDelete:{$ne:true}}))){
                 console.log(`添加仪器编号有误`);
                 this.body = {
                     success: false,
@@ -110,14 +110,15 @@ module.exports = {
     },
     updateType: function*(){
         let query = {
-            type:"未确认" 
+            type:"未确认",
+            isDelete:{$ne:true} 
         };
         let num=0;
         //找出未确认状态的来料，之后对其更新
         let list = yield materialsModel.find(query);
         for(let i of list){
             i = i.toObject();
-            let matcode = yield MatCodeModel.findOne({code: i.code});
+            let matcode = yield MatCodeModel.findOne({code: i.code,isDelete:{$ne:true}});
             if(matcode){
                 i["type"] = matcode.type;
                 if(i.type == "NA"){

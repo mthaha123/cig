@@ -53,7 +53,7 @@ function getUserList() {
 
 function saveUser(user) {
     return new Promise((rs, rj) => {
-        UserModel.findOne({ userId: user.Badge[0] }, (err, res) => {
+        UserModel.findOne({ userId: user.Badge[0],isDelete:{$ne:true} }, (err, res) => {
             if (err) {
                 rj(err);
             } else {

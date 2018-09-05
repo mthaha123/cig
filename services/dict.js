@@ -131,7 +131,7 @@ module.exports = {
         pageSize = parseInt(pageSize);
         pageNo = parseInt(pageNo);
         return new Promise((rs, rj) => {
-            ModelDict["depInfo"].find().distinct("keeper").exec(function(err, res) {
+            ModelDict["depInfo"].find({isDelete:{$ne:true}}).distinct("keeper").exec(function(err, res) {
                 if (err) {
                     console.warn("getInvalidList Error:", err);
                     rj(err);
@@ -219,6 +219,7 @@ module.exports = {
             for (let key of uniqueList) {
                 exQueryObj[key] = item[key];
             }
+            exQueryObj.isDelete = {$ne:true};
             
             var exist = yield Model.findOne(exQueryObj);
             if (exist) {

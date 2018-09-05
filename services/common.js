@@ -25,7 +25,7 @@ const xlsx = require('node-xlsx').default;
 
 function existDev(code) {
     return new Promise((rs, rj) => {
-        InsInfoModel.find({ code }, (err, res) => {
+        InsInfoModel.find({ code,isDelete:{$ne:true} }, (err, res) => {
             if (err) {
                 rj(err);
             } else {
@@ -72,7 +72,7 @@ function getKeeper(name) {
     }
 
     return new Promise((rs, rj) => {
-        UserModel.find({ userId }, (err, res) => {
+        UserModel.find({ userId,isDelete:{$ne:true} }, (err, res) => {
             if (err) {
                 rj(err);
             } else {
@@ -120,7 +120,7 @@ function getInsCode(code) {
     if (typeof (code) == "string")
         code = code.replace(/\s/g, "");
     return new Promise((rs, rj) => {
-        InsCodeModel.find({ code }, (err, res) => {
+        InsCodeModel.find({ code ,isDelete:{$ne:true}}, (err, res) => {
             if (err) {
                 rj(err);
             } else {
