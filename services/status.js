@@ -463,7 +463,7 @@ module.exports = {
     },
     getDeviceByCode: function(code) {
         return new Promise((rs, rj) => {
-            InsInfoModel.find({ code }, function(err, res) {
+            InsInfoModel.find({ code:code,isDelete:{$ne:true} }, function(err, res) {
                 if (err) {
                     rj(err)
                 } else {
