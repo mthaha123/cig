@@ -18687,6 +18687,7 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.$store.commit("viewMaterialsDetail", true);
 	            this.dialogTitle = "编辑信息";
 	            this.SaveActionName = "editMaterials";
+	            this.typeView = false;
 	            this.userOptions = [{
 	                value: row.user,
 	                label: row.user ? row.user.split("&")[1] : ""
@@ -18698,10 +18699,11 @@ webpackJsonp([12,14],Array(107).concat([
 	            this.dialogTitle = "新建来料信息";
 	            this.SaveActionName = "createMaterials";
 	            this.typeView = false;
-	            this.form = {};
-	            this.form.completeView = "未完成";
-	            this.form.complete = false;
-	            this.form.type = "未确认";
+	            var form = {};
+	            form.completeView = "未完成";
+	            form.complete = false;
+	            form.type = "未确认";
+	            this.form = _lodash2.default.assign({}, form);
 	        },
 	        submit: function submit() {
 	            var _this2 = this;
@@ -19129,7 +19131,7 @@ webpackJsonp([12,14],Array(107).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "createTime",
+	      "prop": "updateTime",
 	      "label": "日期",
 	      "width": "180",
 	      "show-overflow-tooltip": true

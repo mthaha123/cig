@@ -313,6 +313,9 @@ module.exports = {
                 obj["supplier"] = vals[6];
                 obj["user"] = user?user._id+'&'+user.name:"";
                 obj["complete"] = false;
+                if(obj["type"]=="NA"){
+                    obj["complete"] = true;
+                }
 
                 try {
                     var model = new materialsModel(obj);

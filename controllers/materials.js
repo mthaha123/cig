@@ -128,6 +128,21 @@ module.exports = {
                 num++;
             }
         }
+        //找出状态为NA的，更新为完成
+        query = {
+            type:"NA",
+            isDelete:{$ne:true} 
+        };
+        list = yield materialsModel.find(query);
+        for(let i of list){
+            i = i.toObject();
+            if(i.complete ==false){
+                i.complete = true;
+                yield dictSvc.update("materials", i._id, getSaveItem("materials", i));
+                num++;
+            }
+
+        }
         this.body = {
             success: true,
             result:num,

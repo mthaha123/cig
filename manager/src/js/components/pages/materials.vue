@@ -22,7 +22,7 @@
                 <el-table :data="dataList" v-loading.body="$store.state.materials.tableLoading" border style="width: 100%">
                     <el-table-column type="index" width="55">
                     </el-table-column>
-                    <el-table-column prop="createTime" label="日期" width="180" :show-overflow-tooltip=true>
+                    <el-table-column prop="updateTime" label="日期" width="180" :show-overflow-tooltip=true>
                     </el-table-column>
                     <el-table-column prop="code" label="料号" width="180" :show-overflow-tooltip=true>
                     </el-table-column>
@@ -241,6 +241,7 @@ export default {
             this.$store.commit("viewMaterialsDetail", true);
             this.dialogTitle = "编辑信息";
             this.SaveActionName = "editMaterials";
+            this.typeView = false;
             this.userOptions = [{
                 value: row.user,
                 label: row.user?row.user.split("&")[1]:""
@@ -252,10 +253,11 @@ export default {
             this.dialogTitle = "新建来料信息";
             this.SaveActionName = "createMaterials";
             this.typeView = false;
-            this.form = {};
-            this.form.completeView = "未完成";
-            this.form.complete = false;
-            this.form.type = "未确认";
+            let form = {};
+            form.completeView = "未完成";
+            form.complete = false;
+            form.type = "未确认";
+            this.form = _.assign({},form);
         },
         submit() {
             let ret = validateMaterials(this.form);

@@ -916,5 +916,42 @@ module.exports = {
                 })
             })
         });
-    } 
+    } ,
+    completeCancelTest:function(id,userId){
+        let cLog = {
+            message: "删除此仪器，测试结束",
+            time: moment().format("YYYY-MM-DD HH:mm:ss"),
+            operator: userId,
+        };
+        return new Promise((rs,rj) => {
+            TestModel.findOne({insId:id,complete:false}).exec(function(err, res) {
+                if (err) {
+                    // console.warn("getList", type, "Error:", err);
+                    rj(err);
+                } else {
+                    rs(res);
+                }
+            })
+        }).then(data =>{
+            if(data){
+                let log = (data.log ||[]).concat([cLog]);
+                let updateObj = {
+                    complete: true,
+                    toConfirm: "1",
+                    log
+                };
+                return new Promise((rs,rj)=>{
+                    TestModel.update({ _id: data._id },updateObj,(err,res) =>{
+                        if (err) {
+                            rj(err);
+                        } else {
+                            rs(res);
+                        }
+                    })
+                }) 
+            }else{
+                return;
+            }
+        })
+    }
 }

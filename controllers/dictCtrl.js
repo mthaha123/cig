@@ -111,6 +111,10 @@ module.exports = {
     },
     deleteDict: function*(type, id) {
         yield dictSvc.remove(type, id);
+        let userId = this.session.userInfo.userId;
+        if(type == "insInfo"){
+            yield statusSvc.completeCancelTest(id,userId);
+        }
         this.body = {
             success: true
         }
