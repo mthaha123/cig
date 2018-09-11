@@ -19132,7 +19132,7 @@ webpackJsonp([12,14],Array(107).concat([
 	    }
 	  }), _vm._v(" "), _c('el-table-column', {
 	    attrs: {
-	      "prop": "updateTime",
+	      "prop": "createTime",
 	      "label": "日期",
 	      "width": "180",
 	      "show-overflow-tooltip": true

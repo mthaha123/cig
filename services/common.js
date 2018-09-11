@@ -304,8 +304,8 @@ module.exports = {
                 // }
                 let user = yield UserModel.findOne({name:vals[7],isDelete:{$ne:true}});
                 
-                obj["updateTime"] = moment(vals[1],"YYYY-MM-DD").isValid()?vals[1]:"1970-01-01";
-                obj["updateTime"] = obj["updateTime"]+" 00:00:00";
+                obj["createTime"] = moment(vals[1],"YYYY-MM-DD").isValid()?vals[1]:"1970-01-01";
+                obj["createTime"] = obj["createTime"]+" 00:00:00";
                 obj["code"] = vals[2];
                 obj["order"] = vals[3];
                 obj["num"] = vals[4];
@@ -744,10 +744,10 @@ module.exports = {
             retList.push(headerList);
             list.forEach((current,mIndex)=>{
                 current = current.toObject();
-                current.updateTime = moment(current.updateTime).format("YYYY-MM-DD");
+                current.createTime = moment(current.createTime).format("YYYY-MM-DD");
                 current.user = current.user?current.user.split("&")[1]:"";
                 current.complete = current.complete?"完成":"未完成";
-                let c = [mIndex+1,current.updateTime,current.code,current.order,
+                let c = [mIndex+1,current.createTime,current.code,current.order,
                         current.num,current.description,current.supplier,current.user,current.complete,current.type];
                 retList.push(c);
             });

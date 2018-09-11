@@ -22,7 +22,7 @@
                 <el-table :data="dataList" v-loading.body="$store.state.materials.tableLoading" border style="width: 100%">
                     <el-table-column type="index" width="55">
                     </el-table-column>
-                    <el-table-column prop="updateTime" label="日期" width="180" :show-overflow-tooltip=true>
+                    <el-table-column prop="createTime" label="日期" width="180" :show-overflow-tooltip=true>
                     </el-table-column>
                     <el-table-column prop="code" label="料号" width="180" :show-overflow-tooltip=true>
                     </el-table-column>
