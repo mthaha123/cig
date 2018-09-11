@@ -18657,6 +18657,7 @@ webpackJsonp([12,14],Array(107).concat([
 	                cur.completeView = cur.complete ? "完成" : "未完成";
 	                cur.userView = cur.user ? cur.user.split("&")[1] : "";
 	                cur.createTime = (0, _moment2.default)(cur.createTime).format("YYYY-MM-DD");
+	                cur.updateTime = (0, _moment2.default)(cur.updateTime).format("YYYY-MM-DD");
 	                return cur;
 	            });
 	        },

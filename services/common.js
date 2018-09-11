@@ -744,10 +744,10 @@ module.exports = {
             retList.push(headerList);
             list.forEach((current,mIndex)=>{
                 current = current.toObject();
-                current.createTime = moment(current.createTime).format("YYYY-MM-DD");
+                current.updateTime = moment(current.updateTime).format("YYYY-MM-DD");
                 current.user = current.user?current.user.split("&")[1]:"";
                 current.complete = current.complete?"完成":"未完成";
-                let c = [mIndex+1,current.createTime,current.code,current.order,
+                let c = [mIndex+1,current.updateTime,current.code,current.order,
                         current.num,current.description,current.supplier,current.user,current.complete,current.type];
                 retList.push(c);
             });

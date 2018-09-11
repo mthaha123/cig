@@ -213,6 +213,7 @@ export default {
                 cur.completeView = cur.complete?"完成":"未完成";
                 cur.userView = cur.user?cur.user.split("&")[1]:"";
                 cur.createTime = moment(cur.createTime).format("YYYY-MM-DD");
+                cur.updateTime = moment(cur.updateTime).format("YYYY-MM-DD");
                 return cur;
             });
         },
