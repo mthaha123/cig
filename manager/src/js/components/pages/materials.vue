@@ -267,7 +267,7 @@ export default {
             } else {
                 this.$store.dispatch(this.SaveActionName, this.form).then(res => {
                     this.$message.info("保存成功")
-                    this.getList(pageNo);
+                    this.getList(this.pageNo);
                 }, err => {
                     this.$message.error("保存失败")
                 });

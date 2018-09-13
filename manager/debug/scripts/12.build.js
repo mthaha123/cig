@@ -18715,7 +18715,7 @@ webpackJsonp([12,14],Array(107).concat([
 	            } else {
 	                this.$store.dispatch(this.SaveActionName, this.form).then(function (res) {
 	                    _this2.$message.info("保存成功");
-	                    _this2.getList(pageNo);
+	                    _this2.getList(_this2.pageNo);
 	                }, function (err) {
 	                    _this2.$message.error("保存失败");
 	                });
