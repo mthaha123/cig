@@ -770,5 +770,74 @@ module.exports = {
                 message: "导出失败"
             };
         })
+    },
+
+    UpdateInsList: function*(list){
+        let retList = [];
+        let extendConfig = yield configSvc.getConfig("extendHeader");
+        let index = 1;
+        list.data.shift();
+        for(let line of list.data){
+            let obj = {};
+            if(line == ""){
+                continue;
+            }
+            let vals = line;
+            function getValue(name) {
+                if (importHeaderOrder.hasOwnProperty(name)) {
+                    return vals[importHeaderOrder[name]];
+                } else {
+                    return "";
+                }
+            }
+            code = getValue("code");
+            if(yield existDev(code)){
+                obj["name"] = getValue("name");
+                obj["modelNo"] = getValue("modelNo");
+                obj["specification"] = getValue("specification");
+                obj["testType"] = (function (type) {
+                    let list = [{
+                        value: "0",
+                        label: "内校"
+                    }, {
+                        value: "1",
+                        label: "外校"
+                    }, {
+                        value: "2",
+                        label: "免校"
+                    }];
+
+                    for (let item of list) {
+                        if (item.label == type) {
+                            return item.value;
+                        }
+                    }
+                })(getValue("testType"));
+                obj["depCode"] = getValue("depCode");
+                let dep = yield DepModel.findOne({name: obj["depCode"],isDelete:{$ne:true}});
+                if(dep){
+                    obj["keeper"] = dep.keeper;
+                }else{
+                    obj["keeper"] = yield getKeeper(getValue("keeper"));
+                }
+
+                obj["No"] = getValue("No");
+                obj["assertNo"] = getValue("assertNo");
+                obj["extendFields"] = {};
+                extendConfig.value.forEach((cur, i, array) => {
+                    obj["extendFields"][cur.fieldName] = vals[16 + i];
+                });
+                InsInfoModel.update({code:code,isDelete:{$ne:true}},obj,(err,res)=>{
+                    if(err){
+                        return err;
+                    }else{
+                        return res;
+                    }
+                });
+                retList.push(vals[0]);
+                console.log(vals[0]);
+            }
+            index++;
+        }
     }
 }

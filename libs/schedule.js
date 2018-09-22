@@ -6,12 +6,15 @@ const statusSvc = require("../controllers/statuCtrl.js");
 const { statusCode } = require("../modeltranform/statusrule.js");
 const co = require("co");
 const dictSvc = require("../services/dict");
+const xlsx = require("node-xlsx");
+const commonSvc = require("../services/common.js");
 
 const userSvc = require("../services/user.js");
 
 const period = {
     month: '0 0 0 1 * *',
     day: "0 5 22 * * *",
+    day2: "0 37 22 * * *",
     // month: '1/10 * * * * *',
     // day: "1/10 * * * * *"
 }
@@ -402,11 +405,22 @@ function* userImport() {
     }
 
 }
+function initUpdataList(){
+    excute(period.day2, updateInsList);
+}
+
+function updateInsList(){
+    co(function*(){
+        var content = xlsx.parse("inslist.xlsx");
+        let list = yield commonSvc.UpdateInsList(content[0]);
+    })
+}
 
 module.exports = {
     init() {
         initMonthSendList();     //每月1号提醒下月到期仪器
         initDayEveryCheck();     //每天检查仪器是否要到期
+        initUpdataList();
         // initUserImport();        //每天定时更新用户信息，如发现无效且为科室信息中登记过的员工,发送邮件
         // monthHandler();
         // dayHandler();
