@@ -99,7 +99,7 @@ function getAdminList() {
 function getDeviceListNotify(list) {
     if (list && list.length) {
         return list.map(cur => {
-            return `${cur.code} ${cur.No} ${cur.name} ${cur.modelNo}`;
+            return `<tr><td>${cur.code}</td><td>${cur.No}</td><td>${cur.name}</td><td>${cur.modelNo}</td></tr>`;
         })
     } else {
         return [];
@@ -111,7 +111,7 @@ function getReportList(list) {
     if (list && list.length) {
         return list.map(cur => {
             cur.deviceStatus = statusrule.statusList[parseInt(cur.deviceStatus)-1].label;
-            return `${cur.insCode} ${cur.insName}  ${cur.deviceStatus}`;
+            return `<tr><td>${cur.insCode}</td><td>${cur.insName}</td><td>${cur.deviceStatus}</td></tr>`;
         })
     } else {
         return [];
@@ -123,7 +123,7 @@ function getHandleList(list) {
         return list.map(cur => {
             cur.deviceStatus = statusrule.statusList[parseInt(cur.deviceStatus)-1].label;
             cur.nextDeviceStatus = statusrule.statusList[parseInt(cur.nextDeviceStatus)-1].label;
-            return `${cur.insCode} ${cur.insName}  ${cur.deviceStatus} => ${cur.nextDeviceStatus}`;
+            return `<tr><td>${cur.insCode}</td><td>${cur.insName}</td><td>${cur.deviceStatus}</td><td>${cur.nextDeviceStatus}</td></tr>`;
         })
     } else {
         return [];
@@ -133,7 +133,7 @@ function getHandleList(list) {
 function getUserListNotify(list) {
     if (list && list.length) {
         return list.map(cur => {
-            return `${cur.name}  ${cur.userId}`;
+            return `<tr><td>${cur.name}</td><td>${cur.userId}</td></tr>`;
         })
     } else {
         return [];
@@ -143,14 +143,14 @@ function getInfoChangeList(list) {
    return list.map(cur => {
        let keeper = cur.keeper.split("&")[1];
        let fromkeeper = cur.fromKeeper =="无"?"无":cur.fromKeeper.split("&")[1];
-       return `${cur.insCode}  ${cur.insName} ${fromkeeper} => ${keeper}`;
+       return `<tr><td>${cur.insCode}</td><td>${cur.insName}</td><td>${fromkeeper}</td><td>${keeper}</td></tr>`;
    })
 }
 
 function getCompleteList(list) {
    return list.map(cur => {
        let keeper = cur.keeper.split("&")[1];
-       return `${cur.insCode} ${cur.insName}  校验完毕`;
+       return `<tr><td>${cur.insCode}</td><td>${cur.insName}</td><td>校验完毕</td></tr>`;
    })
 }
 

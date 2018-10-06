@@ -84,7 +84,7 @@ module.exports.sendMail = function (type, userList, deviceList, params,ccRecipie
             }
 
         }
-        template = template.replace("{{__devList}}", deviceList.join(",<br />"));
+        template = template.replace("{{__devList}}", deviceList.join(" "));
 
         let args = JSON.parse(JSON.stringify(ewsArgsTemplate));
         if (userList && userList.length) {

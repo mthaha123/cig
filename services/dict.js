@@ -2,6 +2,7 @@ const { UserModel, InsInfoModel, InsCodeModel, DepModel, EmailModel,supplierMode
 const mongoose = require('mongoose');
 const co =require('co');
 const _=require('lodash');
+var statusSvc = require("../services/status");
 
 var ModelDict = {
     user: UserModel,
@@ -142,11 +143,11 @@ module.exports = {
         }).then((list) => {
             list = list.map(function(val){
                 // return mongoose.Types.ObjectId(val.split("&")[0]);
-                return val.split("&")[1];
+                return val.split("&")[0];
             });
             return new Promise((rs, rj) => {
                 ModelDict["user"].find(whereObj)
-                .in('name',list)
+                .in('_id',list)
                 .skip(parseInt(pageNo) * pageSize)
                 .limit(pageSize)
                 .exec(function(err, res) {
@@ -252,5 +253,25 @@ module.exports = {
                 }
             })
         });
+    },
+    //更新部门信息，修改部门保管人时要同时更新仪器信息的保管人
+    updateDepInfo:function*(type,id,item,userId){
+        //
+        let data = yield ModelDict[type].findById({ "_id": id });
+        yield ModelDict[type].update({ "_id": id }, item);
+        if(data.keeper != item.keeper){//如果更换了保管人，该部门的仪器更换保管人
+            let list = yield ModelDict["insInfo"].find({"depCode":item.name,"isValid":{$ne: true}});
+            if(list&&list.length){
+                for(l of list){
+                    if(l.isInit == false){//对于保管人确认过的仪器添加保管人确认记录
+                        l.fromKeeper = l.keeper;
+                        l.keeper = item.keeper;
+                        yield statusSvc.completeClog(l,userId,l.fromKeeper);
+                    }
+                }
+                yield ModelDict["insInfo"].updateMany({"depCode":item.name,"isValid":{$ne: true}},{"keeper":item.keeper});
+            }
+        }
+        return item;
     }
 }

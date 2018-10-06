@@ -81,10 +81,13 @@ module.exports = {
     updateDict: function*(type, id) {
         let params = yield parse(this);
         let userId = this.session.userInfo.userId;
+        var item;
         if (type == "insInfo") {
-            var item = yield statusSvc.updateInsInfo(id, getSaveItem(type, params),userId);
-        } else {
-            var item = yield dictSvc.update(type, id, getSaveItem(type, params));
+            item = yield statusSvc.updateInsInfo(id, getSaveItem(type, params),userId);
+        } else if(type == "depInfo"){
+            item = yield dictSvc.updateDepInfo(type, id, getSaveItem(type, params),userId);
+        }else{
+            item = yield dictSvc.update(type, id, getSaveItem(type, params));
         }
 
         this.body = {

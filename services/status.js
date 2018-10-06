@@ -70,24 +70,29 @@ module.exports = {
                                 }
                             })
                         }).then((confirmLogData)=>{
-                            let log = (confirmLogData[0].log || []).concat([cLog]);
-                            let updateObj = {
-                                keeper: item.keeper,
-                                log
-                            }; 
-                            if(item.keeper == confirmLogData[0].fromKeeper){
-                                updateObj.confirm = 1;
-                                item.isInit = false;
-                            }
-                            return new Promise((rs,rj)=>{
-                                confirmLogModel.update({ _id: confirmLogData[0]._id },updateObj,(err,res) =>{
-                                    if (err) {
-                                        rj(err);
-                                    } else {
-                                        rs(res);
-                                    }
+                            if(!confirmLogData.length){
+                                cancelTest = this.createConfirmLog(id,item,userId,data);
+                            }else{
+                                let log = (confirmLogData[0].log || []).concat([cLog]);
+                                let updateObj = {
+                                    keeper: item.keeper,
+                                    log
+                                }; 
+                                if(item.keeper == confirmLogData[0].fromKeeper){
+                                    updateObj.confirm = 1;
+                                    item.isInit = false;
+                                }
+                                return new Promise((rs,rj)=>{
+                                    confirmLogModel.update({ _id: confirmLogData[0]._id },updateObj,(err,res) =>{
+                                        if (err) {
+                                            rj(err);
+                                        } else {
+                                            rs(res);
+                                        }
+                                    })
                                 })
-                            })
+                            }
+                            
                         });
                     }else{
                         item.isInit = true;  //标志修改了保管人
@@ -860,7 +865,7 @@ module.exports = {
             })
         })
     },
-    completeClog: function(item,userId){
+    completeClog: function(item,userId,fromKeeper=null){
         let cLog = {
             message: item.keeper.split("&")[1]+"确认更换保管人",
             time: moment().format("YYYY-MM-DD HH:mm:ss"),
@@ -881,7 +886,7 @@ module.exports = {
                     insCode : item.code,
                     insName: item.name,
                     keeper: item.keeper,
-                    fromKeeper: "无",
+                    fromKeeper: fromKeeper||"无",
                     complete: true,
                     confirm: "1",
                     log: [{

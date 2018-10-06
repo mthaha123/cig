@@ -13,7 +13,7 @@ const userSvc = require("../services/user.js");
 
 const period = {
     month: '0 0 0 1 * *',
-    day: "0 5 22 * * *",
+    day: "0 03 17 * * *",
     day2: "0 37 22 * * *",
     // month: '1/10 * * * * *',
     // day: "1/10 * * * * *"
@@ -399,7 +399,7 @@ function* userImport() {
     yield userSvc.import();
     let whereObj = {isValid:{$ne: true}};
     let ret = yield dictSvc.getInvalidList(whereObj, 0, 100);
-    if(ret.total&&ret.list){
+    if(ret.total&&ret.list.length){
         // 重要人员离职通知(10)
         yield notify.notifyAdmin("infochange",ret.list);
     }
