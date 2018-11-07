@@ -29,6 +29,7 @@
                     <el-table-column inline-template fixed="right" :context="_self" label="操作" width="300">
                         <span>
                        <el-button @click="viewTestLog(row)" type="success" size="small">查看</el-button>
+                       <el-button @click="delrow(row)" type="danger" size="small">删除</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -104,6 +105,37 @@ export default {
         listsizechange(val) {
             this.pageSize = val;
             this.getList(1);
+        },
+        delrow(row) {
+            console.log(row)
+            this.$confirm('此操作将永久删除, 是否继续?', '提示', {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+                type: 'warning'
+            }).then(() => {
+                this.$store.dispatch("removeDict", {
+                    type: "confirmLog",
+                    id: row._id
+                }).then(() => {
+                    this.$message({
+                        type: 'success',
+                        message: '删除成功!'
+                    });
+                    this.getList(this.pageNo);
+                }, err => {
+                    this.$message({
+                        type: 'error',
+                        message: '删除失败!'
+                    });
+                })
+
+            }).catch(() => {
+                this.$message({
+                    type: 'info',
+                    message: '已取消删除'
+                });
+            });
+
         },
         search() {
             this.getList(1);

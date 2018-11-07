@@ -7,8 +7,8 @@ module.exports = {
     },
     matCode:{
         keywordFields:["code","type"],
-        updateFields:["code","type","supplier","description"],
-        insertFields:["code","type","supplier","description"],
+        updateFields:["code","type","supplier","description","hasFile","files"],
+        insertFields:["code","type","supplier","description","hasFile","files"],
         uniqueList:["code"],
     },
     test:{

@@ -18463,6 +18463,7 @@ webpackJsonp([10,14],Array(107).concat([
 	//
 	//
 	//
+	//
 	
 	exports.default = {
 	    data: function data() {
@@ -18509,6 +18510,37 @@ webpackJsonp([10,14],Array(107).concat([
 	        listsizechange: function listsizechange(val) {
 	            this.pageSize = val;
 	            this.getList(1);
+	        },
+	        delrow: function delrow(row) {
+	            var _this = this;
+	
+	            console.log(row);
+	            this.$confirm('此操作将永久删除, 是否继续?', '提示', {
+	                confirmButtonText: '确定',
+	                cancelButtonText: '取消',
+	                type: 'warning'
+	            }).then(function () {
+	                _this.$store.dispatch("removeDict", {
+	                    type: "confirmLog",
+	                    id: row._id
+	                }).then(function () {
+	                    _this.$message({
+	                        type: 'success',
+	                        message: '删除成功!'
+	                    });
+	                    _this.getList(_this.pageNo);
+	                }, function (err) {
+	                    _this.$message({
+	                        type: 'error',
+	                        message: '删除失败!'
+	                    });
+	                });
+	            }).catch(function () {
+	                _this.$message({
+	                    type: 'info',
+	                    message: '已取消删除'
+	                });
+	            });
 	        },
 	        search: function search() {
 	            this.getList(1);
@@ -18661,7 +18693,17 @@ webpackJsonp([10,14],Array(107).concat([
 	                _vm.viewTestLog(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("查看")])], 1)
+	          }, [_vm._v("查看")]), _vm._v(" "), _c('el-button', {
+	            attrs: {
+	              "type": "danger",
+	              "size": "small"
+	            },
+	            on: {
+	              "click": function($event) {
+	                _vm.delrow(_vm.row)
+	              }
+	            }
+	          }, [_vm._v("删除")])], 1)
 	        
 	      },
 	      staticRenderFns: []

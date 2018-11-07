@@ -31,10 +31,12 @@
                     </el-table-column>
                     <el-table-column prop="description" label="物料描述" :show-overflow-tooltip=true>
                     </el-table-column>
-                    <el-table-column inline-template fixed="right" v-if='dictEdit' :context="_self" label="操作" width="300">
+                    <el-table-column inline-template fixed="right" v-if='dictEdit' :context="_self" label="操作" width="350">
                         <span>
                        <el-button @click="edit(row)" v-if='dictEdit' type="success" size="small">编辑</el-button>
                        <el-button @click="delrow(row)" v-if='dictEdit' type="danger" size="small">删除</el-button>
+                       <el-button @click="addFile(row)" v-if='dictEdit' type="success" size="small">导入文件</el-button>
+                       <el-button @click="downfile(row)" v-if='dictEdit&&row.hasFile==true' type="success" size="small">下载文件</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -70,6 +72,31 @@
                 <el-button type="primary" @click="submit">确 定</el-button>
             </div>
         </el-dialog>
+        <el-dialog title="导入文件信息" size='tiny' v-model="importFileView" :modal-append-to-body='false'>
+            <el-upload class="upload-demo" multiple action="/cig/uploadfile"  :file-list="fileList" :on-success="importFileSuccess" >
+                    <el-button size="small" type="primary">点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">请上传pdf文件</div>
+            </el-upload>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="hideImportDialog">取 消</el-button>
+                <el-button type="primary" @click="importFile">确 定</el-button>
+            </div>
+        </el-dialog>
+        <el-dialog title="下载文件" size='small' v-model="downFileView" :modal-append-to-body='false'>
+            <el-row>
+                <el-table :data="fileList" style="width: 100%">
+                    <el-table-column type="index" width="55">
+                    </el-table-column>
+                    <el-table-column prop="name" label="名称">
+                    </el-table-column>
+                    <el-table-column inline-template :context="_self" label="操作" width="150">
+                        <span>
+                      <el-button @click="download(row)" type="success" size="small">下载</el-button>
+                    </span>
+                    </el-table-column>
+                </el-table>
+            </el-row>
+        </el-dialog>
         <el-dialog title="导入来料Code信息" size='small' v-model="importDialogView" :modal-append-to-body='false'>
             <el-upload class="upload-demo" multiple drag action="/cig/uploadfile" :on-success='handleSuccess' :show-file-list="false">
                 <i class="el-icon-upload"></i>
@@ -82,6 +109,7 @@
 <script>
 import _ from "lodash";
 import moment from "moment";
+import path from "path";
 import { validateMatCode } from "../../libs/validate.js";
 
 export default {
@@ -95,6 +123,9 @@ export default {
             form: {},
             type: "create",
             importDialogView: false,
+            importFileView:false,
+            downFileView:false,
+            fileList:[],
         }
     },
     computed: {
@@ -204,6 +235,50 @@ export default {
                 keyword: this.serachContent,
                 pageSize: this.pageSize,
             });
+        },
+        hideImportDialog(){
+            this.importFileView = false;
+        },
+        addFile(row){
+            this.fileList = [];
+            if(row.hasFile){
+                for(let i of row.files){
+                    this.fileList.push({name:path.basename(i),response:{result:i}});
+                }
+            }
+            this.form = _.assign({}, row);
+            this.importFileView = true; 
+        },
+        importFile(){
+            this.form.files=[]; 
+            if(this.fileList){
+                for(let file of this.fileList){
+                    this.form.files.push(file.response.result);
+                }
+                this.form.hasFile =true;
+            }
+            this.SaveActionName = "editMatCode";
+            this.submit();
+            this.importFileView = false;
+            this.getList(this.pageNo);
+        },
+        downfile(row){
+            this.fileList = [];
+            if(row.hasFile){
+                for(let i of row.files){
+                    this.fileList.push({name:path.basename(i),response:{result:i},path:i});
+                }
+            }
+            this.form = _.assign({}, row);
+            this.downFileView =true;
+        },
+        importFileSuccess(res,file,fileList){
+            if (res.success) {
+                this.fileList.push(file);
+            }
+        },
+        download(row) {
+            window.open("/cig/downloadfile?path=" + row.path)
         },
     },
     mounted() {

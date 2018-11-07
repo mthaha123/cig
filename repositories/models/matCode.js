@@ -10,6 +10,8 @@ var matCodeSchema = new Schema({
     supplier:{ type: String},
     updateTime:{ type: Date },
     createTime:{ type: Date },
+    hasFile:{type: Boolean},
+    files:{ type: Array},
     isDelete: { type: Boolean, default: false},
 },{timestamps:{
     updatedAt: "updateTime",
