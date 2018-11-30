@@ -546,6 +546,9 @@ webpackJsonp([3,14],{
 	        dictEdit: function dictEdit() {
 	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
 	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00101") > -1;
+	        },
 	        auths: function auths() {
 	            return this.$store.state.common.authList.map(function (cur) {
 	                return cur;
@@ -1079,7 +1082,7 @@ webpackJsonp([3,14],{
 	                _vm.resetPassword(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("重置密码")]), _vm._v(" "), _c('el-button', {
+	          }, [_vm._v("重置密码")]), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -1089,7 +1092,7 @@ webpackJsonp([3,14],{
 	                _vm.delrow(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("删除")]), _vm._v(" "), _c('el-button', {
+	          }, [_vm._v("删除")]) : _vm._e(), _vm._v(" "), _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"

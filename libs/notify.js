@@ -150,7 +150,8 @@ function getInfoChangeList(list) {
 function getCompleteList(list) {
    return list.map(cur => {
        let keeper = cur.keeper.split("&")[1];
-       return `<tr><td>${cur.insCode}</td><td>${cur.insName}</td><td>校验完毕</td></tr>`;
+       let insCode = cur.insCode.split("&")[1];
+       return `<tr><td>${insCode}</td><td>${keeper}</td><td>校验完毕</td></tr>`;
    })
 }
 

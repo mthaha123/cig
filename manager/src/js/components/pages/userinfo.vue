@@ -42,7 +42,7 @@
                         <span>
                         <el-button @click="edit(row)" type="success" size="small">编辑</el-button>
                         <el-button @click="resetPassword(row)" type="danger" size="small">重置密码</el-button>
-                        <el-button type="danger" @click='delrow(row)' size="small">删除</el-button>
+                        <el-button v-if='removeEdit' type="danger" @click='delrow(row)' size="small">删除</el-button>
                         <el-button type="danger" @click='changeUserAuth(row)' size="small">权限交接</el-button>
                       </span>
                     </el-table-column>
@@ -132,6 +132,9 @@ export default {
     computed: {
         dictEdit() {
             return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00101") > -1;
         },
         auths() {
             return this.$store.state.common.authList.map(cur => {

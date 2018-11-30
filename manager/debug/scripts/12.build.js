@@ -18663,6 +18663,9 @@ webpackJsonp([12,14],Array(107).concat([
 	        },
 	        dictEdit: function dictEdit() {
 	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00115") > -1;
 	        }
 	    },
 	    methods: {
@@ -18909,7 +18912,7 @@ webpackJsonp([12,14],Array(107).concat([
 	        },
 	        importFile: function importFile() {
 	            this.form.log = { url: [] };
-	            if (this.fileList) {
+	            if (this.fileList && this.fileList.length) {
 	                var _iteratorNormalCompletion3 = true;
 	                var _didIteratorError3 = false;
 	                var _iteratorError3 = undefined;
@@ -18936,6 +18939,8 @@ webpackJsonp([12,14],Array(107).concat([
 	                }
 	
 	                this.form.complete = true;
+	            } else {
+	                this.form.complete = false;
 	            }
 	            this.SaveActionName = "editMaterials";
 	            this.submit();
@@ -18945,6 +18950,9 @@ webpackJsonp([12,14],Array(107).concat([
 	            if (res.success) {
 	                this.fileList.push(file);
 	            }
+	        },
+	        onRemove: function onRemove(file, fileList) {
+	            this.fileList.pop(file);
 	        },
 	        addIns: function addIns(row) {
 	            this.form = row;
@@ -19212,7 +19220,7 @@ webpackJsonp([12,14],Array(107).concat([
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -19605,6 +19613,7 @@ webpackJsonp([12,14],Array(107).concat([
 	      "multiple": "",
 	      "action": "/cig/uploadfile",
 	      "file-list": _vm.fileList,
+	      "on-remove": _vm.onRemove,
 	      "on-success": _vm.importFileSuccess
 	    }
 	  }, [_c('el-button', {

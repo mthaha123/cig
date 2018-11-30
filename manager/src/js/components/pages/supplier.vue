@@ -26,7 +26,7 @@
                     <el-table-column inline-template v-if='dictEdit' :context="_self" label="操作" width="300">
                         <span>
                        <el-button @click="edit(row)" v-if='dictEdit' type="success" size="small">编辑</el-button>
-                       <el-button @click="delrow(row)" v-if='dictEdit' type="danger" size="small">删除</el-button>
+                       <el-button @click="delrow(row)" v-if='removeEdit' type="danger" size="small">删除</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -80,7 +80,10 @@ export default {
         },
         dictEdit() {   
             return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-        }
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00111") > -1;
+        },
     },
     methods: {
         hideDialog() {

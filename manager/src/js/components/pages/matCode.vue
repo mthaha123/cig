@@ -34,7 +34,7 @@
                     <el-table-column inline-template fixed="right" v-if='dictEdit' :context="_self" label="操作" width="350">
                         <span>
                        <el-button @click="edit(row)" v-if='dictEdit' type="success" size="small">编辑</el-button>
-                       <el-button @click="delrow(row)" v-if='dictEdit' type="danger" size="small">删除</el-button>
+                       <el-button @click="delrow(row)" v-if='removeEdit' type="danger" size="small">删除</el-button>
                        <el-button @click="addFile(row)" v-if='dictEdit' type="success" size="small">导入文件</el-button>
                        <el-button @click="downfile(row)" v-if='dictEdit&&row.hasFile==true' type="success" size="small">下载文件</el-button>
                       </span>
@@ -73,7 +73,7 @@
             </div>
         </el-dialog>
         <el-dialog title="导入文件信息" size='tiny' v-model="importFileView" :modal-append-to-body='false'>
-            <el-upload class="upload-demo" multiple action="/cig/uploadfile"  :file-list="fileList" :on-success="importFileSuccess" >
+            <el-upload class="upload-demo" multiple action="/cig/uploadfile"  :file-list="fileList" :on-remove="onRemove" :on-success="importFileSuccess" >
                     <el-button size="small" type="primary">点击上传</el-button>
                     <div slot="tip" class="el-upload__tip">请上传pdf文件</div>
             </el-upload>
@@ -137,7 +137,10 @@ export default {
         },
         dictEdit() {   
             return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-        }
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00114") > -1;
+        },
     },
     methods: {
         exportList() {
@@ -251,11 +254,13 @@ export default {
         },
         importFile(){
             this.form.files=[]; 
-            if(this.fileList){
+            if(this.fileList && this.fileList.length){
                 for(let file of this.fileList){
                     this.form.files.push(file.response.result);
                 }
                 this.form.hasFile =true;
+            }else{
+                this.form.hasFile = false;
             }
             this.SaveActionName = "editMatCode";
             this.submit();
@@ -276,6 +281,9 @@ export default {
             if (res.success) {
                 this.fileList.push(file);
             }
+        },
+        onRemove(file,fileList){
+            this.fileList.pop(file);
         },
         download(row) {
             window.open("/cig/downloadfile?path=" + row.path)

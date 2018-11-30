@@ -22,6 +22,7 @@ var ConfirmLogSchema = new Schema({
     keeper: { type: String },
     fromKeeper: { type: String , default :"无" },
     log: { type: Object },
+    isDelete: {type: Boolean ,default: false},
 },{timestamps:{
     createdAt: "createTime",
     updatedAt: "updateTime",

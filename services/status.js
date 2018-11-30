@@ -312,7 +312,7 @@ module.exports = {
                         rj(err);
                     } else {
                         for (let item of res) {
-                            console.log(resObj)
+                            // console.log(resObj)
                             resObj[item._id.toString()].insInfo = item.toObject();
                         }
 

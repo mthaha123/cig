@@ -18576,6 +18576,9 @@ webpackJsonp([11,14],Array(107).concat([
 	        },
 	        dictEdit: function dictEdit() {
 	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00114") > -1;
 	        }
 	    },
 	    methods: {
@@ -18717,7 +18720,7 @@ webpackJsonp([11,14],Array(107).concat([
 	        },
 	        importFile: function importFile() {
 	            this.form.files = [];
-	            if (this.fileList) {
+	            if (this.fileList && this.fileList.length) {
 	                var _iteratorNormalCompletion2 = true;
 	                var _didIteratorError2 = false;
 	                var _iteratorError2 = undefined;
@@ -18744,6 +18747,8 @@ webpackJsonp([11,14],Array(107).concat([
 	                }
 	
 	                this.form.hasFile = true;
+	            } else {
+	                this.form.hasFile = false;
 	            }
 	            this.SaveActionName = "editMatCode";
 	            this.submit();
@@ -18785,6 +18790,9 @@ webpackJsonp([11,14],Array(107).concat([
 	            if (res.success) {
 	                this.fileList.push(file);
 	            }
+	        },
+	        onRemove: function onRemove(file, fileList) {
+	            this.fileList.pop(file);
 	        },
 	        download: function download(row) {
 	            window.open("/cig/downloadfile?path=" + row.path);
@@ -18959,7 +18967,7 @@ webpackJsonp([11,14],Array(107).concat([
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -19174,6 +19182,7 @@ webpackJsonp([11,14],Array(107).concat([
 	      "multiple": "",
 	      "action": "/cig/uploadfile",
 	      "file-list": _vm.fileList,
+	      "on-remove": _vm.onRemove,
 	      "on-success": _vm.importFileSuccess
 	    }
 	  }, [_c('el-button', {

@@ -29,7 +29,7 @@
                     <el-table-column inline-template fixed="right" :context="_self" label="操作" width="300">
                         <span>
                        <el-button @click="viewTestLog(row)" type="success" size="small">查看</el-button>
-                       <el-button @click="delrow(row)" type="danger" size="small">删除</el-button>
+                       <el-button @click="delrow(row)" v-if="removeEdit" type="danger" size="small">删除</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -90,9 +90,12 @@ export default {
                 return current;
             })
         },
-        // dictEdit() {   
-        //     return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-        // }
+        dictEdit() {   
+            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00113") > -1;
+        },
     },
     methods: {
         hideDialog() {

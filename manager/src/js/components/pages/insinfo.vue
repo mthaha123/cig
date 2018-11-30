@@ -38,7 +38,7 @@
                         <span>
                             <el-button v-if='dictEdit' @click="edit(row)" type="success" size="small">编辑</el-button>
                             <el-button  @click="viewLog(row)" type="success" size="small">查看记录</el-button>
-                               <el-button v-if='dictEdit' @click="delrow(row)" type="danger" size="small">删除</el-button>
+                               <el-button v-if='removeEdit' @click="delrow(row)" type="danger" size="small">删除</el-button>
                                <el-button v-if='superAdmin' @click="startTest(row)"  size="small">测试</el-button>
                                <el-button v-if='row.isInit&&canConfirmImport(row.keeper)' @click="confirmImport(row)"  size="small">确认导入</el-button>
                        </span>
@@ -398,6 +398,9 @@ export default {
         // },
         dictEdit() {
             return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00102") > -1;
         },
         superAdmin() {
             return this.$store.state.common.userAuthList.indexOf("00000") > -1;

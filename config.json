@@ -3,5 +3,5 @@
         "host": "127.0.0.1",
         "port": "6379"
     },
-    "userImportUrl": "http://172.31.11.30:81/WebSvcBuilderSetup/Hr.asmx/EMPINFO"
+    "userImportUrl": "https://e-hr.ci-g.com/services/hr?wsdl"
 }

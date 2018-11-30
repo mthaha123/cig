@@ -952,6 +952,9 @@ webpackJsonp([4,14],Array(107).concat([
 	        dictEdit: function dictEdit() {
 	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
 	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00102") > -1;
+	        },
 	        superAdmin: function superAdmin() {
 	            return this.$store.state.common.userAuthList.indexOf("00000") > -1;
 	        }
@@ -19707,7 +19710,7 @@ webpackJsonp([4,14],Array(107).concat([
 	                _vm.viewLog(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("查看记录")]), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	          }, [_vm._v("查看记录")]), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"

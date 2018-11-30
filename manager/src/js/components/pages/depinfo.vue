@@ -32,7 +32,7 @@
                     <el-table-column inline-template :context="_self" v-if='dictEdit' label="操作" width="200">
                         <span>
                        <el-button v-if='dictEdit' @click="edit(row)" type="success" size="small">编辑</el-button>
-                       <el-button v-if='dictEdit' @click="delrow(row)" type="danger" size="small">删除</el-button>
+                       <el-button v-if='removeEdit' @click="delrow(row)" type="danger" size="small">删除</el-button>
                       </span>
                     </el-table-column>
                 </el-table>
@@ -153,7 +153,10 @@ export default {
         },
         dictEdit() {
             return this.$store.state.common.userAuthList.indexOf("00007") > -1;
-        }
+        },
+        removeEdit(){
+            return this.$store.state.common.userAuthList.indexOf("00103") > -1;
+        },
     },
     data() {
         var self = this;

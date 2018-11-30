@@ -9772,6 +9772,48 @@ webpackJsonp([0,14],[
 	        }, {
 	            name: "超级管理员",
 	            code: "00000"
+	        }, {
+	            name: "Email",
+	            code: "00010"
+	        }, {
+	            name: "供应商信息",
+	            code: "00011"
+	        }, {
+	            name: "流水记录",
+	            code: "00012"
+	        }, {
+	            name: "保管人确认记录",
+	            code: "00013"
+	        }, {
+	            name: "来料Code",
+	            code: "00014"
+	        }, {
+	            name: "流水记录",
+	            code: "00015"
+	        }, {
+	            name: "用户删除",
+	            code: "00101"
+	        }, {
+	            name: "仪器删除",
+	            code: "00102"
+	        }, {
+	            name: "科室信息删除",
+	            code: "00103"
+	        }, {
+	            name: "仪器代码删除",
+	            code: "00104"
+	        }, {
+	            name: "供应商信息删除",
+	            code: "00111"
+	        }, {
+	            name: "保管人记录删除",
+	            code: "00113"
+	        }, {
+	            name: "来料Code删除",
+	            code: "00114"
+	        }, {
+	            name: "来料信息删除",
+	            code: "00115"
 	        }],
 	        currentMenu: {},
 	        navpath: "",

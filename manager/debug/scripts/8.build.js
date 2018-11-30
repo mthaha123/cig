@@ -550,6 +550,9 @@ webpackJsonp([8,14],{
 	        },
 	        dictEdit: function dictEdit() {
 	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00111") > -1;
 	        }
 	    },
 	    methods: {
@@ -761,7 +764,7 @@ webpackJsonp([8,14],{
 	                _vm.edit(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.dictEdit) ? _c('el-button', {
+	          }, [_vm._v("编辑")]) : _vm._e(), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"

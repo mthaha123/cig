@@ -259,8 +259,8 @@ module.exports = {
         //
         let data = yield ModelDict[type].findById({ "_id": id });
         yield ModelDict[type].update({ "_id": id }, item);
-        if(data.keeper != item.keeper){//如果更换了保管人，该部门的仪器更换保管人
-            let list = yield ModelDict["insInfo"].find({"depCode":item.name,"isValid":{$ne: true}});
+        if(data.keeper != item.keeper||data.name != item.name){//如果更换了保管人，该部门的仪器更换保管人
+            let list = yield ModelDict["insInfo"].find({"depCode":data.name,"isValid":{$ne: true}});
             if(list&&list.length){
                 for(l of list){
                     if(l.isInit == false){//对于保管人确认过的仪器添加保管人确认记录
@@ -269,7 +269,7 @@ module.exports = {
                         yield statusSvc.completeClog(l,userId,l.fromKeeper);
                     }
                 }
-                yield ModelDict["insInfo"].updateMany({"depCode":item.name,"isValid":{$ne: true}},{"keeper":item.keeper});
+                yield ModelDict["insInfo"].updateMany({"depCode":data.name,"isValid":{$ne: true}},{"keeper":item.keeper,"depCode":item.name});
             }
         }
         return item;

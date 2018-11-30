@@ -18497,6 +18497,12 @@ webpackJsonp([10,14],Array(107).concat([
 	                current.fromKeeperName = current.fromKeeper.split("&")[1] || "无";
 	                return current;
 	            });
+	        },
+	        dictEdit: function dictEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00007") > -1;
+	        },
+	        removeEdit: function removeEdit() {
+	            return this.$store.state.common.userAuthList.indexOf("00113") > -1;
 	        }
 	    },
 	    methods: {
@@ -18693,7 +18699,7 @@ webpackJsonp([10,14],Array(107).concat([
 	                _vm.viewTestLog(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("查看")]), _vm._v(" "), _c('el-button', {
+	          }, [_vm._v("查看")]), _vm._v(" "), (_vm.removeEdit) ? _c('el-button', {
 	            attrs: {
 	              "type": "danger",
 	              "size": "small"
@@ -18703,7 +18709,7 @@ webpackJsonp([10,14],Array(107).concat([
 	                _vm.delrow(_vm.row)
 	              }
 	            }
-	          }, [_vm._v("删除")])], 1)
+	          }, [_vm._v("删除")]) : _vm._e()], 1)
 	        
 	      },
 	      staticRenderFns: []
