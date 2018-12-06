@@ -13,7 +13,7 @@ const userSvc = require("../services/user.js");
 
 const period = {
     month: '0 0 0 1 * *',
-    day: "0 03 17 * * *",
+    day: "0 50 16 * * *",
     day2: "0 37 22 * * *",
     // month: '1/10 * * * * *',
     // day: "1/10 * * * * *"
@@ -420,7 +420,7 @@ module.exports = {
     init() {
         initMonthSendList();     //每月1号提醒下月到期仪器
         initDayEveryCheck();     //每天检查仪器是否要到期
-        initUpdataList();
+        // initUpdataList();
         // initUserImport();        //每天定时更新用户信息，如发现无效且为科室信息中登记过的员工,发送邮件
         // monthHandler();
         // dayHandler();
