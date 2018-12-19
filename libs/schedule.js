@@ -13,7 +13,7 @@ const userSvc = require("../services/user.js");
 
 const period = {
     month: '0 0 0 1 * *',
-    day: "0 50 16 * * *",
+    day: "0 0 1 * * *",
     day2: "0 37 22 * * *",
     // month: '1/10 * * * * *',
     // day: "1/10 * * * * *"
@@ -50,12 +50,12 @@ function notifyKeeper(deviceList, overTime, type) {
 } */
 
 //按部门通知仪器保管人以及相关主管，并抄送计量管理员
-function notifyKeeper(deviceList, type) {
+function notifyKeeper(devicelist, type) {
     return co(function*() {
         let deviceList = [];
         let dep = [];
         let reciever;
-        for (let device of deviceList) {
+        for (let device of devicelist) {
             let depCode = device.depCode;
             let index = dep.indexOf(depCode);
             if(index ==-1){
@@ -65,11 +65,11 @@ function notifyKeeper(deviceList, type) {
                 deviceList[index].push(device);
             }
         }
-        if(dep.length){
+        if(dep && dep.length){
             for(let i =0;i<dep.length;i++){
                 reciever = [];
-                let department = yield DepModel.findOne({name:depCode});//获取部门领导相关信息
-                if(dep){
+                let department = yield DepModel.findOne({name:dep[i]});//获取部门领导相关信息
+                if(department){
                     if(department.keeper) reciever.push(department.keeper.split("&")[0]);
                     if(department.manager) reciever.push(department.manager.split("&")[0]);
                     if(department.proxer)  reciever.push(department.proxer.split("&")[0]);
@@ -100,9 +100,9 @@ function notifyKeeper(deviceList, type) {
 
 function getRecieveDeviceByDay(condition, status = statusCode.normal) {
     let endDateCondition = condition;
-
+    let stat = {"$in":[statusCode.receive,status]}
     return new Promise((rs, rj) => {
-        InsInfoModel.find({ "endDate": endDateCondition, "status": status,"isDelete":{$ne:true} }, (err, res) => {
+        InsInfoModel.find({ "endDate": endDateCondition, "status": stat,"isDelete":{$ne:true} }, (err, res) => {
             if (err) {
                 console.log(err);
                 rj(err);
@@ -134,7 +134,7 @@ function monthHandler() {
             // "$gt": new Date(monthStartDate)
         });
 
-        // 将所有本月待检仪器状态设置为recieve
+        // 将所有下月待检仪器状态设置为recieve
         for (let insInfo of list) {
             yield statusSvc.createTest(insInfo.id);    //创建测试并修改仪器表中仪器状态
         }
@@ -215,8 +215,15 @@ function getOverTimeList() {
         return [];
     })
 }
-
+//更新过期仪器状态
 function updateOverTime(list) {
+    list = list.filter(cur =>{
+        if(cur.testType=="0"||cur.testType=="1"){
+            return true;
+        }else{
+            return false;
+        }
+    })
     list = list.map(cur => {
         return cur._id;
     })

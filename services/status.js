@@ -123,6 +123,20 @@ module.exports = {
 
                 }
 
+                if(data.code != item.code){
+                    cancelTest =cancelTest.then(function(){
+                        return new Promise((rs,rj)=>{
+                            TestModel.update({insId:id,complete:false},{insCode:item.code},
+                                (err, res) => {
+                                    if (err) {
+                                        rj(err);
+                                    } else {
+                                        rs(res);
+                                    }
+                                });
+                        })
+                    })
+                }
                 if (data.status != item.status) {
                     item.toConfirm = "1";
                     item.nextStatus = "";

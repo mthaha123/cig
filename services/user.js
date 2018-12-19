@@ -1,5 +1,6 @@
 const parseString = require('xml2js').parseString;
-const request = require("request");
+const soap = require('soap');
+// const request = require("request");
 const { userImportUrl } = require("../config.json");
 const { UserModel, InsInfoModel, TestModel } = require("../repositories/mongoHelper.js");
 const md5 = require("md5");
@@ -10,23 +11,22 @@ const co = require("co");
 
 function getUserList() {
     return new Promise((rs, rj) => {
-        // rs(require("../test/userlist.json"));
-        request({
-            uri: userImportUrl,
-            method: "POST",
-            form: {
-                Badge: "all"
+        soap.createClient(userImportUrl,function(err,client){
+            if(err){
+                console.log(err);
             }
-        }, (err, res) => {
-            if (err) {
-                rj(err);
-            } else {
-                rs(res)
-            }
-        });
+            //返回一个客户端，并且传参调用Java的接口，接收返回的数据
+            client.EmpInfo({Badge:'all'},function(err,res){
+               if (err) {
+                    rj(err);
+                } else {
+                    rs(res)
+                }
+            });
+         });
     }).then(data => {
-        data = data.body.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-
+        // data = data.return.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+        data = data.return;
         return new Promise((rs, rj) => {
             parseString(data, function(err, result) {
                 if (err) {
@@ -36,8 +36,8 @@ function getUserList() {
                         rj(err);
                     })
                 } else {
-                    if (result.string.DOC && result.string.DOC.length) {
-                        rs(result.string.DOC[0]);
+                    if (result.LIST) {
+                        rs(result.LIST);
                     } else rs([]);
                 }
             });
@@ -53,7 +53,7 @@ function getUserList() {
 
 function saveUser(user) {
     return new Promise((rs, rj) => {
-        UserModel.findOne({ userId: user.Badge[0],isDelete:{$ne:true} }, (err, res) => {
+        UserModel.findOne({ userId: user.BADGE[0],isDelete:{$ne:true} }, (err, res) => {
             if (err) {
                 rj(err);
             } else {
@@ -62,21 +62,21 @@ function saveUser(user) {
         })
     }).then(data => {
         if (data) {
-            console.log(`user ${user.Name[0]} exist, updating`)
+            console.log(`user ${user.NAME[0]} exist, updating`)
             if(user.Email[0]!=="无"){
                 return new Promise((rs, rj) => {
                     UserModel.update(
-                        { userId: user.Badge[0] },
+                        { userId: user.BADGE[0] },
                         { $set:
                             {
-                                "Email": user.Email[0],
-                                isValid: user.Status[0]=="在职"?true:false,
-                                isLock: user.Status[0]=="在职"?false:true
+                                "Email": user.EMAIL[0],
+                                isValid: user.STATUS[0]=="在职"?true:false,
+                                isLock: user.STATUS[0]=="在职"?false:true
                             }
                         },
                         (err, res) => {
                             if (err) {
-                                console.warn("update", user.Name[0], "Error:", err);
+                                console.warn("update", user.NAME[0], "Error:", err);
                                 rj(err);
                             } else {
                                 rs(res);
@@ -87,16 +87,16 @@ function saveUser(user) {
             }else{
                 return new Promise((rs, rj) => {
                     UserModel.update(
-                        { userId: user.Badge[0] },
+                        { userId: user.BADGE[0] },
                         { $set:
                             {
-                                isValid: user.Status[0]=="在职"?true:false,
-                                isLock: user.Status[0]=="在职"?false:true
+                                isValid: user.STATUS[0]=="在职"?true:false,
+                                isLock: user.STATUS[0]=="在职"?false:true
                             }
                         },
                         (err, res) => {
                             if (err) {
-                                console.warn("update", user.Name[0], "Error:", err);
+                                console.warn("update", user.NAME[0], "Error:", err);
                                 rj(err);
                             } else {
                                 rs(res);
@@ -107,14 +107,14 @@ function saveUser(user) {
             }
         } else {
             var model = new UserModel({
-                "name": user.Name[0],
-                "Email": user.Email[0],
+                "name": user.NAME[0],
+                "Email": user.EMAIL[0],
                 "role": 0,
-                "userId": user.Badge[0],
+                "userId": user.BADGE[0],
                 "isInit": true,
                 "password": "1234",
                 isLock: false,
-                isValid: user.Status=="在职"?true:false
+                isValid: user.STATUS[0]=="在职"?true:false
             });
 
             return new Promise((rs, rj) => {
@@ -123,7 +123,7 @@ function saveUser(user) {
                         console.warn("save", type, "Error:", err);
                         rj(err);
                     } else {
-                        console.log(`save user ${user.Name[0]} complete`)
+                        console.log(`save user ${user.NAME[0]} complete`)
                         rs(res);
                     }
                 })
@@ -292,7 +292,7 @@ function updateChain(from, to) {
 module.exports = {
     import: function*() {
         let ret = yield getUserList();
-        let list = ret.Row;
+        let list = ret.ITEM;
 
         for (let user of list) {
             yield saveUser(user);
