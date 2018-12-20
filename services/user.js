@@ -63,7 +63,7 @@ function saveUser(user) {
     }).then(data => {
         if (data) {
             console.log(`user ${user.NAME[0]} exist, updating`)
-            if(user.Email[0]!=="无"){
+            if(user.EMAIL[0]!=="无"){
                 return new Promise((rs, rj) => {
                     UserModel.update(
                         { userId: user.BADGE[0] },
