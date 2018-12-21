@@ -102,7 +102,7 @@ function getRecieveDeviceByDay(condition, status = statusCode.normal) {
     let endDateCondition = condition;
     let stat = {"$in":[statusCode.receive,status]}
     return new Promise((rs, rj) => {
-        InsInfoModel.find({ "endDate": endDateCondition, "status": stat,"isDelete":{$ne:true} }, (err, res) => {
+        InsInfoModel.find({ "endDate": endDateCondition, "status": stat,"testType":{"$in":["0","1"]},"isDelete":{$ne:true} }, (err, res) => {
             if (err) {
                 console.log(err);
                 rj(err);
@@ -334,7 +334,7 @@ function dayHandler() {
         yield notifyKeeper(coList, "timeout");
 
         let hasoList = yield getOverTimeList();
-        console.log(`send count: coList ${coList.length}, hasoList ${hasoList.length}`);
+        // console.log(`send count: coList ${coList.length}, hasoList ${hasoList.length}`);
         // 每天发送异常列表到责任人 (7)
         notifyKeeper(hasoList, "error");
 
