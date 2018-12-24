@@ -225,10 +225,10 @@ function updateOverTime(list) {
         }
     })
     list = list.map(cur => {
-        return cur._id;
+        return cur.id;
     })
     return new Promise((rs, rj) => {
-        InsInfoModel.update({ _id: { $in: list } }, { status: "7" }, (err, res) => {
+        InsInfoModel.updateMany({ _id: { $in: list } }, { status: "7" }, (err, res) => {
             if (err) {
                 console.log(err);
             } else {
@@ -236,7 +236,7 @@ function updateOverTime(list) {
             }
         });
     }).then(() => {
-        TestModel.update({ _id: { $in: list } }, { deviceStatus: "7", toConfirm: '1', nextDeviceStatus: "" }, (err, res) => {
+        TestModel.updateMany({ insId: { $in: list } }, { deviceStatus: "7", toConfirm: '1', nextDeviceStatus: "" }, (err, res) => {
             if (err) {
                 console.log(err);
             } else {

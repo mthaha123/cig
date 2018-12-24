@@ -202,11 +202,13 @@ module.exports = {
             if (testInfo.confirmChain && testInfo.confirmChain.length != testInfo.completeChain.length) {
                 let userId = this.session.userInfo._id + "&" + this.session.userInfo.name;
                 if (userId != testInfo.forUser) {
-                    this.body = {
-                        success: false,
-                        message: "您没有权限执行此操作"
+                    if(testInfo.confirmChain.indexOf(userId) == -1 ){
+                        this.body = {
+                            success: false,
+                            message: "您没有权限执行此操作或您已审核"
+                        }
+                        return;
                     }
-                    return;
                 }
             }
 

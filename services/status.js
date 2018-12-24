@@ -704,9 +704,12 @@ module.exports = {
 
                 // TODO: role is 计量管理员
                 updateObj.toConfirm = '1';
+                if(testInfo.nextDeviceStatus =="3"){
+                    updateObj.toConfirm = '0';
+                }
                 updateObj.forUser = '';
                 updateObj.fromWho = "";
-                // updateObj.completeChain = [];
+                updateObj.completeChain = [];
                 updateObj.confirmChain = [];
                 updateObj.deviceStatus = testInfo.nextDeviceStatus;
                 updateObj.nextDeviceStatus = "";
@@ -726,7 +729,7 @@ module.exports = {
             };
 
             //判断审批链是否完成
-            if (completeChain.length == testInfo.confirmChain.length) {
+            if (completeChain.length >= testInfo.confirmChain.length) {
                 //完成
                 updateObj.toConfirm = '2';
                 updateObj.forUser = testInfo.fromWho;
