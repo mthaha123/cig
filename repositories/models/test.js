@@ -6,7 +6,7 @@ var Schema = mongoose.Schema;
 /**
  * deviceStatus 为设备当前的状态
  * 如果更新的下一个状态需要审批，那提交申请后  nextDeviceStatus  为待确认状态
- * toConfirm 0 待确认  1 确认  2 等待计量管理员确认
+ * toConfirm 0 审批人确认  1 确认  2 等待计量管理员确认
  */
 var TestSchema = new Schema({
     /**

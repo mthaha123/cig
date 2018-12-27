@@ -136,7 +136,7 @@ module.exports = {
         }
 
         let testInfo = yield statusSvc.getTestInfo(testId);
-        if (testInfo.toConfirm == "0") {
+        if (testInfo.toConfirm != "1") {
             this.body = {
                 success: false,
                 message: "该检测需要等待状态确认"
@@ -202,7 +202,7 @@ module.exports = {
             if (testInfo.confirmChain && testInfo.confirmChain.length != testInfo.completeChain.length) {
                 let userId = this.session.userInfo._id + "&" + this.session.userInfo.name;
                 if (userId != testInfo.forUser) {
-                    if(testInfo.confirmChain.indexOf(userId) == -1 ){
+                    if(testInfo.confirmChain.indexOf(userId) == -1  ){
                         this.body = {
                             success: false,
                             message: "您没有权限执行此操作或您已审核"

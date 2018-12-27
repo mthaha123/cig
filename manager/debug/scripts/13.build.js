@@ -18698,12 +18698,12 @@ webpackJsonp([13,14],Array(107).concat([
 	        edit: function edit(insInfo) {
 	            this.form = insInfo;
 	            this.form.uploadFileList = {};
-	            this.needProve = insInfo.toConfirm == "0" || true;
+	            this.needProve = insInfo.toConfirm != "1" || true;
 	
-	            if (insInfo.toConfirm == "1") {
-	                this.form.completeChain = [];
-	                this.form.confirmChain = [];
-	            }
+	            // if (insInfo.toConfirm == "1") {
+	            //     this.form.completeChain = [];
+	            //     this.form.confirmChain = [];
+	            // }
 	
 	            this.form.attachmentList = function (list) {
 	                var retArray = [];
@@ -18857,6 +18857,7 @@ webpackJsonp([13,14],Array(107).concat([
 	        this.init();
 	    }
 	}; //
+	//
 	//
 	//
 	//
@@ -19369,7 +19370,7 @@ webpackJsonp([13,14],Array(107).concat([
 	    }
 	  }, [_c('el-select', {
 	    attrs: {
-	      "disabled": _vm.form.toConfirm != '1',
+	      "disabled": _vm.form.toConfirm == '1' && _vm.form.status != '7' && _vm.form.status != '16',
 	      "multiple": "",
 	      "filterable": "",
 	      "remote": "",
@@ -19564,7 +19565,7 @@ webpackJsonp([13,14],Array(107).concat([
 	    on: {
 	      "click": _vm.submit
 	    }
-	  }, [_vm._v("确 定")]), _vm._v(" "), (_vm.form.toConfirm == 0) ? _c('el-button', {
+	  }, [_vm._v("确 定")]), _vm._v(" "), (_vm.form.toConfirm != '1') ? _c('el-button', {
 	    attrs: {
 	      "type": "primary"
 	    },

@@ -175,7 +175,7 @@ function getDeviceByTest(list) {
 // 日报 获取需要处理的签核
 function getDayForHandle() {
     return new Promise((rs, rj) => {
-        TestModel.find({ "toConfirm": { $in: ["2", '1'] }, deviceStatus: "3", complete: false }, (err, res) => {
+        TestModel.find({ "toConfirm": { $in: ["2", "0"] }, deviceStatus: "3", complete: false }, (err, res) => {
             if (err) {
                 console.log(err);
                 rj(err);
@@ -261,7 +261,7 @@ function* getHandleList(){
 //获取签核中的仪器信息
 function* getDayforConfirmList(){
     let whereObj = {
-        toConfirm: "2",
+        toConfirm: {$in:["0","2"]},
         complete : false,
         deviceStatus:{$ne:"1"}
     }

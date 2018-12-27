@@ -85,7 +85,8 @@
                 </el-row>
                 <el-row v-if='needProve'>
                     <el-form-item label="审批链" label-width="80px">
-                        <el-select :disabled="form.toConfirm!='1'" v-model="form.confirmChain" multiple filterable remote placeholder="请选择" :remote-method="getUserList" :loading="userLoading">
+                        <el-select :disabled=" form.toConfirm == '1'&& form.status != '7'&&form.status !='16' " v-model="form.confirmChain" multiple filterable remote placeholder="请选择" :remote-method="getUserList" :loading="userLoading">
+                        <!-- <el-select :disabled="form.toConfirm != '1'||form.statusCode != '7'&&form.statusCode != '16'" v-model="form.confirmChain" multiple filterable remote placeholder="请选择" :remote-method="getUserList" :loading="userLoading"> -->
                             <el-option v-for="item in userOptions" :label="item.label" :key="item.value" :value="item.value">
                             </el-option>
                         </el-select>
@@ -145,7 +146,7 @@
             <div slot="footer" class="dialog-footer">
                 <el-button @click='hideDialog'>取 消</el-button>
                 <el-button type="primary" @click="submit">确 定</el-button>
-                <el-button type="primary" v-if="form.toConfirm == 0" @click="reject">否 决</el-button>
+                <el-button type="primary" v-if="form.toConfirm != '1'" @click="reject">否 决</el-button>
             </div>
         </el-dialog>
         <el-dialog title="导入报告信息" size='small' v-model="importDialogView" :modal-append-to-body='false'>
@@ -415,12 +416,12 @@ export default {
         edit(insInfo) {
             this.form = insInfo;
             this.form.uploadFileList = {};
-            this.needProve = insInfo.toConfirm == "0" || true;
+            this.needProve = insInfo.toConfirm != "1" || true;
 
-            if (insInfo.toConfirm == "1") {
-                this.form.completeChain = [];
-                this.form.confirmChain = [];
-            }
+            // if (insInfo.toConfirm == "1") {
+            //     this.form.completeChain = [];
+            //     this.form.confirmChain = [];
+            // }
 
             this.form.attachmentList = (function(list) {
                 let retArray = [];

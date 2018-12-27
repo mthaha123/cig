@@ -704,9 +704,9 @@ module.exports = {
 
                 // TODO: role is 计量管理员
                 updateObj.toConfirm = '1';
-                if(testInfo.nextDeviceStatus =="3"){
-                    updateObj.toConfirm = '0';
-                }
+                // if(testInfo.nextDeviceStatus =="3"){
+                //     updateObj.toConfirm = '0';
+                // }
                 updateObj.forUser = '';
                 updateObj.fromWho = "";
                 updateObj.completeChain = [];
