@@ -583,7 +583,7 @@ module.exports = {
         // 如果有审批链进入确认流程
         if (confirmChain && confirmChain.length) {
             let cLog = {
-                message: "更新状态" + statusCodeView[to] + "等待确认",
+                message: "更新状态--" + statusCodeView[to] + "--等待确认",
                 time: moment().format("YYYY-MM-DD HH:mm:ss"),
                 note: note,
                 operator: userId.split("&")[1]
@@ -614,7 +614,7 @@ module.exports = {
             }
         } else {
             let cLog = {
-                message: "更新状态 " + statusCodeView[to],
+                message: "更新状态-- " + statusCodeView[to],
                 time: moment().format("YYYY-MM-DD HH:mm:ss"),
                 note: note,
                 operator: userId.split("&")[1]
