@@ -9,7 +9,7 @@ const fs = require("fs");
 // exchange server connection info
 let ewsConfig = {
     username: 'calibration',
-    password: '1234.com',
+    password: '1234567890@123.com',
     host: 'https://mail.cambridgeig.com',
 };
 
