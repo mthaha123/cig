@@ -184,6 +184,7 @@ module.exports.notifyKeeper = function(type, userList, deviceList) {
         switch(type){
             case "userchange": list = getInfoChangeList(deviceList); break;
             case "complete": list = getCompleteList(deviceList);break;
+            case "handle": list = getHandleList(deviceList);break;
             default:   list = getDeviceListNotify(deviceList);
         }
         yield sendMail(type, tmpuserList, list,false,ccRecipients);

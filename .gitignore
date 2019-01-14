@@ -9,3 +9,4 @@ config.json
 dump
 emaillog
 statics
+libs/email/index.2.js
