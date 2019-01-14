@@ -160,12 +160,12 @@ module.exports = {
 
             if (to == '8' && !confirmChain) {
                 let devInfo = yield dictSvc.get("insInfo", { _id: testInfo.insId })
-                notifyKeeper("complete", [devInfo.keeper.split("&")[0]], [devInfo]);
+                yield notifyKeeper("complete", [devInfo.keeper.split("&")[0]], [devInfo]);
             }
 
             if (to == '7' && !confirmChain) {
                 let devInfo = yield dictSvc.get("insInfo", { _id: testInfo.insId })
-                notifyKeeper("error", [devInfo.keeper.split("&")[0]], [devInfo]);
+                yield notifyKeeper("error", [devInfo.keeper.split("&")[0]], [devInfo]);
             }
 
             if (!confirmChain && isProcessComplete(to)) {

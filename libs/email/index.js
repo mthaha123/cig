@@ -63,7 +63,7 @@ let ewsArgsTemplate = {
 };
 
 
-function send(ewsArgs) {
+function* send(ewsArgs) {
     return ews.run(ewsFunction, ewsArgs)
         .then(result => {
             console.log(JSON.stringify(result));
@@ -121,6 +121,7 @@ module.exports.sendMail = function (type, userList, deviceList, params,ccRecipie
         fse.outputFileSync(filePath, `\ntitle:${tpls[type].title}`, { flag: "a" })
 
         // return "";
-        return send(args);
+        yield send(args);
+        return;
     })
 }
