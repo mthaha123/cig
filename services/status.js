@@ -608,7 +608,8 @@ module.exports = {
                 updateObj.fromWho = userId;
                 let confirmer = confirmChain[0].split("&")[0]
                 this.getDeviceByID(testInfo.insId).then(res=>{
-                     notify.notifyKeeper("handle", [confirmer], res);
+                    testInfo.insName = res[0].name;
+                    notify.notifyKeeper("handle", [confirmer], {testInfo});
                 })
                 
             }
@@ -741,7 +742,8 @@ module.exports = {
                 let releaseUser = testInfo.confirmChain.slice(completeChain.length).shift();
                 updateObj.forUser = releaseUser;
                 this.getDeviceByID(testInfo.insId).then(res=>{
-                    notify.notifyKeeper("handle", [releaseUser.split("&")[0]], res);
+                    testInfo.insName = res[0].name;
+                    notify.notifyKeeper("handle", [releaseUser.split("&")[0]], [testInfo]);
                 })
                 
             }

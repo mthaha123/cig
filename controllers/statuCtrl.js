@@ -187,7 +187,7 @@ module.exports = {
         let { note, filePath } = yield parse(this);
         let testInfo = yield statusSvc.getTestInfo(testId);
 
-        let authList = this.session.userInfo.authList;
+        let authList = this.session.userInfo.authList?this.session.userInfo.authList:[];
 
         // 审批流程结束后需要计量管理员
         if (testInfo.toConfirm == "2" && authList.indexOf("00008") == -1) {
