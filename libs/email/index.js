@@ -1,4 +1,4 @@
-const EWS = require('node-ews');
+const nodemailer = require('nodemailer');
 let { getTpls } = require("./mail_templates.js");
 const co = require("co");
 const fse = require("fs-extra");
@@ -6,65 +6,37 @@ const path = require("path");
 const moment = require("moment");
 const fs = require("fs");
 
-// exchange server connection info
-let ewsConfig = {
-    username: 'calibration',
-    password: '1234567890@123.com',
-    host: 'https://mail.cambridgeig.com',
-};
-
-let tpls;
-getTpls().then(res => {
-    tpls = res;
-})
-
-let options = {
-    strictSSL: false
-};
-
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
-
-// initialize node-ews
-let ews = new EWS(ewsConfig);
-
-// define ews api function
-let ewsFunction = 'CreateItem';
-
-let ewsArgsTemplate = {
-    "attributes": {
-        "MessageDisposition": "SendAndSaveCopy"
-    },
-    "SavedItemFolderId": {
-        "DistinguishedFolderId": {
-            "attributes": {
-                "Id": "sentitems"
-            }
-        }
-    },
-    "Items": {
-        "Message": {
-            "ItemClass": "IPM.Note",
-            "Subject": "",
-            "Body": {
-                "attributes": {
-                    "BodyType": "HTML"
-                },
-                "$value": ""
-            },
-            "ToRecipients": {
-                "Mailbox": []
-            },
-            "CcRecipients":{
-                "Mailbox":[]
-            },
-            "IsRead": "false"
-        }
+// 开启一个 SMTP 连接池
+let transporter = nodemailer.createTransport({
+    host: 'smtp.163.com',
+    secureConnection: true, // use SSL
+    port: 465,
+    secure: true, // secure:true for port 465, secure:false for port 587
+    auth: {
+        user: 'calibrationmonitor@163.com',
+        pass: 'Cal6180' // QQ邮箱需要使用授权码
     }
+});
+
+// 设置邮件内容（谁发送什么给谁）
+let mailOptions = {
+    "from": 'calibrationmonitor@163.com', // 发件人
+    "to": [], // 收件人
+    "cc":[],
+    "subject": "", // 主题
+    "html": '<b>这是一封来自 Node.js 的测试邮件</b>', // html body
 };
 
-
-function* send(ewsArgs) {
-    return ews.run(ewsFunction, ewsArgs)
+// 使用先前创建的传输器的 sendMail 方法传递消息对象
+// transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//         return console.log(error);
+//     }
+//     console.log(`Message: ${info.messageId}`);
+//     console.log(`sent: ${info.response}`);
+// });
+function* send(args) {
+    return transporter.sendMail(args)
         .then(result => {
             console.log(JSON.stringify(result));
         })
@@ -73,6 +45,11 @@ function* send(ewsArgs) {
         });
 }
 
+
+let tpls;
+getTpls().then(res => {
+    tpls = res;
+})
 
 
 module.exports.sendMail = function (type, userList, deviceList, params,ccRecipients) {
@@ -86,24 +63,16 @@ module.exports.sendMail = function (type, userList, deviceList, params,ccRecipie
         }
         template = template.replace("<tr><td>{{__devList}}</td></tr>", deviceList.join(" "));
 
-        let args = JSON.parse(JSON.stringify(ewsArgsTemplate));
+        let args = JSON.parse(JSON.stringify(mailOptions));
         if (userList && userList.length) {
-            args["Items"]["Message"]["ToRecipients"]["Mailbox"] = userList.map(cur => {
-                return {
-                    "EmailAddress": cur
-                }
-            })
+            args["to"] = userList;
 
-            args["Items"]["Message"]["Subject"] = tpls[type].title;
+            args["subject"] = tpls[type].title;
 
-            args["Items"]["Message"]["Body"]["$value"] = template;
+            args["html"] = template;
         }
         if(ccRecipients &&ccRecipients.length){
-            args["Items"]["Message"]["CcRecipients"]["Mailbox"] = ccRecipients.map(cur =>{
-                return {
-                    "EmailAddress":cur
-                }
-            })
+            args["cc"] = ccRecipients;
         }
 
         console.log("===========sendEmial===========");

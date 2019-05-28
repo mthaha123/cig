@@ -10,3 +10,4 @@ dump
 emaillog
 statics
 libs/email/index.2.js
+libs/email/mail_test.js
