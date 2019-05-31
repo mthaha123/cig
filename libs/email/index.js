@@ -8,19 +8,19 @@ const fs = require("fs");
 
 // 开启一个 SMTP 连接池
 let transporter = nodemailer.createTransport({
-    host: 'smtp.163.com',
+    host: 'smtp.qq.com',
     secureConnection: true, // use SSL
     port: 465,
     secure: true, // secure:true for port 465, secure:false for port 587
     auth: {
-        user: 'calibrationmonitor@163.com',
-        pass: 'Cal6180' // QQ邮箱需要使用授权码
+        user: '1181732384@qq.com',
+        pass: 'iinjbrtwdwtrgihj' // QQ邮箱需要使用授权码
     }
 });
 
 // 设置邮件内容（谁发送什么给谁）
 let mailOptions = {
-    "from": 'calibrationmonitor@163.com', // 发件人
+    "from": '1181732384@qq.com', // 发件人
     "to": [], // 收件人
     "cc":[],
     "subject": "", // 主题
