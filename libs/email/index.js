@@ -8,23 +8,23 @@ const fs = require("fs");
 
 // 开启一个 SMTP 连接池
 let transporter = nodemailer.createTransport({
-    host: 'smtp.qq.com',
+    host: 'mail.cambridgeig.com',
     secureConnection: true, // use SSL
     port: 465,
-    secure: true, // secure:true for port 465, secure:false for port 587
+    secure: false, // secure:true for port 465, secure:false for port 25
     auth: {
-        user: '1181732384@qq.com',
-        pass: 'iinjbrtwdwtrgihj' // QQ邮箱需要使用授权码
+        user: 'calibration',
+        pass: '@Cal123456@' // QQ邮箱需要使用授权码
     }
 });
 
 // 设置邮件内容（谁发送什么给谁）
 let mailOptions = {
-    "from": '1181732384@qq.com', // 发件人
+    "from": 'calibration', // 发件人
     "to": [], // 收件人
     "cc":[],
     "subject": "", // 主题
-    "html": '<b>这是一封来自 Node.js 的测试邮件</b>', // html body
+    "html": '', // html body
 };
 
 // 使用先前创建的传输器的 sendMail 方法传递消息对象
