@@ -35,7 +35,7 @@
     "md5": "^2.2.1",
     "memwatch-next": "^0.3.0",
     "moment": "^2.17.0",
-    "mongoose": "^4.7.3",
+    "mongoose": "^5.7.5",
     "mysql": "^2.12.0",
     "n-readlines": "^0.2.7",
     "node-ews": "^3.2.2",
